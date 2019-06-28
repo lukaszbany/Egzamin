@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.15"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Dokumentacja pliku psys/z6_12_potomny.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.15 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6032343dc0b3c162fbefe13d41e474ba.html">psys</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Komponenty</a> &#124;
+<a href="#define-members">Definicje</a> &#124;
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku z6_12_potomny.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;memory.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;sys/wait.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Komponenty</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structProcessData.html">ProcessData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:ad9699f597384c01411e910aae4c75b3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#ad9699f597384c01411e910aae4c75b3f">RESULT_LENGTH</a>&#160;&#160;&#160;160</td></tr>
+<tr class="separator:ad9699f597384c01411e910aae4c75b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c52f3e083ffd8acde0b01f74de7a5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#a73c52f3e083ffd8acde0b01f74de7a5a">COMMAND_LENGTH</a>&#160;&#160;&#160;80</td></tr>
+<tr class="separator:a73c52f3e083ffd8acde0b01f74de7a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a075c2857863bb022e03f3ec6237957dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#a075c2857863bb022e03f3ec6237957dd">BINARY_LENGTH</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a075c2857863bb022e03f3ec6237957dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdcf83357d907088a65e37fd95bf4f79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#acdcf83357d907088a65e37fd95bf4f79">SIGNALS_NUMBER</a>&#160;&#160;&#160;64</td></tr>
+<tr class="separator:acdcf83357d907088a65e37fd95bf4f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38540853065a7d4ca28efef2436fa521"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#a38540853065a7d4ca28efef2436fa521">MAX_FILES_OPENED</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:a38540853065a7d4ca28efef2436fa521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada74e7db007a68e763f20c17f2985356"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#ada74e7db007a68e763f20c17f2985356">READ</a>&#160;&#160;&#160;&quot;r&quot;</td></tr>
+<tr class="separator:ada74e7db007a68e763f20c17f2985356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:ab80d2ac405208bc1d1eb4de7a00b8fcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#ab80d2ac405208bc1d1eb4de7a00b8fcd">trim</a> (char *text)</td></tr>
+<tr class="separator:ab80d2ac405208bc1d1eb4de7a00b8fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41ad4b72b109ca1d8b1c2e5fd6354c2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#a41ad4b72b109ca1d8b1c2e5fd6354c2f">printIdentification</a> (<a class="el" href="structProcessData.html">ProcessData</a> *processData)</td></tr>
+<tr class="separator:a41ad4b72b109ca1d8b1c2e5fd6354c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6edcd13abbd84c4d54b23dabf53cbb09"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#a6edcd13abbd84c4d54b23dabf53cbb09">getResultFromCommand</a> (char *command)</td></tr>
+<tr class="separator:a6edcd13abbd84c4d54b23dabf53cbb09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e8e4de0df140153d9de69109bf24db0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#a0e8e4de0df140153d9de69109bf24db0">printDirectories</a> (pid_t pid, <a class="el" href="structProcessData.html">ProcessData</a> *processData)</td></tr>
+<tr class="separator:a0e8e4de0df140153d9de69109bf24db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6601d9d7088c383655ad33b2b93aca07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#a6601d9d7088c383655ad33b2b93aca07">printUmask</a> (pid_t pid, <a class="el" href="structProcessData.html">ProcessData</a> *processData)</td></tr>
+<tr class="separator:a6601d9d7088c383655ad33b2b93aca07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20ab0a55fc458411ca20ce436908b89a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#a20ab0a55fc458411ca20ce436908b89a">convertHexCharToBin</a> (char hex)</td></tr>
+<tr class="separator:a20ab0a55fc458411ca20ce436908b89a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96a07fb0ac1fbc1a205a04d340e46e40"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#a96a07fb0ac1fbc1a205a04d340e46e40">saveSignals</a> (char *signals, char *type, <a class="el" href="structProcessData.html">ProcessData</a> *processData)</td></tr>
+<tr class="separator:a96a07fb0ac1fbc1a205a04d340e46e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f36d6a3bcee060bf2508b83d84173b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#a1f36d6a3bcee060bf2508b83d84173b0">printSignals</a> (pid_t pid, char *grepFor, char *name, <a class="el" href="structProcessData.html">ProcessData</a> *processData)</td></tr>
+<tr class="separator:a1f36d6a3bcee060bf2508b83d84173b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1115a6ed1605daffa695ceb324e5db9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#ad1115a6ed1605daffa695ceb324e5db9">printAllSignals</a> (pid_t pid, <a class="el" href="structProcessData.html">ProcessData</a> *processData)</td></tr>
+<tr class="separator:ad1115a6ed1605daffa695ceb324e5db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a612e3a75024670d808e0c0da365e813c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#a612e3a75024670d808e0c0da365e813c">printFilesOpened</a> (pid_t pid, <a class="el" href="structProcessData.html">ProcessData</a> *processData)</td></tr>
+<tr class="separator:a612e3a75024670d808e0c0da365e813c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8ca4a1e811a3e08819e7b40fe34963d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#ae8ca4a1e811a3e08819e7b40fe34963d">printProcessName</a> (pid_t pid, <a class="el" href="structProcessData.html">ProcessData</a> *processData)</td></tr>
+<tr class="separator:ae8ca4a1e811a3e08819e7b40fe34963d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d504dbbb1393a63f86336fd4b2dd77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#ae7d504dbbb1393a63f86336fd4b2dd77">setParent</a> (<a class="el" href="structProcessData.html">ProcessData</a> *data)</td></tr>
+<tr class="separator:ae7d504dbbb1393a63f86336fd4b2dd77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e38fc7dce77ea7ca21bf7b036738d7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#a9e38fc7dce77ea7ca21bf7b036738d7a">printCurrentProcessAttributes</a> (<a class="el" href="structProcessData.html">ProcessData</a> *processData)</td></tr>
+<tr class="separator:a9e38fc7dce77ea7ca21bf7b036738d7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea16168e5905fa886b98877aae72b28e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#aea16168e5905fa886b98877aae72b28e">filesOpenedDifferent</a> (<a class="el" href="structProcessData.html">ProcessData</a> *parentData, <a class="el" href="structProcessData.html">ProcessData</a> *childData)</td></tr>
+<tr class="separator:aea16168e5905fa886b98877aae72b28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__12__potomny_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a id="a075c2857863bb022e03f3ec6237957dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a075c2857863bb022e03f3ec6237957dd">&#9670;&nbsp;</a></span>BINARY_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BINARY_LENGTH&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73c52f3e083ffd8acde0b01f74de7a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c52f3e083ffd8acde0b01f74de7a5a">&#9670;&nbsp;</a></span>COMMAND_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMAND_LENGTH&#160;&#160;&#160;80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38540853065a7d4ca28efef2436fa521"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38540853065a7d4ca28efef2436fa521">&#9670;&nbsp;</a></span>MAX_FILES_OPENED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_FILES_OPENED&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada74e7db007a68e763f20c17f2985356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada74e7db007a68e763f20c17f2985356">&#9670;&nbsp;</a></span>READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define READ&#160;&#160;&#160;&quot;r&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9699f597384c01411e910aae4c75b3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9699f597384c01411e910aae4c75b3f">&#9670;&nbsp;</a></span>RESULT_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RESULT_LENGTH&#160;&#160;&#160;160</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acdcf83357d907088a65e37fd95bf4f79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdcf83357d907088a65e37fd95bf4f79">&#9670;&nbsp;</a></span>SIGNALS_NUMBER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SIGNALS_NUMBER&#160;&#160;&#160;64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="a20ab0a55fc458411ca20ce436908b89a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20ab0a55fc458411ca20ce436908b89a">&#9670;&nbsp;</a></span>convertHexCharToBin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* convertHexCharToBin </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>hex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea16168e5905fa886b98877aae72b28e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea16168e5905fa886b98877aae72b28e">&#9670;&nbsp;</a></span>filesOpenedDifferent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int filesOpenedDifferent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structProcessData.html">ProcessData</a> *&#160;</td>
+          <td class="paramname"><em>parentData</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structProcessData.html">ProcessData</a> *&#160;</td>
+          <td class="paramname"><em>childData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6edcd13abbd84c4d54b23dabf53cbb09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6edcd13abbd84c4d54b23dabf53cbb09">&#9670;&nbsp;</a></span>getResultFromCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* getResultFromCommand </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>command</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1115a6ed1605daffa695ceb324e5db9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1115a6ed1605daffa695ceb324e5db9">&#9670;&nbsp;</a></span>printAllSignals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAllSignals </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structProcessData.html">ProcessData</a> *&#160;</td>
+          <td class="paramname"><em>processData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9e38fc7dce77ea7ca21bf7b036738d7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e38fc7dce77ea7ca21bf7b036738d7a">&#9670;&nbsp;</a></span>printCurrentProcessAttributes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printCurrentProcessAttributes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structProcessData.html">ProcessData</a> *&#160;</td>
+          <td class="paramname"><em>processData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e8e4de0df140153d9de69109bf24db0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e8e4de0df140153d9de69109bf24db0">&#9670;&nbsp;</a></span>printDirectories()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printDirectories </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structProcessData.html">ProcessData</a> *&#160;</td>
+          <td class="paramname"><em>processData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a612e3a75024670d808e0c0da365e813c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a612e3a75024670d808e0c0da365e813c">&#9670;&nbsp;</a></span>printFilesOpened()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printFilesOpened </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structProcessData.html">ProcessData</a> *&#160;</td>
+          <td class="paramname"><em>processData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41ad4b72b109ca1d8b1c2e5fd6354c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41ad4b72b109ca1d8b1c2e5fd6354c2f">&#9670;&nbsp;</a></span>printIdentification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printIdentification </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structProcessData.html">ProcessData</a> *&#160;</td>
+          <td class="paramname"><em>processData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae8ca4a1e811a3e08819e7b40fe34963d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8ca4a1e811a3e08819e7b40fe34963d">&#9670;&nbsp;</a></span>printProcessName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printProcessName </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structProcessData.html">ProcessData</a> *&#160;</td>
+          <td class="paramname"><em>processData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f36d6a3bcee060bf2508b83d84173b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f36d6a3bcee060bf2508b83d84173b0">&#9670;&nbsp;</a></span>printSignals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printSignals </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>grepFor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structProcessData.html">ProcessData</a> *&#160;</td>
+          <td class="paramname"><em>processData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6601d9d7088c383655ad33b2b93aca07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6601d9d7088c383655ad33b2b93aca07">&#9670;&nbsp;</a></span>printUmask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printUmask </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structProcessData.html">ProcessData</a> *&#160;</td>
+          <td class="paramname"><em>processData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a96a07fb0ac1fbc1a205a04d340e46e40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96a07fb0ac1fbc1a205a04d340e46e40">&#9670;&nbsp;</a></span>saveSignals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void saveSignals </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>signals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structProcessData.html">ProcessData</a> *&#160;</td>
+          <td class="paramname"><em>processData</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae7d504dbbb1393a63f86336fd4b2dd77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d504dbbb1393a63f86336fd4b2dd77">&#9670;&nbsp;</a></span>setParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setParent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structProcessData.html">ProcessData</a> *&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab80d2ac405208bc1d1eb4de7a00b8fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab80d2ac405208bc1d1eb4de7a00b8fcd">&#9670;&nbsp;</a></span>trim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void trim </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
+</body>
+</html>

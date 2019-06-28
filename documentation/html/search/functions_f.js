@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['safeexit',['safeExit',['../z8__8__rdfifo_8c.html#ad814211931a54bbbeff99b7d100f27da',1,'safeExit(int status):&#160;z8_8_rdfifo.c'],['../z8__8__wrfifo_8c.html#ad814211931a54bbbeff99b7d100f27da',1,'safeExit(int status):&#160;z8_8_wrfifo.c']]],
+  ['savechars',['saveChars',['../z8__4_8c.html#a965fa8c921be00e6fe868b61a366c63b',1,'z8_4.c']]],
+  ['savedataandsendsignal',['saveDataAndSendSignal',['../z6__14__sender_8c.html#a69ea7043ec81d0946035ee8031946148',1,'z6_14_sender.c']]],
+  ['savesession',['saveSession',['../mydb_8h.html#ad62254d31aef80cd4a6bd67ef8ecaa5f',1,'mydb.h']]],
+  ['savesignals',['saveSignals',['../z6__11_8c.html#a96a07fb0ac1fbc1a205a04d340e46e40',1,'saveSignals(char *signals, char *type, ProcessData *processData):&#160;z6_11.c'],['../z6__12_8c.html#a96a07fb0ac1fbc1a205a04d340e46e40',1,'saveSignals(char *signals, char *type, ProcessData *processData):&#160;z6_12.c'],['../z6__12__potomny_8c.html#a96a07fb0ac1fbc1a205a04d340e46e40',1,'saveSignals(char *signals, char *type, ProcessData *processData):&#160;z6_12_potomny.c']]],
+  ['sendtosocket',['sendToSocket',['../pap_2zaj7_2zadanie9_2mylib_8h.html#a97b914ebec20a6594b93a1e346cdc667',1,'mylib.h']]],
+  ['sendudpmessage',['sendUdpMessage',['../pap_2zaj7_2zadanie7_2mylib_8h.html#a21703aab5c9f96d568142701a84d0fe7',1,'sendUdpMessage(int socketFd, char *message, char *address, int port):&#160;mylib.h'],['../pap_2zaj7_2zadanie8_2mylib_8h.html#a21703aab5c9f96d568142701a84d0fe7',1,'sendUdpMessage(int socketFd, char *message, char *address, int port):&#160;mylib.h'],['../pap_2zaj7_2zadanie9_2mylib_8h.html#a21703aab5c9f96d568142701a84d0fe7',1,'sendUdpMessage(int socketFd, char *message, char *address, int port):&#160;mylib.h']]],
+  ['setalarm',['setAlarm',['../z8__6_8c.html#a75e98b9730357038111037edda8339df',1,'z8_6.c']]],
+  ['setparent',['setParent',['../z6__11_8c.html#ae7d504dbbb1393a63f86336fd4b2dd77',1,'setParent(ProcessData *data):&#160;z6_11.c'],['../z6__12_8c.html#ae7d504dbbb1393a63f86336fd4b2dd77',1,'setParent(ProcessData *data):&#160;z6_12.c'],['../z6__12__potomny_8c.html#ae7d504dbbb1393a63f86336fd4b2dd77',1,'setParent(ProcessData *data):&#160;z6_12_potomny.c']]],
+  ['setup',['setup',['../z8__8__rdfifo_8c.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;z8_8_rdfifo.c'],['../z8__8__wrfifo_8c.html#a4fc01d736fe50cf5b977f755b675f11d',1,'setup():&#160;z8_8_wrfifo.c']]],
+  ['shellcmd',['shellcmd',['../z6__4_8c.html#ae7331bf52ec602a1ca702f7da3e73ac9',1,'shellcmd(char *):&#160;z6_4.c'],['../z8__7_8c.html#ae7331bf52ec602a1ca702f7da3e73ac9',1,'shellcmd(char *):&#160;z6_4.c']]],
+  ['shouldprintfileinfo',['shouldPrintFileInfo',['../z4__8_8c.html#af552387fee24e2454fd71c7f65108717',1,'z4_8.c']]],
+  ['sig_5fchild',['sig_child',['../serwerWspolbiezny_8c.html#a7dd73bef69e22bcf38b44cecfbc12712',1,'serwerWspolbiezny.c']]],
+  ['sigalrm_5fhandler',['sigalrm_handler',['../z6__14__receiver_8c.html#a46863d0b2519a49b151fae261fd2f7dc',1,'sigalrm_handler(int sig_num):&#160;z6_14_receiver.c'],['../z6__7_8c.html#a46863d0b2519a49b151fae261fd2f7dc',1,'sigalrm_handler(int sig_num):&#160;z6_7.c'],['../z8__6_8c.html#a46863d0b2519a49b151fae261fd2f7dc',1,'sigalrm_handler(int sig_num):&#160;z8_6.c']]],
+  ['sighandler',['sighandler',['../z8__8__rdfifo_8c.html#aad53a52f6f3801d7815fb313793c3123',1,'sighandler(int sig_num):&#160;z8_8_rdfifo.c'],['../z8__8__wrfifo_8c.html#aad53a52f6f3801d7815fb313793c3123',1,'sighandler(int sig_num):&#160;z8_8_wrfifo.c']]],
+  ['sigint_5fhandler',['sigint_handler',['../z6__6_8c.html#a4e64e19ce30b595523725c16450403dd',1,'z6_6.c']]],
+  ['sigtstp_5fhandler',['sigtstp_handler',['../z6__6_8c.html#acadc8669686ccbb3ca518dd3a5171c86',1,'z6_6.c']]],
+  ['startlistening',['startListening',['../mylib_8c.html#af20c7fe82d88f6c19955f36984994a77',1,'startListening(int serverFd, int maxBacklog):&#160;mylib.c'],['../libs_2mylib_8h.html#af20c7fe82d88f6c19955f36984994a77',1,'startListening(int serverFd, int maxBacklog):&#160;mylib.c'],['../pap_2zaj7_2zadanie7_2mylib_8h.html#af20c7fe82d88f6c19955f36984994a77',1,'startListening(int serverFd, int maxBacklog):&#160;mylib.h'],['../pap_2zaj7_2zadanie8_2mylib_8h.html#af20c7fe82d88f6c19955f36984994a77',1,'startListening(int serverFd, int maxBacklog):&#160;mylib.h'],['../pap_2zaj7_2zadanie9_2mylib_8h.html#af20c7fe82d88f6c19955f36984994a77',1,'startListening(int serverFd, int maxBacklog):&#160;mylib.h']]],
+  ['startthread',['startThread',['../10c-serwer_8c.html#a3284b2d42b5781f981bdffb62bedcb01',1,'startThread(void *args):&#160;10c-serwer.c'],['../10d-serwer_8c.html#aad3b04c93a07b2f8394c08d734abc062',1,'startThread(void *args):&#160;10d-serwer.c']]],
+  ['sumsizeandprint',['sumSizeAndPrint',['../z4__8_8c.html#a80f2527f2aaaaf02ab0d0b040e90b837',1,'z4_8.c']]],
+  ['sumsizes',['sumSizes',['../z4__8_8c.html#afe6d371efd752a36b2bb075e7135df89',1,'z4_8.c']]]
+];

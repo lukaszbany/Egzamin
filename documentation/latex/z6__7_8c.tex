@@ -1,0 +1,67 @@
+\hypertarget{z6__7_8c}{}\section{Dokumentacja pliku psys/z6\+\_\+7.c}
+\label{z6__7_8c}\index{psys/z6\_7.c@{psys/z6\_7.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{z6__7_8c_a078b6c12f1ac6819cecef90ab5870276}{T\+I\+ME}}~10
+\item 
+\#define \mbox{\hyperlink{z6__7_8c_a9e8538fad4eee548302ad9f60e6d47ca}{P\+A\+S\+S\+W\+O\+RD}}~\char`\"{}proszeopunkt\char`\"{}
+\item 
+\#define \mbox{\hyperlink{z6__7_8c_a0bbe35fda939018d5672a6cfc02cfa51}{P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+L\+E\+N\+G\+TH}}~15
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{z6__7_8c_a46863d0b2519a49b151fae261fd2f7dc}{sigalrm\+\_\+handler}} (int sig\+\_\+num)
+\item 
+int \mbox{\hyperlink{z6__7_8c_ab2b47c2ab3cbdbb6a4f53621e0fe32c5}{check\+Password}} (char $\ast$password)
+\item 
+int \mbox{\hyperlink{z6__7_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{z6__7_8c_a9e8538fad4eee548302ad9f60e6d47ca}\label{z6__7_8c_a9e8538fad4eee548302ad9f60e6d47ca}} 
+\index{z6\_7.c@{z6\_7.c}!PASSWORD@{PASSWORD}}
+\index{PASSWORD@{PASSWORD}!z6\_7.c@{z6\_7.c}}
+\subsubsection{\texorpdfstring{PASSWORD}{PASSWORD}}
+{\footnotesize\ttfamily \#define P\+A\+S\+S\+W\+O\+RD~\char`\"{}proszeopunkt\char`\"{}}
+
+\mbox{\Hypertarget{z6__7_8c_a0bbe35fda939018d5672a6cfc02cfa51}\label{z6__7_8c_a0bbe35fda939018d5672a6cfc02cfa51}} 
+\index{z6\_7.c@{z6\_7.c}!PASSWORD\_LENGTH@{PASSWORD\_LENGTH}}
+\index{PASSWORD\_LENGTH@{PASSWORD\_LENGTH}!z6\_7.c@{z6\_7.c}}
+\subsubsection{\texorpdfstring{PASSWORD\_LENGTH}{PASSWORD\_LENGTH}}
+{\footnotesize\ttfamily \#define P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+L\+E\+N\+G\+TH~15}
+
+\mbox{\Hypertarget{z6__7_8c_a078b6c12f1ac6819cecef90ab5870276}\label{z6__7_8c_a078b6c12f1ac6819cecef90ab5870276}} 
+\index{z6\_7.c@{z6\_7.c}!TIME@{TIME}}
+\index{TIME@{TIME}!z6\_7.c@{z6\_7.c}}
+\subsubsection{\texorpdfstring{TIME}{TIME}}
+{\footnotesize\ttfamily \#define T\+I\+ME~10}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{z6__7_8c_ab2b47c2ab3cbdbb6a4f53621e0fe32c5}\label{z6__7_8c_ab2b47c2ab3cbdbb6a4f53621e0fe32c5}} 
+\index{z6\_7.c@{z6\_7.c}!checkPassword@{checkPassword}}
+\index{checkPassword@{checkPassword}!z6\_7.c@{z6\_7.c}}
+\subsubsection{\texorpdfstring{checkPassword()}{checkPassword()}}
+{\footnotesize\ttfamily int check\+Password (\begin{DoxyParamCaption}\item[{char $\ast$}]{password }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__7_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{z6__7_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{z6\_7.c@{z6\_7.c}!main@{main}}
+\index{main@{main}!z6\_7.c@{z6\_7.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__7_8c_a46863d0b2519a49b151fae261fd2f7dc}\label{z6__7_8c_a46863d0b2519a49b151fae261fd2f7dc}} 
+\index{z6\_7.c@{z6\_7.c}!sigalrm\_handler@{sigalrm\_handler}}
+\index{sigalrm\_handler@{sigalrm\_handler}!z6\_7.c@{z6\_7.c}}
+\subsubsection{\texorpdfstring{sigalrm\_handler()}{sigalrm\_handler()}}
+{\footnotesize\ttfamily void sigalrm\+\_\+handler (\begin{DoxyParamCaption}\item[{int}]{sig\+\_\+num }\end{DoxyParamCaption})}
+

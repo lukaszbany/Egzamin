@@ -1,0 +1,63 @@
+\hypertarget{main_8c}{}\section{Dokumentacja pliku main.\+c}
+\label{main_8c}\index{main.c@{main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$mysql/mysql.\+h$>$}\newline
+{\ttfamily \#include $<$zconf.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}libs/mylib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Request\+Processor.\+h\char`\"{}}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a16b710f592bf8f7900666392adc444dc}{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+RT}}~9876
+\item 
+\#define \mbox{\hyperlink{main_8c_a0a8f91f93d75a07f0ae45077db45b3eb}{M\+A\+X\+\_\+\+C\+L\+I\+E\+N\+TS}}~20
+\item 
+\#define \mbox{\hyperlink{main_8c_ad5765300a9df69229ca7cf5bd438ce73}{M\+A\+X\+\_\+\+B\+A\+C\+K\+L\+OG}}~3
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a3eb60b93b6901c2acd5eb7df758d81b0}{get\+Port}} (int argc, char $\ast$const $\ast$argv)
+\item 
+int \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{main_8c_a16b710f592bf8f7900666392adc444dc}\label{main_8c_a16b710f592bf8f7900666392adc444dc}} 
+\index{main.c@{main.c}!DEFAULT\_PORT@{DEFAULT\_PORT}}
+\index{DEFAULT\_PORT@{DEFAULT\_PORT}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{DEFAULT\_PORT}{DEFAULT\_PORT}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+RT~9876}
+
+\mbox{\Hypertarget{main_8c_ad5765300a9df69229ca7cf5bd438ce73}\label{main_8c_ad5765300a9df69229ca7cf5bd438ce73}} 
+\index{main.c@{main.c}!MAX\_BACKLOG@{MAX\_BACKLOG}}
+\index{MAX\_BACKLOG@{MAX\_BACKLOG}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{MAX\_BACKLOG}{MAX\_BACKLOG}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+B\+A\+C\+K\+L\+OG~3}
+
+\mbox{\Hypertarget{main_8c_a0a8f91f93d75a07f0ae45077db45b3eb}\label{main_8c_a0a8f91f93d75a07f0ae45077db45b3eb}} 
+\index{main.c@{main.c}!MAX\_CLIENTS@{MAX\_CLIENTS}}
+\index{MAX\_CLIENTS@{MAX\_CLIENTS}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{MAX\_CLIENTS}{MAX\_CLIENTS}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+C\+L\+I\+E\+N\+TS~20}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{main_8c_a3eb60b93b6901c2acd5eb7df758d81b0}\label{main_8c_a3eb60b93b6901c2acd5eb7df758d81b0}} 
+\index{main.c@{main.c}!getPort@{getPort}}
+\index{getPort@{getPort}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily int get\+Port (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$const $\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+

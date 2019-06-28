@@ -1,0 +1,128 @@
+\hypertarget{z8__8__rdfifo_8c}{}\section{Dokumentacja pliku psys/z8\+\_\+8\+\_\+rdfifo.c}
+\label{z8__8__rdfifo_8c}\index{psys/z8\_8\_rdfifo.c@{psys/z8\_8\_rdfifo.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{z8__8__rdfifo_8c_ad13ef9fc86d531a6c7ead593b38e3d12}{S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+F\+I\+LE}}~\char`\"{}z8\+\_\+8.\+dat\char`\"{}
+\item 
+\#define \mbox{\hyperlink{z8__8__rdfifo_8c_ac146c3c7afc6f342ae4f476bd46d924a}{M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+E\+N\+G\+TH}}~150
+\item 
+\#define \mbox{\hyperlink{z8__8__rdfifo_8c_af71324c57f05ff9e24bd384925dd6b17}{N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+TH}}~30
+\item 
+\#define \mbox{\hyperlink{z8__8__rdfifo_8c_ab8c52c1b4c021ed3e6b6b677bd2ac019}{M\+O\+DE}}~0666
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{z8__8__rdfifo_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}{trim}} (char $\ast$text)
+\item 
+void \mbox{\hyperlink{z8__8__rdfifo_8c_ad814211931a54bbbeff99b7d100f27da}{safe\+Exit}} (int status)
+\item 
+void \mbox{\hyperlink{z8__8__rdfifo_8c_aad53a52f6f3801d7815fb313793c3123}{sighandler}} (int sig\+\_\+num)
+\item 
+void \mbox{\hyperlink{z8__8__rdfifo_8c_acd8e56ee9f1e3372a09e6f60ab70e172}{miliseconds\+Sleep}} (long miliseconds\+Interval)
+\item 
+void \mbox{\hyperlink{z8__8__rdfifo_8c_ab081b0feacbbc04fce361d9cc35c55fc}{load\+Fifo\+Name}} ()
+\item 
+void \mbox{\hyperlink{z8__8__rdfifo_8c_a63fbff743cd1286e41081989d5479d50}{create\+Fifo}} ()
+\item 
+void \mbox{\hyperlink{z8__8__rdfifo_8c_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+int \mbox{\hyperlink{z8__8__rdfifo_8c_a1d751617772003bcd52ac957bb6285e2}{open\+Fifo}} ()
+\item 
+int \mbox{\hyperlink{z8__8__rdfifo_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{z8__8__rdfifo_8c_ac146c3c7afc6f342ae4f476bd46d924a}\label{z8__8__rdfifo_8c_ac146c3c7afc6f342ae4f476bd46d924a}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!MESSAGE\_LENGTH@{MESSAGE\_LENGTH}}
+\index{MESSAGE\_LENGTH@{MESSAGE\_LENGTH}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{MESSAGE\_LENGTH}{MESSAGE\_LENGTH}}
+{\footnotesize\ttfamily \#define M\+E\+S\+S\+A\+G\+E\+\_\+\+L\+E\+N\+G\+TH~150}
+
+\mbox{\Hypertarget{z8__8__rdfifo_8c_ab8c52c1b4c021ed3e6b6b677bd2ac019}\label{z8__8__rdfifo_8c_ab8c52c1b4c021ed3e6b6b677bd2ac019}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!MODE@{MODE}}
+\index{MODE@{MODE}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{MODE}{MODE}}
+{\footnotesize\ttfamily \#define M\+O\+DE~0666}
+
+\mbox{\Hypertarget{z8__8__rdfifo_8c_af71324c57f05ff9e24bd384925dd6b17}\label{z8__8__rdfifo_8c_af71324c57f05ff9e24bd384925dd6b17}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!NAME\_LENGTH@{NAME\_LENGTH}}
+\index{NAME\_LENGTH@{NAME\_LENGTH}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{NAME\_LENGTH}{NAME\_LENGTH}}
+{\footnotesize\ttfamily \#define N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+TH~30}
+
+\mbox{\Hypertarget{z8__8__rdfifo_8c_ad13ef9fc86d531a6c7ead593b38e3d12}\label{z8__8__rdfifo_8c_ad13ef9fc86d531a6c7ead593b38e3d12}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!SETTINGS\_FILE@{SETTINGS\_FILE}}
+\index{SETTINGS\_FILE@{SETTINGS\_FILE}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{SETTINGS\_FILE}{SETTINGS\_FILE}}
+{\footnotesize\ttfamily \#define S\+E\+T\+T\+I\+N\+G\+S\+\_\+\+F\+I\+LE~\char`\"{}z8\+\_\+8.\+dat\char`\"{}}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{z8__8__rdfifo_8c_a63fbff743cd1286e41081989d5479d50}\label{z8__8__rdfifo_8c_a63fbff743cd1286e41081989d5479d50}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!createFifo@{createFifo}}
+\index{createFifo@{createFifo}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{createFifo()}{createFifo()}}
+{\footnotesize\ttfamily void create\+Fifo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__8__rdfifo_8c_ab081b0feacbbc04fce361d9cc35c55fc}\label{z8__8__rdfifo_8c_ab081b0feacbbc04fce361d9cc35c55fc}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!loadFifoName@{loadFifoName}}
+\index{loadFifoName@{loadFifoName}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{loadFifoName()}{loadFifoName()}}
+{\footnotesize\ttfamily void load\+Fifo\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__8__rdfifo_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{z8__8__rdfifo_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!main@{main}}
+\index{main@{main}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__8__rdfifo_8c_acd8e56ee9f1e3372a09e6f60ab70e172}\label{z8__8__rdfifo_8c_acd8e56ee9f1e3372a09e6f60ab70e172}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!milisecondsSleep@{milisecondsSleep}}
+\index{milisecondsSleep@{milisecondsSleep}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{milisecondsSleep()}{milisecondsSleep()}}
+{\footnotesize\ttfamily void miliseconds\+Sleep (\begin{DoxyParamCaption}\item[{long}]{miliseconds\+Interval }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__8__rdfifo_8c_a1d751617772003bcd52ac957bb6285e2}\label{z8__8__rdfifo_8c_a1d751617772003bcd52ac957bb6285e2}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!openFifo@{openFifo}}
+\index{openFifo@{openFifo}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{openFifo()}{openFifo()}}
+{\footnotesize\ttfamily int open\+Fifo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__8__rdfifo_8c_ad814211931a54bbbeff99b7d100f27da}\label{z8__8__rdfifo_8c_ad814211931a54bbbeff99b7d100f27da}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!safeExit@{safeExit}}
+\index{safeExit@{safeExit}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{safeExit()}{safeExit()}}
+{\footnotesize\ttfamily void safe\+Exit (\begin{DoxyParamCaption}\item[{int}]{status }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__8__rdfifo_8c_a4fc01d736fe50cf5b977f755b675f11d}\label{z8__8__rdfifo_8c_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!setup@{setup}}
+\index{setup@{setup}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__8__rdfifo_8c_aad53a52f6f3801d7815fb313793c3123}\label{z8__8__rdfifo_8c_aad53a52f6f3801d7815fb313793c3123}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!sighandler@{sighandler}}
+\index{sighandler@{sighandler}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{sighandler()}{sighandler()}}
+{\footnotesize\ttfamily void sighandler (\begin{DoxyParamCaption}\item[{int}]{sig\+\_\+num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__8__rdfifo_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}\label{z8__8__rdfifo_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}} 
+\index{z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}!trim@{trim}}
+\index{trim@{trim}!z8\_8\_rdfifo.c@{z8\_8\_rdfifo.c}}
+\subsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily void trim (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+

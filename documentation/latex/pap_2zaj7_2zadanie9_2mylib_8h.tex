@@ -1,0 +1,232 @@
+\hypertarget{pap_2zaj7_2zadanie9_2mylib_8h}{}\section{Dokumentacja pliku pap/zaj7/zadanie9/mylib.h}
+\label{pap_2zaj7_2zadanie9_2mylib_8h}\index{pap/zaj7/zadanie9/mylib.h@{pap/zaj7/zadanie9/mylib.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$syslog.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_ad5570a4ab8c9d790b0e8f7c15378d582}{M\+A\+X\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+TH}}~80
+\item 
+\#define \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a383cc726612c3f31cc235472be55516b}{T\+CP}}~\char`\"{}tcp\char`\"{}
+\item 
+\#define \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a1db55153877cfdc729091d3aecdb3bd2}{U\+DP}}~\char`\"{}udp\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a813affbb40064ac0726b445efc4dc095}{run\+As\+Daemon}} (int port)
+\item 
+int \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_ae20818ce587f9a471ecefc0f89b4739f}{create\+Tcp\+Socket}} ()
+\item 
+int \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a8c72bda1ce3792c4e3e059e3de4de0be}{create\+Udp\+Socket}} ()
+\item 
+void \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a5b8d3988a249e53b8bceed317d55552f}{bind\+Socket\+With\+Port}} (int server\+Fd, int port)
+\item 
+void \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_af20c7fe82d88f6c19955f36984994a77}{start\+Listening}} (int server\+Fd, int max\+Backlog)
+\item 
+void \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a4ed91d668694a3e59932bd65b5ac8fdb}{bind\+And\+Listen}} (int server\+Fd, int port, int max\+Backlog)
+\item 
+void \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_adbd9e9e9ab153f13203f74978d35bef9}{connect\+With\+Server}} (int connection\+Fd, char $\ast$address, int port)
+\item 
+int \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a51d9381832841b0cc19b7c5f9a790637}{create\+Socket\+And\+Connect}} (char $\ast$address, int port)
+\item 
+void \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a21703aab5c9f96d568142701a84d0fe7}{send\+Udp\+Message}} (int socket\+Fd, char $\ast$message, char $\ast$address, int port)
+\item 
+void \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a467c9f905dd4ab80db3016579985ba8b}{answer\+To\+Udp\+Message}} (int socket\+Fd, char $\ast$message, struct sockaddr\+\_\+in servaddr)
+\item 
+void \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a1bdface4fc04fa265a97a81525195b64}{get\+Ip}} (char $\ast$hostname, char $\ast$ip)
+\item 
+void \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a38838f8aa6b163c26e25681056453a42}{get\+Hostname}} (char $\ast$address, char $\ast$hostname)
+\item 
+void \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a2129dc620af813bcf156ec152931b240}{read\+Ip\+Address}} (char $\ast$address, char $\ast$result)
+\item 
+int \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_aa5bfa84e9fe63fc784efa761f41b4e52}{is\+Ip\+Address}} (char $\ast$address)
+\item 
+int \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_adf3f0c7331b45cb18485b7b8b6f696ec}{read\+Port}} (char $\ast$given, char $\ast$protocol)
+\item 
+char $\ast$ \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a080b331af454134060776319eb4ebade}{read\+From\+Socket}} (int connection\+Fd, char destination\mbox{[}$\,$\mbox{]}, size\+\_\+t max\+Buf)
+\item 
+void \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a97b914ebec20a6594b93a1e346cdc667}{send\+To\+Socket}} (int connection\+Fd, char $\ast$message, int max\+Buf)
+\item 
+int \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a8fc152c9b7ea906ff8a1484fa9beaed3}{create\+Socket}} (int type)
+\item 
+struct sockaddr\+\_\+in \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a28c7d962316c79baa25bc5691eb67b23}{create\+Sockaddr\+With\+Address}} (char $\ast$address, int port)
+\item 
+struct sockaddr\+\_\+in \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a1c5b32d121051483480797482935948e}{create\+Sockaddr}} (int port)
+\item 
+int \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a3461e2159f993f75f6994a773e84d18d}{create\+Tcp\+Socket\+And\+Connect}} (char $\ast$address, int port)
+\item 
+int \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_acc7e74dc05bdb8ededb174ec81a21632}{create\+Udp\+Socket\+And\+Connect}} (char $\ast$address, int port)
+\item 
+struct sockaddr\+\_\+in \mbox{\hyperlink{pap_2zaj7_2zadanie9_2mylib_8h_a8b6f69063a7335ef700fe9e5ebfeeba9}{receive\+Udp\+Message}} (int socket\+Fd, char $\ast$answer, int max\+Message\+Length, struct sockaddr\+\_\+in senderaddr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_ad5570a4ab8c9d790b0e8f7c15378d582}\label{pap_2zaj7_2zadanie9_2mylib_8h_ad5570a4ab8c9d790b0e8f7c15378d582}} 
+\index{mylib.h@{mylib.h}!MAX\_HOSTNAME\_LENGTH@{MAX\_HOSTNAME\_LENGTH}}
+\index{MAX\_HOSTNAME\_LENGTH@{MAX\_HOSTNAME\_LENGTH}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{MAX\_HOSTNAME\_LENGTH}{MAX\_HOSTNAME\_LENGTH}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+TH~80}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a383cc726612c3f31cc235472be55516b}\label{pap_2zaj7_2zadanie9_2mylib_8h_a383cc726612c3f31cc235472be55516b}} 
+\index{mylib.h@{mylib.h}!TCP@{TCP}}
+\index{TCP@{TCP}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{TCP}{TCP}}
+{\footnotesize\ttfamily \#define T\+CP~\char`\"{}tcp\char`\"{}}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a1db55153877cfdc729091d3aecdb3bd2}\label{pap_2zaj7_2zadanie9_2mylib_8h_a1db55153877cfdc729091d3aecdb3bd2}} 
+\index{mylib.h@{mylib.h}!UDP@{UDP}}
+\index{UDP@{UDP}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{UDP}{UDP}}
+{\footnotesize\ttfamily \#define U\+DP~\char`\"{}udp\char`\"{}}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a467c9f905dd4ab80db3016579985ba8b}\label{pap_2zaj7_2zadanie9_2mylib_8h_a467c9f905dd4ab80db3016579985ba8b}} 
+\index{mylib.h@{mylib.h}!answerToUdpMessage@{answerToUdpMessage}}
+\index{answerToUdpMessage@{answerToUdpMessage}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{answerToUdpMessage()}{answerToUdpMessage()}}
+{\footnotesize\ttfamily void answer\+To\+Udp\+Message (\begin{DoxyParamCaption}\item[{int}]{socket\+Fd,  }\item[{char $\ast$}]{message,  }\item[{struct sockaddr\+\_\+in}]{servaddr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a4ed91d668694a3e59932bd65b5ac8fdb}\label{pap_2zaj7_2zadanie9_2mylib_8h_a4ed91d668694a3e59932bd65b5ac8fdb}} 
+\index{mylib.h@{mylib.h}!bindAndListen@{bindAndListen}}
+\index{bindAndListen@{bindAndListen}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{bindAndListen()}{bindAndListen()}}
+{\footnotesize\ttfamily void bind\+And\+Listen (\begin{DoxyParamCaption}\item[{int}]{server\+Fd,  }\item[{int}]{port,  }\item[{int}]{max\+Backlog }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a5b8d3988a249e53b8bceed317d55552f}\label{pap_2zaj7_2zadanie9_2mylib_8h_a5b8d3988a249e53b8bceed317d55552f}} 
+\index{mylib.h@{mylib.h}!bindSocketWithPort@{bindSocketWithPort}}
+\index{bindSocketWithPort@{bindSocketWithPort}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{bindSocketWithPort()}{bindSocketWithPort()}}
+{\footnotesize\ttfamily void bind\+Socket\+With\+Port (\begin{DoxyParamCaption}\item[{int}]{server\+Fd,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_adbd9e9e9ab153f13203f74978d35bef9}\label{pap_2zaj7_2zadanie9_2mylib_8h_adbd9e9e9ab153f13203f74978d35bef9}} 
+\index{mylib.h@{mylib.h}!connectWithServer@{connectWithServer}}
+\index{connectWithServer@{connectWithServer}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{connectWithServer()}{connectWithServer()}}
+{\footnotesize\ttfamily void connect\+With\+Server (\begin{DoxyParamCaption}\item[{int}]{connection\+Fd,  }\item[{char $\ast$}]{address,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a1c5b32d121051483480797482935948e}\label{pap_2zaj7_2zadanie9_2mylib_8h_a1c5b32d121051483480797482935948e}} 
+\index{mylib.h@{mylib.h}!createSockaddr@{createSockaddr}}
+\index{createSockaddr@{createSockaddr}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{createSockaddr()}{createSockaddr()}}
+{\footnotesize\ttfamily struct sockaddr\+\_\+in create\+Sockaddr (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a28c7d962316c79baa25bc5691eb67b23}\label{pap_2zaj7_2zadanie9_2mylib_8h_a28c7d962316c79baa25bc5691eb67b23}} 
+\index{mylib.h@{mylib.h}!createSockaddrWithAddress@{createSockaddrWithAddress}}
+\index{createSockaddrWithAddress@{createSockaddrWithAddress}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{createSockaddrWithAddress()}{createSockaddrWithAddress()}}
+{\footnotesize\ttfamily struct sockaddr\+\_\+in create\+Sockaddr\+With\+Address (\begin{DoxyParamCaption}\item[{char $\ast$}]{address,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a8fc152c9b7ea906ff8a1484fa9beaed3}\label{pap_2zaj7_2zadanie9_2mylib_8h_a8fc152c9b7ea906ff8a1484fa9beaed3}} 
+\index{mylib.h@{mylib.h}!createSocket@{createSocket}}
+\index{createSocket@{createSocket}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{createSocket()}{createSocket()}}
+{\footnotesize\ttfamily int create\+Socket (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a51d9381832841b0cc19b7c5f9a790637}\label{pap_2zaj7_2zadanie9_2mylib_8h_a51d9381832841b0cc19b7c5f9a790637}} 
+\index{mylib.h@{mylib.h}!createSocketAndConnect@{createSocketAndConnect}}
+\index{createSocketAndConnect@{createSocketAndConnect}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{createSocketAndConnect()}{createSocketAndConnect()}}
+{\footnotesize\ttfamily int create\+Socket\+And\+Connect (\begin{DoxyParamCaption}\item[{char $\ast$}]{address,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_ae20818ce587f9a471ecefc0f89b4739f}\label{pap_2zaj7_2zadanie9_2mylib_8h_ae20818ce587f9a471ecefc0f89b4739f}} 
+\index{mylib.h@{mylib.h}!createTcpSocket@{createTcpSocket}}
+\index{createTcpSocket@{createTcpSocket}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{createTcpSocket()}{createTcpSocket()}}
+{\footnotesize\ttfamily int create\+Tcp\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a3461e2159f993f75f6994a773e84d18d}\label{pap_2zaj7_2zadanie9_2mylib_8h_a3461e2159f993f75f6994a773e84d18d}} 
+\index{mylib.h@{mylib.h}!createTcpSocketAndConnect@{createTcpSocketAndConnect}}
+\index{createTcpSocketAndConnect@{createTcpSocketAndConnect}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{createTcpSocketAndConnect()}{createTcpSocketAndConnect()}}
+{\footnotesize\ttfamily int create\+Tcp\+Socket\+And\+Connect (\begin{DoxyParamCaption}\item[{char $\ast$}]{address,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a8c72bda1ce3792c4e3e059e3de4de0be}\label{pap_2zaj7_2zadanie9_2mylib_8h_a8c72bda1ce3792c4e3e059e3de4de0be}} 
+\index{mylib.h@{mylib.h}!createUdpSocket@{createUdpSocket}}
+\index{createUdpSocket@{createUdpSocket}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{createUdpSocket()}{createUdpSocket()}}
+{\footnotesize\ttfamily int create\+Udp\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_acc7e74dc05bdb8ededb174ec81a21632}\label{pap_2zaj7_2zadanie9_2mylib_8h_acc7e74dc05bdb8ededb174ec81a21632}} 
+\index{mylib.h@{mylib.h}!createUdpSocketAndConnect@{createUdpSocketAndConnect}}
+\index{createUdpSocketAndConnect@{createUdpSocketAndConnect}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{createUdpSocketAndConnect()}{createUdpSocketAndConnect()}}
+{\footnotesize\ttfamily int create\+Udp\+Socket\+And\+Connect (\begin{DoxyParamCaption}\item[{char $\ast$}]{address,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a38838f8aa6b163c26e25681056453a42}\label{pap_2zaj7_2zadanie9_2mylib_8h_a38838f8aa6b163c26e25681056453a42}} 
+\index{mylib.h@{mylib.h}!getHostname@{getHostname}}
+\index{getHostname@{getHostname}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{getHostname()}{getHostname()}}
+{\footnotesize\ttfamily void get\+Hostname (\begin{DoxyParamCaption}\item[{char $\ast$}]{address,  }\item[{char $\ast$}]{hostname }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a1bdface4fc04fa265a97a81525195b64}\label{pap_2zaj7_2zadanie9_2mylib_8h_a1bdface4fc04fa265a97a81525195b64}} 
+\index{mylib.h@{mylib.h}!getIp@{getIp}}
+\index{getIp@{getIp}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{getIp()}{getIp()}}
+{\footnotesize\ttfamily void get\+Ip (\begin{DoxyParamCaption}\item[{char $\ast$}]{hostname,  }\item[{char $\ast$}]{ip }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_aa5bfa84e9fe63fc784efa761f41b4e52}\label{pap_2zaj7_2zadanie9_2mylib_8h_aa5bfa84e9fe63fc784efa761f41b4e52}} 
+\index{mylib.h@{mylib.h}!isIpAddress@{isIpAddress}}
+\index{isIpAddress@{isIpAddress}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{isIpAddress()}{isIpAddress()}}
+{\footnotesize\ttfamily int is\+Ip\+Address (\begin{DoxyParamCaption}\item[{char $\ast$}]{address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a080b331af454134060776319eb4ebade}\label{pap_2zaj7_2zadanie9_2mylib_8h_a080b331af454134060776319eb4ebade}} 
+\index{mylib.h@{mylib.h}!readFromSocket@{readFromSocket}}
+\index{readFromSocket@{readFromSocket}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{readFromSocket()}{readFromSocket()}}
+{\footnotesize\ttfamily char $\ast$ read\+From\+Socket (\begin{DoxyParamCaption}\item[{int}]{connection\+Fd,  }\item[{char}]{destination\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{max\+Buf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a2129dc620af813bcf156ec152931b240}\label{pap_2zaj7_2zadanie9_2mylib_8h_a2129dc620af813bcf156ec152931b240}} 
+\index{mylib.h@{mylib.h}!readIpAddress@{readIpAddress}}
+\index{readIpAddress@{readIpAddress}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{readIpAddress()}{readIpAddress()}}
+{\footnotesize\ttfamily void read\+Ip\+Address (\begin{DoxyParamCaption}\item[{char $\ast$}]{address,  }\item[{char $\ast$}]{result }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_adf3f0c7331b45cb18485b7b8b6f696ec}\label{pap_2zaj7_2zadanie9_2mylib_8h_adf3f0c7331b45cb18485b7b8b6f696ec}} 
+\index{mylib.h@{mylib.h}!readPort@{readPort}}
+\index{readPort@{readPort}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{readPort()}{readPort()}}
+{\footnotesize\ttfamily int read\+Port (\begin{DoxyParamCaption}\item[{char $\ast$}]{given,  }\item[{char $\ast$}]{protocol }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a8b6f69063a7335ef700fe9e5ebfeeba9}\label{pap_2zaj7_2zadanie9_2mylib_8h_a8b6f69063a7335ef700fe9e5ebfeeba9}} 
+\index{mylib.h@{mylib.h}!receiveUdpMessage@{receiveUdpMessage}}
+\index{receiveUdpMessage@{receiveUdpMessage}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{receiveUdpMessage()}{receiveUdpMessage()}}
+{\footnotesize\ttfamily struct sockaddr\+\_\+in receive\+Udp\+Message (\begin{DoxyParamCaption}\item[{int}]{socket\+Fd,  }\item[{char $\ast$}]{answer,  }\item[{int}]{max\+Message\+Length,  }\item[{struct sockaddr\+\_\+in}]{senderaddr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a813affbb40064ac0726b445efc4dc095}\label{pap_2zaj7_2zadanie9_2mylib_8h_a813affbb40064ac0726b445efc4dc095}} 
+\index{mylib.h@{mylib.h}!runAsDaemon@{runAsDaemon}}
+\index{runAsDaemon@{runAsDaemon}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{runAsDaemon()}{runAsDaemon()}}
+{\footnotesize\ttfamily void run\+As\+Daemon (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a97b914ebec20a6594b93a1e346cdc667}\label{pap_2zaj7_2zadanie9_2mylib_8h_a97b914ebec20a6594b93a1e346cdc667}} 
+\index{mylib.h@{mylib.h}!sendToSocket@{sendToSocket}}
+\index{sendToSocket@{sendToSocket}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{sendToSocket()}{sendToSocket()}}
+{\footnotesize\ttfamily void send\+To\+Socket (\begin{DoxyParamCaption}\item[{int}]{connection\+Fd,  }\item[{char $\ast$}]{message,  }\item[{int}]{max\+Buf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_a21703aab5c9f96d568142701a84d0fe7}\label{pap_2zaj7_2zadanie9_2mylib_8h_a21703aab5c9f96d568142701a84d0fe7}} 
+\index{mylib.h@{mylib.h}!sendUdpMessage@{sendUdpMessage}}
+\index{sendUdpMessage@{sendUdpMessage}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{sendUdpMessage()}{sendUdpMessage()}}
+{\footnotesize\ttfamily void send\+Udp\+Message (\begin{DoxyParamCaption}\item[{int}]{socket\+Fd,  }\item[{char $\ast$}]{message,  }\item[{char $\ast$}]{address,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie9_2mylib_8h_af20c7fe82d88f6c19955f36984994a77}\label{pap_2zaj7_2zadanie9_2mylib_8h_af20c7fe82d88f6c19955f36984994a77}} 
+\index{mylib.h@{mylib.h}!startListening@{startListening}}
+\index{startListening@{startListening}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{startListening()}{startListening()}}
+{\footnotesize\ttfamily void start\+Listening (\begin{DoxyParamCaption}\item[{int}]{server\+Fd,  }\item[{int}]{max\+Backlog }\end{DoxyParamCaption})}
+

@@ -1,0 +1,159 @@
+\hypertarget{libs_2mylib_8h}{}\section{Dokumentacja pliku libs/mylib.h}
+\label{libs_2mylib_8h}\index{libs/mylib.h@{libs/mylib.h}}
+{\ttfamily \#include $<$bits/types/\+F\+I\+L\+E.\+h$>$}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{libs_2mylib_8h_ad5570a4ab8c9d790b0e8f7c15378d582}{M\+A\+X\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+TH}}~80
+\item 
+\#define \mbox{\hyperlink{libs_2mylib_8h_a383cc726612c3f31cc235472be55516b}{T\+CP}}~\char`\"{}tcp\char`\"{}
+\item 
+\#define \mbox{\hyperlink{libs_2mylib_8h_a1db55153877cfdc729091d3aecdb3bd2}{U\+DP}}~\char`\"{}udp\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{libs_2mylib_8h_a813affbb40064ac0726b445efc4dc095}{run\+As\+Daemon}} (int port)
+\item 
+int \mbox{\hyperlink{libs_2mylib_8h_ae20818ce587f9a471ecefc0f89b4739f}{create\+Tcp\+Socket}} ()
+\item 
+void \mbox{\hyperlink{libs_2mylib_8h_a5b8d3988a249e53b8bceed317d55552f}{bind\+Socket\+With\+Port}} (int server\+Fd, int port)
+\item 
+void \mbox{\hyperlink{libs_2mylib_8h_af20c7fe82d88f6c19955f36984994a77}{start\+Listening}} (int server\+Fd, int max\+Backlog)
+\item 
+void \mbox{\hyperlink{libs_2mylib_8h_a4ed91d668694a3e59932bd65b5ac8fdb}{bind\+And\+Listen}} (int server\+Fd, int port, int max\+Backlog)
+\item 
+void \mbox{\hyperlink{libs_2mylib_8h_adbd9e9e9ab153f13203f74978d35bef9}{connect\+With\+Server}} (int connection\+Fd, char $\ast$address, int port)
+\item 
+int \mbox{\hyperlink{libs_2mylib_8h_a51d9381832841b0cc19b7c5f9a790637}{create\+Socket\+And\+Connect}} (char $\ast$address, int port)
+\item 
+void \mbox{\hyperlink{libs_2mylib_8h_a1bdface4fc04fa265a97a81525195b64}{get\+Ip}} (char $\ast$hostname, char $\ast$ip)
+\item 
+void \mbox{\hyperlink{libs_2mylib_8h_a38838f8aa6b163c26e25681056453a42}{get\+Hostname}} (char $\ast$address, char $\ast$hostname)
+\item 
+void \mbox{\hyperlink{libs_2mylib_8h_a2129dc620af813bcf156ec152931b240}{read\+Ip\+Address}} (char $\ast$address, char $\ast$result)
+\item 
+int \mbox{\hyperlink{libs_2mylib_8h_aa5bfa84e9fe63fc784efa761f41b4e52}{is\+Ip\+Address}} (char $\ast$address)
+\item 
+int \mbox{\hyperlink{libs_2mylib_8h_adf3f0c7331b45cb18485b7b8b6f696ec}{read\+Port}} (char $\ast$given, char $\ast$protocol)
+\item 
+int \mbox{\hyperlink{libs_2mylib_8h_a67b86ec0e83279c0885565da066be3df}{accept\+Connection}} (int server\+Socket)
+\item 
+int \mbox{\hyperlink{libs_2mylib_8h_a0c3fea059b954935070e40660115a5e4}{process\+Headers\+And\+Get\+Session\+Id\+If\+Exist}} (F\+I\+LE $\ast$request\+Headers, char $\ast$session\+Id)
+\item 
+int \mbox{\hyperlink{libs_2mylib_8h_ae4dbbd30bb20258f61f826ca7b14fddd}{find\+Session\+Id\+In\+Cookie}} (char $\ast$Cookie, char $\ast$session\+Id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{libs_2mylib_8h_ad5570a4ab8c9d790b0e8f7c15378d582}\label{libs_2mylib_8h_ad5570a4ab8c9d790b0e8f7c15378d582}} 
+\index{mylib.h@{mylib.h}!MAX\_HOSTNAME\_LENGTH@{MAX\_HOSTNAME\_LENGTH}}
+\index{MAX\_HOSTNAME\_LENGTH@{MAX\_HOSTNAME\_LENGTH}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{MAX\_HOSTNAME\_LENGTH}{MAX\_HOSTNAME\_LENGTH}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+H\+O\+S\+T\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+TH~80}
+
+\mbox{\Hypertarget{libs_2mylib_8h_a383cc726612c3f31cc235472be55516b}\label{libs_2mylib_8h_a383cc726612c3f31cc235472be55516b}} 
+\index{mylib.h@{mylib.h}!TCP@{TCP}}
+\index{TCP@{TCP}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{TCP}{TCP}}
+{\footnotesize\ttfamily \#define T\+CP~\char`\"{}tcp\char`\"{}}
+
+\mbox{\Hypertarget{libs_2mylib_8h_a1db55153877cfdc729091d3aecdb3bd2}\label{libs_2mylib_8h_a1db55153877cfdc729091d3aecdb3bd2}} 
+\index{mylib.h@{mylib.h}!UDP@{UDP}}
+\index{UDP@{UDP}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{UDP}{UDP}}
+{\footnotesize\ttfamily \#define U\+DP~\char`\"{}udp\char`\"{}}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{libs_2mylib_8h_a67b86ec0e83279c0885565da066be3df}\label{libs_2mylib_8h_a67b86ec0e83279c0885565da066be3df}} 
+\index{mylib.h@{mylib.h}!acceptConnection@{acceptConnection}}
+\index{acceptConnection@{acceptConnection}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{acceptConnection()}{acceptConnection()}}
+{\footnotesize\ttfamily int accept\+Connection (\begin{DoxyParamCaption}\item[{int}]{server\+Socket }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_a4ed91d668694a3e59932bd65b5ac8fdb}\label{libs_2mylib_8h_a4ed91d668694a3e59932bd65b5ac8fdb}} 
+\index{mylib.h@{mylib.h}!bindAndListen@{bindAndListen}}
+\index{bindAndListen@{bindAndListen}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{bindAndListen()}{bindAndListen()}}
+{\footnotesize\ttfamily void bind\+And\+Listen (\begin{DoxyParamCaption}\item[{int}]{server\+Fd,  }\item[{int}]{port,  }\item[{int}]{max\+Backlog }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_a5b8d3988a249e53b8bceed317d55552f}\label{libs_2mylib_8h_a5b8d3988a249e53b8bceed317d55552f}} 
+\index{mylib.h@{mylib.h}!bindSocketWithPort@{bindSocketWithPort}}
+\index{bindSocketWithPort@{bindSocketWithPort}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{bindSocketWithPort()}{bindSocketWithPort()}}
+{\footnotesize\ttfamily void bind\+Socket\+With\+Port (\begin{DoxyParamCaption}\item[{int}]{server\+Fd,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_adbd9e9e9ab153f13203f74978d35bef9}\label{libs_2mylib_8h_adbd9e9e9ab153f13203f74978d35bef9}} 
+\index{mylib.h@{mylib.h}!connectWithServer@{connectWithServer}}
+\index{connectWithServer@{connectWithServer}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{connectWithServer()}{connectWithServer()}}
+{\footnotesize\ttfamily void connect\+With\+Server (\begin{DoxyParamCaption}\item[{int}]{connection\+Fd,  }\item[{char $\ast$}]{address,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_a51d9381832841b0cc19b7c5f9a790637}\label{libs_2mylib_8h_a51d9381832841b0cc19b7c5f9a790637}} 
+\index{mylib.h@{mylib.h}!createSocketAndConnect@{createSocketAndConnect}}
+\index{createSocketAndConnect@{createSocketAndConnect}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{createSocketAndConnect()}{createSocketAndConnect()}}
+{\footnotesize\ttfamily int create\+Socket\+And\+Connect (\begin{DoxyParamCaption}\item[{char $\ast$}]{address,  }\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_ae20818ce587f9a471ecefc0f89b4739f}\label{libs_2mylib_8h_ae20818ce587f9a471ecefc0f89b4739f}} 
+\index{mylib.h@{mylib.h}!createTcpSocket@{createTcpSocket}}
+\index{createTcpSocket@{createTcpSocket}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{createTcpSocket()}{createTcpSocket()}}
+{\footnotesize\ttfamily int create\+Tcp\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_ae4dbbd30bb20258f61f826ca7b14fddd}\label{libs_2mylib_8h_ae4dbbd30bb20258f61f826ca7b14fddd}} 
+\index{mylib.h@{mylib.h}!findSessionIdInCookie@{findSessionIdInCookie}}
+\index{findSessionIdInCookie@{findSessionIdInCookie}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{findSessionIdInCookie()}{findSessionIdInCookie()}}
+{\footnotesize\ttfamily int find\+Session\+Id\+In\+Cookie (\begin{DoxyParamCaption}\item[{char $\ast$}]{Cookie,  }\item[{char $\ast$}]{session\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_a38838f8aa6b163c26e25681056453a42}\label{libs_2mylib_8h_a38838f8aa6b163c26e25681056453a42}} 
+\index{mylib.h@{mylib.h}!getHostname@{getHostname}}
+\index{getHostname@{getHostname}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{getHostname()}{getHostname()}}
+{\footnotesize\ttfamily void get\+Hostname (\begin{DoxyParamCaption}\item[{char $\ast$}]{address,  }\item[{char $\ast$}]{hostname }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_a1bdface4fc04fa265a97a81525195b64}\label{libs_2mylib_8h_a1bdface4fc04fa265a97a81525195b64}} 
+\index{mylib.h@{mylib.h}!getIp@{getIp}}
+\index{getIp@{getIp}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{getIp()}{getIp()}}
+{\footnotesize\ttfamily void get\+Ip (\begin{DoxyParamCaption}\item[{char $\ast$}]{hostname,  }\item[{char $\ast$}]{ip }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_aa5bfa84e9fe63fc784efa761f41b4e52}\label{libs_2mylib_8h_aa5bfa84e9fe63fc784efa761f41b4e52}} 
+\index{mylib.h@{mylib.h}!isIpAddress@{isIpAddress}}
+\index{isIpAddress@{isIpAddress}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{isIpAddress()}{isIpAddress()}}
+{\footnotesize\ttfamily int is\+Ip\+Address (\begin{DoxyParamCaption}\item[{char $\ast$}]{address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_a0c3fea059b954935070e40660115a5e4}\label{libs_2mylib_8h_a0c3fea059b954935070e40660115a5e4}} 
+\index{mylib.h@{mylib.h}!processHeadersAndGetSessionIdIfExist@{processHeadersAndGetSessionIdIfExist}}
+\index{processHeadersAndGetSessionIdIfExist@{processHeadersAndGetSessionIdIfExist}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{processHeadersAndGetSessionIdIfExist()}{processHeadersAndGetSessionIdIfExist()}}
+{\footnotesize\ttfamily int process\+Headers\+And\+Get\+Session\+Id\+If\+Exist (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{request\+Headers,  }\item[{char $\ast$}]{session\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_a2129dc620af813bcf156ec152931b240}\label{libs_2mylib_8h_a2129dc620af813bcf156ec152931b240}} 
+\index{mylib.h@{mylib.h}!readIpAddress@{readIpAddress}}
+\index{readIpAddress@{readIpAddress}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{readIpAddress()}{readIpAddress()}}
+{\footnotesize\ttfamily void read\+Ip\+Address (\begin{DoxyParamCaption}\item[{char $\ast$}]{address,  }\item[{char $\ast$}]{result }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_adf3f0c7331b45cb18485b7b8b6f696ec}\label{libs_2mylib_8h_adf3f0c7331b45cb18485b7b8b6f696ec}} 
+\index{mylib.h@{mylib.h}!readPort@{readPort}}
+\index{readPort@{readPort}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{readPort()}{readPort()}}
+{\footnotesize\ttfamily int read\+Port (\begin{DoxyParamCaption}\item[{char $\ast$}]{given,  }\item[{char $\ast$}]{protocol }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_a813affbb40064ac0726b445efc4dc095}\label{libs_2mylib_8h_a813affbb40064ac0726b445efc4dc095}} 
+\index{mylib.h@{mylib.h}!runAsDaemon@{runAsDaemon}}
+\index{runAsDaemon@{runAsDaemon}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{runAsDaemon()}{runAsDaemon()}}
+{\footnotesize\ttfamily void run\+As\+Daemon (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mylib_8h_af20c7fe82d88f6c19955f36984994a77}\label{libs_2mylib_8h_af20c7fe82d88f6c19955f36984994a77}} 
+\index{mylib.h@{mylib.h}!startListening@{startListening}}
+\index{startListening@{startListening}!mylib.h@{mylib.h}}
+\subsubsection{\texorpdfstring{startListening()}{startListening()}}
+{\footnotesize\ttfamily void start\+Listening (\begin{DoxyParamCaption}\item[{int}]{server\+Fd,  }\item[{int}]{max\+Backlog }\end{DoxyParamCaption})}
+

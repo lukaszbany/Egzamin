@@ -1,0 +1,67 @@
+\hypertarget{pap_2zaj7_2zadanie10_2socklib_8c}{}\section{Dokumentacja pliku pap/zaj7/zadanie10/socklib.c}
+\label{pap_2zaj7_2zadanie10_2socklib_8c}\index{pap/zaj7/zadanie10/socklib.c@{pap/zaj7/zadanie10/socklib.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$strings.\+h$>$}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pap_2zaj7_2zadanie10_2socklib_8c_aaed8cc9d26720635595ffb924fd59ef0}{H\+O\+S\+T\+L\+EN}}~256
+\item 
+\#define \mbox{\hyperlink{pap_2zaj7_2zadanie10_2socklib_8c_aeefbbafa97642defe3ee6c3080b7d66f}{B\+A\+C\+K\+L\+OG}}~1
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pap_2zaj7_2zadanie10_2socklib_8c_a469b97e661f1e67557a24beeecbfaf3c}{make\+\_\+server\+\_\+socket\+\_\+q}} (int, int)
+\item 
+int \mbox{\hyperlink{pap_2zaj7_2zadanie10_2socklib_8c_af9c195227744072e06159c3a64b6719c}{make\+\_\+server\+\_\+socket}} (int portnum)
+\item 
+int \mbox{\hyperlink{pap_2zaj7_2zadanie10_2socklib_8c_a99f74cf6d41136c5f23461090ae0dd93}{connect\+\_\+to\+\_\+server}} (char $\ast$host, int portnum)
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{pap_2zaj7_2zadanie10_2socklib_8c_aeefbbafa97642defe3ee6c3080b7d66f}\label{pap_2zaj7_2zadanie10_2socklib_8c_aeefbbafa97642defe3ee6c3080b7d66f}} 
+\index{socklib.c@{socklib.c}!BACKLOG@{BACKLOG}}
+\index{BACKLOG@{BACKLOG}!socklib.c@{socklib.c}}
+\subsubsection{\texorpdfstring{BACKLOG}{BACKLOG}}
+{\footnotesize\ttfamily \#define B\+A\+C\+K\+L\+OG~1}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie10_2socklib_8c_aaed8cc9d26720635595ffb924fd59ef0}\label{pap_2zaj7_2zadanie10_2socklib_8c_aaed8cc9d26720635595ffb924fd59ef0}} 
+\index{socklib.c@{socklib.c}!HOSTLEN@{HOSTLEN}}
+\index{HOSTLEN@{HOSTLEN}!socklib.c@{socklib.c}}
+\subsubsection{\texorpdfstring{HOSTLEN}{HOSTLEN}}
+{\footnotesize\ttfamily \#define H\+O\+S\+T\+L\+EN~256}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{pap_2zaj7_2zadanie10_2socklib_8c_a99f74cf6d41136c5f23461090ae0dd93}\label{pap_2zaj7_2zadanie10_2socklib_8c_a99f74cf6d41136c5f23461090ae0dd93}} 
+\index{socklib.c@{socklib.c}!connect\_to\_server@{connect\_to\_server}}
+\index{connect\_to\_server@{connect\_to\_server}!socklib.c@{socklib.c}}
+\subsubsection{\texorpdfstring{connect\_to\_server()}{connect\_to\_server()}}
+{\footnotesize\ttfamily int connect\+\_\+to\+\_\+server (\begin{DoxyParamCaption}\item[{char $\ast$}]{host,  }\item[{int}]{portnum }\end{DoxyParamCaption})}
+
+Step 1\+: Get a socket
+
+Step 2\+: connect to server \mbox{\Hypertarget{pap_2zaj7_2zadanie10_2socklib_8c_af9c195227744072e06159c3a64b6719c}\label{pap_2zaj7_2zadanie10_2socklib_8c_af9c195227744072e06159c3a64b6719c}} 
+\index{socklib.c@{socklib.c}!make\_server\_socket@{make\_server\_socket}}
+\index{make\_server\_socket@{make\_server\_socket}!socklib.c@{socklib.c}}
+\subsubsection{\texorpdfstring{make\_server\_socket()}{make\_server\_socket()}}
+{\footnotesize\ttfamily int make\+\_\+server\+\_\+socket (\begin{DoxyParamCaption}\item[{int}]{portnum }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pap_2zaj7_2zadanie10_2socklib_8c_a469b97e661f1e67557a24beeecbfaf3c}\label{pap_2zaj7_2zadanie10_2socklib_8c_a469b97e661f1e67557a24beeecbfaf3c}} 
+\index{socklib.c@{socklib.c}!make\_server\_socket\_q@{make\_server\_socket\_q}}
+\index{make\_server\_socket\_q@{make\_server\_socket\_q}!socklib.c@{socklib.c}}
+\subsubsection{\texorpdfstring{make\_server\_socket\_q()}{make\_server\_socket\_q()}}
+{\footnotesize\ttfamily int make\+\_\+server\+\_\+socket\+\_\+q (\begin{DoxyParamCaption}\item[{int}]{portnum,  }\item[{int}]{backlog }\end{DoxyParamCaption})}
+
+build address and bind it to socket
+
+arrange for incoming calls 

@@ -1,0 +1,156 @@
+\hypertarget{serwer-www_8c}{}\section{Dokumentacja pliku serwer-\/www.c}
+\label{serwer-www_8c}\index{serwer-\/www.c@{serwer-\/www.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}socklib.\+c\char`\"{}}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{serwer-www_8c_a0a8f91f93d75a07f0ae45077db45b3eb}{M\+A\+X\+\_\+\+C\+L\+I\+E\+N\+TS}}~20
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{serwer-www_8c_aec3402ec3244a54e1bc086a1e1054755}{read\+\_\+til\+\_\+crnl}} (F\+I\+LE $\ast$fp)
+\item 
+void \mbox{\hyperlink{serwer-www_8c_ad8ba6d5e4a00c2fff7a65af14096bd9b}{process\+\_\+rq}} (char $\ast$rq, int fd)
+\item 
+void \mbox{\hyperlink{serwer-www_8c_adc7bfb1c892aecf61c0c73f3458caf90}{header}} (F\+I\+LE $\ast$fp, char $\ast$content\+\_\+type)
+\item 
+void \mbox{\hyperlink{serwer-www_8c_a8e603d6f76a35b616135eb394f6ec080}{cannot\+\_\+do}} (int fd)
+\item 
+void \mbox{\hyperlink{serwer-www_8c_ad3f91122750391e238cfbee3b88975ec}{do\+\_\+404}} (char $\ast$item, int fd)
+\item 
+int \mbox{\hyperlink{serwer-www_8c_a68ac50fc5196973b9f3ef7b4992f7279}{isadir}} (char $\ast$f)
+\item 
+int \mbox{\hyperlink{serwer-www_8c_a963f754c08801de5f56c78f1b26e3a86}{not\+\_\+exist}} (char $\ast$f)
+\item 
+int \mbox{\hyperlink{serwer-www_8c_a83999b0603c38aa5fe08f7ed801e6cfe}{do\+\_\+ls}} (char $\ast$dir, int fd)
+\item 
+char $\ast$ \mbox{\hyperlink{serwer-www_8c_a29b9ee72561809560e62a9ea307d1ff6}{file\+\_\+type}} (char $\ast$f)
+\item 
+int \mbox{\hyperlink{serwer-www_8c_ad3ef3c593d3a792b02a341450eaa62dd}{ends\+\_\+in\+\_\+cgi}} (char $\ast$f)
+\item 
+void \mbox{\hyperlink{serwer-www_8c_a0a305ff573da158eaa9484e5506921c0}{do\+\_\+exec}} (char $\ast$prog, int fd)
+\item 
+void \mbox{\hyperlink{serwer-www_8c_adab7e9f2617cceb5752ef3f97cfc2ef1}{do\+\_\+cat}} (char $\ast$f, int fd)
+\item 
+void \mbox{\hyperlink{serwer-www_8c_a182f39efe710f6e9bf678baa9e8eafa3}{process}} (int fd, F\+I\+LE $\ast$fpin)
+\item 
+int \mbox{\hyperlink{serwer-www_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{serwer-www_8c_a1f5bcbe2b6bbbf057f1e857d6466ac34}{active\+Connections}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{serwer-www_8c_a0a8f91f93d75a07f0ae45077db45b3eb}\label{serwer-www_8c_a0a8f91f93d75a07f0ae45077db45b3eb}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!MAX\_CLIENTS@{MAX\_CLIENTS}}
+\index{MAX\_CLIENTS@{MAX\_CLIENTS}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{MAX\_CLIENTS}{MAX\_CLIENTS}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+C\+L\+I\+E\+N\+TS~20}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{serwer-www_8c_a8e603d6f76a35b616135eb394f6ec080}\label{serwer-www_8c_a8e603d6f76a35b616135eb394f6ec080}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!cannot\_do@{cannot\_do}}
+\index{cannot\_do@{cannot\_do}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{cannot\_do()}{cannot\_do()}}
+{\footnotesize\ttfamily void cannot\+\_\+do (\begin{DoxyParamCaption}\item[{int}]{fd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_ad3f91122750391e238cfbee3b88975ec}\label{serwer-www_8c_ad3f91122750391e238cfbee3b88975ec}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!do\_404@{do\_404}}
+\index{do\_404@{do\_404}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{do\_404()}{do\_404()}}
+{\footnotesize\ttfamily void do\+\_\+404 (\begin{DoxyParamCaption}\item[{char $\ast$}]{item,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_adab7e9f2617cceb5752ef3f97cfc2ef1}\label{serwer-www_8c_adab7e9f2617cceb5752ef3f97cfc2ef1}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!do\_cat@{do\_cat}}
+\index{do\_cat@{do\_cat}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{do\_cat()}{do\_cat()}}
+{\footnotesize\ttfamily void do\+\_\+cat (\begin{DoxyParamCaption}\item[{char $\ast$}]{f,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_a0a305ff573da158eaa9484e5506921c0}\label{serwer-www_8c_a0a305ff573da158eaa9484e5506921c0}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!do\_exec@{do\_exec}}
+\index{do\_exec@{do\_exec}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{do\_exec()}{do\_exec()}}
+{\footnotesize\ttfamily void do\+\_\+exec (\begin{DoxyParamCaption}\item[{char $\ast$}]{prog,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_a83999b0603c38aa5fe08f7ed801e6cfe}\label{serwer-www_8c_a83999b0603c38aa5fe08f7ed801e6cfe}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!do\_ls@{do\_ls}}
+\index{do\_ls@{do\_ls}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{do\_ls()}{do\_ls()}}
+{\footnotesize\ttfamily int do\+\_\+ls (\begin{DoxyParamCaption}\item[{char $\ast$}]{dir,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_ad3ef3c593d3a792b02a341450eaa62dd}\label{serwer-www_8c_ad3ef3c593d3a792b02a341450eaa62dd}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!ends\_in\_cgi@{ends\_in\_cgi}}
+\index{ends\_in\_cgi@{ends\_in\_cgi}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{ends\_in\_cgi()}{ends\_in\_cgi()}}
+{\footnotesize\ttfamily int ends\+\_\+in\+\_\+cgi (\begin{DoxyParamCaption}\item[{char $\ast$}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_a29b9ee72561809560e62a9ea307d1ff6}\label{serwer-www_8c_a29b9ee72561809560e62a9ea307d1ff6}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!file\_type@{file\_type}}
+\index{file\_type@{file\_type}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{file\_type()}{file\_type()}}
+{\footnotesize\ttfamily char$\ast$ file\+\_\+type (\begin{DoxyParamCaption}\item[{char $\ast$}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_adc7bfb1c892aecf61c0c73f3458caf90}\label{serwer-www_8c_adc7bfb1c892aecf61c0c73f3458caf90}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!header@{header}}
+\index{header@{header}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{header()}{header()}}
+{\footnotesize\ttfamily void header (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{char $\ast$}]{content\+\_\+type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_a68ac50fc5196973b9f3ef7b4992f7279}\label{serwer-www_8c_a68ac50fc5196973b9f3ef7b4992f7279}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!isadir@{isadir}}
+\index{isadir@{isadir}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{isadir()}{isadir()}}
+{\footnotesize\ttfamily int isadir (\begin{DoxyParamCaption}\item[{char $\ast$}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{serwer-www_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!main@{main}}
+\index{main@{main}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_a963f754c08801de5f56c78f1b26e3a86}\label{serwer-www_8c_a963f754c08801de5f56c78f1b26e3a86}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!not\_exist@{not\_exist}}
+\index{not\_exist@{not\_exist}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{not\_exist()}{not\_exist()}}
+{\footnotesize\ttfamily int not\+\_\+exist (\begin{DoxyParamCaption}\item[{char $\ast$}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_a182f39efe710f6e9bf678baa9e8eafa3}\label{serwer-www_8c_a182f39efe710f6e9bf678baa9e8eafa3}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!process@{process}}
+\index{process@{process}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void process (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{F\+I\+LE $\ast$}]{fpin }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_ad8ba6d5e4a00c2fff7a65af14096bd9b}\label{serwer-www_8c_ad8ba6d5e4a00c2fff7a65af14096bd9b}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!process\_rq@{process\_rq}}
+\index{process\_rq@{process\_rq}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{process\_rq()}{process\_rq()}}
+{\footnotesize\ttfamily void process\+\_\+rq (\begin{DoxyParamCaption}\item[{char $\ast$}]{rq,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwer-www_8c_aec3402ec3244a54e1bc086a1e1054755}\label{serwer-www_8c_aec3402ec3244a54e1bc086a1e1054755}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!read\_til\_crnl@{read\_til\_crnl}}
+\index{read\_til\_crnl@{read\_til\_crnl}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{read\_til\_crnl()}{read\_til\_crnl()}}
+{\footnotesize\ttfamily void read\+\_\+til\+\_\+crnl (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+\subsection{Dokumentacja zmiennych}
+\mbox{\Hypertarget{serwer-www_8c_a1f5bcbe2b6bbbf057f1e857d6466ac34}\label{serwer-www_8c_a1f5bcbe2b6bbbf057f1e857d6466ac34}} 
+\index{serwer-\/www.c@{serwer-\/www.c}!activeConnections@{activeConnections}}
+\index{activeConnections@{activeConnections}!serwer-\/www.c@{serwer-\/www.c}}
+\subsubsection{\texorpdfstring{activeConnections}{activeConnections}}
+{\footnotesize\ttfamily int active\+Connections = 0}
+

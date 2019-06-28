@@ -1,0 +1,193 @@
+\hypertarget{z6__12__potomny_8c}{}\section{Dokumentacja pliku psys/z6\+\_\+12\+\_\+potomny.c}
+\label{z6__12__potomny_8c}\index{psys/z6\_12\_potomny.c@{psys/z6\_12\_potomny.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+\subsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structProcessData}{Process\+Data}}
+\end{DoxyCompactItemize}
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{z6__12__potomny_8c_ad9699f597384c01411e910aae4c75b3f}{R\+E\+S\+U\+L\+T\+\_\+\+L\+E\+N\+G\+TH}}~160
+\item 
+\#define \mbox{\hyperlink{z6__12__potomny_8c_a73c52f3e083ffd8acde0b01f74de7a5a}{C\+O\+M\+M\+A\+N\+D\+\_\+\+L\+E\+N\+G\+TH}}~80
+\item 
+\#define \mbox{\hyperlink{z6__12__potomny_8c_a075c2857863bb022e03f3ec6237957dd}{B\+I\+N\+A\+R\+Y\+\_\+\+L\+E\+N\+G\+TH}}~4
+\item 
+\#define \mbox{\hyperlink{z6__12__potomny_8c_acdcf83357d907088a65e37fd95bf4f79}{S\+I\+G\+N\+A\+L\+S\+\_\+\+N\+U\+M\+B\+ER}}~64
+\item 
+\#define \mbox{\hyperlink{z6__12__potomny_8c_a38540853065a7d4ca28efef2436fa521}{M\+A\+X\+\_\+\+F\+I\+L\+E\+S\+\_\+\+O\+P\+E\+N\+ED}}~32
+\item 
+\#define \mbox{\hyperlink{z6__12__potomny_8c_ada74e7db007a68e763f20c17f2985356}{R\+E\+AD}}~\char`\"{}r\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{z6__12__potomny_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}{trim}} (char $\ast$text)
+\item 
+void \mbox{\hyperlink{z6__12__potomny_8c_a41ad4b72b109ca1d8b1c2e5fd6354c2f}{print\+Identification}} (\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$process\+Data)
+\item 
+char $\ast$ \mbox{\hyperlink{z6__12__potomny_8c_a6edcd13abbd84c4d54b23dabf53cbb09}{get\+Result\+From\+Command}} (char $\ast$command)
+\item 
+void \mbox{\hyperlink{z6__12__potomny_8c_a0e8e4de0df140153d9de69109bf24db0}{print\+Directories}} (pid\+\_\+t pid, \mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$process\+Data)
+\item 
+void \mbox{\hyperlink{z6__12__potomny_8c_a6601d9d7088c383655ad33b2b93aca07}{print\+Umask}} (pid\+\_\+t pid, \mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$process\+Data)
+\item 
+char $\ast$ \mbox{\hyperlink{z6__12__potomny_8c_a20ab0a55fc458411ca20ce436908b89a}{convert\+Hex\+Char\+To\+Bin}} (char hex)
+\item 
+void \mbox{\hyperlink{z6__12__potomny_8c_a96a07fb0ac1fbc1a205a04d340e46e40}{save\+Signals}} (char $\ast$signals, char $\ast$type, \mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$process\+Data)
+\item 
+void \mbox{\hyperlink{z6__12__potomny_8c_a1f36d6a3bcee060bf2508b83d84173b0}{print\+Signals}} (pid\+\_\+t pid, char $\ast$grep\+For, char $\ast$name, \mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$process\+Data)
+\item 
+void \mbox{\hyperlink{z6__12__potomny_8c_ad1115a6ed1605daffa695ceb324e5db9}{print\+All\+Signals}} (pid\+\_\+t pid, \mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$process\+Data)
+\item 
+void \mbox{\hyperlink{z6__12__potomny_8c_a612e3a75024670d808e0c0da365e813c}{print\+Files\+Opened}} (pid\+\_\+t pid, \mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$process\+Data)
+\item 
+void \mbox{\hyperlink{z6__12__potomny_8c_ae8ca4a1e811a3e08819e7b40fe34963d}{print\+Process\+Name}} (pid\+\_\+t pid, \mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$process\+Data)
+\item 
+void \mbox{\hyperlink{z6__12__potomny_8c_ae7d504dbbb1393a63f86336fd4b2dd77}{set\+Parent}} (\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$data)
+\item 
+void \mbox{\hyperlink{z6__12__potomny_8c_a9e38fc7dce77ea7ca21bf7b036738d7a}{print\+Current\+Process\+Attributes}} (\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$process\+Data)
+\item 
+int \mbox{\hyperlink{z6__12__potomny_8c_aea16168e5905fa886b98877aae72b28e}{files\+Opened\+Different}} (\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$parent\+Data, \mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$child\+Data)
+\item 
+int \mbox{\hyperlink{z6__12__potomny_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{z6__12__potomny_8c_a075c2857863bb022e03f3ec6237957dd}\label{z6__12__potomny_8c_a075c2857863bb022e03f3ec6237957dd}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!BINARY\_LENGTH@{BINARY\_LENGTH}}
+\index{BINARY\_LENGTH@{BINARY\_LENGTH}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{BINARY\_LENGTH}{BINARY\_LENGTH}}
+{\footnotesize\ttfamily \#define B\+I\+N\+A\+R\+Y\+\_\+\+L\+E\+N\+G\+TH~4}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_a73c52f3e083ffd8acde0b01f74de7a5a}\label{z6__12__potomny_8c_a73c52f3e083ffd8acde0b01f74de7a5a}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!COMMAND\_LENGTH@{COMMAND\_LENGTH}}
+\index{COMMAND\_LENGTH@{COMMAND\_LENGTH}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{COMMAND\_LENGTH}{COMMAND\_LENGTH}}
+{\footnotesize\ttfamily \#define C\+O\+M\+M\+A\+N\+D\+\_\+\+L\+E\+N\+G\+TH~80}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_a38540853065a7d4ca28efef2436fa521}\label{z6__12__potomny_8c_a38540853065a7d4ca28efef2436fa521}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!MAX\_FILES\_OPENED@{MAX\_FILES\_OPENED}}
+\index{MAX\_FILES\_OPENED@{MAX\_FILES\_OPENED}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{MAX\_FILES\_OPENED}{MAX\_FILES\_OPENED}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+F\+I\+L\+E\+S\+\_\+\+O\+P\+E\+N\+ED~32}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_ada74e7db007a68e763f20c17f2985356}\label{z6__12__potomny_8c_ada74e7db007a68e763f20c17f2985356}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!READ@{READ}}
+\index{READ@{READ}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{READ}{READ}}
+{\footnotesize\ttfamily \#define R\+E\+AD~\char`\"{}r\char`\"{}}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_ad9699f597384c01411e910aae4c75b3f}\label{z6__12__potomny_8c_ad9699f597384c01411e910aae4c75b3f}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!RESULT\_LENGTH@{RESULT\_LENGTH}}
+\index{RESULT\_LENGTH@{RESULT\_LENGTH}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{RESULT\_LENGTH}{RESULT\_LENGTH}}
+{\footnotesize\ttfamily \#define R\+E\+S\+U\+L\+T\+\_\+\+L\+E\+N\+G\+TH~160}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_acdcf83357d907088a65e37fd95bf4f79}\label{z6__12__potomny_8c_acdcf83357d907088a65e37fd95bf4f79}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!SIGNALS\_NUMBER@{SIGNALS\_NUMBER}}
+\index{SIGNALS\_NUMBER@{SIGNALS\_NUMBER}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{SIGNALS\_NUMBER}{SIGNALS\_NUMBER}}
+{\footnotesize\ttfamily \#define S\+I\+G\+N\+A\+L\+S\+\_\+\+N\+U\+M\+B\+ER~64}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{z6__12__potomny_8c_a20ab0a55fc458411ca20ce436908b89a}\label{z6__12__potomny_8c_a20ab0a55fc458411ca20ce436908b89a}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!convertHexCharToBin@{convertHexCharToBin}}
+\index{convertHexCharToBin@{convertHexCharToBin}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{convertHexCharToBin()}{convertHexCharToBin()}}
+{\footnotesize\ttfamily char$\ast$ convert\+Hex\+Char\+To\+Bin (\begin{DoxyParamCaption}\item[{char}]{hex }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_aea16168e5905fa886b98877aae72b28e}\label{z6__12__potomny_8c_aea16168e5905fa886b98877aae72b28e}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!filesOpenedDifferent@{filesOpenedDifferent}}
+\index{filesOpenedDifferent@{filesOpenedDifferent}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{filesOpenedDifferent()}{filesOpenedDifferent()}}
+{\footnotesize\ttfamily int files\+Opened\+Different (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$}]{parent\+Data,  }\item[{\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$}]{child\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_a6edcd13abbd84c4d54b23dabf53cbb09}\label{z6__12__potomny_8c_a6edcd13abbd84c4d54b23dabf53cbb09}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!getResultFromCommand@{getResultFromCommand}}
+\index{getResultFromCommand@{getResultFromCommand}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{getResultFromCommand()}{getResultFromCommand()}}
+{\footnotesize\ttfamily char$\ast$ get\+Result\+From\+Command (\begin{DoxyParamCaption}\item[{char $\ast$}]{command }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{z6__12__potomny_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!main@{main}}
+\index{main@{main}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_ad1115a6ed1605daffa695ceb324e5db9}\label{z6__12__potomny_8c_ad1115a6ed1605daffa695ceb324e5db9}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!printAllSignals@{printAllSignals}}
+\index{printAllSignals@{printAllSignals}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{printAllSignals()}{printAllSignals()}}
+{\footnotesize\ttfamily void print\+All\+Signals (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$}]{process\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_a9e38fc7dce77ea7ca21bf7b036738d7a}\label{z6__12__potomny_8c_a9e38fc7dce77ea7ca21bf7b036738d7a}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!printCurrentProcessAttributes@{printCurrentProcessAttributes}}
+\index{printCurrentProcessAttributes@{printCurrentProcessAttributes}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{printCurrentProcessAttributes()}{printCurrentProcessAttributes()}}
+{\footnotesize\ttfamily void print\+Current\+Process\+Attributes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$}]{process\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_a0e8e4de0df140153d9de69109bf24db0}\label{z6__12__potomny_8c_a0e8e4de0df140153d9de69109bf24db0}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!printDirectories@{printDirectories}}
+\index{printDirectories@{printDirectories}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{printDirectories()}{printDirectories()}}
+{\footnotesize\ttfamily void print\+Directories (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$}]{process\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_a612e3a75024670d808e0c0da365e813c}\label{z6__12__potomny_8c_a612e3a75024670d808e0c0da365e813c}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!printFilesOpened@{printFilesOpened}}
+\index{printFilesOpened@{printFilesOpened}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{printFilesOpened()}{printFilesOpened()}}
+{\footnotesize\ttfamily void print\+Files\+Opened (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$}]{process\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_a41ad4b72b109ca1d8b1c2e5fd6354c2f}\label{z6__12__potomny_8c_a41ad4b72b109ca1d8b1c2e5fd6354c2f}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!printIdentification@{printIdentification}}
+\index{printIdentification@{printIdentification}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{printIdentification()}{printIdentification()}}
+{\footnotesize\ttfamily void print\+Identification (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$}]{process\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_ae8ca4a1e811a3e08819e7b40fe34963d}\label{z6__12__potomny_8c_ae8ca4a1e811a3e08819e7b40fe34963d}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!printProcessName@{printProcessName}}
+\index{printProcessName@{printProcessName}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{printProcessName()}{printProcessName()}}
+{\footnotesize\ttfamily void print\+Process\+Name (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$}]{process\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_a1f36d6a3bcee060bf2508b83d84173b0}\label{z6__12__potomny_8c_a1f36d6a3bcee060bf2508b83d84173b0}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!printSignals@{printSignals}}
+\index{printSignals@{printSignals}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{printSignals()}{printSignals()}}
+{\footnotesize\ttfamily void print\+Signals (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{char $\ast$}]{grep\+For,  }\item[{char $\ast$}]{name,  }\item[{\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$}]{process\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_a6601d9d7088c383655ad33b2b93aca07}\label{z6__12__potomny_8c_a6601d9d7088c383655ad33b2b93aca07}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!printUmask@{printUmask}}
+\index{printUmask@{printUmask}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{printUmask()}{printUmask()}}
+{\footnotesize\ttfamily void print\+Umask (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$}]{process\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_a96a07fb0ac1fbc1a205a04d340e46e40}\label{z6__12__potomny_8c_a96a07fb0ac1fbc1a205a04d340e46e40}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!saveSignals@{saveSignals}}
+\index{saveSignals@{saveSignals}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{saveSignals()}{saveSignals()}}
+{\footnotesize\ttfamily void save\+Signals (\begin{DoxyParamCaption}\item[{char $\ast$}]{signals,  }\item[{char $\ast$}]{type,  }\item[{\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$}]{process\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_ae7d504dbbb1393a63f86336fd4b2dd77}\label{z6__12__potomny_8c_ae7d504dbbb1393a63f86336fd4b2dd77}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!setParent@{setParent}}
+\index{setParent@{setParent}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{setParent()}{setParent()}}
+{\footnotesize\ttfamily void set\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structProcessData}{Process\+Data}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__12__potomny_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}\label{z6__12__potomny_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}} 
+\index{z6\_12\_potomny.c@{z6\_12\_potomny.c}!trim@{trim}}
+\index{trim@{trim}!z6\_12\_potomny.c@{z6\_12\_potomny.c}}
+\subsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily void trim (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+

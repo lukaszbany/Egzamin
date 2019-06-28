@@ -1,0 +1,610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.15"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Dokumentacja pliku libs/mylib.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.15 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html">libs</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definicje</a> &#124;
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku mylib.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="libs_2mylib_8h_source.html">mylib.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;sys/socket.h&gt;</code><br />
+<code>#include &lt;arpa/inet.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;memory.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;syslog.h&gt;</code><br />
+<code>#include &lt;netdb.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:a54fa99013d88b05125eba286921517c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a54fa99013d88b05125eba286921517c7">SESSION_ID_LENGTH</a>&#160;&#160;&#160;15</td></tr>
+<tr class="separator:a54fa99013d88b05125eba286921517c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:a813affbb40064ac0726b445efc4dc095"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a813affbb40064ac0726b445efc4dc095">runAsDaemon</a> (int port)</td></tr>
+<tr class="separator:a813affbb40064ac0726b445efc4dc095"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc152c9b7ea906ff8a1484fa9beaed3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a8fc152c9b7ea906ff8a1484fa9beaed3">createSocket</a> (int type)</td></tr>
+<tr class="separator:a8fc152c9b7ea906ff8a1484fa9beaed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae20818ce587f9a471ecefc0f89b4739f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#ae20818ce587f9a471ecefc0f89b4739f">createTcpSocket</a> ()</td></tr>
+<tr class="separator:ae20818ce587f9a471ecefc0f89b4739f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28c7d962316c79baa25bc5691eb67b23"><td class="memItemLeft" align="right" valign="top">struct sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a28c7d962316c79baa25bc5691eb67b23">createSockaddrWithAddress</a> (char *address, int port)</td></tr>
+<tr class="separator:a28c7d962316c79baa25bc5691eb67b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c5b32d121051483480797482935948e"><td class="memItemLeft" align="right" valign="top">struct sockaddr_in&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a1c5b32d121051483480797482935948e">createSockaddr</a> (int port)</td></tr>
+<tr class="separator:a1c5b32d121051483480797482935948e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8d3988a249e53b8bceed317d55552f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a5b8d3988a249e53b8bceed317d55552f">bindSocketWithPort</a> (int serverFd, int port)</td></tr>
+<tr class="separator:a5b8d3988a249e53b8bceed317d55552f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20c7fe82d88f6c19955f36984994a77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#af20c7fe82d88f6c19955f36984994a77">startListening</a> (int serverFd, int maxBacklog)</td></tr>
+<tr class="separator:af20c7fe82d88f6c19955f36984994a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed91d668694a3e59932bd65b5ac8fdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a4ed91d668694a3e59932bd65b5ac8fdb">bindAndListen</a> (int serverFd, int port, int maxBacklog)</td></tr>
+<tr class="separator:a4ed91d668694a3e59932bd65b5ac8fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbd9e9e9ab153f13203f74978d35bef9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#adbd9e9e9ab153f13203f74978d35bef9">connectWithServer</a> (int connectionFd, char *address, int port)</td></tr>
+<tr class="separator:adbd9e9e9ab153f13203f74978d35bef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3461e2159f993f75f6994a773e84d18d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a3461e2159f993f75f6994a773e84d18d">createTcpSocketAndConnect</a> (char *address, int port)</td></tr>
+<tr class="separator:a3461e2159f993f75f6994a773e84d18d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bdface4fc04fa265a97a81525195b64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a1bdface4fc04fa265a97a81525195b64">getIp</a> (char *hostname, char *ip)</td></tr>
+<tr class="separator:a1bdface4fc04fa265a97a81525195b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38838f8aa6b163c26e25681056453a42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a38838f8aa6b163c26e25681056453a42">getHostname</a> (char *address, char *hostname)</td></tr>
+<tr class="separator:a38838f8aa6b163c26e25681056453a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf3f0c7331b45cb18485b7b8b6f696ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#adf3f0c7331b45cb18485b7b8b6f696ec">readPort</a> (char *given, char *protocol)</td></tr>
+<tr class="separator:adf3f0c7331b45cb18485b7b8b6f696ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2129dc620af813bcf156ec152931b240"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a2129dc620af813bcf156ec152931b240">readIpAddress</a> (char *address, char *result)</td></tr>
+<tr class="separator:a2129dc620af813bcf156ec152931b240"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5bfa84e9fe63fc784efa761f41b4e52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#aa5bfa84e9fe63fc784efa761f41b4e52">isIpAddress</a> (char *address)</td></tr>
+<tr class="separator:aa5bfa84e9fe63fc784efa761f41b4e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67b86ec0e83279c0885565da066be3df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a67b86ec0e83279c0885565da066be3df">acceptConnection</a> (int serverSocket)</td></tr>
+<tr class="separator:a67b86ec0e83279c0885565da066be3df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c3fea059b954935070e40660115a5e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a0c3fea059b954935070e40660115a5e4">processHeadersAndGetSessionIdIfExist</a> (FILE *requestHeaders, char *sessionId)</td></tr>
+<tr class="separator:a0c3fea059b954935070e40660115a5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1fefe546a6d814c4bf9a33f4f9daefa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#ac1fefe546a6d814c4bf9a33f4f9daefa">findSessionIdInCookie</a> (char *cookie, char *sessionId)</td></tr>
+<tr class="separator:ac1fefe546a6d814c4bf9a33f4f9daefa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a id="a54fa99013d88b05125eba286921517c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54fa99013d88b05125eba286921517c7">&#9670;&nbsp;</a></span>SESSION_ID_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SESSION_ID_LENGTH&#160;&#160;&#160;15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="a67b86ec0e83279c0885565da066be3df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67b86ec0e83279c0885565da066be3df">&#9670;&nbsp;</a></span>acceptConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int acceptConnection </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>serverSocket</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ed91d668694a3e59932bd65b5ac8fdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed91d668694a3e59932bd65b5ac8fdb">&#9670;&nbsp;</a></span>bindAndListen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bindAndListen </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>serverFd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxBacklog</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b8d3988a249e53b8bceed317d55552f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b8d3988a249e53b8bceed317d55552f">&#9670;&nbsp;</a></span>bindSocketWithPort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bindSocketWithPort </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>serverFd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adbd9e9e9ab153f13203f74978d35bef9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbd9e9e9ab153f13203f74978d35bef9">&#9670;&nbsp;</a></span>connectWithServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void connectWithServer </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>connectionFd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1c5b32d121051483480797482935948e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c5b32d121051483480797482935948e">&#9670;&nbsp;</a></span>createSockaddr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct sockaddr_in createSockaddr </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a28c7d962316c79baa25bc5691eb67b23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28c7d962316c79baa25bc5691eb67b23">&#9670;&nbsp;</a></span>createSockaddrWithAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct sockaddr_in createSockaddrWithAddress </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8fc152c9b7ea906ff8a1484fa9beaed3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fc152c9b7ea906ff8a1484fa9beaed3">&#9670;&nbsp;</a></span>createSocket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int createSocket </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae20818ce587f9a471ecefc0f89b4739f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae20818ce587f9a471ecefc0f89b4739f">&#9670;&nbsp;</a></span>createTcpSocket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int createTcpSocket </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3461e2159f993f75f6994a773e84d18d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3461e2159f993f75f6994a773e84d18d">&#9670;&nbsp;</a></span>createTcpSocketAndConnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int createTcpSocketAndConnect </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac1fefe546a6d814c4bf9a33f4f9daefa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1fefe546a6d814c4bf9a33f4f9daefa">&#9670;&nbsp;</a></span>findSessionIdInCookie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int findSessionIdInCookie </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>cookie</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>sessionId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38838f8aa6b163c26e25681056453a42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38838f8aa6b163c26e25681056453a42">&#9670;&nbsp;</a></span>getHostname()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getHostname </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>hostname</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1bdface4fc04fa265a97a81525195b64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bdface4fc04fa265a97a81525195b64">&#9670;&nbsp;</a></span>getIp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getIp </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>hostname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>ip</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa5bfa84e9fe63fc784efa761f41b4e52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5bfa84e9fe63fc784efa761f41b4e52">&#9670;&nbsp;</a></span>isIpAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int isIpAddress </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c3fea059b954935070e40660115a5e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c3fea059b954935070e40660115a5e4">&#9670;&nbsp;</a></span>processHeadersAndGetSessionIdIfExist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int processHeadersAndGetSessionIdIfExist </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>requestHeaders</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>sessionId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2129dc620af813bcf156ec152931b240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2129dc620af813bcf156ec152931b240">&#9670;&nbsp;</a></span>readIpAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void readIpAddress </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adf3f0c7331b45cb18485b7b8b6f696ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf3f0c7331b45cb18485b7b8b6f696ec">&#9670;&nbsp;</a></span>readPort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int readPort </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>given</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>protocol</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a813affbb40064ac0726b445efc4dc095"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a813affbb40064ac0726b445efc4dc095">&#9670;&nbsp;</a></span>runAsDaemon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void runAsDaemon </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af20c7fe82d88f6c19955f36984994a77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af20c7fe82d88f6c19955f36984994a77">&#9670;&nbsp;</a></span>startListening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void startListening </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>serverFd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxBacklog</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
+</body>
+</html>

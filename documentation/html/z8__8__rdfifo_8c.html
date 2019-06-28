@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.15"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Dokumentacja pliku psys/z8_8_rdfifo.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.15 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6032343dc0b3c162fbefe13d41e474ba.html">psys</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definicje</a> &#124;
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku z8_8_rdfifo.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;memory.h&gt;</code><br />
+<code>#include &lt;sys/stat.h&gt;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;fcntl.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:ad13ef9fc86d531a6c7ead593b38e3d12"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#ad13ef9fc86d531a6c7ead593b38e3d12">SETTINGS_FILE</a>&#160;&#160;&#160;&quot;z8_8.dat&quot;</td></tr>
+<tr class="separator:ad13ef9fc86d531a6c7ead593b38e3d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac146c3c7afc6f342ae4f476bd46d924a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#ac146c3c7afc6f342ae4f476bd46d924a">MESSAGE_LENGTH</a>&#160;&#160;&#160;150</td></tr>
+<tr class="separator:ac146c3c7afc6f342ae4f476bd46d924a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af71324c57f05ff9e24bd384925dd6b17"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#af71324c57f05ff9e24bd384925dd6b17">NAME_LENGTH</a>&#160;&#160;&#160;30</td></tr>
+<tr class="separator:af71324c57f05ff9e24bd384925dd6b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c52c1b4c021ed3e6b6b677bd2ac019"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#ab8c52c1b4c021ed3e6b6b677bd2ac019">MODE</a>&#160;&#160;&#160;0666</td></tr>
+<tr class="separator:ab8c52c1b4c021ed3e6b6b677bd2ac019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:ab80d2ac405208bc1d1eb4de7a00b8fcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#ab80d2ac405208bc1d1eb4de7a00b8fcd">trim</a> (char *text)</td></tr>
+<tr class="separator:ab80d2ac405208bc1d1eb4de7a00b8fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad814211931a54bbbeff99b7d100f27da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#ad814211931a54bbbeff99b7d100f27da">safeExit</a> (int status)</td></tr>
+<tr class="separator:ad814211931a54bbbeff99b7d100f27da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad53a52f6f3801d7815fb313793c3123"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#aad53a52f6f3801d7815fb313793c3123">sighandler</a> (int sig_num)</td></tr>
+<tr class="separator:aad53a52f6f3801d7815fb313793c3123"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd8e56ee9f1e3372a09e6f60ab70e172"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#acd8e56ee9f1e3372a09e6f60ab70e172">milisecondsSleep</a> (long milisecondsInterval)</td></tr>
+<tr class="separator:acd8e56ee9f1e3372a09e6f60ab70e172"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab081b0feacbbc04fce361d9cc35c55fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#ab081b0feacbbc04fce361d9cc35c55fc">loadFifoName</a> ()</td></tr>
+<tr class="separator:ab081b0feacbbc04fce361d9cc35c55fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63fbff743cd1286e41081989d5479d50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#a63fbff743cd1286e41081989d5479d50">createFifo</a> ()</td></tr>
+<tr class="separator:a63fbff743cd1286e41081989d5479d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
+<tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d751617772003bcd52ac957bb6285e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#a1d751617772003bcd52ac957bb6285e2">openFifo</a> ()</td></tr>
+<tr class="separator:a1d751617772003bcd52ac957bb6285e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z8__8__rdfifo_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a id="ac146c3c7afc6f342ae4f476bd46d924a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac146c3c7afc6f342ae4f476bd46d924a">&#9670;&nbsp;</a></span>MESSAGE_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MESSAGE_LENGTH&#160;&#160;&#160;150</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab8c52c1b4c021ed3e6b6b677bd2ac019"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8c52c1b4c021ed3e6b6b677bd2ac019">&#9670;&nbsp;</a></span>MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MODE&#160;&#160;&#160;0666</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af71324c57f05ff9e24bd384925dd6b17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af71324c57f05ff9e24bd384925dd6b17">&#9670;&nbsp;</a></span>NAME_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NAME_LENGTH&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad13ef9fc86d531a6c7ead593b38e3d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad13ef9fc86d531a6c7ead593b38e3d12">&#9670;&nbsp;</a></span>SETTINGS_FILE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SETTINGS_FILE&#160;&#160;&#160;&quot;z8_8.dat&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="a63fbff743cd1286e41081989d5479d50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63fbff743cd1286e41081989d5479d50">&#9670;&nbsp;</a></span>createFifo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void createFifo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab081b0feacbbc04fce361d9cc35c55fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab081b0feacbbc04fce361d9cc35c55fc">&#9670;&nbsp;</a></span>loadFifoName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loadFifoName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd8e56ee9f1e3372a09e6f60ab70e172"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd8e56ee9f1e3372a09e6f60ab70e172">&#9670;&nbsp;</a></span>milisecondsSleep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void milisecondsSleep </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>milisecondsInterval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d751617772003bcd52ac957bb6285e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d751617772003bcd52ac957bb6285e2">&#9670;&nbsp;</a></span>openFifo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int openFifo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad814211931a54bbbeff99b7d100f27da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad814211931a54bbbeff99b7d100f27da">&#9670;&nbsp;</a></span>safeExit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void safeExit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>status</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4fc01d736fe50cf5b977f755b675f11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc01d736fe50cf5b977f755b675f11d">&#9670;&nbsp;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad53a52f6f3801d7815fb313793c3123"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad53a52f6f3801d7815fb313793c3123">&#9670;&nbsp;</a></span>sighandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sighandler </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sig_num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab80d2ac405208bc1d1eb4de7a00b8fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab80d2ac405208bc1d1eb4de7a00b8fcd">&#9670;&nbsp;</a></span>trim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void trim </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
+</body>
+</html>

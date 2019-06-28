@@ -1,0 +1,140 @@
+\hypertarget{z8__6_8c}{}\section{Dokumentacja pliku psys/z8\+\_\+6.c}
+\label{z8__6_8c}\index{psys/z8\_6.c@{psys/z8\_6.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$termios.\+h$>$}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{z8__6_8c_a078b6c12f1ac6819cecef90ab5870276}{T\+I\+ME}}~6
+\item 
+\#define \mbox{\hyperlink{z8__6_8c_a7f264fafe78080f8ea68715854b9bc24}{M\+A\+X\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+L\+E\+N\+G\+TH}}~20
+\item 
+\#define \mbox{\hyperlink{z8__6_8c_af3cc4ba42efb48f16226cb5ba77c1bbb}{C\+M\+D\+\_\+\+L\+E\+N\+G\+TH}}~100
+\item 
+\#define \mbox{\hyperlink{z8__6_8c_a42eb19b10bf0faee9c8decb218bdeae9}{H\+A\+S\+H\+\_\+\+L\+E\+N\+G\+TH}}~100
+\item 
+\#define \mbox{\hyperlink{z8__6_8c_a49b0d3f4f7f7687d16ef7390bb5bf39e}{P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+F\+I\+LE}}~\char`\"{}pswd.\+dat\char`\"{}
+\item 
+\#define \mbox{\hyperlink{z8__6_8c_acfbc006ea433ad708fdee3e82996e721}{G\+R\+E\+EN}}~\char`\"{}\textbackslash{}x1B\mbox{[}32m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{z8__6_8c_a8d23feea868a983c8c2b661e1e16972f}{R\+ED}}~\char`\"{}\textbackslash{}x1B\mbox{[}31m\char`\"{}
+\item 
+\#define \mbox{\hyperlink{z8__6_8c_ab702106cf3b3e96750b6845ded4e0299}{R\+E\+S\+ET}}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{z8__6_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}{trim}} (char $\ast$text)
+\item 
+void \mbox{\hyperlink{z8__6_8c_a46863d0b2519a49b151fae261fd2f7dc}{sigalrm\+\_\+handler}} (int sig\+\_\+num)
+\item 
+void \mbox{\hyperlink{z8__6_8c_a75e98b9730357038111037edda8339df}{set\+Alarm}} ()
+\item 
+void \mbox{\hyperlink{z8__6_8c_abb4e4cccedc1accfe96444d6cd091492}{get\+Password}} (char $\ast$password)
+\item 
+void \mbox{\hyperlink{z8__6_8c_a14512e854a1339ff59d6b34af404e55b}{encode\+Password}} (char $\ast$password, char $\ast$hashed\+Password)
+\item 
+void \mbox{\hyperlink{z8__6_8c_a256361e7974cb1267671629b9c3a91d1}{check\+Password}} (char $\ast$password)
+\item 
+int \mbox{\hyperlink{z8__6_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{z8__6_8c_af3cc4ba42efb48f16226cb5ba77c1bbb}\label{z8__6_8c_af3cc4ba42efb48f16226cb5ba77c1bbb}} 
+\index{z8\_6.c@{z8\_6.c}!CMD\_LENGTH@{CMD\_LENGTH}}
+\index{CMD\_LENGTH@{CMD\_LENGTH}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{CMD\_LENGTH}{CMD\_LENGTH}}
+{\footnotesize\ttfamily \#define C\+M\+D\+\_\+\+L\+E\+N\+G\+TH~100}
+
+\mbox{\Hypertarget{z8__6_8c_acfbc006ea433ad708fdee3e82996e721}\label{z8__6_8c_acfbc006ea433ad708fdee3e82996e721}} 
+\index{z8\_6.c@{z8\_6.c}!GREEN@{GREEN}}
+\index{GREEN@{GREEN}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{GREEN}{GREEN}}
+{\footnotesize\ttfamily \#define G\+R\+E\+EN~\char`\"{}\textbackslash{}x1B\mbox{[}32m\char`\"{}}
+
+\mbox{\Hypertarget{z8__6_8c_a42eb19b10bf0faee9c8decb218bdeae9}\label{z8__6_8c_a42eb19b10bf0faee9c8decb218bdeae9}} 
+\index{z8\_6.c@{z8\_6.c}!HASH\_LENGTH@{HASH\_LENGTH}}
+\index{HASH\_LENGTH@{HASH\_LENGTH}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{HASH\_LENGTH}{HASH\_LENGTH}}
+{\footnotesize\ttfamily \#define H\+A\+S\+H\+\_\+\+L\+E\+N\+G\+TH~100}
+
+\mbox{\Hypertarget{z8__6_8c_a7f264fafe78080f8ea68715854b9bc24}\label{z8__6_8c_a7f264fafe78080f8ea68715854b9bc24}} 
+\index{z8\_6.c@{z8\_6.c}!MAX\_PASSWORD\_LENGTH@{MAX\_PASSWORD\_LENGTH}}
+\index{MAX\_PASSWORD\_LENGTH@{MAX\_PASSWORD\_LENGTH}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{MAX\_PASSWORD\_LENGTH}{MAX\_PASSWORD\_LENGTH}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+L\+E\+N\+G\+TH~20}
+
+\mbox{\Hypertarget{z8__6_8c_a49b0d3f4f7f7687d16ef7390bb5bf39e}\label{z8__6_8c_a49b0d3f4f7f7687d16ef7390bb5bf39e}} 
+\index{z8\_6.c@{z8\_6.c}!PASSWORD\_FILE@{PASSWORD\_FILE}}
+\index{PASSWORD\_FILE@{PASSWORD\_FILE}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{PASSWORD\_FILE}{PASSWORD\_FILE}}
+{\footnotesize\ttfamily \#define P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+F\+I\+LE~\char`\"{}pswd.\+dat\char`\"{}}
+
+\mbox{\Hypertarget{z8__6_8c_a8d23feea868a983c8c2b661e1e16972f}\label{z8__6_8c_a8d23feea868a983c8c2b661e1e16972f}} 
+\index{z8\_6.c@{z8\_6.c}!RED@{RED}}
+\index{RED@{RED}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{RED}{RED}}
+{\footnotesize\ttfamily \#define R\+ED~\char`\"{}\textbackslash{}x1B\mbox{[}31m\char`\"{}}
+
+\mbox{\Hypertarget{z8__6_8c_ab702106cf3b3e96750b6845ded4e0299}\label{z8__6_8c_ab702106cf3b3e96750b6845ded4e0299}} 
+\index{z8\_6.c@{z8\_6.c}!RESET@{RESET}}
+\index{RESET@{RESET}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{RESET}{RESET}}
+{\footnotesize\ttfamily \#define R\+E\+S\+ET~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}}
+
+\mbox{\Hypertarget{z8__6_8c_a078b6c12f1ac6819cecef90ab5870276}\label{z8__6_8c_a078b6c12f1ac6819cecef90ab5870276}} 
+\index{z8\_6.c@{z8\_6.c}!TIME@{TIME}}
+\index{TIME@{TIME}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{TIME}{TIME}}
+{\footnotesize\ttfamily \#define T\+I\+ME~6}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{z8__6_8c_a256361e7974cb1267671629b9c3a91d1}\label{z8__6_8c_a256361e7974cb1267671629b9c3a91d1}} 
+\index{z8\_6.c@{z8\_6.c}!checkPassword@{checkPassword}}
+\index{checkPassword@{checkPassword}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{checkPassword()}{checkPassword()}}
+{\footnotesize\ttfamily void check\+Password (\begin{DoxyParamCaption}\item[{char $\ast$}]{password }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__6_8c_a14512e854a1339ff59d6b34af404e55b}\label{z8__6_8c_a14512e854a1339ff59d6b34af404e55b}} 
+\index{z8\_6.c@{z8\_6.c}!encodePassword@{encodePassword}}
+\index{encodePassword@{encodePassword}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{encodePassword()}{encodePassword()}}
+{\footnotesize\ttfamily void encode\+Password (\begin{DoxyParamCaption}\item[{char $\ast$}]{password,  }\item[{char $\ast$}]{hashed\+Password }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__6_8c_abb4e4cccedc1accfe96444d6cd091492}\label{z8__6_8c_abb4e4cccedc1accfe96444d6cd091492}} 
+\index{z8\_6.c@{z8\_6.c}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{getPassword()}{getPassword()}}
+{\footnotesize\ttfamily void get\+Password (\begin{DoxyParamCaption}\item[{char $\ast$}]{password }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__6_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{z8__6_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{z8\_6.c@{z8\_6.c}!main@{main}}
+\index{main@{main}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__6_8c_a75e98b9730357038111037edda8339df}\label{z8__6_8c_a75e98b9730357038111037edda8339df}} 
+\index{z8\_6.c@{z8\_6.c}!setAlarm@{setAlarm}}
+\index{setAlarm@{setAlarm}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{setAlarm()}{setAlarm()}}
+{\footnotesize\ttfamily void set\+Alarm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__6_8c_a46863d0b2519a49b151fae261fd2f7dc}\label{z8__6_8c_a46863d0b2519a49b151fae261fd2f7dc}} 
+\index{z8\_6.c@{z8\_6.c}!sigalrm\_handler@{sigalrm\_handler}}
+\index{sigalrm\_handler@{sigalrm\_handler}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{sigalrm\_handler()}{sigalrm\_handler()}}
+{\footnotesize\ttfamily void sigalrm\+\_\+handler (\begin{DoxyParamCaption}\item[{int}]{sig\+\_\+num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__6_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}\label{z8__6_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}} 
+\index{z8\_6.c@{z8\_6.c}!trim@{trim}}
+\index{trim@{trim}!z8\_6.c@{z8\_6.c}}
+\subsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily void trim (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+

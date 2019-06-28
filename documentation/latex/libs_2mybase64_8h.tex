@@ -1,0 +1,74 @@
+\hypertarget{libs_2mybase64_8h}{}\section{Dokumentacja pliku libs/mybase64.h}
+\label{libs_2mybase64_8h}\index{libs/mybase64.h@{libs/mybase64.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$syslog.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{libs_2mybase64_8h_af3cc4ba42efb48f16226cb5ba77c1bbb}{C\+M\+D\+\_\+\+L\+E\+N\+G\+TH}}~120
+\item 
+\#define \mbox{\hyperlink{libs_2mybase64_8h_a42eb19b10bf0faee9c8decb218bdeae9}{H\+A\+S\+H\+\_\+\+L\+E\+N\+G\+TH}}~120
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{libs_2mybase64_8h_a6ee5ffeb0b133bc068b1da5dba748a8d}{encode\+Chars}} (char $\ast$chars, char $\ast$encoded\+Chars)
+\item 
+void \mbox{\hyperlink{libs_2mybase64_8h_acd990e7a2dc16addbdbd4b4a37793e4d}{get\+Login\+And\+Password}} (char $\ast$uder\+Data, char $\ast$login, char $\ast$password)
+\item 
+void \mbox{\hyperlink{libs_2mybase64_8h_ab80d2ac405208bc1d1eb4de7a00b8fcd}{trim}} (char $\ast$text)
+\item 
+void \mbox{\hyperlink{libs_2mybase64_8h_a739f2a7597dcf758fedf402ab95b83b8}{run\+Command}} (char $\ast$encoded\+Chars, const char $\ast$cmd)
+\item 
+void \mbox{\hyperlink{libs_2mybase64_8h_a7536b82a5aafae3c0ae598f76897722f}{decode\+Chars}} (char $\ast$chars, char $\ast$decoded\+Chars)
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{libs_2mybase64_8h_af3cc4ba42efb48f16226cb5ba77c1bbb}\label{libs_2mybase64_8h_af3cc4ba42efb48f16226cb5ba77c1bbb}} 
+\index{mybase64.h@{mybase64.h}!CMD\_LENGTH@{CMD\_LENGTH}}
+\index{CMD\_LENGTH@{CMD\_LENGTH}!mybase64.h@{mybase64.h}}
+\subsubsection{\texorpdfstring{CMD\_LENGTH}{CMD\_LENGTH}}
+{\footnotesize\ttfamily \#define C\+M\+D\+\_\+\+L\+E\+N\+G\+TH~120}
+
+\mbox{\Hypertarget{libs_2mybase64_8h_a42eb19b10bf0faee9c8decb218bdeae9}\label{libs_2mybase64_8h_a42eb19b10bf0faee9c8decb218bdeae9}} 
+\index{mybase64.h@{mybase64.h}!HASH\_LENGTH@{HASH\_LENGTH}}
+\index{HASH\_LENGTH@{HASH\_LENGTH}!mybase64.h@{mybase64.h}}
+\subsubsection{\texorpdfstring{HASH\_LENGTH}{HASH\_LENGTH}}
+{\footnotesize\ttfamily \#define H\+A\+S\+H\+\_\+\+L\+E\+N\+G\+TH~120}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{libs_2mybase64_8h_a7536b82a5aafae3c0ae598f76897722f}\label{libs_2mybase64_8h_a7536b82a5aafae3c0ae598f76897722f}} 
+\index{mybase64.h@{mybase64.h}!decodeChars@{decodeChars}}
+\index{decodeChars@{decodeChars}!mybase64.h@{mybase64.h}}
+\subsubsection{\texorpdfstring{decodeChars()}{decodeChars()}}
+{\footnotesize\ttfamily void decode\+Chars (\begin{DoxyParamCaption}\item[{char $\ast$}]{chars,  }\item[{char $\ast$}]{decoded\+Chars }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mybase64_8h_a6ee5ffeb0b133bc068b1da5dba748a8d}\label{libs_2mybase64_8h_a6ee5ffeb0b133bc068b1da5dba748a8d}} 
+\index{mybase64.h@{mybase64.h}!encodeChars@{encodeChars}}
+\index{encodeChars@{encodeChars}!mybase64.h@{mybase64.h}}
+\subsubsection{\texorpdfstring{encodeChars()}{encodeChars()}}
+{\footnotesize\ttfamily void encode\+Chars (\begin{DoxyParamCaption}\item[{char $\ast$}]{chars,  }\item[{char $\ast$}]{encoded\+Chars }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mybase64_8h_acd990e7a2dc16addbdbd4b4a37793e4d}\label{libs_2mybase64_8h_acd990e7a2dc16addbdbd4b4a37793e4d}} 
+\index{mybase64.h@{mybase64.h}!getLoginAndPassword@{getLoginAndPassword}}
+\index{getLoginAndPassword@{getLoginAndPassword}!mybase64.h@{mybase64.h}}
+\subsubsection{\texorpdfstring{getLoginAndPassword()}{getLoginAndPassword()}}
+{\footnotesize\ttfamily void get\+Login\+And\+Password (\begin{DoxyParamCaption}\item[{char $\ast$}]{uder\+Data,  }\item[{char $\ast$}]{login,  }\item[{char $\ast$}]{password }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mybase64_8h_a739f2a7597dcf758fedf402ab95b83b8}\label{libs_2mybase64_8h_a739f2a7597dcf758fedf402ab95b83b8}} 
+\index{mybase64.h@{mybase64.h}!runCommand@{runCommand}}
+\index{runCommand@{runCommand}!mybase64.h@{mybase64.h}}
+\subsubsection{\texorpdfstring{runCommand()}{runCommand()}}
+{\footnotesize\ttfamily void run\+Command (\begin{DoxyParamCaption}\item[{char $\ast$}]{encoded\+Chars,  }\item[{const char $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{libs_2mybase64_8h_ab80d2ac405208bc1d1eb4de7a00b8fcd}\label{libs_2mybase64_8h_ab80d2ac405208bc1d1eb4de7a00b8fcd}} 
+\index{mybase64.h@{mybase64.h}!trim@{trim}}
+\index{trim@{trim}!mybase64.h@{mybase64.h}}
+\subsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily void trim (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+

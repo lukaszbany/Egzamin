@@ -1,0 +1,130 @@
+\hypertarget{z6__9_8c}{}\section{Dokumentacja pliku psys/z6\+\_\+9.c}
+\label{z6__9_8c}\index{psys/z6\_9.c@{psys/z6\_9.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$pwd.\+h$>$}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{z6__9_8c_a1e43beab739edc548f9387fb77e43032}{P\+I\+D\+S\+\_\+\+L\+E\+N\+G\+TH}}~200
+\item 
+\#define \mbox{\hyperlink{z6__9_8c_a0b11bb7412ef46b9e6fa344228f3695f}{L\+O\+G\+I\+N\+\_\+\+L\+E\+N\+G\+TH}}~50
+\item 
+\#define \mbox{\hyperlink{z6__9_8c_a478242505360921969a1d3f9748f1998}{L\+O\+G\+I\+N\+S\+\_\+\+N\+U\+M\+B\+ER}}~25
+\item 
+\#define \mbox{\hyperlink{z6__9_8c_a73c52f3e083ffd8acde0b01f74de7a5a}{C\+O\+M\+M\+A\+N\+D\+\_\+\+L\+E\+N\+G\+TH}}~80
+\item 
+\#define \mbox{\hyperlink{z6__9_8c_a1ff5d0ebd8e1c8ce5c1c3f16e100701a}{A\+P\+P\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+TH}}~80
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{z6__9_8c_a2abdbecf6215b74341b958ba80d82bf4}{app\+Is\+Working}} (char $\ast$pids)
+\item 
+void \mbox{\hyperlink{z6__9_8c_a4f6438624e0d7ca016f471fc93b7aa9d}{trim\+End\+New\+Line}} (char $\ast$text)
+\item 
+char $\ast$ \mbox{\hyperlink{z6__9_8c_acf1980a5285097903a91479e2f27a1a1}{get\+Username\+For\+Pid}} (pid\+\_\+t pid)
+\item 
+char $\ast$ \mbox{\hyperlink{z6__9_8c_a5f0ba3b7c3ea7b7c63f8be60b648f46a}{get\+Pids\+Of\+App}} (char $\ast$application\+Name)
+\item 
+void \mbox{\hyperlink{z6__9_8c_aa09b4653c730162f53e1ff44a8f162a0}{print\+Name\+Of\+User\+With\+Login}} (char $\ast$login)
+\item 
+int \mbox{\hyperlink{z6__9_8c_abfb109cd2e221e37a6ed51ac23f7519e}{login\+Not\+Saved\+Before}} (char $\ast$login, char $\ast$logins\mbox{[}$\,$\mbox{]}, int logins\+Size)
+\item 
+void \mbox{\hyperlink{z6__9_8c_a4eea78a698d838676f5c1f4f9bdc16a5}{print\+Users\+Of\+App}} (char $\ast$pids, char $\ast$app\+Name)
+\item 
+void \mbox{\hyperlink{z6__9_8c_a45c8593e48e540b970ab1d0e2ff5081e}{print\+Names\+For\+Applications\+From\+File}} (char $\ast$filename)
+\item 
+int \mbox{\hyperlink{z6__9_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{z6__9_8c_a1ff5d0ebd8e1c8ce5c1c3f16e100701a}\label{z6__9_8c_a1ff5d0ebd8e1c8ce5c1c3f16e100701a}} 
+\index{z6\_9.c@{z6\_9.c}!APPNAME\_LENGTH@{APPNAME\_LENGTH}}
+\index{APPNAME\_LENGTH@{APPNAME\_LENGTH}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{APPNAME\_LENGTH}{APPNAME\_LENGTH}}
+{\footnotesize\ttfamily \#define A\+P\+P\+N\+A\+M\+E\+\_\+\+L\+E\+N\+G\+TH~80}
+
+\mbox{\Hypertarget{z6__9_8c_a73c52f3e083ffd8acde0b01f74de7a5a}\label{z6__9_8c_a73c52f3e083ffd8acde0b01f74de7a5a}} 
+\index{z6\_9.c@{z6\_9.c}!COMMAND\_LENGTH@{COMMAND\_LENGTH}}
+\index{COMMAND\_LENGTH@{COMMAND\_LENGTH}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{COMMAND\_LENGTH}{COMMAND\_LENGTH}}
+{\footnotesize\ttfamily \#define C\+O\+M\+M\+A\+N\+D\+\_\+\+L\+E\+N\+G\+TH~80}
+
+\mbox{\Hypertarget{z6__9_8c_a0b11bb7412ef46b9e6fa344228f3695f}\label{z6__9_8c_a0b11bb7412ef46b9e6fa344228f3695f}} 
+\index{z6\_9.c@{z6\_9.c}!LOGIN\_LENGTH@{LOGIN\_LENGTH}}
+\index{LOGIN\_LENGTH@{LOGIN\_LENGTH}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{LOGIN\_LENGTH}{LOGIN\_LENGTH}}
+{\footnotesize\ttfamily \#define L\+O\+G\+I\+N\+\_\+\+L\+E\+N\+G\+TH~50}
+
+\mbox{\Hypertarget{z6__9_8c_a478242505360921969a1d3f9748f1998}\label{z6__9_8c_a478242505360921969a1d3f9748f1998}} 
+\index{z6\_9.c@{z6\_9.c}!LOGINS\_NUMBER@{LOGINS\_NUMBER}}
+\index{LOGINS\_NUMBER@{LOGINS\_NUMBER}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{LOGINS\_NUMBER}{LOGINS\_NUMBER}}
+{\footnotesize\ttfamily \#define L\+O\+G\+I\+N\+S\+\_\+\+N\+U\+M\+B\+ER~25}
+
+\mbox{\Hypertarget{z6__9_8c_a1e43beab739edc548f9387fb77e43032}\label{z6__9_8c_a1e43beab739edc548f9387fb77e43032}} 
+\index{z6\_9.c@{z6\_9.c}!PIDS\_LENGTH@{PIDS\_LENGTH}}
+\index{PIDS\_LENGTH@{PIDS\_LENGTH}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{PIDS\_LENGTH}{PIDS\_LENGTH}}
+{\footnotesize\ttfamily \#define P\+I\+D\+S\+\_\+\+L\+E\+N\+G\+TH~200}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{z6__9_8c_a2abdbecf6215b74341b958ba80d82bf4}\label{z6__9_8c_a2abdbecf6215b74341b958ba80d82bf4}} 
+\index{z6\_9.c@{z6\_9.c}!appIsWorking@{appIsWorking}}
+\index{appIsWorking@{appIsWorking}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{appIsWorking()}{appIsWorking()}}
+{\footnotesize\ttfamily int app\+Is\+Working (\begin{DoxyParamCaption}\item[{char $\ast$}]{pids }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__9_8c_a5f0ba3b7c3ea7b7c63f8be60b648f46a}\label{z6__9_8c_a5f0ba3b7c3ea7b7c63f8be60b648f46a}} 
+\index{z6\_9.c@{z6\_9.c}!getPidsOfApp@{getPidsOfApp}}
+\index{getPidsOfApp@{getPidsOfApp}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{getPidsOfApp()}{getPidsOfApp()}}
+{\footnotesize\ttfamily char$\ast$ get\+Pids\+Of\+App (\begin{DoxyParamCaption}\item[{char $\ast$}]{application\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__9_8c_acf1980a5285097903a91479e2f27a1a1}\label{z6__9_8c_acf1980a5285097903a91479e2f27a1a1}} 
+\index{z6\_9.c@{z6\_9.c}!getUsernameForPid@{getUsernameForPid}}
+\index{getUsernameForPid@{getUsernameForPid}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{getUsernameForPid()}{getUsernameForPid()}}
+{\footnotesize\ttfamily char$\ast$ get\+Username\+For\+Pid (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__9_8c_abfb109cd2e221e37a6ed51ac23f7519e}\label{z6__9_8c_abfb109cd2e221e37a6ed51ac23f7519e}} 
+\index{z6\_9.c@{z6\_9.c}!loginNotSavedBefore@{loginNotSavedBefore}}
+\index{loginNotSavedBefore@{loginNotSavedBefore}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{loginNotSavedBefore()}{loginNotSavedBefore()}}
+{\footnotesize\ttfamily int login\+Not\+Saved\+Before (\begin{DoxyParamCaption}\item[{char $\ast$}]{login,  }\item[{char $\ast$}]{logins\mbox{[}$\,$\mbox{]},  }\item[{int}]{logins\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__9_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{z6__9_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{z6\_9.c@{z6\_9.c}!main@{main}}
+\index{main@{main}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__9_8c_aa09b4653c730162f53e1ff44a8f162a0}\label{z6__9_8c_aa09b4653c730162f53e1ff44a8f162a0}} 
+\index{z6\_9.c@{z6\_9.c}!printNameOfUserWithLogin@{printNameOfUserWithLogin}}
+\index{printNameOfUserWithLogin@{printNameOfUserWithLogin}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{printNameOfUserWithLogin()}{printNameOfUserWithLogin()}}
+{\footnotesize\ttfamily void print\+Name\+Of\+User\+With\+Login (\begin{DoxyParamCaption}\item[{char $\ast$}]{login }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__9_8c_a45c8593e48e540b970ab1d0e2ff5081e}\label{z6__9_8c_a45c8593e48e540b970ab1d0e2ff5081e}} 
+\index{z6\_9.c@{z6\_9.c}!printNamesForApplicationsFromFile@{printNamesForApplicationsFromFile}}
+\index{printNamesForApplicationsFromFile@{printNamesForApplicationsFromFile}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{printNamesForApplicationsFromFile()}{printNamesForApplicationsFromFile()}}
+{\footnotesize\ttfamily void print\+Names\+For\+Applications\+From\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__9_8c_a4eea78a698d838676f5c1f4f9bdc16a5}\label{z6__9_8c_a4eea78a698d838676f5c1f4f9bdc16a5}} 
+\index{z6\_9.c@{z6\_9.c}!printUsersOfApp@{printUsersOfApp}}
+\index{printUsersOfApp@{printUsersOfApp}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{printUsersOfApp()}{printUsersOfApp()}}
+{\footnotesize\ttfamily void print\+Users\+Of\+App (\begin{DoxyParamCaption}\item[{char $\ast$}]{pids,  }\item[{char $\ast$}]{app\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__9_8c_a4f6438624e0d7ca016f471fc93b7aa9d}\label{z6__9_8c_a4f6438624e0d7ca016f471fc93b7aa9d}} 
+\index{z6\_9.c@{z6\_9.c}!trimEndNewLine@{trimEndNewLine}}
+\index{trimEndNewLine@{trimEndNewLine}!z6\_9.c@{z6\_9.c}}
+\subsubsection{\texorpdfstring{trimEndNewLine()}{trimEndNewLine()}}
+{\footnotesize\ttfamily void trim\+End\+New\+Line (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+

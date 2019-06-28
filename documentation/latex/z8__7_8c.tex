@@ -1,0 +1,94 @@
+\hypertarget{z8__7_8c}{}\section{Dokumentacja pliku psys/z8\+\_\+7.c}
+\label{z8__7_8c}\index{psys/z8\_7.c@{psys/z8\_7.c}}
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{z8__7_8c_a25f40fb7595d797ba48b360ceb962387}{A\+R\+G\+\_\+\+L\+E\+N\+G\+TH}}~35
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{z8__7_8c_ae7331bf52ec602a1ca702f7da3e73ac9}{shellcmd}} (char $\ast$)
+\item 
+void \mbox{\hyperlink{z8__7_8c_a46544c95eff9314a6ac2f2980c1f2583}{prstat}} (int)
+\item 
+void \mbox{\hyperlink{z8__7_8c_a0f5d6f6c0932bb08ad193b9675751480}{trim\+Whitespaces}} (char $\ast$text)
+\item 
+void \mbox{\hyperlink{z8__7_8c_a4aafbd01df3f14121c228d3dc8157d3e}{execute\+Command}} (char $\ast$cmd)
+\item 
+void \mbox{\hyperlink{z8__7_8c_a742bf48a05ab869f6897e94671259a70}{close\+Descriptors}} (int in\+Fd, int out\+Fd)
+\item 
+void \mbox{\hyperlink{z8__7_8c_a3d3fdfb8875e98d6e45016df99f50445}{process\+Argument}} (int in\+Fd, int out\+Fd, char $\ast$cmd)
+\item 
+void \mbox{\hyperlink{z8__7_8c_a3f49ecd713458b0d14313022a4c688a1}{execute\+All}} (int argc, char $\ast$$\ast$argv)
+\item 
+int \mbox{\hyperlink{z8__7_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{z8__7_8c_a25f40fb7595d797ba48b360ceb962387}\label{z8__7_8c_a25f40fb7595d797ba48b360ceb962387}} 
+\index{z8\_7.c@{z8\_7.c}!ARG\_LENGTH@{ARG\_LENGTH}}
+\index{ARG\_LENGTH@{ARG\_LENGTH}!z8\_7.c@{z8\_7.c}}
+\subsubsection{\texorpdfstring{ARG\_LENGTH}{ARG\_LENGTH}}
+{\footnotesize\ttfamily \#define A\+R\+G\+\_\+\+L\+E\+N\+G\+TH~35}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{z8__7_8c_a742bf48a05ab869f6897e94671259a70}\label{z8__7_8c_a742bf48a05ab869f6897e94671259a70}} 
+\index{z8\_7.c@{z8\_7.c}!closeDescriptors@{closeDescriptors}}
+\index{closeDescriptors@{closeDescriptors}!z8\_7.c@{z8\_7.c}}
+\subsubsection{\texorpdfstring{closeDescriptors()}{closeDescriptors()}}
+{\footnotesize\ttfamily void close\+Descriptors (\begin{DoxyParamCaption}\item[{int}]{in\+Fd,  }\item[{int}]{out\+Fd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__7_8c_a3f49ecd713458b0d14313022a4c688a1}\label{z8__7_8c_a3f49ecd713458b0d14313022a4c688a1}} 
+\index{z8\_7.c@{z8\_7.c}!executeAll@{executeAll}}
+\index{executeAll@{executeAll}!z8\_7.c@{z8\_7.c}}
+\subsubsection{\texorpdfstring{executeAll()}{executeAll()}}
+{\footnotesize\ttfamily void execute\+All (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__7_8c_a4aafbd01df3f14121c228d3dc8157d3e}\label{z8__7_8c_a4aafbd01df3f14121c228d3dc8157d3e}} 
+\index{z8\_7.c@{z8\_7.c}!executeCommand@{executeCommand}}
+\index{executeCommand@{executeCommand}!z8\_7.c@{z8\_7.c}}
+\subsubsection{\texorpdfstring{executeCommand()}{executeCommand()}}
+{\footnotesize\ttfamily void execute\+Command (\begin{DoxyParamCaption}\item[{char $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__7_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{z8__7_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{z8\_7.c@{z8\_7.c}!main@{main}}
+\index{main@{main}!z8\_7.c@{z8\_7.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__7_8c_a3d3fdfb8875e98d6e45016df99f50445}\label{z8__7_8c_a3d3fdfb8875e98d6e45016df99f50445}} 
+\index{z8\_7.c@{z8\_7.c}!processArgument@{processArgument}}
+\index{processArgument@{processArgument}!z8\_7.c@{z8\_7.c}}
+\subsubsection{\texorpdfstring{processArgument()}{processArgument()}}
+{\footnotesize\ttfamily void process\+Argument (\begin{DoxyParamCaption}\item[{int}]{in\+Fd,  }\item[{int}]{out\+Fd,  }\item[{char $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__7_8c_a46544c95eff9314a6ac2f2980c1f2583}\label{z8__7_8c_a46544c95eff9314a6ac2f2980c1f2583}} 
+\index{z8\_7.c@{z8\_7.c}!prstat@{prstat}}
+\index{prstat@{prstat}!z8\_7.c@{z8\_7.c}}
+\subsubsection{\texorpdfstring{prstat()}{prstat()}}
+{\footnotesize\ttfamily void prstat (\begin{DoxyParamCaption}\item[{int}]{status }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__7_8c_ae7331bf52ec602a1ca702f7da3e73ac9}\label{z8__7_8c_ae7331bf52ec602a1ca702f7da3e73ac9}} 
+\index{z8\_7.c@{z8\_7.c}!shellcmd@{shellcmd}}
+\index{shellcmd@{shellcmd}!z8\_7.c@{z8\_7.c}}
+\subsubsection{\texorpdfstring{shellcmd()}{shellcmd()}}
+{\footnotesize\ttfamily int shellcmd (\begin{DoxyParamCaption}\item[{char $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z8__7_8c_a0f5d6f6c0932bb08ad193b9675751480}\label{z8__7_8c_a0f5d6f6c0932bb08ad193b9675751480}} 
+\index{z8\_7.c@{z8\_7.c}!trimWhitespaces@{trimWhitespaces}}
+\index{trimWhitespaces@{trimWhitespaces}!z8\_7.c@{z8\_7.c}}
+\subsubsection{\texorpdfstring{trimWhitespaces()}{trimWhitespaces()}}
+{\footnotesize\ttfamily void trim\+Whitespaces (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+

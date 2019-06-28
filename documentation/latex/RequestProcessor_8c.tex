@@ -1,0 +1,62 @@
+\hypertarget{RequestProcessor_8c}{}\section{Dokumentacja pliku Request\+Processor.\+c}
+\label{RequestProcessor_8c}\index{RequestProcessor.c@{RequestProcessor.c}}
+{\ttfamily \#include \char`\"{}Request\+Processor.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$mysql/mysql.\+h$>$}\newline
+{\ttfamily \#include $<$zconf.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}libs/mylib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}libs/mydb.\+h\char`\"{}}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{RequestProcessor_8c_a54fa99013d88b05125eba286921517c7}{S\+E\+S\+S\+I\+O\+N\+\_\+\+I\+D\+\_\+\+L\+E\+N\+G\+TH}}~15
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{RequestProcessor_8c_af6d6108de0d4edf552b16b42718356a7}{process}} (int connection\+Fd)
+\item 
+void \mbox{\hyperlink{RequestProcessor_8c_ae12d073ac8fb908f2637659d1646a724}{generate\+New\+Session\+Id}} (char $\ast$session\+Id)
+\end{DoxyCompactItemize}
+\subsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+const char \mbox{\hyperlink{RequestProcessor_8c_a7066977006bd1e86e63f017236d9b584}{session\+Chars}} \mbox{[}$\,$\mbox{]} = \char`\"{}0123456789abcdefghijklmnopqrstuvwxyz\+A\+B\+C\+D\+E\+F\+G\+H\+I\+J\+K\+L\+M\+N\+O\+P\+R\+S\+T\+U\+V\+W\+X\+Y\+Z\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{RequestProcessor_8c_a54fa99013d88b05125eba286921517c7}\label{RequestProcessor_8c_a54fa99013d88b05125eba286921517c7}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!SESSION\_ID\_LENGTH@{SESSION\_ID\_LENGTH}}
+\index{SESSION\_ID\_LENGTH@{SESSION\_ID\_LENGTH}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{SESSION\_ID\_LENGTH}{SESSION\_ID\_LENGTH}}
+{\footnotesize\ttfamily \#define S\+E\+S\+S\+I\+O\+N\+\_\+\+I\+D\+\_\+\+L\+E\+N\+G\+TH~15}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{RequestProcessor_8c_ae12d073ac8fb908f2637659d1646a724}\label{RequestProcessor_8c_ae12d073ac8fb908f2637659d1646a724}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!generateNewSessionId@{generateNewSessionId}}
+\index{generateNewSessionId@{generateNewSessionId}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{generateNewSessionId()}{generateNewSessionId()}}
+{\footnotesize\ttfamily void generate\+New\+Session\+Id (\begin{DoxyParamCaption}\item[{char $\ast$}]{session\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{RequestProcessor_8c_af6d6108de0d4edf552b16b42718356a7}\label{RequestProcessor_8c_af6d6108de0d4edf552b16b42718356a7}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!process@{process}}
+\index{process@{process}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily void process (\begin{DoxyParamCaption}\item[{int}]{connection\+Fd }\end{DoxyParamCaption})}
+
+
+
+\subsection{Dokumentacja zmiennych}
+\mbox{\Hypertarget{RequestProcessor_8c_a7066977006bd1e86e63f017236d9b584}\label{RequestProcessor_8c_a7066977006bd1e86e63f017236d9b584}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!sessionChars@{sessionChars}}
+\index{sessionChars@{sessionChars}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{sessionChars}{sessionChars}}
+{\footnotesize\ttfamily const char session\+Chars\mbox{[}$\,$\mbox{]} = \char`\"{}0123456789abcdefghijklmnopqrstuvwxyz\+A\+B\+C\+D\+E\+F\+G\+H\+I\+J\+K\+L\+M\+N\+O\+P\+R\+S\+T\+U\+V\+W\+X\+Y\+Z\char`\"{}}
+

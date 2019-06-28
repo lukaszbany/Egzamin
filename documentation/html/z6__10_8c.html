@@ -1,0 +1,533 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.15"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Dokumentacja pliku psys/z6_10.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.15 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6032343dc0b3c162fbefe13d41e474ba.html">psys</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definicje</a> &#124;
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku z6_10.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;memory.h&gt;</code><br />
+<code>#include &lt;pwd.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:ad9699f597384c01411e910aae4c75b3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#ad9699f597384c01411e910aae4c75b3f">RESULT_LENGTH</a>&#160;&#160;&#160;160</td></tr>
+<tr class="separator:ad9699f597384c01411e910aae4c75b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c52f3e083ffd8acde0b01f74de7a5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a73c52f3e083ffd8acde0b01f74de7a5a">COMMAND_LENGTH</a>&#160;&#160;&#160;80</td></tr>
+<tr class="separator:a73c52f3e083ffd8acde0b01f74de7a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a075c2857863bb022e03f3ec6237957dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a075c2857863bb022e03f3ec6237957dd">BINARY_LENGTH</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a075c2857863bb022e03f3ec6237957dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdcf83357d907088a65e37fd95bf4f79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#acdcf83357d907088a65e37fd95bf4f79">SIGNALS_NUMBER</a>&#160;&#160;&#160;64</td></tr>
+<tr class="separator:acdcf83357d907088a65e37fd95bf4f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada74e7db007a68e763f20c17f2985356"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#ada74e7db007a68e763f20c17f2985356">READ</a>&#160;&#160;&#160;&quot;r&quot;</td></tr>
+<tr class="separator:ada74e7db007a68e763f20c17f2985356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:a44f15932ae0abbd2cb9c98e925b67aef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a44f15932ae0abbd2cb9c98e925b67aef">catch_ctlc</a> (int sig_num)</td></tr>
+<tr class="separator:a44f15932ae0abbd2cb9c98e925b67aef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4526a20f84b0fe8e257cb5b50c4a4663"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a4526a20f84b0fe8e257cb5b50c4a4663">catch_sigusr1</a> (int sig_num)</td></tr>
+<tr class="separator:a4526a20f84b0fe8e257cb5b50c4a4663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab80d2ac405208bc1d1eb4de7a00b8fcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#ab80d2ac405208bc1d1eb4de7a00b8fcd">trim</a> (char *text)</td></tr>
+<tr class="separator:ab80d2ac405208bc1d1eb4de7a00b8fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0425ef71712fa6cea7bdc8759bd2785d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a0425ef71712fa6cea7bdc8759bd2785d">printIdentification</a> ()</td></tr>
+<tr class="separator:a0425ef71712fa6cea7bdc8759bd2785d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6edcd13abbd84c4d54b23dabf53cbb09"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a6edcd13abbd84c4d54b23dabf53cbb09">getResultFromCommand</a> (char *command)</td></tr>
+<tr class="separator:a6edcd13abbd84c4d54b23dabf53cbb09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01007e216828d9d2fb6ca85f03dfc0a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a01007e216828d9d2fb6ca85f03dfc0a3">printDirectories</a> (pid_t pid)</td></tr>
+<tr class="separator:a01007e216828d9d2fb6ca85f03dfc0a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08b70d2c3eca299b1a0d74c37c466c44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a08b70d2c3eca299b1a0d74c37c466c44">printUmask</a> (pid_t pid)</td></tr>
+<tr class="separator:a08b70d2c3eca299b1a0d74c37c466c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20ab0a55fc458411ca20ce436908b89a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a20ab0a55fc458411ca20ce436908b89a">convertHexCharToBin</a> (char hex)</td></tr>
+<tr class="separator:a20ab0a55fc458411ca20ce436908b89a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab06da4b50b1a16a134462abc7564d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#abab06da4b50b1a16a134462abc7564d1">printSignalFromNumber</a> (int number)</td></tr>
+<tr class="separator:abab06da4b50b1a16a134462abc7564d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ce5a26fa0571bc83374d8cefab9d449"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a0ce5a26fa0571bc83374d8cefab9d449">printSignalsFromBinary</a> (char *binary)</td></tr>
+<tr class="separator:a0ce5a26fa0571bc83374d8cefab9d449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae566cd7475937e3d09ee10b8ebd0c570"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#ae566cd7475937e3d09ee10b8ebd0c570">printSignalsFromHex</a> (char *hex)</td></tr>
+<tr class="separator:ae566cd7475937e3d09ee10b8ebd0c570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac81dafa0ad29ab907eab0bb58952b943"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#ac81dafa0ad29ab907eab0bb58952b943">printSignals</a> (pid_t pid, char *grepFor, char *name)</td></tr>
+<tr class="separator:ac81dafa0ad29ab907eab0bb58952b943"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ce7db37ce42aedec0a536b370a5adea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a0ce7db37ce42aedec0a536b370a5adea">printAllSignals</a> (pid_t pid)</td></tr>
+<tr class="separator:a0ce7db37ce42aedec0a536b370a5adea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a397ef9b5b6a7732cffa2da1844068d16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a397ef9b5b6a7732cffa2da1844068d16">printFilesOpened</a> (pid_t pid)</td></tr>
+<tr class="separator:a397ef9b5b6a7732cffa2da1844068d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bb01a706ecf987e4037e89b65bad0cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a0bb01a706ecf987e4037e89b65bad0cc">printProcessName</a> (pid_t pid)</td></tr>
+<tr class="separator:a0bb01a706ecf987e4037e89b65bad0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11f5b3529ecf4e76fad1f2a891de8923"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#a11f5b3529ecf4e76fad1f2a891de8923">printCurrentProcessAttributes</a> ()</td></tr>
+<tr class="separator:a11f5b3529ecf4e76fad1f2a891de8923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="z6__10_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a id="a075c2857863bb022e03f3ec6237957dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a075c2857863bb022e03f3ec6237957dd">&#9670;&nbsp;</a></span>BINARY_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BINARY_LENGTH&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a73c52f3e083ffd8acde0b01f74de7a5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c52f3e083ffd8acde0b01f74de7a5a">&#9670;&nbsp;</a></span>COMMAND_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COMMAND_LENGTH&#160;&#160;&#160;80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada74e7db007a68e763f20c17f2985356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada74e7db007a68e763f20c17f2985356">&#9670;&nbsp;</a></span>READ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define READ&#160;&#160;&#160;&quot;r&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9699f597384c01411e910aae4c75b3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9699f597384c01411e910aae4c75b3f">&#9670;&nbsp;</a></span>RESULT_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RESULT_LENGTH&#160;&#160;&#160;160</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acdcf83357d907088a65e37fd95bf4f79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdcf83357d907088a65e37fd95bf4f79">&#9670;&nbsp;</a></span>SIGNALS_NUMBER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SIGNALS_NUMBER&#160;&#160;&#160;64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="a44f15932ae0abbd2cb9c98e925b67aef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f15932ae0abbd2cb9c98e925b67aef">&#9670;&nbsp;</a></span>catch_ctlc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void catch_ctlc </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sig_num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4526a20f84b0fe8e257cb5b50c4a4663"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4526a20f84b0fe8e257cb5b50c4a4663">&#9670;&nbsp;</a></span>catch_sigusr1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void catch_sigusr1 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sig_num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a20ab0a55fc458411ca20ce436908b89a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20ab0a55fc458411ca20ce436908b89a">&#9670;&nbsp;</a></span>convertHexCharToBin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* convertHexCharToBin </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>hex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6edcd13abbd84c4d54b23dabf53cbb09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6edcd13abbd84c4d54b23dabf53cbb09">&#9670;&nbsp;</a></span>getResultFromCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* getResultFromCommand </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>command</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ce7db37ce42aedec0a536b370a5adea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ce7db37ce42aedec0a536b370a5adea">&#9670;&nbsp;</a></span>printAllSignals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printAllSignals </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a11f5b3529ecf4e76fad1f2a891de8923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11f5b3529ecf4e76fad1f2a891de8923">&#9670;&nbsp;</a></span>printCurrentProcessAttributes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printCurrentProcessAttributes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01007e216828d9d2fb6ca85f03dfc0a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01007e216828d9d2fb6ca85f03dfc0a3">&#9670;&nbsp;</a></span>printDirectories()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printDirectories </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a397ef9b5b6a7732cffa2da1844068d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a397ef9b5b6a7732cffa2da1844068d16">&#9670;&nbsp;</a></span>printFilesOpened()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printFilesOpened </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0425ef71712fa6cea7bdc8759bd2785d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0425ef71712fa6cea7bdc8759bd2785d">&#9670;&nbsp;</a></span>printIdentification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printIdentification </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0bb01a706ecf987e4037e89b65bad0cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bb01a706ecf987e4037e89b65bad0cc">&#9670;&nbsp;</a></span>printProcessName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printProcessName </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abab06da4b50b1a16a134462abc7564d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abab06da4b50b1a16a134462abc7564d1">&#9670;&nbsp;</a></span>printSignalFromNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printSignalFromNumber </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac81dafa0ad29ab907eab0bb58952b943"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac81dafa0ad29ab907eab0bb58952b943">&#9670;&nbsp;</a></span>printSignals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printSignals </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>grepFor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ce5a26fa0571bc83374d8cefab9d449"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ce5a26fa0571bc83374d8cefab9d449">&#9670;&nbsp;</a></span>printSignalsFromBinary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printSignalsFromBinary </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>binary</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae566cd7475937e3d09ee10b8ebd0c570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae566cd7475937e3d09ee10b8ebd0c570">&#9670;&nbsp;</a></span>printSignalsFromHex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printSignalsFromHex </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>hex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a08b70d2c3eca299b1a0d74c37c466c44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08b70d2c3eca299b1a0d74c37c466c44">&#9670;&nbsp;</a></span>printUmask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void printUmask </td>
+          <td>(</td>
+          <td class="paramtype">pid_t&#160;</td>
+          <td class="paramname"><em>pid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab80d2ac405208bc1d1eb4de7a00b8fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab80d2ac405208bc1d1eb4de7a00b8fcd">&#9670;&nbsp;</a></span>trim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void trim </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
+</body>
+</html>

@@ -1,0 +1,117 @@
+\hypertarget{z6__14__receiver_8c}{}\section{Dokumentacja pliku psys/z6\+\_\+14\+\_\+receiver.c}
+\label{z6__14__receiver_8c}\index{psys/z6\_14\_receiver.c@{psys/z6\_14\_receiver.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$pwd.\+h$>$}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{z6__14__receiver_8c_ad5131de0b5004c64db5e79e8aac7471e}{L\+I\+N\+E\+\_\+\+L\+E\+N\+G\+TH}}~10
+\item 
+\#define \mbox{\hyperlink{z6__14__receiver_8c_ada74e7db007a68e763f20c17f2985356}{R\+E\+AD}}~\char`\"{}r\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{z6__14__receiver_8c_a33a9b17c718862ede42e355e2e5efbf5}{end\+Signal\+Handler}} (int sig\+\_\+num)
+\item 
+void \mbox{\hyperlink{z6__14__receiver_8c_a05522d71c837c0af258b7eeefa5e4364}{blocked\+Signal\+Handler}} (int sig\+\_\+num)
+\item 
+void \mbox{\hyperlink{z6__14__receiver_8c_a46863d0b2519a49b151fae261fd2f7dc}{sigalrm\+\_\+handler}} (int sig\+\_\+num)
+\item 
+void \mbox{\hyperlink{z6__14__receiver_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}{trim}} (char $\ast$text)
+\item 
+void \mbox{\hyperlink{z6__14__receiver_8c_ae26b73e8ffef5c7ff468e3144651fd07}{get\+Signals}} (char $\ast$block, char $\ast$end)
+\item 
+void \mbox{\hyperlink{z6__14__receiver_8c_ac91e614835aeb81a713587e558ced4a2}{handler\+Usr1}} (int sig\+\_\+num)
+\item 
+void \mbox{\hyperlink{z6__14__receiver_8c_ab260c2b9a10d33139e8255a13b6105fa}{block\+Signal}} ()
+\item 
+void \mbox{\hyperlink{z6__14__receiver_8c_a71f167e5c86b7a593bd878f9606e4ec8}{unblock\+Signals}} ()
+\item 
+void \mbox{\hyperlink{z6__14__receiver_8c_ad09480c960d7dc64308e1bde1441bd62}{check\+Changes}} ()
+\item 
+int \mbox{\hyperlink{z6__14__receiver_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{z6__14__receiver_8c_ad5131de0b5004c64db5e79e8aac7471e}\label{z6__14__receiver_8c_ad5131de0b5004c64db5e79e8aac7471e}} 
+\index{z6\_14\_receiver.c@{z6\_14\_receiver.c}!LINE\_LENGTH@{LINE\_LENGTH}}
+\index{LINE\_LENGTH@{LINE\_LENGTH}!z6\_14\_receiver.c@{z6\_14\_receiver.c}}
+\subsubsection{\texorpdfstring{LINE\_LENGTH}{LINE\_LENGTH}}
+{\footnotesize\ttfamily \#define L\+I\+N\+E\+\_\+\+L\+E\+N\+G\+TH~10}
+
+\mbox{\Hypertarget{z6__14__receiver_8c_ada74e7db007a68e763f20c17f2985356}\label{z6__14__receiver_8c_ada74e7db007a68e763f20c17f2985356}} 
+\index{z6\_14\_receiver.c@{z6\_14\_receiver.c}!READ@{READ}}
+\index{READ@{READ}!z6\_14\_receiver.c@{z6\_14\_receiver.c}}
+\subsubsection{\texorpdfstring{READ}{READ}}
+{\footnotesize\ttfamily \#define R\+E\+AD~\char`\"{}r\char`\"{}}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{z6__14__receiver_8c_a05522d71c837c0af258b7eeefa5e4364}\label{z6__14__receiver_8c_a05522d71c837c0af258b7eeefa5e4364}} 
+\index{z6\_14\_receiver.c@{z6\_14\_receiver.c}!blockedSignalHandler@{blockedSignalHandler}}
+\index{blockedSignalHandler@{blockedSignalHandler}!z6\_14\_receiver.c@{z6\_14\_receiver.c}}
+\subsubsection{\texorpdfstring{blockedSignalHandler()}{blockedSignalHandler()}}
+{\footnotesize\ttfamily void blocked\+Signal\+Handler (\begin{DoxyParamCaption}\item[{int}]{sig\+\_\+num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__14__receiver_8c_ab260c2b9a10d33139e8255a13b6105fa}\label{z6__14__receiver_8c_ab260c2b9a10d33139e8255a13b6105fa}} 
+\index{z6\_14\_receiver.c@{z6\_14\_receiver.c}!blockSignal@{blockSignal}}
+\index{blockSignal@{blockSignal}!z6\_14\_receiver.c@{z6\_14\_receiver.c}}
+\subsubsection{\texorpdfstring{blockSignal()}{blockSignal()}}
+{\footnotesize\ttfamily void block\+Signal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__14__receiver_8c_ad09480c960d7dc64308e1bde1441bd62}\label{z6__14__receiver_8c_ad09480c960d7dc64308e1bde1441bd62}} 
+\index{z6\_14\_receiver.c@{z6\_14\_receiver.c}!checkChanges@{checkChanges}}
+\index{checkChanges@{checkChanges}!z6\_14\_receiver.c@{z6\_14\_receiver.c}}
+\subsubsection{\texorpdfstring{checkChanges()}{checkChanges()}}
+{\footnotesize\ttfamily void check\+Changes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__14__receiver_8c_a33a9b17c718862ede42e355e2e5efbf5}\label{z6__14__receiver_8c_a33a9b17c718862ede42e355e2e5efbf5}} 
+\index{z6\_14\_receiver.c@{z6\_14\_receiver.c}!endSignalHandler@{endSignalHandler}}
+\index{endSignalHandler@{endSignalHandler}!z6\_14\_receiver.c@{z6\_14\_receiver.c}}
+\subsubsection{\texorpdfstring{endSignalHandler()}{endSignalHandler()}}
+{\footnotesize\ttfamily void end\+Signal\+Handler (\begin{DoxyParamCaption}\item[{int}]{sig\+\_\+num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__14__receiver_8c_ae26b73e8ffef5c7ff468e3144651fd07}\label{z6__14__receiver_8c_ae26b73e8ffef5c7ff468e3144651fd07}} 
+\index{z6\_14\_receiver.c@{z6\_14\_receiver.c}!getSignals@{getSignals}}
+\index{getSignals@{getSignals}!z6\_14\_receiver.c@{z6\_14\_receiver.c}}
+\subsubsection{\texorpdfstring{getSignals()}{getSignals()}}
+{\footnotesize\ttfamily void get\+Signals (\begin{DoxyParamCaption}\item[{char $\ast$}]{block,  }\item[{char $\ast$}]{end }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__14__receiver_8c_ac91e614835aeb81a713587e558ced4a2}\label{z6__14__receiver_8c_ac91e614835aeb81a713587e558ced4a2}} 
+\index{z6\_14\_receiver.c@{z6\_14\_receiver.c}!handlerUsr1@{handlerUsr1}}
+\index{handlerUsr1@{handlerUsr1}!z6\_14\_receiver.c@{z6\_14\_receiver.c}}
+\subsubsection{\texorpdfstring{handlerUsr1()}{handlerUsr1()}}
+{\footnotesize\ttfamily void handler\+Usr1 (\begin{DoxyParamCaption}\item[{int}]{sig\+\_\+num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__14__receiver_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{z6__14__receiver_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{z6\_14\_receiver.c@{z6\_14\_receiver.c}!main@{main}}
+\index{main@{main}!z6\_14\_receiver.c@{z6\_14\_receiver.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__14__receiver_8c_a46863d0b2519a49b151fae261fd2f7dc}\label{z6__14__receiver_8c_a46863d0b2519a49b151fae261fd2f7dc}} 
+\index{z6\_14\_receiver.c@{z6\_14\_receiver.c}!sigalrm\_handler@{sigalrm\_handler}}
+\index{sigalrm\_handler@{sigalrm\_handler}!z6\_14\_receiver.c@{z6\_14\_receiver.c}}
+\subsubsection{\texorpdfstring{sigalrm\_handler()}{sigalrm\_handler()}}
+{\footnotesize\ttfamily void sigalrm\+\_\+handler (\begin{DoxyParamCaption}\item[{int}]{sig\+\_\+num }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__14__receiver_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}\label{z6__14__receiver_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}} 
+\index{z6\_14\_receiver.c@{z6\_14\_receiver.c}!trim@{trim}}
+\index{trim@{trim}!z6\_14\_receiver.c@{z6\_14\_receiver.c}}
+\subsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily void trim (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z6__14__receiver_8c_a71f167e5c86b7a593bd878f9606e4ec8}\label{z6__14__receiver_8c_a71f167e5c86b7a593bd878f9606e4ec8}} 
+\index{z6\_14\_receiver.c@{z6\_14\_receiver.c}!unblockSignals@{unblockSignals}}
+\index{unblockSignals@{unblockSignals}!z6\_14\_receiver.c@{z6\_14\_receiver.c}}
+\subsubsection{\texorpdfstring{unblockSignals()}{unblockSignals()}}
+{\footnotesize\ttfamily void unblock\+Signals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

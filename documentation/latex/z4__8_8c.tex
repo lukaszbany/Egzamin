@@ -1,0 +1,93 @@
+\hypertarget{z4__8_8c}{}\section{Dokumentacja pliku psys/z4\+\_\+8.c}
+\label{z4__8_8c}\index{psys/z4\_8.c@{psys/z4\_8.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$getopt.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$ftw.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{z4__8_8c_a78c99ffd76a7bb3c8c74db76207e9ab4}{\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+CE}}~1
+\item 
+\#define \mbox{\hyperlink{z4__8_8c_ac7b30cf7f83588cb6bc1c716be66f5a2}{\+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+E\+X\+T\+E\+N\+D\+ED}}~1
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{z4__8_8c_ae03d127d29be2cce05df0c98fab2a13a}{format\+Size}} (long size)
+\item 
+char \mbox{\hyperlink{z4__8_8c_ad7432e55fd433722717ba25433d9884a}{get\+Unit}} ()
+\item 
+bool \mbox{\hyperlink{z4__8_8c_af552387fee24e2454fd71c7f65108717}{should\+Print\+File\+Info}} (const char $\ast$path)
+\item 
+int \mbox{\hyperlink{z4__8_8c_afe6d371efd752a36b2bb075e7135df89}{sum\+Sizes}} (const char $\ast$path, const struct stat $\ast$stat\+\_\+buf, int type, struct F\+TW $\ast$ftwp)
+\item 
+int \mbox{\hyperlink{z4__8_8c_a80f2527f2aaaaf02ab0d0b040e90b837}{sum\+Size\+And\+Print}} (const char $\ast$path, const struct stat $\ast$stat\+\_\+buf, int type, struct F\+TW $\ast$ftwp)
+\item 
+void \mbox{\hyperlink{z4__8_8c_aa2482595e5a5382e292d7ef9e728b4c6}{check\+Option}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{z4__8_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{z4__8_8c_a78c99ffd76a7bb3c8c74db76207e9ab4}\label{z4__8_8c_a78c99ffd76a7bb3c8c74db76207e9ab4}} 
+\index{z4\_8.c@{z4\_8.c}!\_XOPEN\_SOURCE@{\_XOPEN\_SOURCE}}
+\index{\_XOPEN\_SOURCE@{\_XOPEN\_SOURCE}!z4\_8.c@{z4\_8.c}}
+\subsubsection{\texorpdfstring{\_XOPEN\_SOURCE}{\_XOPEN\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+CE~1}
+
+\mbox{\Hypertarget{z4__8_8c_ac7b30cf7f83588cb6bc1c716be66f5a2}\label{z4__8_8c_ac7b30cf7f83588cb6bc1c716be66f5a2}} 
+\index{z4\_8.c@{z4\_8.c}!\_XOPEN\_SOURCE\_EXTENDED@{\_XOPEN\_SOURCE\_EXTENDED}}
+\index{\_XOPEN\_SOURCE\_EXTENDED@{\_XOPEN\_SOURCE\_EXTENDED}!z4\_8.c@{z4\_8.c}}
+\subsubsection{\texorpdfstring{\_XOPEN\_SOURCE\_EXTENDED}{\_XOPEN\_SOURCE\_EXTENDED}}
+{\footnotesize\ttfamily \#define \+\_\+\+X\+O\+P\+E\+N\+\_\+\+S\+O\+U\+R\+C\+E\+\_\+\+E\+X\+T\+E\+N\+D\+ED~1}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{z4__8_8c_aa2482595e5a5382e292d7ef9e728b4c6}\label{z4__8_8c_aa2482595e5a5382e292d7ef9e728b4c6}} 
+\index{z4\_8.c@{z4\_8.c}!checkOption@{checkOption}}
+\index{checkOption@{checkOption}!z4\_8.c@{z4\_8.c}}
+\subsubsection{\texorpdfstring{checkOption()}{checkOption()}}
+{\footnotesize\ttfamily void check\+Option (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z4__8_8c_ae03d127d29be2cce05df0c98fab2a13a}\label{z4__8_8c_ae03d127d29be2cce05df0c98fab2a13a}} 
+\index{z4\_8.c@{z4\_8.c}!formatSize@{formatSize}}
+\index{formatSize@{formatSize}!z4\_8.c@{z4\_8.c}}
+\subsubsection{\texorpdfstring{formatSize()}{formatSize()}}
+{\footnotesize\ttfamily long format\+Size (\begin{DoxyParamCaption}\item[{long}]{size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z4__8_8c_ad7432e55fd433722717ba25433d9884a}\label{z4__8_8c_ad7432e55fd433722717ba25433d9884a}} 
+\index{z4\_8.c@{z4\_8.c}!getUnit@{getUnit}}
+\index{getUnit@{getUnit}!z4\_8.c@{z4\_8.c}}
+\subsubsection{\texorpdfstring{getUnit()}{getUnit()}}
+{\footnotesize\ttfamily char get\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z4__8_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{z4__8_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{z4\_8.c@{z4\_8.c}!main@{main}}
+\index{main@{main}!z4\_8.c@{z4\_8.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z4__8_8c_af552387fee24e2454fd71c7f65108717}\label{z4__8_8c_af552387fee24e2454fd71c7f65108717}} 
+\index{z4\_8.c@{z4\_8.c}!shouldPrintFileInfo@{shouldPrintFileInfo}}
+\index{shouldPrintFileInfo@{shouldPrintFileInfo}!z4\_8.c@{z4\_8.c}}
+\subsubsection{\texorpdfstring{shouldPrintFileInfo()}{shouldPrintFileInfo()}}
+{\footnotesize\ttfamily bool should\+Print\+File\+Info (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z4__8_8c_a80f2527f2aaaaf02ab0d0b040e90b837}\label{z4__8_8c_a80f2527f2aaaaf02ab0d0b040e90b837}} 
+\index{z4\_8.c@{z4\_8.c}!sumSizeAndPrint@{sumSizeAndPrint}}
+\index{sumSizeAndPrint@{sumSizeAndPrint}!z4\_8.c@{z4\_8.c}}
+\subsubsection{\texorpdfstring{sumSizeAndPrint()}{sumSizeAndPrint()}}
+{\footnotesize\ttfamily int sum\+Size\+And\+Print (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{const struct stat $\ast$}]{stat\+\_\+buf,  }\item[{int}]{type,  }\item[{struct F\+TW $\ast$}]{ftwp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{z4__8_8c_afe6d371efd752a36b2bb075e7135df89}\label{z4__8_8c_afe6d371efd752a36b2bb075e7135df89}} 
+\index{z4\_8.c@{z4\_8.c}!sumSizes@{sumSizes}}
+\index{sumSizes@{sumSizes}!z4\_8.c@{z4\_8.c}}
+\subsubsection{\texorpdfstring{sumSizes()}{sumSizes()}}
+{\footnotesize\ttfamily int sum\+Sizes (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{const struct stat $\ast$}]{stat\+\_\+buf,  }\item[{int}]{type,  }\item[{struct F\+TW $\ast$}]{ftwp }\end{DoxyParamCaption})}
+

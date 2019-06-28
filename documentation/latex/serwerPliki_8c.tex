@@ -1,0 +1,63 @@
+\hypertarget{serwerPliki_8c}{}\section{Dokumentacja pliku pap/zaj7/zadanie8/serwer\+Pliki.c}
+\label{serwerPliki_8c}\index{pap/zaj7/zadanie8/serwerPliki.c@{pap/zaj7/zadanie8/serwerPliki.c}}
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}mylib.\+h\char`\"{}}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{serwerPliki_8c_a16b710f592bf8f7900666392adc444dc}{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+RT}}~9876
+\item 
+\#define \mbox{\hyperlink{serwerPliki_8c_ad7871643c05865c80f5d8050aead2b57}{M\+A\+X\+B\+UF}}~1024
+\item 
+\#define \mbox{\hyperlink{serwerPliki_8c_af24f428a59a4f0f3bca0428de5d8958e}{N\+E\+T\+W\+O\+RK}}~\char`\"{}127.\+0.\+0.\+2\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{serwerPliki_8c_a3eb60b93b6901c2acd5eb7df758d81b0}{get\+Port}} (int argc, char $\ast$const $\ast$argv)
+\item 
+int \mbox{\hyperlink{serwerPliki_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{serwerPliki_8c_a16b710f592bf8f7900666392adc444dc}\label{serwerPliki_8c_a16b710f592bf8f7900666392adc444dc}} 
+\index{serwerPliki.c@{serwerPliki.c}!DEFAULT\_PORT@{DEFAULT\_PORT}}
+\index{DEFAULT\_PORT@{DEFAULT\_PORT}!serwerPliki.c@{serwerPliki.c}}
+\subsubsection{\texorpdfstring{DEFAULT\_PORT}{DEFAULT\_PORT}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+RT~9876}
+
+\mbox{\Hypertarget{serwerPliki_8c_ad7871643c05865c80f5d8050aead2b57}\label{serwerPliki_8c_ad7871643c05865c80f5d8050aead2b57}} 
+\index{serwerPliki.c@{serwerPliki.c}!MAXBUF@{MAXBUF}}
+\index{MAXBUF@{MAXBUF}!serwerPliki.c@{serwerPliki.c}}
+\subsubsection{\texorpdfstring{MAXBUF}{MAXBUF}}
+{\footnotesize\ttfamily \#define M\+A\+X\+B\+UF~1024}
+
+\mbox{\Hypertarget{serwerPliki_8c_af24f428a59a4f0f3bca0428de5d8958e}\label{serwerPliki_8c_af24f428a59a4f0f3bca0428de5d8958e}} 
+\index{serwerPliki.c@{serwerPliki.c}!NETWORK@{NETWORK}}
+\index{NETWORK@{NETWORK}!serwerPliki.c@{serwerPliki.c}}
+\subsubsection{\texorpdfstring{NETWORK}{NETWORK}}
+{\footnotesize\ttfamily \#define N\+E\+T\+W\+O\+RK~\char`\"{}127.\+0.\+0.\+2\char`\"{}}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{serwerPliki_8c_a3eb60b93b6901c2acd5eb7df758d81b0}\label{serwerPliki_8c_a3eb60b93b6901c2acd5eb7df758d81b0}} 
+\index{serwerPliki.c@{serwerPliki.c}!getPort@{getPort}}
+\index{getPort@{getPort}!serwerPliki.c@{serwerPliki.c}}
+\subsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily int get\+Port (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$const $\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwerPliki_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{serwerPliki_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{serwerPliki.c@{serwerPliki.c}!main@{main}}
+\index{main@{main}!serwerPliki.c@{serwerPliki.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+

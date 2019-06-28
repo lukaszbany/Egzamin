@@ -1,0 +1,9 @@
+
+    <div class="jumbotron">
+        <h1 class="display-4">Egzamin v 1.0</h1>
+        <p class="lead">Witamy na stronie automatycznego egzaminu.</p>
+        <hr class="my-4">
+        <p>Strona powstała jako projekt na przedmion Programowanie Aplikacji Klient-Serwer. Autorem projektu jest Łukasz Bany.</p>
+        <a class="btn btn-primary btn-lg" href="/login" role="button">Zaloguj się</a>
+    </div>
+</div>

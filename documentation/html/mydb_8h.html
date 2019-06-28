@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.15"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Project: Dokumentacja pliku libs/mydb.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">My Project
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.15 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html">libs</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definicje</a> &#124;
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku mydb.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;mysql/mysql.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;sys/syslog.h&gt;</code><br />
+</div>
+<p><a href="mydb_8h_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:abbcb64a4f71ba470ccd4a8c25496772e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#abbcb64a4f71ba470ccd4a8c25496772e">INTERNAL_SERVER_ERROR</a>&#160;&#160;&#160;500</td></tr>
+<tr class="separator:abbcb64a4f71ba470ccd4a8c25496772e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a2945f047f8998d636b50a184c99a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#aa3a2945f047f8998d636b50a184c99a8">DB_SERVER</a>&#160;&#160;&#160;&quot;localhost&quot;</td></tr>
+<tr class="separator:aa3a2945f047f8998d636b50a184c99a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a91ca47e7ff6fac6bc8fac0809110ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#a8a91ca47e7ff6fac6bc8fac0809110ea">DB_DATABASE</a>&#160;&#160;&#160;&quot;egzamin&quot;</td></tr>
+<tr class="separator:a8a91ca47e7ff6fac6bc8fac0809110ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf6e62f788a1c295424bca52dfd57dff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#adf6e62f788a1c295424bca52dfd57dff">DB_LOGIN</a>&#160;&#160;&#160;&quot;egzamin&quot;</td></tr>
+<tr class="separator:adf6e62f788a1c295424bca52dfd57dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a575b56de3d90288721473c6e8966aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#a4a575b56de3d90288721473c6e8966aa">DB_PASSWORD</a>&#160;&#160;&#160;&quot;6}H46aeEr&amp;#G&quot;</td></tr>
+<tr class="separator:a4a575b56de3d90288721473c6e8966aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1d47685776b48c3e5844d76e241c93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#add1d47685776b48c3e5844d76e241c93">MAX_QUERY</a>&#160;&#160;&#160;256</td></tr>
+<tr class="separator:add1d47685776b48c3e5844d76e241c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c9cd497d3ec561fd23911ee18ba32d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#a70c9cd497d3ec561fd23911ee18ba32d">INSERT_SESSION</a>&#160;&#160;&#160;&quot;INSERT INTO `session` (`session_id`, `user_id`, `logged_in`) VALUES ('%s', NULL, FALSE)&quot;</td></tr>
+<tr class="separator:a70c9cd497d3ec561fd23911ee18ba32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a52e40005a1cc43293cf92b54dcac73"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#a2a52e40005a1cc43293cf92b54dcac73">GET_SESSION</a>&#160;&#160;&#160;&quot;SELECT * FROM `session` WHERE session_id = '%s'&quot;</td></tr>
+<tr class="separator:a2a52e40005a1cc43293cf92b54dcac73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:a7cf6e29bdeb6bfd376259a61344fe988"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#a7cf6e29bdeb6bfd376259a61344fe988">databaseError</a> (MYSQL *connection)</td></tr>
+<tr class="separator:a7cf6e29bdeb6bfd376259a61344fe988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0f4d3a9631915e2c410f0e19361f8e8"><td class="memItemLeft" align="right" valign="top">MYSQL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#ad0f4d3a9631915e2c410f0e19361f8e8">connectToDatabase</a> ()</td></tr>
+<tr class="separator:ad0f4d3a9631915e2c410f0e19361f8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed3bbf4798b6281e09f75f4a641bd6fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#aed3bbf4798b6281e09f75f4a641bd6fb">runQuery</a> (MYSQL *connection, char *query)</td></tr>
+<tr class="separator:aed3bbf4798b6281e09f75f4a641bd6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac42166a977128e050ae17430f6ee8746"><td class="memItemLeft" align="right" valign="top">MYSQL_RES *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#ac42166a977128e050ae17430f6ee8746">getResult</a> (MYSQL *connection)</td></tr>
+<tr class="separator:ac42166a977128e050ae17430f6ee8746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad62254d31aef80cd4a6bd67ef8ecaa5f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8h.html#ad62254d31aef80cd4a6bd67ef8ecaa5f">saveSession</a> (char *sessionId)</td></tr>
+<tr class="separator:ad62254d31aef80cd4a6bd67ef8ecaa5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a id="a8a91ca47e7ff6fac6bc8fac0809110ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a91ca47e7ff6fac6bc8fac0809110ea">&#9670;&nbsp;</a></span>DB_DATABASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DB_DATABASE&#160;&#160;&#160;&quot;egzamin&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adf6e62f788a1c295424bca52dfd57dff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf6e62f788a1c295424bca52dfd57dff">&#9670;&nbsp;</a></span>DB_LOGIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DB_LOGIN&#160;&#160;&#160;&quot;egzamin&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a575b56de3d90288721473c6e8966aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a575b56de3d90288721473c6e8966aa">&#9670;&nbsp;</a></span>DB_PASSWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DB_PASSWORD&#160;&#160;&#160;&quot;6}H46aeEr&amp;#G&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa3a2945f047f8998d636b50a184c99a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3a2945f047f8998d636b50a184c99a8">&#9670;&nbsp;</a></span>DB_SERVER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DB_SERVER&#160;&#160;&#160;&quot;localhost&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2a52e40005a1cc43293cf92b54dcac73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a52e40005a1cc43293cf92b54dcac73">&#9670;&nbsp;</a></span>GET_SESSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_SESSION&#160;&#160;&#160;&quot;SELECT * FROM `session` WHERE session_id = '%s'&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a70c9cd497d3ec561fd23911ee18ba32d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70c9cd497d3ec561fd23911ee18ba32d">&#9670;&nbsp;</a></span>INSERT_SESSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INSERT_SESSION&#160;&#160;&#160;&quot;INSERT INTO `session` (`session_id`, `user_id`, `logged_in`) VALUES ('%s', NULL, FALSE)&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abbcb64a4f71ba470ccd4a8c25496772e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbcb64a4f71ba470ccd4a8c25496772e">&#9670;&nbsp;</a></span>INTERNAL_SERVER_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INTERNAL_SERVER_ERROR&#160;&#160;&#160;500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add1d47685776b48c3e5844d76e241c93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add1d47685776b48c3e5844d76e241c93">&#9670;&nbsp;</a></span>MAX_QUERY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_QUERY&#160;&#160;&#160;256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="ad0f4d3a9631915e2c410f0e19361f8e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0f4d3a9631915e2c410f0e19361f8e8">&#9670;&nbsp;</a></span>connectToDatabase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MYSQL * connectToDatabase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Uruchamia połączenie z bazą (wymagane, żeby wykonywać operacje na bazie).</p>
+<dl class="section return"><dt>Zwraca</dt><dd>wskaźnik do struktury MYSQL zawierającej informacje o uzyskanym połączeniu lub NULL, jeśli połączenie się nie udało. </dd></dl>
+
+</div>
+</div>
+<a id="a7cf6e29bdeb6bfd376259a61344fe988"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cf6e29bdeb6bfd376259a61344fe988">&#9670;&nbsp;</a></span>databaseError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int databaseError </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>connection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Loguje lub wypisuje na ekran komunikat błędu dotyczącego bazy, zamyka połączenie i zwraca błąd INTERNAL_SERVER_ERROR.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connection</td><td>połączenie z bazą, którego dotyczy błąd </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>500 (INTERNAL_SERVER_ERROR) </dd></dl>
+
+</div>
+</div>
+<a id="ac42166a977128e050ae17430f6ee8746"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac42166a977128e050ae17430f6ee8746">&#9670;&nbsp;</a></span>getResult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MYSQL_RES* getResult </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>connection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera wynik ostatniego zapytania do bazy.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connection</td><td>aktywne połączenie z bazą </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="aed3bbf4798b6281e09f75f4a641bd6fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed3bbf4798b6281e09f75f4a641bd6fb">&#9670;&nbsp;</a></span>runQuery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int runQuery </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>connection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>query</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Uruchamia zapytanie do bazy.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connection</td><td>aktywne połączenie z bazą </td></tr>
+    <tr><td class="paramname">query</td><td>zapytanie SQL </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="ad62254d31aef80cd4a6bd67ef8ecaa5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad62254d31aef80cd4a6bd67ef8ecaa5f">&#9670;&nbsp;</a></span>saveSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int saveSession </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>sessionId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zapisuje daną sesję do bazy (tylko jeśli nie była zapisana wcześniej).</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sessionId</td><td>numer sesji do zapisania </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
+</body>
+</html>

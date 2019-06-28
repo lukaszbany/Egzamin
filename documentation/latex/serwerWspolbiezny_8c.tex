@@ -1,0 +1,93 @@
+\hypertarget{serwerWspolbiezny_8c}{}\section{Dokumentacja pliku pap/zaj7/zadanie9/serwer\+Wspolbiezny.c}
+\label{serwerWspolbiezny_8c}\index{pap/zaj7/zadanie9/serwerWspolbiezny.c@{pap/zaj7/zadanie9/serwerWspolbiezny.c}}
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}mylib.\+h\char`\"{}}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{serwerWspolbiezny_8c_a16b710f592bf8f7900666392adc444dc}{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+RT}}~9876
+\item 
+\#define \mbox{\hyperlink{serwerWspolbiezny_8c_ad7871643c05865c80f5d8050aead2b57}{M\+A\+X\+B\+UF}}~1024
+\item 
+\#define \mbox{\hyperlink{serwerWspolbiezny_8c_a0a8f91f93d75a07f0ae45077db45b3eb}{M\+A\+X\+\_\+\+C\+L\+I\+E\+N\+TS}}~2
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{serwerWspolbiezny_8c_a3eb60b93b6901c2acd5eb7df758d81b0}{get\+Port}} (int argc, char $\ast$const $\ast$argv)
+\item 
+void \mbox{\hyperlink{serwerWspolbiezny_8c_aff7a31e8c78a7dc3272f97c7ea912c50}{handle\+Connection}} (int connection\+Fd)
+\item 
+void \mbox{\hyperlink{serwerWspolbiezny_8c_a7dd73bef69e22bcf38b44cecfbc12712}{sig\+\_\+child}} (int s)
+\item 
+int \mbox{\hyperlink{serwerWspolbiezny_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Zmienne}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{serwerWspolbiezny_8c_a1f5bcbe2b6bbbf057f1e857d6466ac34}{active\+Connections}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{serwerWspolbiezny_8c_a16b710f592bf8f7900666392adc444dc}\label{serwerWspolbiezny_8c_a16b710f592bf8f7900666392adc444dc}} 
+\index{serwerWspolbiezny.c@{serwerWspolbiezny.c}!DEFAULT\_PORT@{DEFAULT\_PORT}}
+\index{DEFAULT\_PORT@{DEFAULT\_PORT}!serwerWspolbiezny.c@{serwerWspolbiezny.c}}
+\subsubsection{\texorpdfstring{DEFAULT\_PORT}{DEFAULT\_PORT}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+RT~9876}
+
+\mbox{\Hypertarget{serwerWspolbiezny_8c_a0a8f91f93d75a07f0ae45077db45b3eb}\label{serwerWspolbiezny_8c_a0a8f91f93d75a07f0ae45077db45b3eb}} 
+\index{serwerWspolbiezny.c@{serwerWspolbiezny.c}!MAX\_CLIENTS@{MAX\_CLIENTS}}
+\index{MAX\_CLIENTS@{MAX\_CLIENTS}!serwerWspolbiezny.c@{serwerWspolbiezny.c}}
+\subsubsection{\texorpdfstring{MAX\_CLIENTS}{MAX\_CLIENTS}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+C\+L\+I\+E\+N\+TS~2}
+
+\mbox{\Hypertarget{serwerWspolbiezny_8c_ad7871643c05865c80f5d8050aead2b57}\label{serwerWspolbiezny_8c_ad7871643c05865c80f5d8050aead2b57}} 
+\index{serwerWspolbiezny.c@{serwerWspolbiezny.c}!MAXBUF@{MAXBUF}}
+\index{MAXBUF@{MAXBUF}!serwerWspolbiezny.c@{serwerWspolbiezny.c}}
+\subsubsection{\texorpdfstring{MAXBUF}{MAXBUF}}
+{\footnotesize\ttfamily \#define M\+A\+X\+B\+UF~1024}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{serwerWspolbiezny_8c_a3eb60b93b6901c2acd5eb7df758d81b0}\label{serwerWspolbiezny_8c_a3eb60b93b6901c2acd5eb7df758d81b0}} 
+\index{serwerWspolbiezny.c@{serwerWspolbiezny.c}!getPort@{getPort}}
+\index{getPort@{getPort}!serwerWspolbiezny.c@{serwerWspolbiezny.c}}
+\subsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily int get\+Port (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$const $\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwerWspolbiezny_8c_aff7a31e8c78a7dc3272f97c7ea912c50}\label{serwerWspolbiezny_8c_aff7a31e8c78a7dc3272f97c7ea912c50}} 
+\index{serwerWspolbiezny.c@{serwerWspolbiezny.c}!handleConnection@{handleConnection}}
+\index{handleConnection@{handleConnection}!serwerWspolbiezny.c@{serwerWspolbiezny.c}}
+\subsubsection{\texorpdfstring{handleConnection()}{handleConnection()}}
+{\footnotesize\ttfamily void handle\+Connection (\begin{DoxyParamCaption}\item[{int}]{connection\+Fd }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwerWspolbiezny_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{serwerWspolbiezny_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{serwerWspolbiezny.c@{serwerWspolbiezny.c}!main@{main}}
+\index{main@{main}!serwerWspolbiezny.c@{serwerWspolbiezny.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{serwerWspolbiezny_8c_a7dd73bef69e22bcf38b44cecfbc12712}\label{serwerWspolbiezny_8c_a7dd73bef69e22bcf38b44cecfbc12712}} 
+\index{serwerWspolbiezny.c@{serwerWspolbiezny.c}!sig\_child@{sig\_child}}
+\index{sig\_child@{sig\_child}!serwerWspolbiezny.c@{serwerWspolbiezny.c}}
+\subsubsection{\texorpdfstring{sig\_child()}{sig\_child()}}
+{\footnotesize\ttfamily void sig\+\_\+child (\begin{DoxyParamCaption}\item[{int}]{s }\end{DoxyParamCaption})}
+
+
+
+\subsection{Dokumentacja zmiennych}
+\mbox{\Hypertarget{serwerWspolbiezny_8c_a1f5bcbe2b6bbbf057f1e857d6466ac34}\label{serwerWspolbiezny_8c_a1f5bcbe2b6bbbf057f1e857d6466ac34}} 
+\index{serwerWspolbiezny.c@{serwerWspolbiezny.c}!activeConnections@{activeConnections}}
+\index{activeConnections@{activeConnections}!serwerWspolbiezny.c@{serwerWspolbiezny.c}}
+\subsubsection{\texorpdfstring{activeConnections}{activeConnections}}
+{\footnotesize\ttfamily int active\+Connections = 0}
+

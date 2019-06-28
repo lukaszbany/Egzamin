@@ -1,0 +1,168 @@
+\hypertarget{mydb_8h}{}\section{Dokumentacja pliku libs/mydb.h}
+\label{mydb_8h}\index{libs/mydb.h@{libs/mydb.h}}
+{\ttfamily \#include $<$mysql/mysql.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$sys/syslog.\+h$>$}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mydb_8h_abbcb64a4f71ba470ccd4a8c25496772e}{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR}}~500
+\item 
+\#define \mbox{\hyperlink{mydb_8h_aa3a2945f047f8998d636b50a184c99a8}{D\+B\+\_\+\+S\+E\+R\+V\+ER}}~\char`\"{}localhost\char`\"{}
+\item 
+\#define \mbox{\hyperlink{mydb_8h_a8a91ca47e7ff6fac6bc8fac0809110ea}{D\+B\+\_\+\+D\+A\+T\+A\+B\+A\+SE}}~\char`\"{}egzamin\char`\"{}
+\item 
+\#define \mbox{\hyperlink{mydb_8h_adf6e62f788a1c295424bca52dfd57dff}{D\+B\+\_\+\+L\+O\+G\+IN}}~\char`\"{}egzamin\char`\"{}
+\item 
+\#define \mbox{\hyperlink{mydb_8h_a4a575b56de3d90288721473c6e8966aa}{D\+B\+\_\+\+P\+A\+S\+S\+W\+O\+RD}}~\char`\"{}6\}H46ae\+Er\&\#G\char`\"{}
+\item 
+\#define \mbox{\hyperlink{mydb_8h_add1d47685776b48c3e5844d76e241c93}{M\+A\+X\+\_\+\+Q\+U\+E\+RY}}~256
+\item 
+\#define \mbox{\hyperlink{mydb_8h_a70c9cd497d3ec561fd23911ee18ba32d}{I\+N\+S\+E\+R\+T\+\_\+\+S\+E\+S\+S\+I\+ON}}~\char`\"{}I\+N\+S\+E\+RT I\+N\+TO \`{}session\`{} (\`{}session\+\_\+id\`{}, \`{}user\+\_\+id\`{}, \`{}logged\+\_\+in\`{}) V\+A\+L\+U\+ES (\textquotesingle{}\%s\textquotesingle{}, N\+U\+LL, F\+A\+L\+SE)\char`\"{}
+\item 
+\#define \mbox{\hyperlink{mydb_8h_a2a52e40005a1cc43293cf92b54dcac73}{G\+E\+T\+\_\+\+S\+E\+S\+S\+I\+ON}}~\char`\"{}S\+E\+L\+E\+CT $\ast$ F\+R\+OM \`{}session\`{} W\+H\+E\+RE session\+\_\+id = \textquotesingle{}\%s\textquotesingle{}\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mydb_8h_a7cf6e29bdeb6bfd376259a61344fe988}{database\+Error}} (M\+Y\+S\+QL $\ast$connection)
+\item 
+M\+Y\+S\+QL $\ast$ \mbox{\hyperlink{mydb_8h_ad0f4d3a9631915e2c410f0e19361f8e8}{connect\+To\+Database}} ()
+\item 
+int \mbox{\hyperlink{mydb_8h_aed3bbf4798b6281e09f75f4a641bd6fb}{run\+Query}} (M\+Y\+S\+QL $\ast$connection, char $\ast$query)
+\item 
+M\+Y\+S\+Q\+L\+\_\+\+R\+ES $\ast$ \mbox{\hyperlink{mydb_8h_ac42166a977128e050ae17430f6ee8746}{get\+Result}} (M\+Y\+S\+QL $\ast$connection)
+\item 
+int \mbox{\hyperlink{mydb_8h_ad62254d31aef80cd4a6bd67ef8ecaa5f}{save\+Session}} (char $\ast$session\+Id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{mydb_8h_a8a91ca47e7ff6fac6bc8fac0809110ea}\label{mydb_8h_a8a91ca47e7ff6fac6bc8fac0809110ea}} 
+\index{mydb.h@{mydb.h}!DB\_DATABASE@{DB\_DATABASE}}
+\index{DB\_DATABASE@{DB\_DATABASE}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{DB\_DATABASE}{DB\_DATABASE}}
+{\footnotesize\ttfamily \#define D\+B\+\_\+\+D\+A\+T\+A\+B\+A\+SE~\char`\"{}egzamin\char`\"{}}
+
+\mbox{\Hypertarget{mydb_8h_adf6e62f788a1c295424bca52dfd57dff}\label{mydb_8h_adf6e62f788a1c295424bca52dfd57dff}} 
+\index{mydb.h@{mydb.h}!DB\_LOGIN@{DB\_LOGIN}}
+\index{DB\_LOGIN@{DB\_LOGIN}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{DB\_LOGIN}{DB\_LOGIN}}
+{\footnotesize\ttfamily \#define D\+B\+\_\+\+L\+O\+G\+IN~\char`\"{}egzamin\char`\"{}}
+
+\mbox{\Hypertarget{mydb_8h_a4a575b56de3d90288721473c6e8966aa}\label{mydb_8h_a4a575b56de3d90288721473c6e8966aa}} 
+\index{mydb.h@{mydb.h}!DB\_PASSWORD@{DB\_PASSWORD}}
+\index{DB\_PASSWORD@{DB\_PASSWORD}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{DB\_PASSWORD}{DB\_PASSWORD}}
+{\footnotesize\ttfamily \#define D\+B\+\_\+\+P\+A\+S\+S\+W\+O\+RD~\char`\"{}6\}H46ae\+Er\&\#G\char`\"{}}
+
+\mbox{\Hypertarget{mydb_8h_aa3a2945f047f8998d636b50a184c99a8}\label{mydb_8h_aa3a2945f047f8998d636b50a184c99a8}} 
+\index{mydb.h@{mydb.h}!DB\_SERVER@{DB\_SERVER}}
+\index{DB\_SERVER@{DB\_SERVER}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{DB\_SERVER}{DB\_SERVER}}
+{\footnotesize\ttfamily \#define D\+B\+\_\+\+S\+E\+R\+V\+ER~\char`\"{}localhost\char`\"{}}
+
+\mbox{\Hypertarget{mydb_8h_a2a52e40005a1cc43293cf92b54dcac73}\label{mydb_8h_a2a52e40005a1cc43293cf92b54dcac73}} 
+\index{mydb.h@{mydb.h}!GET\_SESSION@{GET\_SESSION}}
+\index{GET\_SESSION@{GET\_SESSION}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{GET\_SESSION}{GET\_SESSION}}
+{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+S\+E\+S\+S\+I\+ON~\char`\"{}S\+E\+L\+E\+CT $\ast$ F\+R\+OM \`{}session\`{} W\+H\+E\+RE session\+\_\+id = \textquotesingle{}\%s\textquotesingle{}\char`\"{}}
+
+\mbox{\Hypertarget{mydb_8h_a70c9cd497d3ec561fd23911ee18ba32d}\label{mydb_8h_a70c9cd497d3ec561fd23911ee18ba32d}} 
+\index{mydb.h@{mydb.h}!INSERT\_SESSION@{INSERT\_SESSION}}
+\index{INSERT\_SESSION@{INSERT\_SESSION}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{INSERT\_SESSION}{INSERT\_SESSION}}
+{\footnotesize\ttfamily \#define I\+N\+S\+E\+R\+T\+\_\+\+S\+E\+S\+S\+I\+ON~\char`\"{}I\+N\+S\+E\+RT I\+N\+TO \`{}session\`{} (\`{}session\+\_\+id\`{}, \`{}user\+\_\+id\`{}, \`{}logged\+\_\+in\`{}) V\+A\+L\+U\+ES (\textquotesingle{}\%s\textquotesingle{}, N\+U\+LL, F\+A\+L\+SE)\char`\"{}}
+
+\mbox{\Hypertarget{mydb_8h_abbcb64a4f71ba470ccd4a8c25496772e}\label{mydb_8h_abbcb64a4f71ba470ccd4a8c25496772e}} 
+\index{mydb.h@{mydb.h}!INTERNAL\_SERVER\_ERROR@{INTERNAL\_SERVER\_ERROR}}
+\index{INTERNAL\_SERVER\_ERROR@{INTERNAL\_SERVER\_ERROR}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{INTERNAL\_SERVER\_ERROR}{INTERNAL\_SERVER\_ERROR}}
+{\footnotesize\ttfamily \#define I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR~500}
+
+\mbox{\Hypertarget{mydb_8h_add1d47685776b48c3e5844d76e241c93}\label{mydb_8h_add1d47685776b48c3e5844d76e241c93}} 
+\index{mydb.h@{mydb.h}!MAX\_QUERY@{MAX\_QUERY}}
+\index{MAX\_QUERY@{MAX\_QUERY}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{MAX\_QUERY}{MAX\_QUERY}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+Q\+U\+E\+RY~256}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{mydb_8h_ad0f4d3a9631915e2c410f0e19361f8e8}\label{mydb_8h_ad0f4d3a9631915e2c410f0e19361f8e8}} 
+\index{mydb.h@{mydb.h}!connectToDatabase@{connectToDatabase}}
+\index{connectToDatabase@{connectToDatabase}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{connectToDatabase()}{connectToDatabase()}}
+{\footnotesize\ttfamily M\+Y\+S\+QL $\ast$ connect\+To\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Uruchamia połączenie z bazą (wymagane, żeby wykonywać operacje na bazie).
+
+\begin{DoxyReturn}{Zwraca}
+wskaźnik do struktury M\+Y\+S\+QL zawierającej informacje o uzyskanym połączeniu lub N\+U\+LL, jeśli połączenie się nie udało. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a7cf6e29bdeb6bfd376259a61344fe988}\label{mydb_8h_a7cf6e29bdeb6bfd376259a61344fe988}} 
+\index{mydb.h@{mydb.h}!databaseError@{databaseError}}
+\index{databaseError@{databaseError}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{databaseError()}{databaseError()}}
+{\footnotesize\ttfamily int database\+Error (\begin{DoxyParamCaption}\item[{M\+Y\+S\+QL $\ast$}]{connection }\end{DoxyParamCaption})}
+
+Loguje lub wypisuje na ekran komunikat błędu dotyczącego bazy, zamyka połączenie i zwraca błąd I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR.
+
+
+\begin{DoxyParams}{Parametry}
+{\em connection} & połączenie z bazą, którego dotyczy błąd \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+500 (I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_ac42166a977128e050ae17430f6ee8746}\label{mydb_8h_ac42166a977128e050ae17430f6ee8746}} 
+\index{mydb.h@{mydb.h}!getResult@{getResult}}
+\index{getResult@{getResult}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getResult()}{getResult()}}
+{\footnotesize\ttfamily M\+Y\+S\+Q\+L\+\_\+\+R\+ES$\ast$ get\+Result (\begin{DoxyParamCaption}\item[{M\+Y\+S\+QL $\ast$}]{connection }\end{DoxyParamCaption})}
+
+Pobiera wynik ostatniego zapytania do bazy.
+
+
+\begin{DoxyParams}{Parametry}
+{\em connection} & aktywne połączenie z bazą \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub 500 w razie błędu bazy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_aed3bbf4798b6281e09f75f4a641bd6fb}\label{mydb_8h_aed3bbf4798b6281e09f75f4a641bd6fb}} 
+\index{mydb.h@{mydb.h}!runQuery@{runQuery}}
+\index{runQuery@{runQuery}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{runQuery()}{runQuery()}}
+{\footnotesize\ttfamily int run\+Query (\begin{DoxyParamCaption}\item[{M\+Y\+S\+QL $\ast$}]{connection,  }\item[{char $\ast$}]{query }\end{DoxyParamCaption})}
+
+Uruchamia zapytanie do bazy.
+
+
+\begin{DoxyParams}{Parametry}
+{\em connection} & aktywne połączenie z bazą \\
+\hline
+{\em query} & zapytanie S\+QL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub 500 w razie błędu bazy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_ad62254d31aef80cd4a6bd67ef8ecaa5f}\label{mydb_8h_ad62254d31aef80cd4a6bd67ef8ecaa5f}} 
+\index{mydb.h@{mydb.h}!saveSession@{saveSession}}
+\index{saveSession@{saveSession}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{saveSession()}{saveSession()}}
+{\footnotesize\ttfamily int save\+Session (\begin{DoxyParamCaption}\item[{char $\ast$}]{session\+Id }\end{DoxyParamCaption})}
+
+Zapisuje daną sesję do bazy (tylko jeśli nie była zapisana wcześniej).
+
+
+\begin{DoxyParams}{Parametry}
+{\em session\+Id} & numer sesji do zapisania \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub 500 w razie błędu bazy 
+\end{DoxyReturn}

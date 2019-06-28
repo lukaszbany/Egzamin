@@ -1,0 +1,70 @@
+\hypertarget{7-serwer_8c}{}\section{Dokumentacja pliku pap/zaj7/zadanie7/7-\/serwer.c}
+\label{7-serwer_8c}\index{pap/zaj7/zadanie7/7-\/serwer.c@{pap/zaj7/zadanie7/7-\/serwer.c}}
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}mylib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mybase64.\+h\char`\"{}}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{7-serwer_8c_a322789c10f93ef5e09a1d5f17aabf0e3}{U\+S\+E\+RS}}~\char`\"{}users.\+dat\char`\"{}
+\item 
+\#define \mbox{\hyperlink{7-serwer_8c_a16b710f592bf8f7900666392adc444dc}{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+RT}}~9876
+\item 
+\#define \mbox{\hyperlink{7-serwer_8c_ad7871643c05865c80f5d8050aead2b57}{M\+A\+X\+B\+UF}}~1024
+\item 
+\#define \mbox{\hyperlink{7-serwer_8c_ae7e715c270481406658bbd2bafa2897f}{M\+A\+X\+D\+A\+TA}}~80
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{7-serwer_8c_a3eb60b93b6901c2acd5eb7df758d81b0}{get\+Port}} (int argc, char $\ast$const $\ast$argv)
+\item 
+int \mbox{\hyperlink{7-serwer_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{7-serwer_8c_a16b710f592bf8f7900666392adc444dc}\label{7-serwer_8c_a16b710f592bf8f7900666392adc444dc}} 
+\index{7-\/serwer.c@{7-\/serwer.c}!DEFAULT\_PORT@{DEFAULT\_PORT}}
+\index{DEFAULT\_PORT@{DEFAULT\_PORT}!7-\/serwer.c@{7-\/serwer.c}}
+\subsubsection{\texorpdfstring{DEFAULT\_PORT}{DEFAULT\_PORT}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+O\+RT~9876}
+
+\mbox{\Hypertarget{7-serwer_8c_ad7871643c05865c80f5d8050aead2b57}\label{7-serwer_8c_ad7871643c05865c80f5d8050aead2b57}} 
+\index{7-\/serwer.c@{7-\/serwer.c}!MAXBUF@{MAXBUF}}
+\index{MAXBUF@{MAXBUF}!7-\/serwer.c@{7-\/serwer.c}}
+\subsubsection{\texorpdfstring{MAXBUF}{MAXBUF}}
+{\footnotesize\ttfamily \#define M\+A\+X\+B\+UF~1024}
+
+\mbox{\Hypertarget{7-serwer_8c_ae7e715c270481406658bbd2bafa2897f}\label{7-serwer_8c_ae7e715c270481406658bbd2bafa2897f}} 
+\index{7-\/serwer.c@{7-\/serwer.c}!MAXDATA@{MAXDATA}}
+\index{MAXDATA@{MAXDATA}!7-\/serwer.c@{7-\/serwer.c}}
+\subsubsection{\texorpdfstring{MAXDATA}{MAXDATA}}
+{\footnotesize\ttfamily \#define M\+A\+X\+D\+A\+TA~80}
+
+\mbox{\Hypertarget{7-serwer_8c_a322789c10f93ef5e09a1d5f17aabf0e3}\label{7-serwer_8c_a322789c10f93ef5e09a1d5f17aabf0e3}} 
+\index{7-\/serwer.c@{7-\/serwer.c}!USERS@{USERS}}
+\index{USERS@{USERS}!7-\/serwer.c@{7-\/serwer.c}}
+\subsubsection{\texorpdfstring{USERS}{USERS}}
+{\footnotesize\ttfamily \#define U\+S\+E\+RS~\char`\"{}users.\+dat\char`\"{}}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{7-serwer_8c_a3eb60b93b6901c2acd5eb7df758d81b0}\label{7-serwer_8c_a3eb60b93b6901c2acd5eb7df758d81b0}} 
+\index{7-\/serwer.c@{7-\/serwer.c}!getPort@{getPort}}
+\index{getPort@{getPort}!7-\/serwer.c@{7-\/serwer.c}}
+\subsubsection{\texorpdfstring{getPort()}{getPort()}}
+{\footnotesize\ttfamily int get\+Port (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$const $\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{7-serwer_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{7-serwer_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{7-\/serwer.c@{7-\/serwer.c}!main@{main}}
+\index{main@{main}!7-\/serwer.c@{7-\/serwer.c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
