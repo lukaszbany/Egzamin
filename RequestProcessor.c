@@ -37,7 +37,8 @@ void process(int connectionFd) {
         generateNewSessionId(sessionId);
         errorCode = saveSessionData(sessionId, 0, 0);
         if (errorCode) {
-            handleError(connectionFd, errorCode);
+            ConnectionInfo connectionInfo = {connectionFd, NULL, NULL, NULL, NULL};
+            handleError(connectionInfo, errorCode);
             fclose(requestFile);
             return;
         }
@@ -48,7 +49,7 @@ void process(int connectionFd) {
 
     errorCode = resolveRequest(connectionInfo);
     if (errorCode) {
-        handleError(connectionFd, errorCode);
+        handleError(connectionInfo, errorCode);
         fclose(requestFile);
         return;
     }
@@ -61,30 +62,16 @@ int resolveRequest(ConnectionInfo connectionInfo) {
         return resolveGetFileRequest(connectionInfo);
     } else if (isMappedRequest(connectionInfo.request)) {
         return resolveMappedRequest(connectionInfo);
-    } else {
-        FILE *responseFile = fdopen(connectionInfo.connectionFd, "w");
-        if (responseFile == NULL) {
-            perror("ERROR");
-            exit(EXIT_FAILURE);
-        }
-
-        fprintf(responseFile, "%s%s",
-                ANSWER_OK,
-                connectionInfo.headers);
-
-        fclose(responseFile);
     }
 
-//    sprintf(answerCode, "");
-//    sprintf(headers, "Content-type: text/plain\n");
-    return 0;
+    return NOT_FOUND;
 }
 
 int isFileRequest(char *request, char *headers) {
     char method[METHOD_LENGTH];
     getRequestMethod(request, method);
     if (!strcmp(request, "GET")) {
-        return NOT_FOUND;
+        return BAD_REQUEST;
     }
 
     if (strstr(request, ".css")) {
@@ -125,6 +112,16 @@ int isMappedRequest(char * request) {
         return 1;
     } else if (strcmp(argument, "/register") == 0) {
         return 1;
+    } else if (strcmp(argument, "/logout") == 0) {
+        return 1;
+    } else if (strcmp(argument, "/addGroup") == 0) {
+        return 1;
+    } else if (strcmp(argument, "/addTest") == 0) {
+        return 1;
+    } else if (strcmp(argument, "/createdTests") == 0) {
+        return 1;
+    } else if (strcmp(argument, "/waitingTests") == 0) {
+        return 1;
     }
 
     return 0;
@@ -142,9 +139,15 @@ int resolveMappedRequest(ConnectionInfo connectionInfo) {
         return respondToGetLogin(connectionInfo, NO_MESSAGE, NULL);
     } else if (strcmp(argument, "/login") == 0 && strcmp(method, "POST") == 0) {
         return respondToPostLogin(connectionInfo);
+    } else if (strcmp(argument, "/logout") == 0 && strcmp(method, "GET") == 0) {
+        return respondToPostLogout(connectionInfo);
+    } else if (strcmp(argument, "/register") == 0 && strcmp(method, "GET") == 0) {
+        return respondToGetRegister(connectionInfo, NO_MESSAGE, NULL);
+    } else if (strcmp(argument, "/register") == 0 && strcmp(method, "POST") == 0) {
+        return respondToPostRegister(connectionInfo);
     }
 
-    return 0;
+    return NOT_FOUND;
 }
 
 int respondToIndex(ConnectionInfo connectionInfo, int messageType, char * message) {
@@ -198,6 +201,65 @@ int respondToGetLogin(ConnectionInfo connectionInfo, int messageType, char * mes
     return 0;
 }
 
+int respondToGetRegister(ConnectionInfo connectionInfo, int messageType, char * message) {
+    FILE *responseFile = fdopen(connectionInfo.connectionFd, "w");
+    if (responseFile == NULL) {
+        return INTERNAL_SERVER_ERROR;
+    }
+
+    Session session;
+    memset(&session, 0, sizeof(session));
+    getSession(connectionInfo.sessionId, &session);
+
+    fprintf(responseFile, "%s", ANSWER_OK);
+    fprintf(responseFile, "%s\r\n\r\n", connectionInfo.headers);
+
+    appendPart(responseFile, "header");
+    appendMenu(responseFile, session);
+    appendPart(responseFile, "register-top");
+    if (session.loggedIn) appendMessage(responseFile, ALERT, "Jesteś już zalogowany!");
+    if (messageType != NO_MESSAGE) appendMessage(responseFile, messageType, message);
+    if (!session.loggedIn) appendPart(responseFile, "register-form");
+    fprintf(responseFile, "</div>");
+
+    appendPart(responseFile, "footer");
+
+    fclose(responseFile);
+    return 0;
+}
+
+int respondToPostRegister(ConnectionInfo connectionInfo) {
+    int errors = 0;
+    char login[MINI_BUF];
+    char password[MINI_BUF];
+    char firstName[MINI_BUF];
+    char lastName[MINI_BUF];
+    char role[MINI_BUF];
+    errors += getPostParameterValue(connectionInfo.requestBody, "login", login, 1);
+    errors += getPostParameterValue(connectionInfo.requestBody, "password", password, 1);
+    errors += getPostParameterValue(connectionInfo.requestBody, "first-name", firstName, 1);
+    errors += getPostParameterValue(connectionInfo.requestBody, "last-name", lastName, 1);
+    errors += getPostParameterValue(connectionInfo.requestBody, "role", role, 1);
+    if (errors != 0) {
+        return respondToGetLogin(connectionInfo, ALERT, "Brak wymaganych pól!");
+    }
+
+    int loginIsFree = getUserByLogin(login, NULL);
+    if (!loginIsFree) {
+        return respondToGetRegister(connectionInfo, ALERT, "Użytownik o tym loginie już istnieje!");
+    }
+
+    char encodedPassword[MINI_BUF];
+    encodeChars(password, encodedPassword);
+
+    int errorCode = addUser(login, encodedPassword, firstName, lastName, role);
+    if (errorCode != 0) {
+        return errorCode;
+    }
+
+    return respondToIndex(connectionInfo, SUCCESS, "Zostałeś zarejestrowany. Teraz możesz się zalogować.");
+}
+
 void appendMessage(FILE * responseFile, int messageType, char * message) {
     switch (messageType) {
         case NO_MESSAGE:
@@ -207,6 +269,8 @@ void appendMessage(FILE * responseFile, int messageType, char * message) {
             break;
         case ALERT:
             fprintf(responseFile, "<div class=\"alert alert-danger\" role=\"alert\">%s</div>", message);
+            break;
+        default:
             break;
     }
 }
@@ -228,9 +292,21 @@ int respondToPostLogin(ConnectionInfo connectionInfo) {
         return respondToGetLogin(connectionInfo, ALERT, "Niepoprawne dane logowania");
     }
 
-    saveSessionData(connectionInfo.sessionId, user.id, 1);
+    errorCode = saveSessionData(connectionInfo.sessionId, user.id, 1);
+    if (errorCode != 0) {
+        return errorCode;
+    }
 
     return respondToIndex(connectionInfo, SUCCESS, "Zostałeś zalogowany");
+}
+
+int respondToPostLogout(ConnectionInfo connectionInfo) {
+    int errorCode =  saveSessionData(connectionInfo.sessionId, 0, 0);
+    if (errorCode == -1) {
+        return errorCode;
+    }
+
+    return respondToIndex(connectionInfo, SUCCESS, "Zostałeś wylogowany");
 }
 
 int getPostParameterValue(char * requestBody, char * parameter, char value[], int mandatory) {
@@ -372,18 +448,29 @@ ConnectionInfo createConnectionInfo(int connectionFd, char *request, char *heade
 void appendMenu(FILE *responseFile, Session session) {
     fprintf(responseFile, "<ul class=\"navbar-nav\">");
 
-    if (session.loggedIn) fprintf(responseFile, "<li class=\"nav-item\"><a class=\"nav-link active\" href=\"/addGroup\"><i class=\"fa fa-list-ol\" aria-hidden=\"true\"></i> Utwórz grupę</a></li>");
-    if (session.loggedIn) fprintf(responseFile, "<li class=\"nav-item\"><a class=\"nav-link active\" href=\"/students\"><i class=\"fa fa-list-ol\" aria-hidden=\"true\"></i> Lista studentów</a></li>");
-    if (session.loggedIn) fprintf(responseFile, "<li class=\"nav-item\"><a class=\"nav-link active\" href=\"/addTest\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i> Utwórz test</a></li>");
-    if (session.loggedIn) fprintf(responseFile, "<li class=\"nav-item\"><a class=\"nav-link active\" href=\"/tests\"><i class=\"fa fa-check-square-o\" aria-hidden=\"true\"></i> Moje testy</a></li>");
+    if (session.loggedIn && strcmp(session.role, "ADMIN") == 0)
+        fprintf(responseFile, "<li class=\"nav-item\"><a class=\"nav-link active\" href=\"/addGroup\"><i class=\"fa fa-plus\" aria-hidden=\"true\"></i> Utwórz grupę</a></li>");
+
+    if (session.loggedIn && strcmp(session.role, "ADMIN") == 0)
+        fprintf(responseFile, "<li class=\"nav-item\"><a class=\"nav-link active\" href=\"/students\"><i class=\"fa fa-list-ol\" aria-hidden=\"true\"></i> Lista studentów</a></li>");
+
+    if (session.loggedIn && strcmp(session.role, "EGZAMINATOR") == 0)
+        fprintf(responseFile, "<li class=\"nav-item\"><a class=\"nav-link active\" href=\"/addTest\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i> Utwórz test</a></li>");
+
+    if (session.loggedIn && (strcmp(session.role, "EGZAMINATOR") == 0 || strcmp(session.role, "STUDENT") == 0))
+        fprintf(responseFile, "<li class=\"nav-item\"><a class=\"nav-link active\" href=\"/tests\"><i class=\"fa fa-check-square-o\" aria-hidden=\"true\"></i> Moje testy</a></li>");
 
     fprintf(responseFile, "</ul><ul class=\"navbar-nav ml-auto\">");
-    if (!session.loggedIn) fprintf(responseFile, "<li class=\"nav-item\"><a class=\"nav-link active\" href=\"/login\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> Zaloguj</a></li>");
-    if (!session.loggedIn) fprintf(responseFile, "<li class=\"nav-item\"><a class=\"nav-link active\" href=\"/register\"><i class=\"fa fa-user-plus\" aria-hidden=\"true\"></i> Zarejestruj</a></li>");
 
-    if (session.loggedIn) {
+    if (!session.loggedIn)
+        fprintf(responseFile, "<li class=\"nav-item\"><a class=\"nav-link active\" href=\"/login\"><i class=\"fa fa-user\" aria-hidden=\"true\"></i> Zaloguj</a></li>");
+
+    if (!session.loggedIn)
+        fprintf(responseFile, "<li class=\"nav-item\"><a class=\"nav-link active\" href=\"/register\"><i class=\"fa fa-user-plus\" aria-hidden=\"true\"></i> Zarejestruj</a></li>");
+
+    if (session.loggedIn)
         appendUserData(responseFile, session);
-    }
+
 
     fprintf(responseFile, "</ul></div></nav>");
 }
@@ -391,4 +478,67 @@ void appendMenu(FILE *responseFile, Session session) {
 void appendUserData(FILE *responseFile, Session session) {
     fprintf(responseFile, "<li class=\"nav-item dropdown\"> <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownMenuLink\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"> <i class=\"fa fa-user-o\" aria-hidden=\"true\"></i> %s %s (%s) </a> <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\"> <a class=\"dropdown-item\" href=\"/logout\">Wyloguj</a> </div></li>",
             session.firstName, session.lastName, session.role);
+}
+
+void handleError(ConnectionInfo connectionInfo, int errorCode) {
+    FILE *responseFile = fdopen(connectionInfo.connectionFd, "w");
+
+    Session session;
+    memset(&session, 0, sizeof(session));
+    getSession(connectionInfo.sessionId, &session);
+
+    appendErrorHttpCode(responseFile, errorCode);
+    fprintf(responseFile, "%s\r\n\r\n", connectionInfo.headers);
+
+    appendPart(responseFile, "header");
+    appendMenu(responseFile, session);
+    appendPart(responseFile, "index-top");
+    appendErrorMessage(responseFile, errorCode);
+    appendPart(responseFile, "footer");
+
+    fclose(responseFile);
+
+
+}
+
+void appendErrorHttpCode(FILE * responseFile, int errorCode) {
+    switch (errorCode) {
+        case INTERNAL_SERVER_ERROR:
+            fprintf(responseFile, "%s", INTERNAL_SERVER_ERROR_CODE);
+            break;
+        case NOT_FOUND:
+            fprintf(responseFile, "%s", NOT_FOUND_CODE);
+            break;
+        case UNAUTHORIZED:
+            fprintf(responseFile, "%s", UNAUTHORIZED_CODE);
+            break;
+        case BAD_REQUEST:
+            fprintf(responseFile, "%s", BAD_REQUEST_CODE);
+            break;
+        default:
+            exit(EXIT_FAILURE);
+    }
+}
+
+void appendErrorMessage(FILE * responseFile, int errorCode) {
+    switch (errorCode) {
+        case INTERNAL_SERVER_ERROR:
+            fprintf(responseFile, "<h1>500 Internal Server Error</h1>");
+            fprintf(responseFile, "<p>Nastąpił nieprzewidziany błąd aplikacji</p>");
+            break;
+        case NOT_FOUND:
+            fprintf(responseFile, "<h1>404 Not found</h1>");
+            fprintf(responseFile, "<p>Nie znaleziono podanej strony.</p>");
+            break;
+        case UNAUTHORIZED:
+            fprintf(responseFile, "<h1>402 Unauthorized</h1>");
+            fprintf(responseFile, "<p>Nie masz dostępu do tej strony.</p>");
+            break;
+        case BAD_REQUEST:
+            fprintf(responseFile, "<h1>400 Bad Request</h1>");
+            fprintf(responseFile, "<p>Coś robisz nie tak...</p>");
+            break;
+        default:
+            exit(EXIT_FAILURE);
+    }
 }

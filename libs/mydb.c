@@ -14,6 +14,7 @@
 #define INSERT_SESSION_TEMPLATE "INSERT INTO session (session_id, user_id, logged_in) VALUES ('%s', %s, %d) ON DUPLICATE KEY UPDATE user_id = %s, logged_in = %d"
 
 #define GET_USER_BY_LOGIN_TEMPLATE "SELECT * FROM user WHERE login = '%s'"
+#define INSERT_USER_TEMPLATE "INSERT INTO user (login, password, first_name, last_name, role) VALUES ('%s', '%s', '%s', '%s', '%s')"
 
 
 /**
@@ -73,8 +74,7 @@ int saveSession(Session session) {
     sprintf(getSessionQuery, GET_SESSION_TEMPLATE, session.sessionId);
     errorCode = runQuery(connection, getSessionQuery);
     if (errorCode) {
-        mysql_close(connection);
-        return errorCode;
+        return databaseError(connection);
     }
 
     MYSQL_RES *result = getResult(connection);
@@ -84,8 +84,7 @@ int saveSession(Session session) {
     errorCode = runQuery(connection, insertSessionQuery);
     if (errorCode) {
         mysql_free_result(result);
-        mysql_close(connection);
-        return errorCode;
+        return databaseError(connection);
     }
 
     mysql_free_result(result);
@@ -130,8 +129,7 @@ int getSession(char * sessionId, Session * session) {
     sprintf(getSessionQuery, GET_SESSION_TEMPLATE, sessionId);
     errorCode = runQuery(connection, getSessionQuery);
     if (errorCode) {
-        mysql_close(connection);
-        return errorCode;
+        return databaseError(connection);
     }
 
     MYSQL_RES *result = getResult(connection);
@@ -175,21 +173,22 @@ int getUserByLogin(char * login, User * user) {
     sprintf(getUserQuery, GET_USER_BY_LOGIN_TEMPLATE, login);
     errorCode = runQuery(connection, getUserQuery);
     if (errorCode) {
-        mysql_close(connection);
-        return errorCode;
+        return databaseError(connection);
     }
 
     MYSQL_RES *result = getResult(connection);
     MYSQL_ROW row = mysql_fetch_row(result);
 
     if (result->row_count > 0) {
-        user->id = row[0] ? atoi(row[0]) : 0;
-        user->login = row[1] ? row[1] : NULL;
-        user->password = row[2] ? row[2] : NULL;
-        user->firstName = row[3] ? row[3] : NULL;
-        user->lastName = row[4] ? row[4] : NULL;
-        user->role = row[5] ? row[5] : NULL;
-        user->groupId = row[5] ? atoi(row[5]) : 0;
+        if (user != NULL) {
+            user->id = row[0] ? atoi(row[0]) : 0;
+            user->login = row[1] ? row[1] : NULL;
+            user->password = row[2] ? row[2] : NULL;
+            user->firstName = row[3] ? row[3] : NULL;
+            user->lastName = row[4] ? row[4] : NULL;
+            user->role = row[5] ? row[5] : NULL;
+            user->groupId = row[6] ? atoi(row[6]) : 0;
+        }
 
         mysql_free_result(result);
         mysql_close(connection);
@@ -199,6 +198,25 @@ int getUserByLogin(char * login, User * user) {
     mysql_free_result(result);
     mysql_close(connection);
     return -1;
+}
+
+int addUser(char * login, char * password, char * firstName, char * lastName, char * role) {
+    int errorCode = 0;
+    MYSQL *connection = connectToDatabase();
+    if (!connection) {
+        mysql_close(connection);
+        return INTERNAL_SERVER_ERROR;
+    }
+
+    char insertUserQuery[MAX_QUERY];
+    sprintf(insertUserQuery, INSERT_USER_TEMPLATE, login, password, firstName, lastName, role);
+    errorCode = runQuery(connection, insertUserQuery);
+    if (errorCode) {
+        return databaseError(connection);
+    }
+
+    mysql_close(connection);
+    return 0;
 }
 
 /**

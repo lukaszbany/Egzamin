@@ -34,5 +34,6 @@ int saveSession(Session session);
 int saveSessionData(char * sessionId, int userId, int loggedIn);
 int getSession(char * sessionId, Session * session);
 int getUserByLogin(char * sessionId, User * user);
+int addUser(char * login, char * password, char * firstName, char * lastName, char * role);
 
 #endif //EGZAMIN_MYDB_H

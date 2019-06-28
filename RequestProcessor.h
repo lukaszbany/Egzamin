@@ -11,7 +11,7 @@
 #include <time.h>
 #include <errno.h>
 
-#include "ErrorHandling.h"
+#include "Errors.h"
 #include "AuthenticationProvider.h"
 #include "libs/mylib.h"
 #include "libs/mydb.h"
@@ -41,9 +41,16 @@ void appendMenu(FILE *responseFile, Session session);
 void appendUserData(FILE *responseFile, Session session);
 int getPostParameterValue(char * requestBody, char * parameter, char * value, int mandatory);
 void appendMessage(FILE * responseFile, int messageType, char * message);
+void appendErrorMessage(FILE * responseFile, int errorCode);
+void appendErrorHttpCode(FILE * responseFile, int errorCode);
 
 int respondToIndex(ConnectionInfo connectionInfo, int messageType, char * message);
 int respondToGetLogin(ConnectionInfo connectionInfo, int messageType, char * message);
 int respondToPostLogin(ConnectionInfo connectionInfo);
+int respondToPostLogout(ConnectionInfo connectionInfo);
+int respondToGetRegister(ConnectionInfo connectionInfo, int messageType, char * message);
+int respondToPostRegister(ConnectionInfo connectionInfo);
+
+        void handleError(ConnectionInfo connectionInfo, int errorCode);
 
 #endif //EGZAMIN_REQUESTPROCESSOR_H
