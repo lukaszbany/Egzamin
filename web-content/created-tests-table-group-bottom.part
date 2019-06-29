@@ -1,0 +1,5 @@
+</select>
+<input type="number" placeholder="Czas w minutach" id="time" name="time" class="col-4 offset-1" min="1", max="60" value="10">
+<button type="submit" class="btn btn-primary col-4 offset-1">Udostępnij</button>
+</div>
+</form>

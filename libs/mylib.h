@@ -26,5 +26,7 @@ void removeLF(char *text);
 int findSessionIdInCookie(char * Cookie, char * sessionId);
 void trim(char *text);
 void removeCRLF(char * text);
+int decodeUrlEncoded(char *encoded, char *decoded);
+void createTimestamp(char * timestamp, int offsetInMinutes);
 
 #endif

@@ -1,26 +1,113 @@
 \hypertarget{RequestProcessor_8c}{}\section{Dokumentacja pliku Request\+Processor.\+c}
 \label{RequestProcessor_8c}\index{RequestProcessor.c@{RequestProcessor.c}}
 {\ttfamily \#include \char`\"{}Request\+Processor.\+h\char`\"{}}\newline
-{\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include $<$mysql/mysql.\+h$>$}\newline
-{\ttfamily \#include $<$zconf.\+h$>$}\newline
-{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
-{\ttfamily \#include $<$netinet/in.\+h$>$}\newline
-{\ttfamily \#include $<$string.\+h$>$}\newline
-{\ttfamily \#include $<$time.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}libs/mylib.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}libs/mydb.\+h\char`\"{}}\newline
 \subsection*{Definicje}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{RequestProcessor_8c_a54fa99013d88b05125eba286921517c7}{S\+E\+S\+S\+I\+O\+N\+\_\+\+I\+D\+\_\+\+L\+E\+N\+G\+TH}}~15
+\#define \mbox{\hyperlink{RequestProcessor_8c_a2ca1c6a1e424e30049c0fa365ab34647}{M\+I\+N\+I\+\_\+\+B\+UF}}~128
+\item 
+\#define \mbox{\hyperlink{RequestProcessor_8c_aeb01965415283c7dcb324706c2ef5755}{S\+M\+A\+L\+L\+\_\+\+B\+UF}}~256
+\item 
+\#define \mbox{\hyperlink{RequestProcessor_8c_a3864d0ffbbbc481a10a5600146ad9ed9}{M\+E\+T\+H\+O\+D\+\_\+\+L\+E\+N\+G\+TH}}~8
+\item 
+\#define \mbox{\hyperlink{RequestProcessor_8c_ad11e02669e60f64a75f5a1e8a03c7d5f}{M\+A\+X\+\_\+\+A\+R\+R\+AY}}~100
+\item 
+\#define \mbox{\hyperlink{RequestProcessor_8c_aa8475e926a72f519c2845b818daa7ddc}{A\+N\+S\+W\+E\+R\+\_\+\+OK}}~\char`\"{}H\+T\+TP/1.\+1 200 O\+K\textbackslash{}r\textbackslash{}n\char`\"{}
+\item 
+\#define \mbox{\hyperlink{RequestProcessor_8c_a07048072a11b7c8c17be0c820147b617}{M\+A\+N\+D\+A\+T\+O\+RY}}~1
+\item 
+\#define \mbox{\hyperlink{RequestProcessor_8c_afdff552467cc2d2d5815831e9656cffc}{O\+P\+T\+I\+O\+N\+AL}}~0
+\item 
+\#define \mbox{\hyperlink{RequestProcessor_8c_a5237f6efdf6691b19934e869b7ba9a24}{N\+O\+\_\+\+M\+E\+S\+S\+A\+GE}}~0
+\item 
+\#define \mbox{\hyperlink{RequestProcessor_8c_aa90cac659d18e8ef6294c7ae337f6b58}{S\+U\+C\+C\+E\+SS}}~1
+\item 
+\#define \mbox{\hyperlink{RequestProcessor_8c_ada3f1f3fa9b684d837200490fbb07c26}{A\+L\+E\+RT}}~2
+\item 
+\#define \mbox{\hyperlink{RequestProcessor_8c_acc4a9ad83f9350a588d117e0c8916d45}{N\+OW}}~0
 \end{DoxyCompactItemize}
 \subsection*{Funkcje}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{RequestProcessor_8c_af6d6108de0d4edf552b16b42718356a7}{process}} (int connection\+Fd)
 \item 
+int \mbox{\hyperlink{RequestProcessor_8c_a5d95d9fb16ff0fdb16b4ecd4217df103}{resolve\+Request}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a612c5088c42bcbb62e36c3813c592ae3}{is\+File\+Request}} (char $\ast$request, char $\ast$headers)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a3e86365694fac4e3d56a3bde252be0fa}{is\+Mapped\+Request}} (char $\ast$request)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a601212945b3210c989cb4f5a5d380887}{resolve\+Mapped\+Request}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_ad8dc3ef76ed2a370e5f27152f74254c0}{respond\+To\+Index}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info, int message\+Type, char $\ast$message)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a48052809b2895eb031f077ed167ce016}{respond\+To\+Get\+Login}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info, int message\+Type, char $\ast$message)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_ae1b39d834e9170d22b8bde116068ac20}{respond\+To\+Get\+Register}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info, int message\+Type, char $\ast$message)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a31dda2675408dc19fe57d8db116e0690}{respond\+To\+Post\+Register}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_ada1da38e9bf4f1781351dc855c02e08a}{respond\+To\+Get\+Add\+Group}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info, int message\+Type, char $\ast$message)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a3e2155a5af10465e0416c20cbdbc14ec}{respond\+To\+Post\+Add\+Group}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a961204fa21052c2b04353b3c7ab4a617}{respond\+To\+Post\+Add\+To\+Group}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_aa2332af1624adf989dd7d80963e86358}{respond\+To\+Post\+Start\+Test}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a82b5d2bcf0bbce4179c94f78561f975b}{respond\+To\+Get\+Students}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info, int message\+Type, char $\ast$message)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_ad972bf0f0f50ad7b7c4bb90e5d34e994}{respond\+To\+Get\+Tests}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info, int message\+Type, char $\ast$message)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a5386fe5c16e5b36e1ffb3203cb2a62d0}{respond\+To\+Get\+Tests\+By\+Lecturer}} (F\+I\+LE $\ast$response\+File, \mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info, int message\+Type, char $\ast$message, \mbox{\hyperlink{structSession}{Session}} session)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a2932ca88ce3c0ccb0f0a75dc56906680}{respond\+To\+Get\+Tests\+By\+Student}} (F\+I\+LE $\ast$response\+File, \mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info, int message\+Type, char $\ast$message, \mbox{\hyperlink{structSession}{Session}} session)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a06e1503b572227309d82fd1e9adc709c}{respond\+To\+Get\+Add\+Test}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info, int message\+Type, char $\ast$message)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a015949c29e160768aefba7ba752f066e}{respond\+To\+Post\+Add\+Test}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a09826803df1351e1e98ff136eeb239eb}{respond\+To\+Post\+Test}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a7b7a5156e18d6f8bfcb6b5760496f6a1}{respond\+To\+Post\+Send\+Test}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_ad9da155f191a99526c7a9bd51b1bb59f}{respond\+To\+Post\+Check\+Test}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+void \mbox{\hyperlink{RequestProcessor_8c_a30085b1a911b9c4f7751637f89956a30}{append\+To\+Query}} (char $\ast$query, char $\ast$new\+Query)
+\item 
+void \mbox{\hyperlink{RequestProcessor_8c_a47962df758c167f344c187e8775fc915}{append\+Message}} (F\+I\+LE $\ast$response\+File, int message\+Type, char $\ast$message)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a6294199c9f252e4860411a011512896f}{respond\+To\+Post\+Login}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a42b5f842770dfde5dc87ce56c4dadd64}{respond\+To\+Post\+Logout}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a2d5dc1a71414b535848b3b1869448f1f}{get\+Post\+Parameter\+Value}} (char $\ast$request\+Body, char $\ast$parameter, char value\mbox{[}$\,$\mbox{]}, int mandatory)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a2185cee9e4b3273f9ac300e00e8d5dcc}{append\+Part}} (F\+I\+LE $\ast$response\+File, char $\ast$part)
+\item 
+void \mbox{\hyperlink{RequestProcessor_8c_ad9ddc51f58e3c96d25a5921019fae038}{get\+Request\+Method}} (char $\ast$request, char method\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{RequestProcessor_8c_a93d32fbc97316ed6a1a2bd7517f9ad22}{read\+Argument\+From\+Request}} (char $\ast$request, char $\ast$argument)
+\item 
+void \mbox{\hyperlink{RequestProcessor_8c_ad3ea8e8ee3b09b1604fcf802c88beac1}{append\+To\+Headers}} (char $\ast$headers, char $\ast$new\+Header)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a6ad92c33bd7168c224c4b7d69043a3d9}{resolve\+Get\+File\+Request}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info)
+\item 
+int \mbox{\hyperlink{RequestProcessor_8c_a08b345ebbe43124108a8ebb58e70a3a1}{send\+File}} (int connection\+Fd, char $\ast$filename, char $\ast$headers)
+\item 
 void \mbox{\hyperlink{RequestProcessor_8c_ae12d073ac8fb908f2637659d1646a724}{generate\+New\+Session\+Id}} (char $\ast$session\+Id)
+\item 
+\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} \mbox{\hyperlink{RequestProcessor_8c_a1d52ced5a4cab44bff4b132a02f44654}{create\+Connection\+Info}} (int connection\+Fd, char $\ast$request, char $\ast$headers, char $\ast$session\+Id, char $\ast$request\+Body)
+\item 
+void \mbox{\hyperlink{RequestProcessor_8c_a0f5605b15f4e2b212b33d2ca61e47a83}{append\+Menu}} (F\+I\+LE $\ast$response\+File, \mbox{\hyperlink{structSession}{Session}} session)
+\item 
+void \mbox{\hyperlink{RequestProcessor_8c_abf3dd11060d3a79e72e13178d3839614}{append\+User\+Data}} (F\+I\+LE $\ast$response\+File, \mbox{\hyperlink{structSession}{Session}} session)
+\item 
+void \mbox{\hyperlink{RequestProcessor_8c_a0762dc6030a760b1d95ee5390911b9bf}{handle\+Error}} (\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} connection\+Info, int error\+Code)
+\item 
+void \mbox{\hyperlink{RequestProcessor_8c_a422cf3728942d9e8588b4f67fe5adae0}{append\+Error\+Http\+Code}} (F\+I\+LE $\ast$response\+File, int error\+Code)
+\item 
+void \mbox{\hyperlink{RequestProcessor_8c_aaf1f218a7548ac5d40752eea1fff6839}{append\+Error\+Message}} (F\+I\+LE $\ast$response\+File, int error\+Code)
 \end{DoxyCompactItemize}
 \subsection*{Zmienne}
 \begin{DoxyCompactItemize}
@@ -30,27 +117,691 @@ const char \mbox{\hyperlink{RequestProcessor_8c_a7066977006bd1e86e63f017236d9b58
 
 
 \subsection{Dokumentacja definicji}
-\mbox{\Hypertarget{RequestProcessor_8c_a54fa99013d88b05125eba286921517c7}\label{RequestProcessor_8c_a54fa99013d88b05125eba286921517c7}} 
-\index{RequestProcessor.c@{RequestProcessor.c}!SESSION\_ID\_LENGTH@{SESSION\_ID\_LENGTH}}
-\index{SESSION\_ID\_LENGTH@{SESSION\_ID\_LENGTH}!RequestProcessor.c@{RequestProcessor.c}}
-\subsubsection{\texorpdfstring{SESSION\_ID\_LENGTH}{SESSION\_ID\_LENGTH}}
-{\footnotesize\ttfamily \#define S\+E\+S\+S\+I\+O\+N\+\_\+\+I\+D\+\_\+\+L\+E\+N\+G\+TH~15}
+\mbox{\Hypertarget{RequestProcessor_8c_ada3f1f3fa9b684d837200490fbb07c26}\label{RequestProcessor_8c_ada3f1f3fa9b684d837200490fbb07c26}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!ALERT@{ALERT}}
+\index{ALERT@{ALERT}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{ALERT}{ALERT}}
+{\footnotesize\ttfamily \#define A\+L\+E\+RT~2}
 
+Wiadomość do użytkownika informująca o niepowodzeniu \mbox{\Hypertarget{RequestProcessor_8c_aa8475e926a72f519c2845b818daa7ddc}\label{RequestProcessor_8c_aa8475e926a72f519c2845b818daa7ddc}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!ANSWER\_OK@{ANSWER\_OK}}
+\index{ANSWER\_OK@{ANSWER\_OK}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{ANSWER\_OK}{ANSWER\_OK}}
+{\footnotesize\ttfamily \#define A\+N\+S\+W\+E\+R\+\_\+\+OK~\char`\"{}H\+T\+TP/1.\+1 200 O\+K\textbackslash{}r\textbackslash{}n\char`\"{}}
 
+Standardowa odpowiedź H\+T\+TP (OK). \mbox{\Hypertarget{RequestProcessor_8c_a07048072a11b7c8c17be0c820147b617}\label{RequestProcessor_8c_a07048072a11b7c8c17be0c820147b617}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!MANDATORY@{MANDATORY}}
+\index{MANDATORY@{MANDATORY}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{MANDATORY}{MANDATORY}}
+{\footnotesize\ttfamily \#define M\+A\+N\+D\+A\+T\+O\+RY~1}
+
+Argument wymagany metody post \mbox{\Hypertarget{RequestProcessor_8c_ad11e02669e60f64a75f5a1e8a03c7d5f}\label{RequestProcessor_8c_ad11e02669e60f64a75f5a1e8a03c7d5f}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!MAX\_ARRAY@{MAX\_ARRAY}}
+\index{MAX\_ARRAY@{MAX\_ARRAY}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{MAX\_ARRAY}{MAX\_ARRAY}}
+{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+A\+R\+R\+AY~100}
+
+Maksymalna wielkość tablicy struktur bazy danych \mbox{\Hypertarget{RequestProcessor_8c_a3864d0ffbbbc481a10a5600146ad9ed9}\label{RequestProcessor_8c_a3864d0ffbbbc481a10a5600146ad9ed9}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!METHOD\_LENGTH@{METHOD\_LENGTH}}
+\index{METHOD\_LENGTH@{METHOD\_LENGTH}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{METHOD\_LENGTH}{METHOD\_LENGTH}}
+{\footnotesize\ttfamily \#define M\+E\+T\+H\+O\+D\+\_\+\+L\+E\+N\+G\+TH~8}
+
+Maksymalna długość metody H\+T\+TP \mbox{\Hypertarget{RequestProcessor_8c_a2ca1c6a1e424e30049c0fa365ab34647}\label{RequestProcessor_8c_a2ca1c6a1e424e30049c0fa365ab34647}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!MINI\_BUF@{MINI\_BUF}}
+\index{MINI\_BUF@{MINI\_BUF}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{MINI\_BUF}{MINI\_BUF}}
+{\footnotesize\ttfamily \#define M\+I\+N\+I\+\_\+\+B\+UF~128}
+
+Mini bufor (128 znaków) \mbox{\Hypertarget{RequestProcessor_8c_a5237f6efdf6691b19934e869b7ba9a24}\label{RequestProcessor_8c_a5237f6efdf6691b19934e869b7ba9a24}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!NO\_MESSAGE@{NO\_MESSAGE}}
+\index{NO\_MESSAGE@{NO\_MESSAGE}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{NO\_MESSAGE}{NO\_MESSAGE}}
+{\footnotesize\ttfamily \#define N\+O\+\_\+\+M\+E\+S\+S\+A\+GE~0}
+
+Brak wiadomości do użytkownika \mbox{\Hypertarget{RequestProcessor_8c_acc4a9ad83f9350a588d117e0c8916d45}\label{RequestProcessor_8c_acc4a9ad83f9350a588d117e0c8916d45}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!NOW@{NOW}}
+\index{NOW@{NOW}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{NOW}{NOW}}
+{\footnotesize\ttfamily \#define N\+OW~0}
+
+Zerowy offset przesunięcia minutowego czasu. \mbox{\Hypertarget{RequestProcessor_8c_afdff552467cc2d2d5815831e9656cffc}\label{RequestProcessor_8c_afdff552467cc2d2d5815831e9656cffc}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!OPTIONAL@{OPTIONAL}}
+\index{OPTIONAL@{OPTIONAL}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{OPTIONAL}{OPTIONAL}}
+{\footnotesize\ttfamily \#define O\+P\+T\+I\+O\+N\+AL~0}
+
+Argument opcjonalny metody post \mbox{\Hypertarget{RequestProcessor_8c_aeb01965415283c7dcb324706c2ef5755}\label{RequestProcessor_8c_aeb01965415283c7dcb324706c2ef5755}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!SMALL\_BUF@{SMALL\_BUF}}
+\index{SMALL\_BUF@{SMALL\_BUF}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{SMALL\_BUF}{SMALL\_BUF}}
+{\footnotesize\ttfamily \#define S\+M\+A\+L\+L\+\_\+\+B\+UF~256}
+
+Mały bufor (365 znaków) \mbox{\Hypertarget{RequestProcessor_8c_aa90cac659d18e8ef6294c7ae337f6b58}\label{RequestProcessor_8c_aa90cac659d18e8ef6294c7ae337f6b58}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!SUCCESS@{SUCCESS}}
+\index{SUCCESS@{SUCCESS}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{SUCCESS}{SUCCESS}}
+{\footnotesize\ttfamily \#define S\+U\+C\+C\+E\+SS~1}
+
+Wiadomość do użytkownika informująca o sukcesie 
 
 \subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{RequestProcessor_8c_a422cf3728942d9e8588b4f67fe5adae0}\label{RequestProcessor_8c_a422cf3728942d9e8588b4f67fe5adae0}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!appendErrorHttpCode@{appendErrorHttpCode}}
+\index{appendErrorHttpCode@{appendErrorHttpCode}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{appendErrorHttpCode()}{appendErrorHttpCode()}}
+{\footnotesize\ttfamily void append\+Error\+Http\+Code (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{response\+File,  }\item[{int}]{error\+Code }\end{DoxyParamCaption})}
+
+Zapisuje informacje o błędzie w plik H\+T\+ML. 
+\begin{DoxyParams}{Parametry}
+{\em response\+File} & otwarty do zapisu plik H\+T\+ML \\
+\hline
+{\em error\+Code} & kod błędu \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{RequestProcessor_8c_aaf1f218a7548ac5d40752eea1fff6839}\label{RequestProcessor_8c_aaf1f218a7548ac5d40752eea1fff6839}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!appendErrorMessage@{appendErrorMessage}}
+\index{appendErrorMessage@{appendErrorMessage}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{appendErrorMessage()}{appendErrorMessage()}}
+{\footnotesize\ttfamily void append\+Error\+Message (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{response\+File,  }\item[{int}]{error\+Code }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parametry}
+{\em response\+File} & otwarty do zapisu plik H\+T\+ML \\
+\hline
+{\em error\+Code} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{RequestProcessor_8c_a0f5605b15f4e2b212b33d2ca61e47a83}\label{RequestProcessor_8c_a0f5605b15f4e2b212b33d2ca61e47a83}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!appendMenu@{appendMenu}}
+\index{appendMenu@{appendMenu}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{appendMenu()}{appendMenu()}}
+{\footnotesize\ttfamily void append\+Menu (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{response\+File,  }\item[{\mbox{\hyperlink{structSession}{Session}}}]{session }\end{DoxyParamCaption})}
+
+Generuje menu dla podanego użytkownika i jego roli. 
+\begin{DoxyParams}{Parametry}
+{\em response\+File} & otwarty do zapisu plik H\+T\+ML \\
+\hline
+{\em session} & informacje o sesji \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{RequestProcessor_8c_a47962df758c167f344c187e8775fc915}\label{RequestProcessor_8c_a47962df758c167f344c187e8775fc915}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!appendMessage@{appendMessage}}
+\index{appendMessage@{appendMessage}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{appendMessage()}{appendMessage()}}
+{\footnotesize\ttfamily void append\+Message (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{response\+File,  }\item[{int}]{message\+Type,  }\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
+Wyświetla na stronie wiadomość do użytkownika 
+\begin{DoxyParams}{Parametry}
+{\em response\+File} & otwarty do zapisu plik H\+T\+ML \\
+\hline
+{\em message\+Type} & typ wiadomości do użytkownika \\
+\hline
+{\em message} & treść wiadomości do użytkownika \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{RequestProcessor_8c_a2185cee9e4b3273f9ac300e00e8d5dcc}\label{RequestProcessor_8c_a2185cee9e4b3273f9ac300e00e8d5dcc}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!appendPart@{appendPart}}
+\index{appendPart@{appendPart}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{appendPart()}{appendPart()}}
+{\footnotesize\ttfamily int append\+Part (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{response\+File,  }\item[{char $\ast$}]{part }\end{DoxyParamCaption})}
+
+Dodaje do pliku html tresc pliku .part o podanej nazwie (znajdujacego się w katalogu /web-\/content). 
+\begin{DoxyParams}{Parametry}
+{\em response\+File} & otwarty do zapisu plik H\+T\+ML \\
+\hline
+{\em part} & nazwa pliku (bez rozszerzenia) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_ad3ea8e8ee3b09b1604fcf802c88beac1}\label{RequestProcessor_8c_ad3ea8e8ee3b09b1604fcf802c88beac1}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!appendToHeaders@{appendToHeaders}}
+\index{appendToHeaders@{appendToHeaders}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{appendToHeaders()}{appendToHeaders()}}
+{\footnotesize\ttfamily void append\+To\+Headers (\begin{DoxyParamCaption}\item[{char $\ast$}]{headers,  }\item[{char $\ast$}]{new\+Header }\end{DoxyParamCaption})}
+
+Dodaje nagłówek do istniejących nagłówków 
+\begin{DoxyParams}{Parametry}
+{\em headers} & istniejące nagłówki \\
+\hline
+{\em new\+Header} & nowy nagłówek \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{RequestProcessor_8c_a30085b1a911b9c4f7751637f89956a30}\label{RequestProcessor_8c_a30085b1a911b9c4f7751637f89956a30}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!appendToQuery@{appendToQuery}}
+\index{appendToQuery@{appendToQuery}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{appendToQuery()}{appendToQuery()}}
+{\footnotesize\ttfamily void append\+To\+Query (\begin{DoxyParamCaption}\item[{char $\ast$}]{query,  }\item[{char $\ast$}]{new\+Query }\end{DoxyParamCaption})}
+
+Dodaje nowe zapytanie do istniejącego zapytania 
+\begin{DoxyParams}{Parametry}
+{\em query} & istniejące zapytanie \\
+\hline
+{\em new\+Query} & nowe zapytanie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{RequestProcessor_8c_abf3dd11060d3a79e72e13178d3839614}\label{RequestProcessor_8c_abf3dd11060d3a79e72e13178d3839614}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!appendUserData@{appendUserData}}
+\index{appendUserData@{appendUserData}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{appendUserData()}{appendUserData()}}
+{\footnotesize\ttfamily void append\+User\+Data (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{response\+File,  }\item[{\mbox{\hyperlink{structSession}{Session}}}]{session }\end{DoxyParamCaption})}
+
+Dodaje do pliku html informacje o zalogowanym użytkowniku (imię, nazwisko, rola i grupa, jeśli przynależy) 
+\begin{DoxyParams}{Parametry}
+{\em response\+File} & otwarty do zapisu plik H\+T\+ML \\
+\hline
+{\em session} & informacje o sesji \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{RequestProcessor_8c_a1d52ced5a4cab44bff4b132a02f44654}\label{RequestProcessor_8c_a1d52ced5a4cab44bff4b132a02f44654}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!createConnectionInfo@{createConnectionInfo}}
+\index{createConnectionInfo@{createConnectionInfo}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{createConnectionInfo()}{createConnectionInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} create\+Connection\+Info (\begin{DoxyParamCaption}\item[{int}]{connection\+Fd,  }\item[{char $\ast$}]{request,  }\item[{char $\ast$}]{headers,  }\item[{char $\ast$}]{session\+Id,  }\item[{char $\ast$}]{request\+Body }\end{DoxyParamCaption})}
+
+Tworzy strukturę z informacjami o requeście z podanych informacji 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Fd} & identyfikator gniazda połączeniowego \\
+\hline
+{\em request} & treść requestu \\
+\hline
+{\em headers} & nagłówki \\
+\hline
+{\em session\+Id} & numer sesji \\
+\hline
+{\em request\+Body} & treść żądania P\+O\+ST \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+zwraca strukurę \mbox{\hyperlink{structConnectionInfo}{Connection\+Info}} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{RequestProcessor_8c_ae12d073ac8fb908f2637659d1646a724}\label{RequestProcessor_8c_ae12d073ac8fb908f2637659d1646a724}} 
 \index{RequestProcessor.c@{RequestProcessor.c}!generateNewSessionId@{generateNewSessionId}}
 \index{generateNewSessionId@{generateNewSessionId}!RequestProcessor.c@{RequestProcessor.c}}
 \subsubsection{\texorpdfstring{generateNewSessionId()}{generateNewSessionId()}}
 {\footnotesize\ttfamily void generate\+New\+Session\+Id (\begin{DoxyParamCaption}\item[{char $\ast$}]{session\+Id }\end{DoxyParamCaption})}
 
+Generuje nowe id sesji. 
+\begin{DoxyParams}{Parametry}
+{\em session\+Id} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{RequestProcessor_8c_a2d5dc1a71414b535848b3b1869448f1f}\label{RequestProcessor_8c_a2d5dc1a71414b535848b3b1869448f1f}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!getPostParameterValue@{getPostParameterValue}}
+\index{getPostParameterValue@{getPostParameterValue}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{getPostParameterValue()}{getPostParameterValue()}}
+{\footnotesize\ttfamily int get\+Post\+Parameter\+Value (\begin{DoxyParamCaption}\item[{char $\ast$}]{request\+Body,  }\item[{char $\ast$}]{parameter,  }\item[{char}]{value\mbox{[}$\,$\mbox{]},  }\item[{int}]{mandatory }\end{DoxyParamCaption})}
+
+Pobiera podany parametr z treści żądania P\+O\+ST 
+\begin{DoxyParams}{Parametry}
+{\em request\+Body} & treść żądania P\+O\+ST \\
+\hline
+{\em parameter} & parametr do znalezienia \\
+\hline
+{\em value} & znaleziona wartość parametru \\
+\hline
+{\em mandatory} & flaga określająca, czy parametr jest obowiązkowy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie znalezienia lub jeśli parametr jest niewymagany, 1 w razie nie znalezienia wymaganego parametru 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_ad9ddc51f58e3c96d25a5921019fae038}\label{RequestProcessor_8c_ad9ddc51f58e3c96d25a5921019fae038}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!getRequestMethod@{getRequestMethod}}
+\index{getRequestMethod@{getRequestMethod}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{getRequestMethod()}{getRequestMethod()}}
+{\footnotesize\ttfamily void get\+Request\+Method (\begin{DoxyParamCaption}\item[{char $\ast$}]{request,  }\item[{char}]{method\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Pobiera metodę z requestu 
+\begin{DoxyParams}{Parametry}
+{\em request} & treść requestu \\
+\hline
+{\em method} & wynikowa metoda \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{RequestProcessor_8c_a0762dc6030a760b1d95ee5390911b9bf}\label{RequestProcessor_8c_a0762dc6030a760b1d95ee5390911b9bf}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!handleError@{handleError}}
+\index{handleError@{handleError}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{handleError()}{handleError()}}
+{\footnotesize\ttfamily void handle\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info,  }\item[{int}]{error\+Code }\end{DoxyParamCaption})}
+
+Przetwarza błąd, jeśli wystąpił. 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+{\em error\+Code} & kod błędu \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{RequestProcessor_8c_a612c5088c42bcbb62e36c3813c592ae3}\label{RequestProcessor_8c_a612c5088c42bcbb62e36c3813c592ae3}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!isFileRequest@{isFileRequest}}
+\index{isFileRequest@{isFileRequest}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{isFileRequest()}{isFileRequest()}}
+{\footnotesize\ttfamily int is\+File\+Request (\begin{DoxyParamCaption}\item[{char $\ast$}]{request,  }\item[{char $\ast$}]{headers }\end{DoxyParamCaption})}
+
+Sprawdza, czy zapytanie dotyczy pliku i czy wysyłanie podanego pliku jest dozwolone. Jeśli tak, to dodaje odpowiedni nagłówek.
+
+
+\begin{DoxyParams}{Parametry}
+{\em request} & treść requestu \\
+\hline
+{\em headers} & nagłówki \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+1 jeśli zapytanie o plik, 0 jeśli nie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a3e86365694fac4e3d56a3bde252be0fa}\label{RequestProcessor_8c_a3e86365694fac4e3d56a3bde252be0fa}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!isMappedRequest@{isMappedRequest}}
+\index{isMappedRequest@{isMappedRequest}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{isMappedRequest()}{isMappedRequest()}}
+{\footnotesize\ttfamily int is\+Mapped\+Request (\begin{DoxyParamCaption}\item[{char $\ast$}]{request }\end{DoxyParamCaption})}
+
+Sprawdza czy podany request jest obsługiwany przez serwer.
+
+
+\begin{DoxyParams}{Parametry}
+{\em request} & treść requestu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+1 jeśli zapytanie o plik, 0 jeśli nie 
+\end{DoxyReturn}
 \mbox{\Hypertarget{RequestProcessor_8c_af6d6108de0d4edf552b16b42718356a7}\label{RequestProcessor_8c_af6d6108de0d4edf552b16b42718356a7}} 
 \index{RequestProcessor.c@{RequestProcessor.c}!process@{process}}
 \index{process@{process}!RequestProcessor.c@{RequestProcessor.c}}
 \subsubsection{\texorpdfstring{process()}{process()}}
 {\footnotesize\ttfamily void process (\begin{DoxyParamCaption}\item[{int}]{connection\+Fd }\end{DoxyParamCaption})}
 
+Przetwarza request na podanym gnieździe. 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Fd} & numer gniazda \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{RequestProcessor_8c_a93d32fbc97316ed6a1a2bd7517f9ad22}\label{RequestProcessor_8c_a93d32fbc97316ed6a1a2bd7517f9ad22}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!readArgumentFromRequest@{readArgumentFromRequest}}
+\index{readArgumentFromRequest@{readArgumentFromRequest}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{readArgumentFromRequest()}{readArgumentFromRequest()}}
+{\footnotesize\ttfamily void read\+Argument\+From\+Request (\begin{DoxyParamCaption}\item[{char $\ast$}]{request,  }\item[{char $\ast$}]{argument }\end{DoxyParamCaption})}
+
+Pobiera Argument z requestu. 
+\begin{DoxyParams}{Parametry}
+{\em request} & treść requestu \\
+\hline
+{\em argument} & wynikowy argument \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{RequestProcessor_8c_a6ad92c33bd7168c224c4b7d69043a3d9}\label{RequestProcessor_8c_a6ad92c33bd7168c224c4b7d69043a3d9}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!resolveGetFileRequest@{resolveGetFileRequest}}
+\index{resolveGetFileRequest@{resolveGetFileRequest}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{resolveGetFileRequest()}{resolveGetFileRequest()}}
+{\footnotesize\ttfamily int resolve\+Get\+File\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Przetwarza request o plik. 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a601212945b3210c989cb4f5a5d380887}\label{RequestProcessor_8c_a601212945b3210c989cb4f5a5d380887}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!resolveMappedRequest@{resolveMappedRequest}}
+\index{resolveMappedRequest@{resolveMappedRequest}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{resolveMappedRequest()}{resolveMappedRequest()}}
+{\footnotesize\ttfamily int resolve\+Mapped\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Przetwarza request, który jest obsługiwany przez serwer, a nie jest requestem o plik. 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a5d95d9fb16ff0fdb16b4ecd4217df103}\label{RequestProcessor_8c_a5d95d9fb16ff0fdb16b4ecd4217df103}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!resolveRequest@{resolveRequest}}
+\index{resolveRequest@{resolveRequest}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{resolveRequest()}{resolveRequest()}}
+{\footnotesize\ttfamily int resolve\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Przetwarza request zgodnie informacjami ze struktury connection\+Info 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & informacje o requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+zwraca 0 w razie sukcesu lub numer błędu w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_ada1da38e9bf4f1781351dc855c02e08a}\label{RequestProcessor_8c_ada1da38e9bf4f1781351dc855c02e08a}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToGetAddGroup@{respondToGetAddGroup}}
+\index{respondToGetAddGroup@{respondToGetAddGroup}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToGetAddGroup()}{respondToGetAddGroup()}}
+{\footnotesize\ttfamily int respond\+To\+Get\+Add\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info,  }\item[{int}]{message\+Type,  }\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
+Zwraca stronę z dodawaniem nowej grupy 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+{\em message\+Type} & typ wiadomości do użytkownika \\
+\hline
+{\em message} & treść wiadomości do użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a06e1503b572227309d82fd1e9adc709c}\label{RequestProcessor_8c_a06e1503b572227309d82fd1e9adc709c}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToGetAddTest@{respondToGetAddTest}}
+\index{respondToGetAddTest@{respondToGetAddTest}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToGetAddTest()}{respondToGetAddTest()}}
+{\footnotesize\ttfamily int respond\+To\+Get\+Add\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info,  }\item[{int}]{message\+Type,  }\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
+Zwraca stronę z dodawaniem nowego testu 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+{\em message\+Type} & typ wiadomości do użytkownika \\
+\hline
+{\em message} & treść wiadomości do użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a48052809b2895eb031f077ed167ce016}\label{RequestProcessor_8c_a48052809b2895eb031f077ed167ce016}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToGetLogin@{respondToGetLogin}}
+\index{respondToGetLogin@{respondToGetLogin}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToGetLogin()}{respondToGetLogin()}}
+{\footnotesize\ttfamily int respond\+To\+Get\+Login (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info,  }\item[{int}]{message\+Type,  }\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
+Zwraca stronę logowania 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+{\em message\+Type} & typ wiadomości do użytkownika \\
+\hline
+{\em message} & treść wiadomości do użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_ae1b39d834e9170d22b8bde116068ac20}\label{RequestProcessor_8c_ae1b39d834e9170d22b8bde116068ac20}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToGetRegister@{respondToGetRegister}}
+\index{respondToGetRegister@{respondToGetRegister}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToGetRegister()}{respondToGetRegister()}}
+{\footnotesize\ttfamily int respond\+To\+Get\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info,  }\item[{int}]{message\+Type,  }\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
+Zwraca stronę rejestracji 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+{\em message\+Type} & typ wiadomości do użytkownika \\
+\hline
+{\em message} & treść wiadomości do użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a82b5d2bcf0bbce4179c94f78561f975b}\label{RequestProcessor_8c_a82b5d2bcf0bbce4179c94f78561f975b}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToGetStudents@{respondToGetStudents}}
+\index{respondToGetStudents@{respondToGetStudents}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToGetStudents()}{respondToGetStudents()}}
+{\footnotesize\ttfamily int respond\+To\+Get\+Students (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info,  }\item[{int}]{message\+Type,  }\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
+Zwraca stronę z listą studentów 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+{\em message\+Type} & typ wiadomości do użytkownika \\
+\hline
+{\em message} & treść wiadomości do użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_ad972bf0f0f50ad7b7c4bb90e5d34e994}\label{RequestProcessor_8c_ad972bf0f0f50ad7b7c4bb90e5d34e994}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToGetTests@{respondToGetTests}}
+\index{respondToGetTests@{respondToGetTests}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToGetTests()}{respondToGetTests()}}
+{\footnotesize\ttfamily int respond\+To\+Get\+Tests (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info,  }\item[{int}]{message\+Type,  }\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
+Zwraca stronę z listą testów 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+{\em message\+Type} & typ wiadomości do użytkownika \\
+\hline
+{\em message} & treść wiadomości do użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a5386fe5c16e5b36e1ffb3203cb2a62d0}\label{RequestProcessor_8c_a5386fe5c16e5b36e1ffb3203cb2a62d0}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToGetTestsByLecturer@{respondToGetTestsByLecturer}}
+\index{respondToGetTestsByLecturer@{respondToGetTestsByLecturer}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToGetTestsByLecturer()}{respondToGetTestsByLecturer()}}
+{\footnotesize\ttfamily int respond\+To\+Get\+Tests\+By\+Lecturer (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{response\+File,  }\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info,  }\item[{int}]{message\+Type,  }\item[{char $\ast$}]{message,  }\item[{\mbox{\hyperlink{structSession}{Session}}}]{session }\end{DoxyParamCaption})}
+
+Zwraca stronę z listą testów dla egzaminatora 
+\begin{DoxyParams}{Parametry}
+{\em response\+File} & \\
+\hline
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+{\em message\+Type} & typ wiadomości do użytkownika \\
+\hline
+{\em message} & treść wiadomości do użytkownika \\
+\hline
+{\em session} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a2932ca88ce3c0ccb0f0a75dc56906680}\label{RequestProcessor_8c_a2932ca88ce3c0ccb0f0a75dc56906680}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToGetTestsByStudent@{respondToGetTestsByStudent}}
+\index{respondToGetTestsByStudent@{respondToGetTestsByStudent}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToGetTestsByStudent()}{respondToGetTestsByStudent()}}
+{\footnotesize\ttfamily int respond\+To\+Get\+Tests\+By\+Student (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{response\+File,  }\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info,  }\item[{int}]{message\+Type,  }\item[{char $\ast$}]{message,  }\item[{\mbox{\hyperlink{structSession}{Session}}}]{session }\end{DoxyParamCaption})}
+
+Zwraca stronę z listą testów dla studenta 
+\begin{DoxyParams}{Parametry}
+{\em response\+File} & \\
+\hline
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+{\em message\+Type} & typ wiadomości do użytkownika \\
+\hline
+{\em message} & treść wiadomości do użytkownika \\
+\hline
+{\em session} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_ad8dc3ef76ed2a370e5f27152f74254c0}\label{RequestProcessor_8c_ad8dc3ef76ed2a370e5f27152f74254c0}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToIndex@{respondToIndex}}
+\index{respondToIndex@{respondToIndex}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToIndex()}{respondToIndex()}}
+{\footnotesize\ttfamily int respond\+To\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info,  }\item[{int}]{message\+Type,  }\item[{char $\ast$}]{message }\end{DoxyParamCaption})}
+
+Zwraca stronę główną serwisu 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+{\em message\+Type} & typ wiadomości do użytkownika \\
+\hline
+{\em message} & treść wiadomości do użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a3e2155a5af10465e0416c20cbdbc14ec}\label{RequestProcessor_8c_a3e2155a5af10465e0416c20cbdbc14ec}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToPostAddGroup@{respondToPostAddGroup}}
+\index{respondToPostAddGroup@{respondToPostAddGroup}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToPostAddGroup()}{respondToPostAddGroup()}}
+{\footnotesize\ttfamily int respond\+To\+Post\+Add\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Tworzy nową grupę 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a015949c29e160768aefba7ba752f066e}\label{RequestProcessor_8c_a015949c29e160768aefba7ba752f066e}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToPostAddTest@{respondToPostAddTest}}
+\index{respondToPostAddTest@{respondToPostAddTest}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToPostAddTest()}{respondToPostAddTest()}}
+{\footnotesize\ttfamily int respond\+To\+Post\+Add\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Dodaje nowy test 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a961204fa21052c2b04353b3c7ab4a617}\label{RequestProcessor_8c_a961204fa21052c2b04353b3c7ab4a617}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToPostAddToGroup@{respondToPostAddToGroup}}
+\index{respondToPostAddToGroup@{respondToPostAddToGroup}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToPostAddToGroup()}{respondToPostAddToGroup()}}
+{\footnotesize\ttfamily int respond\+To\+Post\+Add\+To\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Dodaje studenta do grupy 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_ad9da155f191a99526c7a9bd51b1bb59f}\label{RequestProcessor_8c_ad9da155f191a99526c7a9bd51b1bb59f}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToPostCheckTest@{respondToPostCheckTest}}
+\index{respondToPostCheckTest@{respondToPostCheckTest}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToPostCheckTest()}{respondToPostCheckTest()}}
+{\footnotesize\ttfamily int respond\+To\+Post\+Check\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Uruchamia automatyczne sprawdzanie testu 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a6294199c9f252e4860411a011512896f}\label{RequestProcessor_8c_a6294199c9f252e4860411a011512896f}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToPostLogin@{respondToPostLogin}}
+\index{respondToPostLogin@{respondToPostLogin}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToPostLogin()}{respondToPostLogin()}}
+{\footnotesize\ttfamily int respond\+To\+Post\+Login (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Wysyła dane logowania do serwera 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a42b5f842770dfde5dc87ce56c4dadd64}\label{RequestProcessor_8c_a42b5f842770dfde5dc87ce56c4dadd64}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToPostLogout@{respondToPostLogout}}
+\index{respondToPostLogout@{respondToPostLogout}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToPostLogout()}{respondToPostLogout()}}
+{\footnotesize\ttfamily int respond\+To\+Post\+Logout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Wysyła do serwera żądanie o wylogowanie 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a31dda2675408dc19fe57d8db116e0690}\label{RequestProcessor_8c_a31dda2675408dc19fe57d8db116e0690}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToPostRegister@{respondToPostRegister}}
+\index{respondToPostRegister@{respondToPostRegister}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToPostRegister()}{respondToPostRegister()}}
+{\footnotesize\ttfamily int respond\+To\+Post\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Wysyła formularz rejestracyjny do serwera 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a7b7a5156e18d6f8bfcb6b5760496f6a1}\label{RequestProcessor_8c_a7b7a5156e18d6f8bfcb6b5760496f6a1}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToPostSendTest@{respondToPostSendTest}}
+\index{respondToPostSendTest@{respondToPostSendTest}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToPostSendTest()}{respondToPostSendTest()}}
+{\footnotesize\ttfamily int respond\+To\+Post\+Send\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Wysyła odpowiedzi na test 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_aa2332af1624adf989dd7d80963e86358}\label{RequestProcessor_8c_aa2332af1624adf989dd7d80963e86358}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToPostStartTest@{respondToPostStartTest}}
+\index{respondToPostStartTest@{respondToPostStartTest}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToPostStartTest()}{respondToPostStartTest()}}
+{\footnotesize\ttfamily int respond\+To\+Post\+Start\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Udostępnia test grupie 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a09826803df1351e1e98ff136eeb239eb}\label{RequestProcessor_8c_a09826803df1351e1e98ff136eeb239eb}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!respondToPostTest@{respondToPostTest}}
+\index{respondToPostTest@{respondToPostTest}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{respondToPostTest()}{respondToPostTest()}}
+{\footnotesize\ttfamily int respond\+To\+Post\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structConnectionInfo}{Connection\+Info}}}]{connection\+Info }\end{DoxyParamCaption})}
+
+Zwraca stronę z rozwiązywaniem testu 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Info} & struktura z danymi o aktualnym requeście \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{RequestProcessor_8c_a08b345ebbe43124108a8ebb58e70a3a1}\label{RequestProcessor_8c_a08b345ebbe43124108a8ebb58e70a3a1}} 
+\index{RequestProcessor.c@{RequestProcessor.c}!sendFile@{sendFile}}
+\index{sendFile@{sendFile}!RequestProcessor.c@{RequestProcessor.c}}
+\subsubsection{\texorpdfstring{sendFile()}{sendFile()}}
+{\footnotesize\ttfamily int send\+File (\begin{DoxyParamCaption}\item[{int}]{connection\+Fd,  }\item[{char $\ast$}]{filename,  }\item[{char $\ast$}]{headers }\end{DoxyParamCaption})}
+
+Wysyła podany plik do klienta 
+\begin{DoxyParams}{Parametry}
+{\em connection\+Fd} & \\
+\hline
+{\em filename} & \\
+\hline
+{\em headers} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia 
+\end{DoxyReturn}
 
 
 \subsection{Dokumentacja zmiennych}
@@ -60,3 +811,4 @@ const char \mbox{\hyperlink{RequestProcessor_8c_a7066977006bd1e86e63f017236d9b58
 \subsubsection{\texorpdfstring{sessionChars}{sessionChars}}
 {\footnotesize\ttfamily const char session\+Chars\mbox{[}$\,$\mbox{]} = \char`\"{}0123456789abcdefghijklmnopqrstuvwxyz\+A\+B\+C\+D\+E\+F\+G\+H\+I\+J\+K\+L\+M\+N\+O\+P\+R\+S\+T\+U\+V\+W\+X\+Y\+Z\char`\"{}}
 
+Znaki, z których może składać się sesja. 

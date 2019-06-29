@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['connectionfd',['connectionFd',['../structthreadArgs.html#a6dbd124d6ea6c04faa6aa140851173fd',1,'threadArgs']]],
-  ['cwd',['cwd',['../structProcessData.html#a72e52a2fba172b6e53c28e5d3dbdcf22',1,'ProcessData']]]
+  ['connectionfd',['connectionFd',['../structConnectionInfo.html#a6c8c552a26539066578b4ee4d8586df8',1,'ConnectionInfo']]],
+  ['correct',['correct',['../structQuestion.html#a5ad88ad3b7a9b7763dd81d92b754ac1d',1,'Question']]]
 ];

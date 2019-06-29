@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['c_5fdialect',['C_DIALECT',['../CMakeCCompilerId_8c.html#a07f8e5783674099cd7f5110e22a78cdb',1,'CMakeCCompilerId.c']]],
-  ['cmd_5flength',['CMD_LENGTH',['../libs_2mybase64_8h.html#af3cc4ba42efb48f16226cb5ba77c1bbb',1,'CMD_LENGTH():&#160;mybase64.h'],['../pap_2zaj7_2zadanie7_2mybase64_8h.html#af3cc4ba42efb48f16226cb5ba77c1bbb',1,'CMD_LENGTH():&#160;mybase64.h'],['../z8__2_8c.html#af3cc4ba42efb48f16226cb5ba77c1bbb',1,'CMD_LENGTH():&#160;z8_2.c'],['../z8__5_8c.html#af3cc4ba42efb48f16226cb5ba77c1bbb',1,'CMD_LENGTH():&#160;z8_5.c'],['../z8__6_8c.html#af3cc4ba42efb48f16226cb5ba77c1bbb',1,'CMD_LENGTH():&#160;z8_6.c']]],
-  ['command_5flength',['COMMAND_LENGTH',['../z6__10_8c.html#a73c52f3e083ffd8acde0b01f74de7a5a',1,'COMMAND_LENGTH():&#160;z6_10.c'],['../z6__11_8c.html#a73c52f3e083ffd8acde0b01f74de7a5a',1,'COMMAND_LENGTH():&#160;z6_11.c'],['../z6__12_8c.html#a73c52f3e083ffd8acde0b01f74de7a5a',1,'COMMAND_LENGTH():&#160;z6_12.c'],['../z6__12__potomny_8c.html#a73c52f3e083ffd8acde0b01f74de7a5a',1,'COMMAND_LENGTH():&#160;z6_12_potomny.c'],['../z6__13_8c.html#a73c52f3e083ffd8acde0b01f74de7a5a',1,'COMMAND_LENGTH():&#160;z6_13.c'],['../z6__8_8c.html#a73c52f3e083ffd8acde0b01f74de7a5a',1,'COMMAND_LENGTH():&#160;z6_8.c'],['../z6__9_8c.html#a73c52f3e083ffd8acde0b01f74de7a5a',1,'COMMAND_LENGTH():&#160;z6_9.c']]],
-  ['compiler_5fid',['COMPILER_ID',['../CMakeCCompilerId_8c.html#a81dee0709ded976b2e0319239f72d174',1,'CMakeCCompilerId.c']]]
+  ['db_5fdatabase',['DB_DATABASE',['../mydb_8c.html#a8a91ca47e7ff6fac6bc8fac0809110ea',1,'mydb.c']]],
+  ['db_5flogin',['DB_LOGIN',['../mydb_8c.html#adf6e62f788a1c295424bca52dfd57dff',1,'mydb.c']]],
+  ['db_5fpassword',['DB_PASSWORD',['../mydb_8c.html#a4a575b56de3d90288721473c6e8966aa',1,'mydb.c']]],
+  ['db_5fserver',['DB_SERVER',['../mydb_8c.html#aa3a2945f047f8998d636b50a184c99a8',1,'mydb.c']]],
+  ['default_5fport',['DEFAULT_PORT',['../main_8c.html#a16b710f592bf8f7900666392adc444dc',1,'main.c']]]
 ];

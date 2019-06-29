@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['processdata',['ProcessData',['../structProcessData.html',1,'']]]
+  ['connectioninfo',['ConnectionInfo',['../structConnectionInfo.html',1,'']]]
 ];

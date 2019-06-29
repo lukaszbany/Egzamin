@@ -10,12 +10,25 @@
 #include <netdb.h>
 #include <errno.h>
 #include <limits.h>
+#include <time.h>
 
+int isHex(int x);
+
+/**
+ * Dokonuje operacji niezbędnych, aby uruchomić tryb deamon.
+ *
+ * @param port port na którym działa aplikacja
+ */
 void runAsDaemon(int port) {
     daemon(0, 0);
     openlog("Egzamin", LOG_PID, LOG_USER);
 }
 
+/**
+ * Tworzy gniazdo o podanym typie.
+ * @param type typ połączenia
+ * @return identyfikator pliku gniazda
+ */
 int createSocket(int type) {
     int fd = socket(PF_INET, type, 0);
     if (fd == -1) {
@@ -27,6 +40,10 @@ int createSocket(int type) {
     return fd;
 }
 
+/**
+ * Tworzy gniazdo TCP
+ * @return identyfikator pliku gniazda
+ */
 int createTcpSocket() {
     return createSocket(SOCK_STREAM);
 }
@@ -42,6 +59,11 @@ struct sockaddr_in createSockaddrWithAddress(char *address, int port) {
     return servaddr;
 }
 
+/**
+ * Tworzy strukturę sockaddr_in z podanym portem
+ * @param port do struktury
+ * @return gotową strukturę
+ */
 struct sockaddr_in createSockaddr(int port) {
     struct sockaddr_in servaddr;
     memset(&servaddr, 0, sizeof(servaddr));
@@ -53,6 +75,12 @@ struct sockaddr_in createSockaddr(int port) {
     return servaddr;
 }
 
+/**
+ * Łączy gniazdo z portem.
+ *
+ * @param serverFd identyfikator gniazda serwera
+ * @param port port do połączenia
+ */
 void bindSocketWithPort(int serverFd, int port) {
     struct sockaddr_in servaddr = createSockaddr(port);
 
@@ -66,6 +94,12 @@ void bindSocketWithPort(int serverFd, int port) {
     syslog(LOG_INFO, "Binded socket with port %d\n", port);
 }
 
+/**
+ * Zaczyna nasłuchiwanie na podanym gnieździe.
+ *
+ * @param serverFd identyfikator gniazda serwera
+ * @param maxBacklog maksymalna liczba oczekujących połączeń
+ */
 void startListening(int serverFd, int maxBacklog) {
     int result = listen(serverFd, maxBacklog);
     if (result == -1) {
@@ -74,11 +108,24 @@ void startListening(int serverFd, int maxBacklog) {
     }
 }
 
+/**
+ * Łączy gniazdo z portem i zaczyna nasłuchiwanie.
+ * @param serverFd identyfikator gniazda serwera
+ * @param port port do połączenia
+ * @param maxBacklog maksymalna liczba oczekujących połączeń
+ */
 void bindAndListen(int serverFd, int port, int maxBacklog) {
     bindSocketWithPort(serverFd, port);
     startListening(serverFd, maxBacklog);
 }
 
+/**
+ * Łączy z serwerem.
+ *
+ * @param connectionFd identyfikator gniazda połączenia
+ * @param address adres serwera
+ * @param port port na którym nastąpi połączenie
+ */
 void connectWithServer(int connectionFd, char * address, int port) {
     struct sockaddr_in servaddr = createSockaddrWithAddress(address, port);
 
@@ -90,6 +137,13 @@ void connectWithServer(int connectionFd, char * address, int port) {
     }
 }
 
+/**
+ * Tworzy gniazdo TCP i łączy z podanym adresem i portem.
+ *
+ * @param address do połączenia
+ * @param port port na którym nastąpi połączenie
+ * @return identyfikator gniazda połączenia
+ */
 int createTcpSocketAndConnect(char *address, int port) {
     int connectionFd = createTcpSocket();
     connectWithServer(connectionFd, address, port);
@@ -97,6 +151,12 @@ int createTcpSocketAndConnect(char *address, int port) {
     return connectionFd;
 }
 
+/**
+ * Pobiera nazwę hosta i umieszcza numer ip w parametrze ip.
+ *
+ * @param hostname nazwa hosta
+ * @param ip wynikowe ip
+ */
 void getIp(char *hostname, char *ip) {
     int status;
     struct addrinfo hints, *p;
@@ -132,6 +192,11 @@ void getIp(char *hostname, char *ip) {
     freeaddrinfo(servinfo);
 }
 
+/**
+ * Pobiera nazwę hosta z adresu ip
+ * @param address adres ip
+ * @param hostname wynikowa nazwa hosta
+ */
 void getHostname(char * address, char * hostname) {
     struct sockaddr_in sockaddr = createSockaddrWithAddress(address, 0);
     socklen_t size = sizeof(sockaddr);
@@ -147,6 +212,12 @@ void getHostname(char * address, char * hostname) {
     strcpy(hostname, name);
 }
 
+/**
+ * Odczytuje port z nazwy usługi.
+ * @param given
+ * @param protocol
+ * @return
+ */
 int readPort(char * given, char * protocol) {
     char * serviceName;
     errno = 0;
@@ -164,6 +235,11 @@ int readPort(char * given, char * protocol) {
     return port;
 }
 
+/**
+ * Odczytuje adres ip.
+ * @param address
+ * @param result
+ */
 void readIpAddress(char * address, char * result) {
     if (isIpAddress(address)) {
         strcpy(result, address);
@@ -172,12 +248,23 @@ void readIpAddress(char * address, char * result) {
     }
 }
 
+/**
+ * Sprawdza czy podany łańcuch znanków jest adresem ip.
+ * @param address łancuch znaków do sprawdznia
+ * @return 1 jeśli tak, 0 jeśli nie
+ */
 int isIpAddress(char * address) {
     struct sockaddr_in sa;
     int result = inet_pton(AF_INET, address, &(sa.sin_addr));
     return result;
 }
 
+/**
+ * Przyjmuje połączenie od klienta.
+ *
+ * @param serverSocket identyfikator gniazda serwera
+ * @return identyfikator gniazda klienta
+ */
 int acceptConnection(int serverSocket) {
     struct sockaddr_in clientaddr;
     socklen_t clientaddrSize = sizeof(clientaddr);
@@ -197,6 +284,14 @@ int acceptConnection(int serverSocket) {
     return connectionFd;
 }
 
+/**
+ * Przetwarza request do końca pliku, znajdując parametr SESSION_ID
+ * w headerze Cookie i parametry zapytania POST.
+ * @param requestHeaders Treść requestu
+ * @param sessionId znalezione sessionId
+ * @param requestBody znalezione parametry zapytania POST
+ * @return 1 jeśli znaleziono sesję, 0 jeśli nie
+ */
 int processRequestData(FILE *requestHeaders, char *sessionId, char *requestBody) {
     int sessionFound = -1;
     int contentLength = 0;
@@ -214,12 +309,20 @@ int processRequestData(FILE *requestHeaders, char *sessionId, char *requestBody)
     }
 
     if (contentLength > 0 && fgets(buf, (contentLength + 1), requestHeaders) != NULL) {
-        strcpy(requestBody, buf);
+        char decodedBuf[BUFSIZ];
+        decodeUrlEncoded(buf, decodedBuf);
+        strcpy(requestBody, decodedBuf);
     }
 
     return sessionFound;
 }
 
+/**
+ * Znajduje parametr SESSION_ID w nagłówku Cookie
+ * @param cookie Cookie do przeszukania
+ * @param sessionId znalezione SESSION_ID
+ * @return 1 jeśli znajdzie, 0 jeśli nie
+ */
 int findSessionIdInCookie(char * cookie, char sessionId[]) {
     char * token;
     token = strtok(cookie, ";");
@@ -235,16 +338,85 @@ int findSessionIdInCookie(char * cookie, char sessionId[]) {
     return -1;
 }
 
+/**
+ * Wycina znak nowej linii z łańcucha znakow
+ * @param text tekst do trimowania
+ */
 void trim(char * text) {
     int lastChar = strlen(text) - 1;
     if (text[lastChar] == '\n')
         text[lastChar] = '\0';
 }
 
+/**
+ * Wycina znaki powrotu karetki i nowej linii z łańcucha znakow
+ * @param text tekst do trimowania
+ */
 void removeCRLF(char * text) {
     int lastChar = strlen(text);
     for (int i = 0; i < lastChar; ++i) {
         if (text[i] == '\n' || text[i] == '\r')
             text[i] = '\0';
     }
+}
+
+/**
+ * Sprawdza czy wartość jest heksadecymalna
+ * @param x
+ * @return 1 jeśli tak, 0 jeśli nie
+ */
+int isHex(int x) {
+    return	(x >= '0' && x <= '9')	||
+              (x >= 'a' && x <= 'f')	||
+              (x >= 'A' && x <= 'F');
+}
+
+/**
+ * Dekoduje zakodowane parametry POST
+ * @param encoded łańcuch wejściowy
+ * @param decoded łańcuch zdekodowany
+ * @return -1 jeśli błąd
+ */
+int decodeUrlEncoded(char *encoded, char *decoded) {
+    char *o;
+    const char *end = encoded + strlen(encoded);
+    int c;
+
+    for (o = decoded; encoded <= end; o++) {
+        c = *encoded++;
+        if (c == '+') c = ' ';
+        else if (c == '%' && (	!isHex(*encoded++)	||
+                                  !isHex(*encoded++)	||
+                                  !sscanf(encoded - 2, "%2x", &c)))
+            return -1;
+
+        if (decoded) *o = c;
+    }
+
+    return o - decoded;
+}
+
+/**
+ * Zwraca Timestamp bazy danych w postaci łańcucha znaków
+ * dla czasu obecnego z przesunięciem o ilość minut podanych
+ * jako parametr offsetInMinutes.
+ *
+ * @param timestamp wynikowy łańcuch znaków
+ * @param offsetInMinutes minuty do przodu
+ */
+void createTimestamp(char * timestamp, int offsetInMinutes) {
+    struct tm tm;
+    time_t currentTime;
+    time(&currentTime);
+    currentTime += 60 * offsetInMinutes;
+
+    localtime_r(&currentTime, &tm);
+
+    sprintf(timestamp, "%d-%d-%d %d:%d:%d",
+            (tm.tm_year + 1900),
+            (tm.tm_mon + 1),
+            tm.tm_mday,
+            tm.tm_hour,
+            (tm.tm_min),
+            tm.tm_sec);
 }

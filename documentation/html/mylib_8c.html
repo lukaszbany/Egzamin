@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Dokumentacja pliku libs/mylib.c</title>
+<title>Egzamin: Dokumentacja pliku libs/mylib.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Egzamin
    </div>
   </td>
  </tr>
@@ -66,13 +66,12 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Definicje</a> &#124;
 <a href="#func-members">Funkcje</a>  </div>
   <div class="headertitle">
 <div class="title">Dokumentacja pliku mylib.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="libs_2mylib_8h_source.html">mylib.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="mylib_8h_source.html">mylib.h</a>&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;sys/socket.h&gt;</code><br />
 <code>#include &lt;arpa/inet.h&gt;</code><br />
@@ -83,14 +82,12 @@ $(function() {
 <code>#include &lt;netdb.h&gt;</code><br />
 <code>#include &lt;errno.h&gt;</code><br />
 <code>#include &lt;limits.h&gt;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Definicje</h2></td></tr>
-<tr class="memitem:a54fa99013d88b05125eba286921517c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a54fa99013d88b05125eba286921517c7">SESSION_ID_LENGTH</a>&#160;&#160;&#160;15</td></tr>
-<tr class="separator:a54fa99013d88b05125eba286921517c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funkcje</h2></td></tr>
+<tr class="memitem:a289f104688c1504cc880af09d0a1d129"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a289f104688c1504cc880af09d0a1d129">isHex</a> (int x)</td></tr>
+<tr class="separator:a289f104688c1504cc880af09d0a1d129"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a813affbb40064ac0726b445efc4dc095"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a813affbb40064ac0726b445efc4dc095">runAsDaemon</a> (int port)</td></tr>
 <tr class="separator:a813affbb40064ac0726b445efc4dc095"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fc152c9b7ea906ff8a1484fa9beaed3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a8fc152c9b7ea906ff8a1484fa9beaed3">createSocket</a> (int type)</td></tr>
@@ -123,26 +120,19 @@ Funkcje</h2></td></tr>
 <tr class="separator:aa5bfa84e9fe63fc784efa761f41b4e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67b86ec0e83279c0885565da066be3df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a67b86ec0e83279c0885565da066be3df">acceptConnection</a> (int serverSocket)</td></tr>
 <tr class="separator:a67b86ec0e83279c0885565da066be3df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c3fea059b954935070e40660115a5e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a0c3fea059b954935070e40660115a5e4">processHeadersAndGetSessionIdIfExist</a> (FILE *requestHeaders, char *sessionId)</td></tr>
-<tr class="separator:a0c3fea059b954935070e40660115a5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1fefe546a6d814c4bf9a33f4f9daefa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#ac1fefe546a6d814c4bf9a33f4f9daefa">findSessionIdInCookie</a> (char *cookie, char *sessionId)</td></tr>
-<tr class="separator:ac1fefe546a6d814c4bf9a33f4f9daefa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9cc67bf68722256b6db5cd2089a237c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#ae9cc67bf68722256b6db5cd2089a237c">processRequestData</a> (FILE *requestHeaders, char *sessionId, char *requestBody)</td></tr>
+<tr class="separator:ae9cc67bf68722256b6db5cd2089a237c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f6e8be07cf1064700a446039325caa8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a9f6e8be07cf1064700a446039325caa8">findSessionIdInCookie</a> (char *cookie, char sessionId[])</td></tr>
+<tr class="separator:a9f6e8be07cf1064700a446039325caa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab80d2ac405208bc1d1eb4de7a00b8fcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#ab80d2ac405208bc1d1eb4de7a00b8fcd">trim</a> (char *text)</td></tr>
+<tr class="separator:ab80d2ac405208bc1d1eb4de7a00b8fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae003f4cd4d3d8d46beada5d6ccb9fc03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#ae003f4cd4d3d8d46beada5d6ccb9fc03">removeCRLF</a> (char *text)</td></tr>
+<tr class="separator:ae003f4cd4d3d8d46beada5d6ccb9fc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5e85291f3316e7135e4bc009baf8ecb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#af5e85291f3316e7135e4bc009baf8ecb">decodeUrlEncoded</a> (char *encoded, char *decoded)</td></tr>
+<tr class="separator:af5e85291f3316e7135e4bc009baf8ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10662166fecd0481201828c294448e77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mylib_8c.html#a10662166fecd0481201828c294448e77">createTimestamp</a> (char *timestamp, int offsetInMinutes)</td></tr>
+<tr class="separator:a10662166fecd0481201828c294448e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Dokumentacja definicji</h2>
-<a id="a54fa99013d88b05125eba286921517c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54fa99013d88b05125eba286921517c7">&#9670;&nbsp;</a></span>SESSION_ID_LENGTH</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define SESSION_ID_LENGTH&#160;&#160;&#160;15</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Dokumentacja funkcji</h2>
 <a id="a67b86ec0e83279c0885565da066be3df"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a67b86ec0e83279c0885565da066be3df">&#9670;&nbsp;</a></span>acceptConnection()</h2>
@@ -159,6 +149,14 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Przyjmuje połączenie od klienta.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverSocket</td><td>identyfikator gniazda serwera </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>identyfikator gniazda klienta </dd></dl>
 
 </div>
 </div>
@@ -193,6 +191,14 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Łączy gniazdo z portem i zaczyna nasłuchiwanie. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverFd</td><td>identyfikator gniazda serwera </td></tr>
+    <tr><td class="paramname">port</td><td>port do połączenia </td></tr>
+    <tr><td class="paramname">maxBacklog</td><td>maksymalna liczba oczekujących połączeń </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -221,6 +227,14 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Łączy gniazdo z portem.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverFd</td><td>identyfikator gniazda serwera </td></tr>
+    <tr><td class="paramname">port</td><td>port do połączenia </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -255,6 +269,15 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Łączy z serwerem.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionFd</td><td>identyfikator gniazda połączenia </td></tr>
+    <tr><td class="paramname">address</td><td>adres serwera </td></tr>
+    <tr><td class="paramname">port</td><td>port na którym nastąpi połączenie </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -273,6 +296,13 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Tworzy strukturę sockaddr_in z podanym portem </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>do struktury </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>gotową strukturę </dd></dl>
 
 </div>
 </div>
@@ -319,6 +349,13 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Tworzy gniazdo o podanym typie. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>typ połączenia </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>identyfikator pliku gniazda </dd></dl>
 
 </div>
 </div>
@@ -336,6 +373,7 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Tworzy gniazdo TCP </p><dl class="section return"><dt>Zwraca</dt><dd>identyfikator pliku gniazda </dd></dl>
 
 </div>
 </div>
@@ -364,11 +402,92 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Tworzy gniazdo TCP i łączy z podanym adresem i portem.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>do połączenia </td></tr>
+    <tr><td class="paramname">port</td><td>port na którym nastąpi połączenie </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>identyfikator gniazda połączenia </dd></dl>
 
 </div>
 </div>
-<a id="ac1fefe546a6d814c4bf9a33f4f9daefa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1fefe546a6d814c4bf9a33f4f9daefa">&#9670;&nbsp;</a></span>findSessionIdInCookie()</h2>
+<a id="a10662166fecd0481201828c294448e77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10662166fecd0481201828c294448e77">&#9670;&nbsp;</a></span>createTimestamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void createTimestamp </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>timestamp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>offsetInMinutes</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zwraca Timestamp bazy danych w postaci łańcucha znaków dla czasu obecnego z przesunięciem o ilość minut podanych jako parametr offsetInMinutes.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timestamp</td><td>wynikowy łańcuch znaków </td></tr>
+    <tr><td class="paramname">offsetInMinutes</td><td>minuty do przodu </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af5e85291f3316e7135e4bc009baf8ecb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5e85291f3316e7135e4bc009baf8ecb">&#9670;&nbsp;</a></span>decodeUrlEncoded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int decodeUrlEncoded </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>encoded</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>decoded</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dekoduje zakodowane parametry POST </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">encoded</td><td>łańcuch wejściowy </td></tr>
+    <tr><td class="paramname">decoded</td><td>łańcuch zdekodowany </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>-1 jeśli błąd </dd></dl>
+
+</div>
+</div>
+<a id="a9f6e8be07cf1064700a446039325caa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f6e8be07cf1064700a446039325caa8">&#9670;&nbsp;</a></span>findSessionIdInCookie()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -382,8 +501,8 @@ Funkcje</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>sessionId</em>&#160;</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sessionId</em>[]&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -392,6 +511,14 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Znajduje parametr SESSION_ID w nagłówku Cookie </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cookie</td><td>Cookie do przeszukania </td></tr>
+    <tr><td class="paramname">sessionId</td><td>znalezione SESSION_ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>1 jeśli znajdzie, 0 jeśli nie </dd></dl>
 
 </div>
 </div>
@@ -420,6 +547,13 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Pobiera nazwę hosta z adresu ip </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>adres ip </td></tr>
+    <tr><td class="paramname">hostname</td><td>wynikowa nazwa hosta </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -448,6 +582,39 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Pobiera nazwę hosta i umieszcza numer ip w parametrze ip.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hostname</td><td>nazwa hosta </td></tr>
+    <tr><td class="paramname">ip</td><td>wynikowe ip </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a289f104688c1504cc880af09d0a1d129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a289f104688c1504cc880af09d0a1d129">&#9670;&nbsp;</a></span>isHex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int isHex </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sprawdza czy wartość jest heksadecymalna </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>1 jeśli tak, 0 jeśli nie </dd></dl>
 
 </div>
 </div>
@@ -466,17 +633,24 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sprawdza czy podany łańcuch znanków jest adresem ip. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>łancuch znaków do sprawdznia </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>1 jeśli tak, 0 jeśli nie </dd></dl>
 
 </div>
 </div>
-<a id="a0c3fea059b954935070e40660115a5e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c3fea059b954935070e40660115a5e4">&#9670;&nbsp;</a></span>processHeadersAndGetSessionIdIfExist()</h2>
+<a id="ae9cc67bf68722256b6db5cd2089a237c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9cc67bf68722256b6db5cd2089a237c">&#9670;&nbsp;</a></span>processRequestData()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int processHeadersAndGetSessionIdIfExist </td>
+          <td class="memname">int processRequestData </td>
           <td>(</td>
           <td class="paramtype">FILE *&#160;</td>
           <td class="paramname"><em>requestHeaders</em>, </td>
@@ -485,7 +659,13 @@ Funkcje</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>sessionId</em>&#160;</td>
+          <td class="paramname"><em>sessionId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>requestBody</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -494,6 +674,15 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Przetwarza request do końca pliku, znajdując parametr SESSION_ID w headerze Cookie i parametry zapytania POST. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requestHeaders</td><td>Treść requestu </td></tr>
+    <tr><td class="paramname">sessionId</td><td>znalezione sessionId </td></tr>
+    <tr><td class="paramname">requestBody</td><td>znalezione parametry zapytania POST </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>1 jeśli znaleziono sesję, 0 jeśli nie </dd></dl>
 
 </div>
 </div>
@@ -522,6 +711,13 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Odczytuje adres ip. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td></td></tr>
+    <tr><td class="paramname">result</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -550,6 +746,38 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Odczytuje port z nazwy usługi. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">given</td><td></td></tr>
+    <tr><td class="paramname">protocol</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ae003f4cd4d3d8d46beada5d6ccb9fc03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae003f4cd4d3d8d46beada5d6ccb9fc03">&#9670;&nbsp;</a></span>removeCRLF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void removeCRLF </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wycina znaki powrotu karetki i nowej linii z łańcucha znakow </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>tekst do trimowania </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -568,6 +796,13 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Dokonuje operacji niezbędnych, aby uruchomić tryb deamon.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">port</td><td>port na którym działa aplikacja </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -596,6 +831,38 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Zaczyna nasłuchiwanie na podanym gnieździe.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverFd</td><td>identyfikator gniazda serwera </td></tr>
+    <tr><td class="paramname">maxBacklog</td><td>maksymalna liczba oczekujących połączeń </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab80d2ac405208bc1d1eb4de7a00b8fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab80d2ac405208bc1d1eb4de7a00b8fcd">&#9670;&nbsp;</a></span>trim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void trim </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wycina znak nowej linii z łańcucha znakow </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>tekst do trimowania </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

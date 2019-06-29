@@ -1,0 +1,8 @@
+<form action="/addGroup" method="POST" accept-charset="UTF-8">
+    <div class="form-group">
+        <label for="name">Nazwa grupy</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Nazwa grupy" maxlength="10" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Dodaj grupę</button>
+</form>
+</div>

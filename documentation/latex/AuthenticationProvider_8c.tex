@@ -1,0 +1,43 @@
+\hypertarget{AuthenticationProvider_8c}{}\section{Dokumentacja pliku Authentication\+Provider.\+c}
+\label{AuthenticationProvider_8c}\index{AuthenticationProvider.c@{AuthenticationProvider.c}}
+{\ttfamily \#include \char`\"{}Authentication\+Provider.\+h\char`\"{}}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{AuthenticationProvider_8c_a0bbe35fda939018d5672a6cfc02cfa51}{P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+L\+E\+N\+G\+TH}}~256
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{AuthenticationProvider_8c_a12f10e15314bf0bef77f8d74d0c54143}{check\+Credentials}} (char $\ast$login, char $\ast$password, \mbox{\hyperlink{structUser}{User}} $\ast$user)
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{AuthenticationProvider_8c_a0bbe35fda939018d5672a6cfc02cfa51}\label{AuthenticationProvider_8c_a0bbe35fda939018d5672a6cfc02cfa51}} 
+\index{AuthenticationProvider.c@{AuthenticationProvider.c}!PASSWORD\_LENGTH@{PASSWORD\_LENGTH}}
+\index{PASSWORD\_LENGTH@{PASSWORD\_LENGTH}!AuthenticationProvider.c@{AuthenticationProvider.c}}
+\subsubsection{\texorpdfstring{PASSWORD\_LENGTH}{PASSWORD\_LENGTH}}
+{\footnotesize\ttfamily \#define P\+A\+S\+S\+W\+O\+R\+D\+\_\+\+L\+E\+N\+G\+TH~256}
+
+Maksymalna długość hasła. 
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{AuthenticationProvider_8c_a12f10e15314bf0bef77f8d74d0c54143}\label{AuthenticationProvider_8c_a12f10e15314bf0bef77f8d74d0c54143}} 
+\index{AuthenticationProvider.c@{AuthenticationProvider.c}!checkCredentials@{checkCredentials}}
+\index{checkCredentials@{checkCredentials}!AuthenticationProvider.c@{AuthenticationProvider.c}}
+\subsubsection{\texorpdfstring{checkCredentials()}{checkCredentials()}}
+{\footnotesize\ttfamily int check\+Credentials (\begin{DoxyParamCaption}\item[{char $\ast$}]{login,  }\item[{char $\ast$}]{password,  }\item[{\mbox{\hyperlink{structUser}{User}} $\ast$}]{user }\end{DoxyParamCaption})}
+
+Sprawdza czy dane użytkownika znajdują się w bazie łącznie z odkodowaniem jego hasła i zwraca go, jeśli tak. 
+\begin{DoxyParams}{Parametry}
+{\em login} & login użytkownika \\
+\hline
+{\em password} & hasło użytkownika \\
+\hline
+{\em user} & znaleziony użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 jeśli login i hasło się zgadzają, -\/1 jeśli nie 
+\end{DoxyReturn}

@@ -1,0 +1,2 @@
+<form action="/test" method="POST" accept-charset="UTF-8">
+    <div class="form-group row">

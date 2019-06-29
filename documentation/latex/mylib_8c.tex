@@ -11,13 +11,11 @@
 {\ttfamily \#include $<$netdb.\+h$>$}\newline
 {\ttfamily \#include $<$errno.\+h$>$}\newline
 {\ttfamily \#include $<$limits.\+h$>$}\newline
-\subsection*{Definicje}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{mylib_8c_a54fa99013d88b05125eba286921517c7}{S\+E\+S\+S\+I\+O\+N\+\_\+\+I\+D\+\_\+\+L\+E\+N\+G\+TH}}~15
-\end{DoxyCompactItemize}
+{\ttfamily \#include $<$time.\+h$>$}\newline
 \subsection*{Funkcje}
 \begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mylib_8c_a289f104688c1504cc880af09d0a1d129}{is\+Hex}} (int x)
 \item 
 void \mbox{\hyperlink{mylib_8c_a813affbb40064ac0726b445efc4dc095}{run\+As\+Daemon}} (int port)
 \item 
@@ -51,19 +49,18 @@ int \mbox{\hyperlink{mylib_8c_aa5bfa84e9fe63fc784efa761f41b4e52}{is\+Ip\+Address
 \item 
 int \mbox{\hyperlink{mylib_8c_a67b86ec0e83279c0885565da066be3df}{accept\+Connection}} (int server\+Socket)
 \item 
-int \mbox{\hyperlink{mylib_8c_a0c3fea059b954935070e40660115a5e4}{process\+Headers\+And\+Get\+Session\+Id\+If\+Exist}} (F\+I\+LE $\ast$request\+Headers, char $\ast$session\+Id)
+int \mbox{\hyperlink{mylib_8c_ae9cc67bf68722256b6db5cd2089a237c}{process\+Request\+Data}} (F\+I\+LE $\ast$request\+Headers, char $\ast$session\+Id, char $\ast$request\+Body)
 \item 
-int \mbox{\hyperlink{mylib_8c_ac1fefe546a6d814c4bf9a33f4f9daefa}{find\+Session\+Id\+In\+Cookie}} (char $\ast$cookie, char $\ast$session\+Id)
+int \mbox{\hyperlink{mylib_8c_a9f6e8be07cf1064700a446039325caa8}{find\+Session\+Id\+In\+Cookie}} (char $\ast$cookie, char session\+Id\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{mylib_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}{trim}} (char $\ast$text)
+\item 
+void \mbox{\hyperlink{mylib_8c_ae003f4cd4d3d8d46beada5d6ccb9fc03}{remove\+C\+R\+LF}} (char $\ast$text)
+\item 
+int \mbox{\hyperlink{mylib_8c_af5e85291f3316e7135e4bc009baf8ecb}{decode\+Url\+Encoded}} (char $\ast$encoded, char $\ast$decoded)
+\item 
+void \mbox{\hyperlink{mylib_8c_a10662166fecd0481201828c294448e77}{create\+Timestamp}} (char $\ast$timestamp, int offset\+In\+Minutes)
 \end{DoxyCompactItemize}
-
-
-\subsection{Dokumentacja definicji}
-\mbox{\Hypertarget{mylib_8c_a54fa99013d88b05125eba286921517c7}\label{mylib_8c_a54fa99013d88b05125eba286921517c7}} 
-\index{mylib.c@{mylib.c}!SESSION\_ID\_LENGTH@{SESSION\_ID\_LENGTH}}
-\index{SESSION\_ID\_LENGTH@{SESSION\_ID\_LENGTH}!mylib.c@{mylib.c}}
-\subsubsection{\texorpdfstring{SESSION\_ID\_LENGTH}{SESSION\_ID\_LENGTH}}
-{\footnotesize\ttfamily \#define S\+E\+S\+S\+I\+O\+N\+\_\+\+I\+D\+\_\+\+L\+E\+N\+G\+TH~15}
-
 
 
 \subsection{Dokumentacja funkcji}
@@ -73,30 +70,77 @@ int \mbox{\hyperlink{mylib_8c_ac1fefe546a6d814c4bf9a33f4f9daefa}{find\+Session\+
 \subsubsection{\texorpdfstring{acceptConnection()}{acceptConnection()}}
 {\footnotesize\ttfamily int accept\+Connection (\begin{DoxyParamCaption}\item[{int}]{server\+Socket }\end{DoxyParamCaption})}
 
+Przyjmuje połączenie od klienta.
+
+
+\begin{DoxyParams}{Parametry}
+{\em server\+Socket} & identyfikator gniazda serwera \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+identyfikator gniazda klienta 
+\end{DoxyReturn}
 \mbox{\Hypertarget{mylib_8c_a4ed91d668694a3e59932bd65b5ac8fdb}\label{mylib_8c_a4ed91d668694a3e59932bd65b5ac8fdb}} 
 \index{mylib.c@{mylib.c}!bindAndListen@{bindAndListen}}
 \index{bindAndListen@{bindAndListen}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{bindAndListen()}{bindAndListen()}}
 {\footnotesize\ttfamily void bind\+And\+Listen (\begin{DoxyParamCaption}\item[{int}]{server\+Fd,  }\item[{int}]{port,  }\item[{int}]{max\+Backlog }\end{DoxyParamCaption})}
 
+Łączy gniazdo z portem i zaczyna nasłuchiwanie. 
+\begin{DoxyParams}{Parametry}
+{\em server\+Fd} & identyfikator gniazda serwera \\
+\hline
+{\em port} & port do połączenia \\
+\hline
+{\em max\+Backlog} & maksymalna liczba oczekujących połączeń \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{mylib_8c_a5b8d3988a249e53b8bceed317d55552f}\label{mylib_8c_a5b8d3988a249e53b8bceed317d55552f}} 
 \index{mylib.c@{mylib.c}!bindSocketWithPort@{bindSocketWithPort}}
 \index{bindSocketWithPort@{bindSocketWithPort}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{bindSocketWithPort()}{bindSocketWithPort()}}
 {\footnotesize\ttfamily void bind\+Socket\+With\+Port (\begin{DoxyParamCaption}\item[{int}]{server\+Fd,  }\item[{int}]{port }\end{DoxyParamCaption})}
 
+Łączy gniazdo z portem.
+
+
+\begin{DoxyParams}{Parametry}
+{\em server\+Fd} & identyfikator gniazda serwera \\
+\hline
+{\em port} & port do połączenia \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{mylib_8c_adbd9e9e9ab153f13203f74978d35bef9}\label{mylib_8c_adbd9e9e9ab153f13203f74978d35bef9}} 
 \index{mylib.c@{mylib.c}!connectWithServer@{connectWithServer}}
 \index{connectWithServer@{connectWithServer}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{connectWithServer()}{connectWithServer()}}
 {\footnotesize\ttfamily void connect\+With\+Server (\begin{DoxyParamCaption}\item[{int}]{connection\+Fd,  }\item[{char $\ast$}]{address,  }\item[{int}]{port }\end{DoxyParamCaption})}
 
+Łączy z serwerem.
+
+
+\begin{DoxyParams}{Parametry}
+{\em connection\+Fd} & identyfikator gniazda połączenia \\
+\hline
+{\em address} & adres serwera \\
+\hline
+{\em port} & port na którym nastąpi połączenie \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{mylib_8c_a1c5b32d121051483480797482935948e}\label{mylib_8c_a1c5b32d121051483480797482935948e}} 
 \index{mylib.c@{mylib.c}!createSockaddr@{createSockaddr}}
 \index{createSockaddr@{createSockaddr}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{createSockaddr()}{createSockaddr()}}
 {\footnotesize\ttfamily struct sockaddr\+\_\+in create\+Sockaddr (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
 
+Tworzy strukturę sockaddr\+\_\+in z podanym portem 
+\begin{DoxyParams}{Parametry}
+{\em port} & do struktury \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+gotową strukturę 
+\end{DoxyReturn}
 \mbox{\Hypertarget{mylib_8c_a28c7d962316c79baa25bc5691eb67b23}\label{mylib_8c_a28c7d962316c79baa25bc5691eb67b23}} 
 \index{mylib.c@{mylib.c}!createSockaddrWithAddress@{createSockaddrWithAddress}}
 \index{createSockaddrWithAddress@{createSockaddrWithAddress}!mylib.c@{mylib.c}}
@@ -109,69 +153,238 @@ int \mbox{\hyperlink{mylib_8c_ac1fefe546a6d814c4bf9a33f4f9daefa}{find\+Session\+
 \subsubsection{\texorpdfstring{createSocket()}{createSocket()}}
 {\footnotesize\ttfamily int create\+Socket (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})}
 
+Tworzy gniazdo o podanym typie. 
+\begin{DoxyParams}{Parametry}
+{\em type} & typ połączenia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+identyfikator pliku gniazda 
+\end{DoxyReturn}
 \mbox{\Hypertarget{mylib_8c_ae20818ce587f9a471ecefc0f89b4739f}\label{mylib_8c_ae20818ce587f9a471ecefc0f89b4739f}} 
 \index{mylib.c@{mylib.c}!createTcpSocket@{createTcpSocket}}
 \index{createTcpSocket@{createTcpSocket}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{createTcpSocket()}{createTcpSocket()}}
 {\footnotesize\ttfamily int create\+Tcp\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+Tworzy gniazdo T\+CP \begin{DoxyReturn}{Zwraca}
+identyfikator pliku gniazda 
+\end{DoxyReturn}
 \mbox{\Hypertarget{mylib_8c_a3461e2159f993f75f6994a773e84d18d}\label{mylib_8c_a3461e2159f993f75f6994a773e84d18d}} 
 \index{mylib.c@{mylib.c}!createTcpSocketAndConnect@{createTcpSocketAndConnect}}
 \index{createTcpSocketAndConnect@{createTcpSocketAndConnect}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{createTcpSocketAndConnect()}{createTcpSocketAndConnect()}}
 {\footnotesize\ttfamily int create\+Tcp\+Socket\+And\+Connect (\begin{DoxyParamCaption}\item[{char $\ast$}]{address,  }\item[{int}]{port }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{mylib_8c_ac1fefe546a6d814c4bf9a33f4f9daefa}\label{mylib_8c_ac1fefe546a6d814c4bf9a33f4f9daefa}} 
+Tworzy gniazdo T\+CP i łączy z podanym adresem i portem.
+
+
+\begin{DoxyParams}{Parametry}
+{\em address} & do połączenia \\
+\hline
+{\em port} & port na którym nastąpi połączenie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+identyfikator gniazda połączenia 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mylib_8c_a10662166fecd0481201828c294448e77}\label{mylib_8c_a10662166fecd0481201828c294448e77}} 
+\index{mylib.c@{mylib.c}!createTimestamp@{createTimestamp}}
+\index{createTimestamp@{createTimestamp}!mylib.c@{mylib.c}}
+\subsubsection{\texorpdfstring{createTimestamp()}{createTimestamp()}}
+{\footnotesize\ttfamily void create\+Timestamp (\begin{DoxyParamCaption}\item[{char $\ast$}]{timestamp,  }\item[{int}]{offset\+In\+Minutes }\end{DoxyParamCaption})}
+
+Zwraca Timestamp bazy danych w postaci łańcucha znaków dla czasu obecnego z przesunięciem o ilość minut podanych jako parametr offset\+In\+Minutes.
+
+
+\begin{DoxyParams}{Parametry}
+{\em timestamp} & wynikowy łańcuch znaków \\
+\hline
+{\em offset\+In\+Minutes} & minuty do przodu \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mylib_8c_af5e85291f3316e7135e4bc009baf8ecb}\label{mylib_8c_af5e85291f3316e7135e4bc009baf8ecb}} 
+\index{mylib.c@{mylib.c}!decodeUrlEncoded@{decodeUrlEncoded}}
+\index{decodeUrlEncoded@{decodeUrlEncoded}!mylib.c@{mylib.c}}
+\subsubsection{\texorpdfstring{decodeUrlEncoded()}{decodeUrlEncoded()}}
+{\footnotesize\ttfamily int decode\+Url\+Encoded (\begin{DoxyParamCaption}\item[{char $\ast$}]{encoded,  }\item[{char $\ast$}]{decoded }\end{DoxyParamCaption})}
+
+Dekoduje zakodowane parametry P\+O\+ST 
+\begin{DoxyParams}{Parametry}
+{\em encoded} & łańcuch wejściowy \\
+\hline
+{\em decoded} & łańcuch zdekodowany \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+-\/1 jeśli błąd 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mylib_8c_a9f6e8be07cf1064700a446039325caa8}\label{mylib_8c_a9f6e8be07cf1064700a446039325caa8}} 
 \index{mylib.c@{mylib.c}!findSessionIdInCookie@{findSessionIdInCookie}}
 \index{findSessionIdInCookie@{findSessionIdInCookie}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{findSessionIdInCookie()}{findSessionIdInCookie()}}
-{\footnotesize\ttfamily int find\+Session\+Id\+In\+Cookie (\begin{DoxyParamCaption}\item[{char $\ast$}]{cookie,  }\item[{char $\ast$}]{session\+Id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int find\+Session\+Id\+In\+Cookie (\begin{DoxyParamCaption}\item[{char $\ast$}]{cookie,  }\item[{char}]{session\+Id\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
+Znajduje parametr S\+E\+S\+S\+I\+O\+N\+\_\+\+ID w nagłówku Cookie 
+\begin{DoxyParams}{Parametry}
+{\em cookie} & Cookie do przeszukania \\
+\hline
+{\em session\+Id} & znalezione S\+E\+S\+S\+I\+O\+N\+\_\+\+ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+1 jeśli znajdzie, 0 jeśli nie 
+\end{DoxyReturn}
 \mbox{\Hypertarget{mylib_8c_a38838f8aa6b163c26e25681056453a42}\label{mylib_8c_a38838f8aa6b163c26e25681056453a42}} 
 \index{mylib.c@{mylib.c}!getHostname@{getHostname}}
 \index{getHostname@{getHostname}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{getHostname()}{getHostname()}}
 {\footnotesize\ttfamily void get\+Hostname (\begin{DoxyParamCaption}\item[{char $\ast$}]{address,  }\item[{char $\ast$}]{hostname }\end{DoxyParamCaption})}
 
+Pobiera nazwę hosta z adresu ip 
+\begin{DoxyParams}{Parametry}
+{\em address} & adres ip \\
+\hline
+{\em hostname} & wynikowa nazwa hosta \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{mylib_8c_a1bdface4fc04fa265a97a81525195b64}\label{mylib_8c_a1bdface4fc04fa265a97a81525195b64}} 
 \index{mylib.c@{mylib.c}!getIp@{getIp}}
 \index{getIp@{getIp}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{getIp()}{getIp()}}
 {\footnotesize\ttfamily void get\+Ip (\begin{DoxyParamCaption}\item[{char $\ast$}]{hostname,  }\item[{char $\ast$}]{ip }\end{DoxyParamCaption})}
 
+Pobiera nazwę hosta i umieszcza numer ip w parametrze ip.
+
+
+\begin{DoxyParams}{Parametry}
+{\em hostname} & nazwa hosta \\
+\hline
+{\em ip} & wynikowe ip \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mylib_8c_a289f104688c1504cc880af09d0a1d129}\label{mylib_8c_a289f104688c1504cc880af09d0a1d129}} 
+\index{mylib.c@{mylib.c}!isHex@{isHex}}
+\index{isHex@{isHex}!mylib.c@{mylib.c}}
+\subsubsection{\texorpdfstring{isHex()}{isHex()}}
+{\footnotesize\ttfamily int is\+Hex (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+Sprawdza czy wartość jest heksadecymalna 
+\begin{DoxyParams}{Parametry}
+{\em x} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+1 jeśli tak, 0 jeśli nie 
+\end{DoxyReturn}
 \mbox{\Hypertarget{mylib_8c_aa5bfa84e9fe63fc784efa761f41b4e52}\label{mylib_8c_aa5bfa84e9fe63fc784efa761f41b4e52}} 
 \index{mylib.c@{mylib.c}!isIpAddress@{isIpAddress}}
 \index{isIpAddress@{isIpAddress}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{isIpAddress()}{isIpAddress()}}
 {\footnotesize\ttfamily int is\+Ip\+Address (\begin{DoxyParamCaption}\item[{char $\ast$}]{address }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{mylib_8c_a0c3fea059b954935070e40660115a5e4}\label{mylib_8c_a0c3fea059b954935070e40660115a5e4}} 
-\index{mylib.c@{mylib.c}!processHeadersAndGetSessionIdIfExist@{processHeadersAndGetSessionIdIfExist}}
-\index{processHeadersAndGetSessionIdIfExist@{processHeadersAndGetSessionIdIfExist}!mylib.c@{mylib.c}}
-\subsubsection{\texorpdfstring{processHeadersAndGetSessionIdIfExist()}{processHeadersAndGetSessionIdIfExist()}}
-{\footnotesize\ttfamily int process\+Headers\+And\+Get\+Session\+Id\+If\+Exist (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{request\+Headers,  }\item[{char $\ast$}]{session\+Id }\end{DoxyParamCaption})}
+Sprawdza czy podany łańcuch znanków jest adresem ip. 
+\begin{DoxyParams}{Parametry}
+{\em address} & łancuch znaków do sprawdznia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+1 jeśli tak, 0 jeśli nie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mylib_8c_ae9cc67bf68722256b6db5cd2089a237c}\label{mylib_8c_ae9cc67bf68722256b6db5cd2089a237c}} 
+\index{mylib.c@{mylib.c}!processRequestData@{processRequestData}}
+\index{processRequestData@{processRequestData}!mylib.c@{mylib.c}}
+\subsubsection{\texorpdfstring{processRequestData()}{processRequestData()}}
+{\footnotesize\ttfamily int process\+Request\+Data (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{request\+Headers,  }\item[{char $\ast$}]{session\+Id,  }\item[{char $\ast$}]{request\+Body }\end{DoxyParamCaption})}
 
+Przetwarza request do końca pliku, znajdując parametr S\+E\+S\+S\+I\+O\+N\+\_\+\+ID w headerze Cookie i parametry zapytania P\+O\+ST. 
+\begin{DoxyParams}{Parametry}
+{\em request\+Headers} & Treść requestu \\
+\hline
+{\em session\+Id} & znalezione session\+Id \\
+\hline
+{\em request\+Body} & znalezione parametry zapytania P\+O\+ST \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+1 jeśli znaleziono sesję, 0 jeśli nie 
+\end{DoxyReturn}
 \mbox{\Hypertarget{mylib_8c_a2129dc620af813bcf156ec152931b240}\label{mylib_8c_a2129dc620af813bcf156ec152931b240}} 
 \index{mylib.c@{mylib.c}!readIpAddress@{readIpAddress}}
 \index{readIpAddress@{readIpAddress}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{readIpAddress()}{readIpAddress()}}
 {\footnotesize\ttfamily void read\+Ip\+Address (\begin{DoxyParamCaption}\item[{char $\ast$}]{address,  }\item[{char $\ast$}]{result }\end{DoxyParamCaption})}
 
+Odczytuje adres ip. 
+\begin{DoxyParams}{Parametry}
+{\em address} & \\
+\hline
+{\em result} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{mylib_8c_adf3f0c7331b45cb18485b7b8b6f696ec}\label{mylib_8c_adf3f0c7331b45cb18485b7b8b6f696ec}} 
 \index{mylib.c@{mylib.c}!readPort@{readPort}}
 \index{readPort@{readPort}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{readPort()}{readPort()}}
 {\footnotesize\ttfamily int read\+Port (\begin{DoxyParamCaption}\item[{char $\ast$}]{given,  }\item[{char $\ast$}]{protocol }\end{DoxyParamCaption})}
 
+Odczytuje port z nazwy usługi. 
+\begin{DoxyParams}{Parametry}
+{\em given} & \\
+\hline
+{\em protocol} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{mylib_8c_ae003f4cd4d3d8d46beada5d6ccb9fc03}\label{mylib_8c_ae003f4cd4d3d8d46beada5d6ccb9fc03}} 
+\index{mylib.c@{mylib.c}!removeCRLF@{removeCRLF}}
+\index{removeCRLF@{removeCRLF}!mylib.c@{mylib.c}}
+\subsubsection{\texorpdfstring{removeCRLF()}{removeCRLF()}}
+{\footnotesize\ttfamily void remove\+C\+R\+LF (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+
+Wycina znaki powrotu karetki i nowej linii z łańcucha znakow 
+\begin{DoxyParams}{Parametry}
+{\em text} & tekst do trimowania \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{mylib_8c_a813affbb40064ac0726b445efc4dc095}\label{mylib_8c_a813affbb40064ac0726b445efc4dc095}} 
 \index{mylib.c@{mylib.c}!runAsDaemon@{runAsDaemon}}
 \index{runAsDaemon@{runAsDaemon}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{runAsDaemon()}{runAsDaemon()}}
 {\footnotesize\ttfamily void run\+As\+Daemon (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
 
+Dokonuje operacji niezbędnych, aby uruchomić tryb deamon.
+
+
+\begin{DoxyParams}{Parametry}
+{\em port} & port na którym działa aplikacja \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{mylib_8c_af20c7fe82d88f6c19955f36984994a77}\label{mylib_8c_af20c7fe82d88f6c19955f36984994a77}} 
 \index{mylib.c@{mylib.c}!startListening@{startListening}}
 \index{startListening@{startListening}!mylib.c@{mylib.c}}
 \subsubsection{\texorpdfstring{startListening()}{startListening()}}
 {\footnotesize\ttfamily void start\+Listening (\begin{DoxyParamCaption}\item[{int}]{server\+Fd,  }\item[{int}]{max\+Backlog }\end{DoxyParamCaption})}
 
+Zaczyna nasłuchiwanie na podanym gnieździe.
+
+
+\begin{DoxyParams}{Parametry}
+{\em server\+Fd} & identyfikator gniazda serwera \\
+\hline
+{\em max\+Backlog} & maksymalna liczba oczekujących połączeń \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mylib_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}\label{mylib_8c_ab80d2ac405208bc1d1eb4de7a00b8fcd}} 
+\index{mylib.c@{mylib.c}!trim@{trim}}
+\index{trim@{trim}!mylib.c@{mylib.c}}
+\subsubsection{\texorpdfstring{trim()}{trim()}}
+{\footnotesize\ttfamily void trim (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+
+Wycina znak nowej linii z łańcucha znakow 
+\begin{DoxyParams}{Parametry}
+{\em text} & tekst do trimowania \\
+\hline
+\end{DoxyParams}

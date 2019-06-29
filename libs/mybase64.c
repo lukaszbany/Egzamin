@@ -6,12 +6,22 @@
 void trimText(char *text);
 void runCommand(char *encodedChars, const char *cmd);
 
+/**
+ * Wycina znak nowej linii z końca tekstu
+ * @param text
+ */
 void trimText(char *text) {
     int lastChar = strlen(text) - 1;
     if (text[lastChar] == '\n')
         text[lastChar] = '\0';
 }
 
+/**
+ * Uruchamia komendę systemową.
+ *
+ * @param encodedChars parametr
+ * @param cmd komenda
+ */
 void runCommand(char *encodedChars, const char *cmd) {
     FILE *file = popen(cmd, "r");
     if (!file) {
@@ -28,6 +38,11 @@ void runCommand(char *encodedChars, const char *cmd) {
     }
 }
 
+/**
+ * Odkodowuje podane znaki zakodowane metodą base64.
+ * @param chars zakodowane znaki
+ * @param decodedChars odkodowane znaki
+ */
 void decodeChars(char *chars, char *decodedChars) {
     char cmd[CMD_LENGTH];
     sprintf(cmd, "echo -n %s | base64 --decode", chars);
@@ -35,21 +50,14 @@ void decodeChars(char *chars, char *decodedChars) {
     runCommand(decodedChars, cmd);
 }
 
+/**
+ * Zakodowuje podane znaki metodą base64.
+ * @param chars odkodowane znaki
+ * @param encodedChars zakodowane znaki
+ */
 void encodeChars(char *chars, char *encodedChars) {
     char cmd[CMD_LENGTH];
     sprintf(cmd, "echo -n %s | base64", chars);
 
     runCommand(encodedChars, cmd);
-}
-
-void getLoginAndPassword(char *userData, char *login, char *password) {
-    char * token;
-    trimText(userData);
-
-    token = strtok(userData, ":");
-    if (token != NULL) {
-        strcpy(login, token);
-        token = strtok(NULL, ":");
-        strcpy(password, token);
-    }
 }

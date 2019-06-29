@@ -1,0 +1,91 @@
+\hypertarget{mybase64_8c}{}\section{Dokumentacja pliku libs/mybase64.c}
+\label{mybase64_8c}\index{libs/mybase64.c@{libs/mybase64.c}}
+{\ttfamily \#include \char`\"{}mybase64.\+h\char`\"{}}\newline
+\subsection*{Definicje}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mybase64_8c_af3cc4ba42efb48f16226cb5ba77c1bbb}{C\+M\+D\+\_\+\+L\+E\+N\+G\+TH}}~120
+\item 
+\#define \mbox{\hyperlink{mybase64_8c_a42eb19b10bf0faee9c8decb218bdeae9}{H\+A\+S\+H\+\_\+\+L\+E\+N\+G\+TH}}~120
+\end{DoxyCompactItemize}
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mybase64_8c_a2c3e6e2589d17aa8d3d59bc84992bba0}{trim\+Text}} (char $\ast$text)
+\item 
+void \mbox{\hyperlink{mybase64_8c_a739f2a7597dcf758fedf402ab95b83b8}{run\+Command}} (char $\ast$encoded\+Chars, const char $\ast$cmd)
+\item 
+void \mbox{\hyperlink{mybase64_8c_a7536b82a5aafae3c0ae598f76897722f}{decode\+Chars}} (char $\ast$chars, char $\ast$decoded\+Chars)
+\item 
+void \mbox{\hyperlink{mybase64_8c_a6ee5ffeb0b133bc068b1da5dba748a8d}{encode\+Chars}} (char $\ast$chars, char $\ast$encoded\+Chars)
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja definicji}
+\mbox{\Hypertarget{mybase64_8c_af3cc4ba42efb48f16226cb5ba77c1bbb}\label{mybase64_8c_af3cc4ba42efb48f16226cb5ba77c1bbb}} 
+\index{mybase64.c@{mybase64.c}!CMD\_LENGTH@{CMD\_LENGTH}}
+\index{CMD\_LENGTH@{CMD\_LENGTH}!mybase64.c@{mybase64.c}}
+\subsubsection{\texorpdfstring{CMD\_LENGTH}{CMD\_LENGTH}}
+{\footnotesize\ttfamily \#define C\+M\+D\+\_\+\+L\+E\+N\+G\+TH~120}
+
+\mbox{\Hypertarget{mybase64_8c_a42eb19b10bf0faee9c8decb218bdeae9}\label{mybase64_8c_a42eb19b10bf0faee9c8decb218bdeae9}} 
+\index{mybase64.c@{mybase64.c}!HASH\_LENGTH@{HASH\_LENGTH}}
+\index{HASH\_LENGTH@{HASH\_LENGTH}!mybase64.c@{mybase64.c}}
+\subsubsection{\texorpdfstring{HASH\_LENGTH}{HASH\_LENGTH}}
+{\footnotesize\ttfamily \#define H\+A\+S\+H\+\_\+\+L\+E\+N\+G\+TH~120}
+
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{mybase64_8c_a7536b82a5aafae3c0ae598f76897722f}\label{mybase64_8c_a7536b82a5aafae3c0ae598f76897722f}} 
+\index{mybase64.c@{mybase64.c}!decodeChars@{decodeChars}}
+\index{decodeChars@{decodeChars}!mybase64.c@{mybase64.c}}
+\subsubsection{\texorpdfstring{decodeChars()}{decodeChars()}}
+{\footnotesize\ttfamily void decode\+Chars (\begin{DoxyParamCaption}\item[{char $\ast$}]{chars,  }\item[{char $\ast$}]{decoded\+Chars }\end{DoxyParamCaption})}
+
+Odkodowuje podane znaki zakodowane metodą base64. 
+\begin{DoxyParams}{Parametry}
+{\em chars} & zakodowane znaki \\
+\hline
+{\em decoded\+Chars} & odkodowane znaki \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mybase64_8c_a6ee5ffeb0b133bc068b1da5dba748a8d}\label{mybase64_8c_a6ee5ffeb0b133bc068b1da5dba748a8d}} 
+\index{mybase64.c@{mybase64.c}!encodeChars@{encodeChars}}
+\index{encodeChars@{encodeChars}!mybase64.c@{mybase64.c}}
+\subsubsection{\texorpdfstring{encodeChars()}{encodeChars()}}
+{\footnotesize\ttfamily void encode\+Chars (\begin{DoxyParamCaption}\item[{char $\ast$}]{chars,  }\item[{char $\ast$}]{encoded\+Chars }\end{DoxyParamCaption})}
+
+Zakodowuje podane znaki metodą base64. 
+\begin{DoxyParams}{Parametry}
+{\em chars} & odkodowane znaki \\
+\hline
+{\em encoded\+Chars} & zakodowane znaki \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mybase64_8c_a739f2a7597dcf758fedf402ab95b83b8}\label{mybase64_8c_a739f2a7597dcf758fedf402ab95b83b8}} 
+\index{mybase64.c@{mybase64.c}!runCommand@{runCommand}}
+\index{runCommand@{runCommand}!mybase64.c@{mybase64.c}}
+\subsubsection{\texorpdfstring{runCommand()}{runCommand()}}
+{\footnotesize\ttfamily void run\+Command (\begin{DoxyParamCaption}\item[{char $\ast$}]{encoded\+Chars,  }\item[{const char $\ast$}]{cmd }\end{DoxyParamCaption})}
+
+Uruchamia komendę systemową.
+
+
+\begin{DoxyParams}{Parametry}
+{\em encoded\+Chars} & parametr \\
+\hline
+{\em cmd} & komenda \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{mybase64_8c_a2c3e6e2589d17aa8d3d59bc84992bba0}\label{mybase64_8c_a2c3e6e2589d17aa8d3d59bc84992bba0}} 
+\index{mybase64.c@{mybase64.c}!trimText@{trimText}}
+\index{trimText@{trimText}!mybase64.c@{mybase64.c}}
+\subsubsection{\texorpdfstring{trimText()}{trimText()}}
+{\footnotesize\ttfamily void trim\+Text (\begin{DoxyParamCaption}\item[{char $\ast$}]{text }\end{DoxyParamCaption})}
+
+Wycina znak nowej linii z końca tekstu 
+\begin{DoxyParams}{Parametry}
+{\em text} & \\
+\hline
+\end{DoxyParams}

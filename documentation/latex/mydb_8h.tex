@@ -3,97 +3,211 @@
 {\ttfamily \#include $<$mysql/mysql.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$sys/syslog.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\subsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSession}{Session}}
+\item 
+struct \mbox{\hyperlink{structUser}{User}}
+\item 
+struct \mbox{\hyperlink{structGroup}{Group}}
+\item 
+struct \mbox{\hyperlink{structQuestion}{Question}}
+\item 
+struct \mbox{\hyperlink{structTest}{Test}}
+\item 
+struct \mbox{\hyperlink{structAnswers}{Answers}}
+\item 
+struct \mbox{\hyperlink{structWaitingTest}{Waiting\+Test}}
+\end{DoxyCompactItemize}
 \subsection*{Definicje}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{mydb_8h_abbcb64a4f71ba470ccd4a8c25496772e}{I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR}}~500
+\#define \mbox{\hyperlink{mydb_8h_a4e8ecaf2d59499a8c159ccdf7be1baec}{F\+I\+E\+L\+D\+\_\+\+L\+E\+N\+G\+TH}}~96
 \item 
-\#define \mbox{\hyperlink{mydb_8h_aa3a2945f047f8998d636b50a184c99a8}{D\+B\+\_\+\+S\+E\+R\+V\+ER}}~\char`\"{}localhost\char`\"{}
+\#define \mbox{\hyperlink{mydb_8h_acb932076e71b8c1d0658cc6c33043cb3}{L\+O\+N\+G\+\_\+\+F\+I\+E\+L\+D\+\_\+\+L\+E\+N\+G\+TH}}~256
 \item 
-\#define \mbox{\hyperlink{mydb_8h_a8a91ca47e7ff6fac6bc8fac0809110ea}{D\+B\+\_\+\+D\+A\+T\+A\+B\+A\+SE}}~\char`\"{}egzamin\char`\"{}
-\item 
-\#define \mbox{\hyperlink{mydb_8h_adf6e62f788a1c295424bca52dfd57dff}{D\+B\+\_\+\+L\+O\+G\+IN}}~\char`\"{}egzamin\char`\"{}
-\item 
-\#define \mbox{\hyperlink{mydb_8h_a4a575b56de3d90288721473c6e8966aa}{D\+B\+\_\+\+P\+A\+S\+S\+W\+O\+RD}}~\char`\"{}6\}H46ae\+Er\&\#G\char`\"{}
-\item 
-\#define \mbox{\hyperlink{mydb_8h_add1d47685776b48c3e5844d76e241c93}{M\+A\+X\+\_\+\+Q\+U\+E\+RY}}~256
-\item 
-\#define \mbox{\hyperlink{mydb_8h_a70c9cd497d3ec561fd23911ee18ba32d}{I\+N\+S\+E\+R\+T\+\_\+\+S\+E\+S\+S\+I\+ON}}~\char`\"{}I\+N\+S\+E\+RT I\+N\+TO \`{}session\`{} (\`{}session\+\_\+id\`{}, \`{}user\+\_\+id\`{}, \`{}logged\+\_\+in\`{}) V\+A\+L\+U\+ES (\textquotesingle{}\%s\textquotesingle{}, N\+U\+LL, F\+A\+L\+SE)\char`\"{}
-\item 
-\#define \mbox{\hyperlink{mydb_8h_a2a52e40005a1cc43293cf92b54dcac73}{G\+E\+T\+\_\+\+S\+E\+S\+S\+I\+ON}}~\char`\"{}S\+E\+L\+E\+CT $\ast$ F\+R\+OM \`{}session\`{} W\+H\+E\+RE session\+\_\+id = \textquotesingle{}\%s\textquotesingle{}\char`\"{}
+\#define \mbox{\hyperlink{mydb_8h_ade258acb51f094acdf9df686347cbb09}{I\+N\+S\+E\+R\+T\+\_\+\+Q\+U\+E\+S\+T\+I\+ON}}~\char`\"{}I\+N\+S\+E\+RT I\+N\+TO question (test\+\_\+id, question, answer1, answer2, answer3, answer4, correct\+\_\+answer) V\+A\+L\+U\+ES (\%d, \textquotesingle{}\%s\textquotesingle{}, \textquotesingle{}\%s\textquotesingle{}, \textquotesingle{}\%s\textquotesingle{}, \textquotesingle{}\%s\textquotesingle{}, \textquotesingle{}\%s\textquotesingle{}, \textquotesingle{}\%s\textquotesingle{});\textbackslash{}n\char`\"{}
 \end{DoxyCompactItemize}
 \subsection*{Funkcje}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{mydb_8h_a7cf6e29bdeb6bfd376259a61344fe988}{database\+Error}} (M\+Y\+S\+QL $\ast$connection)
 \item 
-M\+Y\+S\+QL $\ast$ \mbox{\hyperlink{mydb_8h_ad0f4d3a9631915e2c410f0e19361f8e8}{connect\+To\+Database}} ()
-\item 
 int \mbox{\hyperlink{mydb_8h_aed3bbf4798b6281e09f75f4a641bd6fb}{run\+Query}} (M\+Y\+S\+QL $\ast$connection, char $\ast$query)
 \item 
 M\+Y\+S\+Q\+L\+\_\+\+R\+ES $\ast$ \mbox{\hyperlink{mydb_8h_ac42166a977128e050ae17430f6ee8746}{get\+Result}} (M\+Y\+S\+QL $\ast$connection)
 \item 
-int \mbox{\hyperlink{mydb_8h_ad62254d31aef80cd4a6bd67ef8ecaa5f}{save\+Session}} (char $\ast$session\+Id)
+M\+Y\+S\+QL $\ast$ \mbox{\hyperlink{mydb_8h_ae886edf9c804939ba8432d12dbf6ca05}{connect\+To\+Database}} ()
+\item 
+int \mbox{\hyperlink{mydb_8h_a1b005132805ab95e4b8aa42c2f40ed07}{run\+Prepared\+Query}} (char $\ast$query)
+\item 
+int \mbox{\hyperlink{mydb_8h_ae4279a72d4977b2b097600b0408f73b9}{save\+Session}} (char $\ast$session\+Id, int user\+Id, int logged\+In)
+\item 
+int \mbox{\hyperlink{mydb_8h_a363428555c5707c1e4cab824537fa77e}{get\+Session}} (char $\ast$session\+Id, \mbox{\hyperlink{structSession}{Session}} $\ast$session)
+\item 
+int \mbox{\hyperlink{mydb_8h_a266b5f52e3e6a19911c36249f7a51842}{get\+User\+By\+Login}} (char $\ast$session\+Id, \mbox{\hyperlink{structUser}{User}} $\ast$user)
+\item 
+int \mbox{\hyperlink{mydb_8h_ac419d3686c84d52c39a3221f0e4119fd}{get\+Students}} (\mbox{\hyperlink{structUser}{User}} user\mbox{[}$\,$\mbox{]}, int $\ast$count, \mbox{\hyperlink{structSession}{Session}} $\ast$session)
+\item 
+int \mbox{\hyperlink{mydb_8h_a08499842806bd1db045e4c50723ab6ae}{get\+Students\+Ids\+By\+Group}} (int ids\mbox{[}$\,$\mbox{]}, int $\ast$count, int group\+Id)
+\item 
+int \mbox{\hyperlink{mydb_8h_a7f8ed9947fe0827b16fe04f51e2e9ff3}{add\+User}} (char $\ast$login, char $\ast$password, char $\ast$first\+Name, char $\ast$last\+Name, char $\ast$role)
+\item 
+int \mbox{\hyperlink{mydb_8h_ad069cb7cbbade92bac35c8b2681121d3}{update\+User\+Set\+Group}} (int user\+Id, int group\+Id)
+\item 
+int \mbox{\hyperlink{mydb_8h_ad3dbb71a63d8670e5f477bf66099fc58}{get\+Groups}} (\mbox{\hyperlink{structGroup}{Group}} groups\mbox{[}$\,$\mbox{]}, int $\ast$count)
+\item 
+int \mbox{\hyperlink{mydb_8h_aa4827bc626b32fcf6d61b830f795d3c0}{get\+Group\+By\+Name}} (char $\ast$name, \mbox{\hyperlink{structGroup}{Group}} $\ast$group)
+\item 
+int \mbox{\hyperlink{mydb_8h_a615b854d7fcd304c52ff9f5c194c6e8e}{add\+Group}} (char $\ast$name)
+\item 
+int \mbox{\hyperlink{mydb_8h_a48b90f74a874b160281a91d950197e0f}{add\+Test}} (int user\+Id, char $\ast$subject, int $\ast$test\+Id)
+\item 
+int \mbox{\hyperlink{mydb_8h_a2385bb9ce62f50d9d321fb487968380a}{get\+Tests\+By\+Author}} (\mbox{\hyperlink{structTest}{Test}} tests\mbox{[}$\,$\mbox{]}, int $\ast$count, \mbox{\hyperlink{structSession}{Session}} $\ast$session)
+\item 
+int \mbox{\hyperlink{mydb_8h_a560acce1aafaa6cf55ae3319848d622c}{add\+Waiting\+Test}} (int test\+Id, int group\+Id, char $\ast$end\+Time)
+\item 
+int \mbox{\hyperlink{mydb_8h_a70fd4479738eae6ccdb16702f463674f}{get\+Waiting\+Test\+By\+Test\+And\+Group}} (int test\+Id, int group\+Id)
+\item 
+int \mbox{\hyperlink{mydb_8h_a3abcf65212af76cf1c3b18377c936ba3}{get\+Waiting\+Tests\+By\+Student\+And\+Group\+And\+Not\+Ended}} (\mbox{\hyperlink{structWaitingTest}{Waiting\+Test}} $\ast$waiting\+Tests, int $\ast$count, int group\+Id, int student\+Id)
+\item 
+int \mbox{\hyperlink{mydb_8h_acccd4d1b6e15c9d83997897ea5af3dd4}{get\+Waiting\+Test\+By\+Id\+And\+Not\+Ended}} (\mbox{\hyperlink{structWaitingTest}{Waiting\+Test}} $\ast$waiting\+Test, int waiting\+Test\+Id)
+\item 
+int \mbox{\hyperlink{mydb_8h_afd926005cfc57c8ca6715642b2270520}{get\+Waiting\+Test\+By\+Author\+And\+Ended}} (\mbox{\hyperlink{structWaitingTest}{Waiting\+Test}} $\ast$waiting\+Tests, int $\ast$count, int author\+Id)
+\item 
+int \mbox{\hyperlink{mydb_8h_ad279dd45a3963ab34000fb045478574e}{get\+Waiting\+Test\+By\+Id}} (\mbox{\hyperlink{structWaitingTest}{Waiting\+Test}} $\ast$waiting\+Test, int waiting\+Test\+Id)
+\item 
+int \mbox{\hyperlink{mydb_8h_a704cf9ab83947a1962bbe320378a275a}{get\+Answers\+By\+Waiting\+Test\+Id}} (\mbox{\hyperlink{structAnswers}{Answers}} answers\mbox{[}$\,$\mbox{]}, int $\ast$count, int waiting\+Test\+Id)
+\item 
+int \mbox{\hyperlink{mydb_8h_a05a7e9ce4389b220b8ec5f357354c70d}{get\+Checked\+Test\+By\+Student}} (\mbox{\hyperlink{structWaitingTest}{Waiting\+Test}} waiting\+Tests\mbox{[}$\,$\mbox{]}, int $\ast$count, int student\+Id)
+\item 
+int \mbox{\hyperlink{mydb_8h_a1e2cbccdfdca376b59145b93ff07fffb}{get\+Questions\+By\+Test\+Id}} (\mbox{\hyperlink{structQuestion}{Question}} questions\mbox{[}$\,$\mbox{]}, int $\ast$count, int test\+Id)
+\item 
+int \mbox{\hyperlink{mydb_8h_af502ea05e96a5f0ae393188e27facb6d}{add\+Answers}} (int waiting\+Test\+Id, int student\+\_\+id, char $\ast$answers)
+\item 
+int \mbox{\hyperlink{mydb_8h_ac6bf7af1bb27272b94b243a8d2dd9322}{get\+Answers\+By\+Waiting\+Test\+Id\+And\+Student\+Id}} (char $\ast$answers, int waiting\+Test\+Id, int student\+Id)
 \end{DoxyCompactItemize}
 
 
 \subsection{Dokumentacja definicji}
-\mbox{\Hypertarget{mydb_8h_a8a91ca47e7ff6fac6bc8fac0809110ea}\label{mydb_8h_a8a91ca47e7ff6fac6bc8fac0809110ea}} 
-\index{mydb.h@{mydb.h}!DB\_DATABASE@{DB\_DATABASE}}
-\index{DB\_DATABASE@{DB\_DATABASE}!mydb.h@{mydb.h}}
-\subsubsection{\texorpdfstring{DB\_DATABASE}{DB\_DATABASE}}
-{\footnotesize\ttfamily \#define D\+B\+\_\+\+D\+A\+T\+A\+B\+A\+SE~\char`\"{}egzamin\char`\"{}}
+\mbox{\Hypertarget{mydb_8h_a4e8ecaf2d59499a8c159ccdf7be1baec}\label{mydb_8h_a4e8ecaf2d59499a8c159ccdf7be1baec}} 
+\index{mydb.h@{mydb.h}!FIELD\_LENGTH@{FIELD\_LENGTH}}
+\index{FIELD\_LENGTH@{FIELD\_LENGTH}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{FIELD\_LENGTH}{FIELD\_LENGTH}}
+{\footnotesize\ttfamily \#define F\+I\+E\+L\+D\+\_\+\+L\+E\+N\+G\+TH~96}
 
-\mbox{\Hypertarget{mydb_8h_adf6e62f788a1c295424bca52dfd57dff}\label{mydb_8h_adf6e62f788a1c295424bca52dfd57dff}} 
-\index{mydb.h@{mydb.h}!DB\_LOGIN@{DB\_LOGIN}}
-\index{DB\_LOGIN@{DB\_LOGIN}!mydb.h@{mydb.h}}
-\subsubsection{\texorpdfstring{DB\_LOGIN}{DB\_LOGIN}}
-{\footnotesize\ttfamily \#define D\+B\+\_\+\+L\+O\+G\+IN~\char`\"{}egzamin\char`\"{}}
+\mbox{\Hypertarget{mydb_8h_ade258acb51f094acdf9df686347cbb09}\label{mydb_8h_ade258acb51f094acdf9df686347cbb09}} 
+\index{mydb.h@{mydb.h}!INSERT\_QUESTION@{INSERT\_QUESTION}}
+\index{INSERT\_QUESTION@{INSERT\_QUESTION}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{INSERT\_QUESTION}{INSERT\_QUESTION}}
+{\footnotesize\ttfamily \#define I\+N\+S\+E\+R\+T\+\_\+\+Q\+U\+E\+S\+T\+I\+ON~\char`\"{}I\+N\+S\+E\+RT I\+N\+TO question (test\+\_\+id, question, answer1, answer2, answer3, answer4, correct\+\_\+answer) V\+A\+L\+U\+ES (\%d, \textquotesingle{}\%s\textquotesingle{}, \textquotesingle{}\%s\textquotesingle{}, \textquotesingle{}\%s\textquotesingle{}, \textquotesingle{}\%s\textquotesingle{}, \textquotesingle{}\%s\textquotesingle{}, \textquotesingle{}\%s\textquotesingle{});\textbackslash{}n\char`\"{}}
 
-\mbox{\Hypertarget{mydb_8h_a4a575b56de3d90288721473c6e8966aa}\label{mydb_8h_a4a575b56de3d90288721473c6e8966aa}} 
-\index{mydb.h@{mydb.h}!DB\_PASSWORD@{DB\_PASSWORD}}
-\index{DB\_PASSWORD@{DB\_PASSWORD}!mydb.h@{mydb.h}}
-\subsubsection{\texorpdfstring{DB\_PASSWORD}{DB\_PASSWORD}}
-{\footnotesize\ttfamily \#define D\+B\+\_\+\+P\+A\+S\+S\+W\+O\+RD~\char`\"{}6\}H46ae\+Er\&\#G\char`\"{}}
-
-\mbox{\Hypertarget{mydb_8h_aa3a2945f047f8998d636b50a184c99a8}\label{mydb_8h_aa3a2945f047f8998d636b50a184c99a8}} 
-\index{mydb.h@{mydb.h}!DB\_SERVER@{DB\_SERVER}}
-\index{DB\_SERVER@{DB\_SERVER}!mydb.h@{mydb.h}}
-\subsubsection{\texorpdfstring{DB\_SERVER}{DB\_SERVER}}
-{\footnotesize\ttfamily \#define D\+B\+\_\+\+S\+E\+R\+V\+ER~\char`\"{}localhost\char`\"{}}
-
-\mbox{\Hypertarget{mydb_8h_a2a52e40005a1cc43293cf92b54dcac73}\label{mydb_8h_a2a52e40005a1cc43293cf92b54dcac73}} 
-\index{mydb.h@{mydb.h}!GET\_SESSION@{GET\_SESSION}}
-\index{GET\_SESSION@{GET\_SESSION}!mydb.h@{mydb.h}}
-\subsubsection{\texorpdfstring{GET\_SESSION}{GET\_SESSION}}
-{\footnotesize\ttfamily \#define G\+E\+T\+\_\+\+S\+E\+S\+S\+I\+ON~\char`\"{}S\+E\+L\+E\+CT $\ast$ F\+R\+OM \`{}session\`{} W\+H\+E\+RE session\+\_\+id = \textquotesingle{}\%s\textquotesingle{}\char`\"{}}
-
-\mbox{\Hypertarget{mydb_8h_a70c9cd497d3ec561fd23911ee18ba32d}\label{mydb_8h_a70c9cd497d3ec561fd23911ee18ba32d}} 
-\index{mydb.h@{mydb.h}!INSERT\_SESSION@{INSERT\_SESSION}}
-\index{INSERT\_SESSION@{INSERT\_SESSION}!mydb.h@{mydb.h}}
-\subsubsection{\texorpdfstring{INSERT\_SESSION}{INSERT\_SESSION}}
-{\footnotesize\ttfamily \#define I\+N\+S\+E\+R\+T\+\_\+\+S\+E\+S\+S\+I\+ON~\char`\"{}I\+N\+S\+E\+RT I\+N\+TO \`{}session\`{} (\`{}session\+\_\+id\`{}, \`{}user\+\_\+id\`{}, \`{}logged\+\_\+in\`{}) V\+A\+L\+U\+ES (\textquotesingle{}\%s\textquotesingle{}, N\+U\+LL, F\+A\+L\+SE)\char`\"{}}
-
-\mbox{\Hypertarget{mydb_8h_abbcb64a4f71ba470ccd4a8c25496772e}\label{mydb_8h_abbcb64a4f71ba470ccd4a8c25496772e}} 
-\index{mydb.h@{mydb.h}!INTERNAL\_SERVER\_ERROR@{INTERNAL\_SERVER\_ERROR}}
-\index{INTERNAL\_SERVER\_ERROR@{INTERNAL\_SERVER\_ERROR}!mydb.h@{mydb.h}}
-\subsubsection{\texorpdfstring{INTERNAL\_SERVER\_ERROR}{INTERNAL\_SERVER\_ERROR}}
-{\footnotesize\ttfamily \#define I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR~500}
-
-\mbox{\Hypertarget{mydb_8h_add1d47685776b48c3e5844d76e241c93}\label{mydb_8h_add1d47685776b48c3e5844d76e241c93}} 
-\index{mydb.h@{mydb.h}!MAX\_QUERY@{MAX\_QUERY}}
-\index{MAX\_QUERY@{MAX\_QUERY}!mydb.h@{mydb.h}}
-\subsubsection{\texorpdfstring{MAX\_QUERY}{MAX\_QUERY}}
-{\footnotesize\ttfamily \#define M\+A\+X\+\_\+\+Q\+U\+E\+RY~256}
+\mbox{\Hypertarget{mydb_8h_acb932076e71b8c1d0658cc6c33043cb3}\label{mydb_8h_acb932076e71b8c1d0658cc6c33043cb3}} 
+\index{mydb.h@{mydb.h}!LONG\_FIELD\_LENGTH@{LONG\_FIELD\_LENGTH}}
+\index{LONG\_FIELD\_LENGTH@{LONG\_FIELD\_LENGTH}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{LONG\_FIELD\_LENGTH}{LONG\_FIELD\_LENGTH}}
+{\footnotesize\ttfamily \#define L\+O\+N\+G\+\_\+\+F\+I\+E\+L\+D\+\_\+\+L\+E\+N\+G\+TH~256}
 
 
 
 \subsection{Dokumentacja funkcji}
-\mbox{\Hypertarget{mydb_8h_ad0f4d3a9631915e2c410f0e19361f8e8}\label{mydb_8h_ad0f4d3a9631915e2c410f0e19361f8e8}} 
+\mbox{\Hypertarget{mydb_8h_af502ea05e96a5f0ae393188e27facb6d}\label{mydb_8h_af502ea05e96a5f0ae393188e27facb6d}} 
+\index{mydb.h@{mydb.h}!addAnswers@{addAnswers}}
+\index{addAnswers@{addAnswers}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{addAnswers()}{addAnswers()}}
+{\footnotesize\ttfamily int add\+Answers (\begin{DoxyParamCaption}\item[{int}]{waiting\+Test\+Id,  }\item[{int}]{student\+\_\+id,  }\item[{char $\ast$}]{answers }\end{DoxyParamCaption})}
+
+Dodaje odpowiedzi studenta na test. 
+\begin{DoxyParams}{Parametry}
+{\em waiting\+Test\+Id} & id oczekującego testu \\
+\hline
+{\em student\+\_\+id} & id studenta \\
+\hline
+{\em answers} & odpowiedzi studenta w formie łancucha znaków \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a615b854d7fcd304c52ff9f5c194c6e8e}\label{mydb_8h_a615b854d7fcd304c52ff9f5c194c6e8e}} 
+\index{mydb.h@{mydb.h}!addGroup@{addGroup}}
+\index{addGroup@{addGroup}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{addGroup()}{addGroup()}}
+{\footnotesize\ttfamily int add\+Group (\begin{DoxyParamCaption}\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Dodaje grupę do bazy 
+\begin{DoxyParams}{Parametry}
+{\em name} & nazwa grupy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a48b90f74a874b160281a91d950197e0f}\label{mydb_8h_a48b90f74a874b160281a91d950197e0f}} 
+\index{mydb.h@{mydb.h}!addTest@{addTest}}
+\index{addTest@{addTest}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{addTest()}{addTest()}}
+{\footnotesize\ttfamily int add\+Test (\begin{DoxyParamCaption}\item[{int}]{user\+Id,  }\item[{char $\ast$}]{subject,  }\item[{int $\ast$}]{test\+Id }\end{DoxyParamCaption})}
+
+Dodaje test do bazy 
+\begin{DoxyParams}{Parametry}
+{\em user\+Id} & id autora \\
+\hline
+{\em subject} & temat testu \\
+\hline
+{\em test\+Id} & id wstawionego właśnie testu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a7f8ed9947fe0827b16fe04f51e2e9ff3}\label{mydb_8h_a7f8ed9947fe0827b16fe04f51e2e9ff3}} 
+\index{mydb.h@{mydb.h}!addUser@{addUser}}
+\index{addUser@{addUser}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{addUser()}{addUser()}}
+{\footnotesize\ttfamily int add\+User (\begin{DoxyParamCaption}\item[{char $\ast$}]{login,  }\item[{char $\ast$}]{password,  }\item[{char $\ast$}]{first\+Name,  }\item[{char $\ast$}]{last\+Name,  }\item[{char $\ast$}]{role }\end{DoxyParamCaption})}
+
+Dodaje użytkownika do bazy 
+\begin{DoxyParams}{Parametry}
+{\em login} & \\
+\hline
+{\em password} & \\
+\hline
+{\em first\+Name} & imię \\
+\hline
+{\em last\+Name} & nazwisko \\
+\hline
+{\em role} & rola w systemie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a560acce1aafaa6cf55ae3319848d622c}\label{mydb_8h_a560acce1aafaa6cf55ae3319848d622c}} 
+\index{mydb.h@{mydb.h}!addWaitingTest@{addWaitingTest}}
+\index{addWaitingTest@{addWaitingTest}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{addWaitingTest()}{addWaitingTest()}}
+{\footnotesize\ttfamily int add\+Waiting\+Test (\begin{DoxyParamCaption}\item[{int}]{test\+Id,  }\item[{int}]{group\+Id,  }\item[{char $\ast$}]{end\+Time }\end{DoxyParamCaption})}
+
+Dodaje oczekujący test dla podanej grup z podanym czasem koncowym. 
+\begin{DoxyParams}{Parametry}
+{\em test\+Id} & numer testu \\
+\hline
+{\em group\+Id} & numer grupy \\
+\hline
+{\em end\+Time} & Timestamp z czasem zakończenia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_ae886edf9c804939ba8432d12dbf6ca05}\label{mydb_8h_ae886edf9c804939ba8432d12dbf6ca05}} 
 \index{mydb.h@{mydb.h}!connectToDatabase@{connectToDatabase}}
 \index{connectToDatabase@{connectToDatabase}!mydb.h@{mydb.h}}
 \subsubsection{\texorpdfstring{connectToDatabase()}{connectToDatabase()}}
-{\footnotesize\ttfamily M\+Y\+S\+QL $\ast$ connect\+To\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily M\+Y\+S\+QL$\ast$ connect\+To\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Uruchamia połączenie z bazą (wymagane, żeby wykonywać operacje na bazie).
 
@@ -116,6 +230,110 @@ Loguje lub wypisuje na ekran komunikat błędu dotyczącego bazy, zamyka połąc
 \begin{DoxyReturn}{Zwraca}
 500 (I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+S\+E\+R\+V\+E\+R\+\_\+\+E\+R\+R\+OR) 
 \end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a704cf9ab83947a1962bbe320378a275a}\label{mydb_8h_a704cf9ab83947a1962bbe320378a275a}} 
+\index{mydb.h@{mydb.h}!getAnswersByWaitingTestId@{getAnswersByWaitingTestId}}
+\index{getAnswersByWaitingTestId@{getAnswersByWaitingTestId}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getAnswersByWaitingTestId()}{getAnswersByWaitingTestId()}}
+{\footnotesize\ttfamily int get\+Answers\+By\+Waiting\+Test\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structAnswers}{Answers}}}]{answers\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{count,  }\item[{int}]{waiting\+Test\+Id }\end{DoxyParamCaption})}
+
+Pobiera odpowiedzi studentów na podany oczekujacy test 
+\begin{DoxyParams}{Parametry}
+{\em answers} & tablica odpowiedzi do zapełnienia \\
+\hline
+{\em count} & liczba znalezionych wpisów \\
+\hline
+{\em waiting\+Test\+Id} & id oczekującego testu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_ac6bf7af1bb27272b94b243a8d2dd9322}\label{mydb_8h_ac6bf7af1bb27272b94b243a8d2dd9322}} 
+\index{mydb.h@{mydb.h}!getAnswersByWaitingTestIdAndStudentId@{getAnswersByWaitingTestIdAndStudentId}}
+\index{getAnswersByWaitingTestIdAndStudentId@{getAnswersByWaitingTestIdAndStudentId}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getAnswersByWaitingTestIdAndStudentId()}{getAnswersByWaitingTestIdAndStudentId()}}
+{\footnotesize\ttfamily int get\+Answers\+By\+Waiting\+Test\+Id\+And\+Student\+Id (\begin{DoxyParamCaption}\item[{char $\ast$}]{answers,  }\item[{int}]{waiting\+Test\+Id,  }\item[{int}]{student\+Id }\end{DoxyParamCaption})}
+
+Pobiera odpowiedzi studenta na podany oczekujący test. 
+\begin{DoxyParams}{Parametry}
+{\em answers} & wynikowe odpowiedzi \\
+\hline
+{\em waiting\+Test\+Id} & id oczekującego testu \\
+\hline
+{\em student\+Id} & id studenta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie znalezienia, -\/1 w razie nie znalezienia, 500 w razie błędu bazy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a05a7e9ce4389b220b8ec5f357354c70d}\label{mydb_8h_a05a7e9ce4389b220b8ec5f357354c70d}} 
+\index{mydb.h@{mydb.h}!getCheckedTestByStudent@{getCheckedTestByStudent}}
+\index{getCheckedTestByStudent@{getCheckedTestByStudent}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getCheckedTestByStudent()}{getCheckedTestByStudent()}}
+{\footnotesize\ttfamily int get\+Checked\+Test\+By\+Student (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structWaitingTest}{Waiting\+Test}}}]{waiting\+Tests\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{count,  }\item[{int}]{student\+Id }\end{DoxyParamCaption})}
+
+Pobiera sprawdzone testy studenta 
+\begin{DoxyParams}{Parametry}
+{\em waiting\+Tests} & tablica testów do zapełnienia \\
+\hline
+{\em count} & liczba znalezionych wpisów \\
+\hline
+{\em student\+Id} & id studenta \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_aa4827bc626b32fcf6d61b830f795d3c0}\label{mydb_8h_aa4827bc626b32fcf6d61b830f795d3c0}} 
+\index{mydb.h@{mydb.h}!getGroupByName@{getGroupByName}}
+\index{getGroupByName@{getGroupByName}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getGroupByName()}{getGroupByName()}}
+{\footnotesize\ttfamily int get\+Group\+By\+Name (\begin{DoxyParamCaption}\item[{char $\ast$}]{name,  }\item[{\mbox{\hyperlink{structGroup}{Group}} $\ast$}]{group }\end{DoxyParamCaption})}
+
+Pobiera grupę po nazwie 
+\begin{DoxyParams}{Parametry}
+{\em name} & nazwa grupy do znalezienia \\
+\hline
+{\em group} & znaleziona grupa \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie znalezienia, -\/1 w razie nie znalezienia, 500 w razie błędu bazy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_ad3dbb71a63d8670e5f477bf66099fc58}\label{mydb_8h_ad3dbb71a63d8670e5f477bf66099fc58}} 
+\index{mydb.h@{mydb.h}!getGroups@{getGroups}}
+\index{getGroups@{getGroups}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getGroups()}{getGroups()}}
+{\footnotesize\ttfamily int get\+Groups (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGroup}{Group}}}]{groups\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{count }\end{DoxyParamCaption})}
+
+Pobiera grupy z bazy 
+\begin{DoxyParams}{Parametry}
+{\em groups} & tablica grup do zapełnienia \\
+\hline
+{\em count} & liczba znalezionych wpisów \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a1e2cbccdfdca376b59145b93ff07fffb}\label{mydb_8h_a1e2cbccdfdca376b59145b93ff07fffb}} 
+\index{mydb.h@{mydb.h}!getQuestionsByTestId@{getQuestionsByTestId}}
+\index{getQuestionsByTestId@{getQuestionsByTestId}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getQuestionsByTestId()}{getQuestionsByTestId()}}
+{\footnotesize\ttfamily int get\+Questions\+By\+Test\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structQuestion}{Question}}}]{questions\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{count,  }\item[{int}]{test\+Id }\end{DoxyParamCaption})}
+
+Pobiera pytania, które są częścią podanego testu. 
+\begin{DoxyParams}{Parametry}
+{\em questions} & tablica pytań do zapełnienia \\
+\hline
+{\em count} & liczba znalezionych wpisów \\
+\hline
+{\em test\+Id} & id testu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{mydb_8h_ac42166a977128e050ae17430f6ee8746}\label{mydb_8h_ac42166a977128e050ae17430f6ee8746}} 
 \index{mydb.h@{mydb.h}!getResult@{getResult}}
 \index{getResult@{getResult}!mydb.h@{mydb.h}}
@@ -131,6 +349,196 @@ Pobiera wynik ostatniego zapytania do bazy.
 \end{DoxyParams}
 \begin{DoxyReturn}{Zwraca}
 0 w razie sukcesu lub 500 w razie błędu bazy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a363428555c5707c1e4cab824537fa77e}\label{mydb_8h_a363428555c5707c1e4cab824537fa77e}} 
+\index{mydb.h@{mydb.h}!getSession@{getSession}}
+\index{getSession@{getSession}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getSession()}{getSession()}}
+{\footnotesize\ttfamily int get\+Session (\begin{DoxyParamCaption}\item[{char $\ast$}]{session\+Id,  }\item[{\mbox{\hyperlink{structSession}{Session}} $\ast$}]{session }\end{DoxyParamCaption})}
+
+Pobiera dane o sesji z bazy.
+
+
+\begin{DoxyParams}{Parametry}
+{\em session\+Id} & numer sesji do pobrania \\
+\hline
+{\em session} & dane sesji, które zostaną uzupełnione \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_ac419d3686c84d52c39a3221f0e4119fd}\label{mydb_8h_ac419d3686c84d52c39a3221f0e4119fd}} 
+\index{mydb.h@{mydb.h}!getStudents@{getStudents}}
+\index{getStudents@{getStudents}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getStudents()}{getStudents()}}
+{\footnotesize\ttfamily int get\+Students (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structUser}{User}}}]{user\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{count,  }\item[{\mbox{\hyperlink{structSession}{Session}} $\ast$}]{session }\end{DoxyParamCaption})}
+
+Pobiera listę wszystkich studentów. 
+\begin{DoxyParams}{Parametry}
+{\em user} & wynikowa tablica studentów \\
+\hline
+{\em count} & liczba znalezionych wpisów \\
+\hline
+{\em session} & sesja \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a08499842806bd1db045e4c50723ab6ae}\label{mydb_8h_a08499842806bd1db045e4c50723ab6ae}} 
+\index{mydb.h@{mydb.h}!getStudentsIdsByGroup@{getStudentsIdsByGroup}}
+\index{getStudentsIdsByGroup@{getStudentsIdsByGroup}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getStudentsIdsByGroup()}{getStudentsIdsByGroup()}}
+{\footnotesize\ttfamily int get\+Students\+Ids\+By\+Group (\begin{DoxyParamCaption}\item[{int}]{ids\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{count,  }\item[{int}]{group\+Id }\end{DoxyParamCaption})}
+
+Pobiera tablicę id studentów należących do podanej grupy. 
+\begin{DoxyParams}{Parametry}
+{\em ids} & tablica id do zapełnienia \\
+\hline
+{\em count} & liczba znalezionych wpisów \\
+\hline
+{\em group\+Id} & id grupy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a2385bb9ce62f50d9d321fb487968380a}\label{mydb_8h_a2385bb9ce62f50d9d321fb487968380a}} 
+\index{mydb.h@{mydb.h}!getTestsByAuthor@{getTestsByAuthor}}
+\index{getTestsByAuthor@{getTestsByAuthor}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getTestsByAuthor()}{getTestsByAuthor()}}
+{\footnotesize\ttfamily int get\+Tests\+By\+Author (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structTest}{Test}}}]{tests\mbox{[}$\,$\mbox{]},  }\item[{int $\ast$}]{count,  }\item[{\mbox{\hyperlink{structSession}{Session}} $\ast$}]{session }\end{DoxyParamCaption})}
+
+Pobiera testy dla utworzone przez zalogowanego użytkownika 
+\begin{DoxyParams}{Parametry}
+{\em tests} & tablica testów do zapełnienia \\
+\hline
+{\em count} & liczba znalezionych wpisów \\
+\hline
+{\em session} & aktualna sesja \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a266b5f52e3e6a19911c36249f7a51842}\label{mydb_8h_a266b5f52e3e6a19911c36249f7a51842}} 
+\index{mydb.h@{mydb.h}!getUserByLogin@{getUserByLogin}}
+\index{getUserByLogin@{getUserByLogin}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getUserByLogin()}{getUserByLogin()}}
+{\footnotesize\ttfamily int get\+User\+By\+Login (\begin{DoxyParamCaption}\item[{char $\ast$}]{login,  }\item[{\mbox{\hyperlink{structUser}{User}} $\ast$}]{user }\end{DoxyParamCaption})}
+
+Pobiera dane o użytkowniku z bazy po loginie 
+\begin{DoxyParams}{Parametry}
+{\em login} & do wyszukania użytkownika \\
+\hline
+{\em user} & dane o użytkowniku, które zostaną uzupełnione \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, -\/1 w razie nie znalezienia użytkownika o podanym loginie, 500 w razie błędu bazy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_afd926005cfc57c8ca6715642b2270520}\label{mydb_8h_afd926005cfc57c8ca6715642b2270520}} 
+\index{mydb.h@{mydb.h}!getWaitingTestByAuthorAndEnded@{getWaitingTestByAuthorAndEnded}}
+\index{getWaitingTestByAuthorAndEnded@{getWaitingTestByAuthorAndEnded}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getWaitingTestByAuthorAndEnded()}{getWaitingTestByAuthorAndEnded()}}
+{\footnotesize\ttfamily int get\+Waiting\+Test\+By\+Author\+And\+Ended (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structWaitingTest}{Waiting\+Test}} $\ast$}]{waiting\+Tests,  }\item[{int $\ast$}]{count,  }\item[{int}]{author\+Id }\end{DoxyParamCaption})}
+
+Pobiera testy utworzone przez użytkownika, których czas minął 
+\begin{DoxyParams}{Parametry}
+{\em waiting\+Tests} & \\
+\hline
+{\em count} & liczba znalezionych wpisów \\
+\hline
+{\em author\+Id} & id autora \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_ad279dd45a3963ab34000fb045478574e}\label{mydb_8h_ad279dd45a3963ab34000fb045478574e}} 
+\index{mydb.h@{mydb.h}!getWaitingTestById@{getWaitingTestById}}
+\index{getWaitingTestById@{getWaitingTestById}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getWaitingTestById()}{getWaitingTestById()}}
+{\footnotesize\ttfamily int get\+Waiting\+Test\+By\+Id (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structWaitingTest}{Waiting\+Test}} $\ast$}]{waiting\+Test,  }\item[{int}]{waiting\+Test\+Id }\end{DoxyParamCaption})}
+
+Pobiera oczekujący test po jego id 
+\begin{DoxyParams}{Parametry}
+{\em waiting\+Test} & wynikowy test \\
+\hline
+{\em waiting\+Test\+Id} & id oczekującego testu do znalezienia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie znalezienia, -\/1 w razie nie znalezienia, 500 w razie błędu bazy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_acccd4d1b6e15c9d83997897ea5af3dd4}\label{mydb_8h_acccd4d1b6e15c9d83997897ea5af3dd4}} 
+\index{mydb.h@{mydb.h}!getWaitingTestByIdAndNotEnded@{getWaitingTestByIdAndNotEnded}}
+\index{getWaitingTestByIdAndNotEnded@{getWaitingTestByIdAndNotEnded}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getWaitingTestByIdAndNotEnded()}{getWaitingTestByIdAndNotEnded()}}
+{\footnotesize\ttfamily int get\+Waiting\+Test\+By\+Id\+And\+Not\+Ended (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structWaitingTest}{Waiting\+Test}} $\ast$}]{waiting\+Test,  }\item[{int}]{waiting\+Test\+Id }\end{DoxyParamCaption})}
+
+Pobiera oczekując test po id, jeśli się nie zakończył 
+\begin{DoxyParams}{Parametry}
+{\em waiting\+Test} & wynikowy test \\
+\hline
+{\em waiting\+Test\+Id} & id oczekującego testu do znalezienia \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie znalezienia, -\/1 w razie nie znalezienia, 500 w razie błędu bazy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a70fd4479738eae6ccdb16702f463674f}\label{mydb_8h_a70fd4479738eae6ccdb16702f463674f}} 
+\index{mydb.h@{mydb.h}!getWaitingTestByTestAndGroup@{getWaitingTestByTestAndGroup}}
+\index{getWaitingTestByTestAndGroup@{getWaitingTestByTestAndGroup}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getWaitingTestByTestAndGroup()}{getWaitingTestByTestAndGroup()}}
+{\footnotesize\ttfamily int get\+Waiting\+Test\+By\+Test\+And\+Group (\begin{DoxyParamCaption}\item[{int}]{test\+Id,  }\item[{int}]{group\+Id }\end{DoxyParamCaption})}
+
+Pobiera oczekujący test dla podanego id testu i grupy. 
+\begin{DoxyParams}{Parametry}
+{\em test\+Id} & id testu \\
+\hline
+{\em group\+Id} & id grupy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie znalezienia, -\/1 w razie nie znalezienia, 500 w razie błędu bazy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a3abcf65212af76cf1c3b18377c936ba3}\label{mydb_8h_a3abcf65212af76cf1c3b18377c936ba3}} 
+\index{mydb.h@{mydb.h}!getWaitingTestsByStudentAndGroupAndNotEnded@{getWaitingTestsByStudentAndGroupAndNotEnded}}
+\index{getWaitingTestsByStudentAndGroupAndNotEnded@{getWaitingTestsByStudentAndGroupAndNotEnded}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{getWaitingTestsByStudentAndGroupAndNotEnded()}{getWaitingTestsByStudentAndGroupAndNotEnded()}}
+{\footnotesize\ttfamily int get\+Waiting\+Tests\+By\+Student\+And\+Group\+And\+Not\+Ended (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structWaitingTest}{Waiting\+Test}} $\ast$}]{waiting\+Tests,  }\item[{int $\ast$}]{count,  }\item[{int}]{group\+Id,  }\item[{int}]{student\+Id }\end{DoxyParamCaption})}
+
+Pobiera oczekujące i nie zakończone testy dla studenta i grupy, które nie zostały jeszcze sprawdzone.
+
+
+\begin{DoxyParams}{Parametry}
+{\em waiting\+Tests} & tablica testów do zapelnienia \\
+\hline
+{\em count} & liczba znalezionych wpisów \\
+\hline
+{\em group\+Id} & \\
+\hline
+{\em student\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_a1b005132805ab95e4b8aa42c2f40ed07}\label{mydb_8h_a1b005132805ab95e4b8aa42c2f40ed07}} 
+\index{mydb.h@{mydb.h}!runPreparedQuery@{runPreparedQuery}}
+\index{runPreparedQuery@{runPreparedQuery}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{runPreparedQuery()}{runPreparedQuery()}}
+{\footnotesize\ttfamily int run\+Prepared\+Query (\begin{DoxyParamCaption}\item[{char $\ast$}]{query }\end{DoxyParamCaption})}
+
+Uruchamia podane zapytanie do bazy 
+\begin{DoxyParams}{Parametry}
+{\em query} & treść zapytania \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{mydb_8h_aed3bbf4798b6281e09f75f4a641bd6fb}\label{mydb_8h_aed3bbf4798b6281e09f75f4a641bd6fb}} 
 \index{mydb.h@{mydb.h}!runQuery@{runQuery}}
@@ -148,21 +556,41 @@ Uruchamia zapytanie do bazy.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Zwraca}
-0 w razie sukcesu lub 500 w razie błędu bazy 
+0 w razie sukcesu lub -\/1 w razie błędu bazy 
 \end{DoxyReturn}
-\mbox{\Hypertarget{mydb_8h_ad62254d31aef80cd4a6bd67ef8ecaa5f}\label{mydb_8h_ad62254d31aef80cd4a6bd67ef8ecaa5f}} 
+\mbox{\Hypertarget{mydb_8h_ae4279a72d4977b2b097600b0408f73b9}\label{mydb_8h_ae4279a72d4977b2b097600b0408f73b9}} 
 \index{mydb.h@{mydb.h}!saveSession@{saveSession}}
 \index{saveSession@{saveSession}!mydb.h@{mydb.h}}
 \subsubsection{\texorpdfstring{saveSession()}{saveSession()}}
-{\footnotesize\ttfamily int save\+Session (\begin{DoxyParamCaption}\item[{char $\ast$}]{session\+Id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int save\+Session (\begin{DoxyParamCaption}\item[{char $\ast$}]{session\+Id,  }\item[{int}]{user\+Id,  }\item[{int}]{logged\+In }\end{DoxyParamCaption})}
 
-Zapisuje daną sesję do bazy (tylko jeśli nie była zapisana wcześniej).
+Zapisuje daną sesję do bazy, jeśli nie była zapisana wcześniej. Jeśli była, modyfikuje wpis.
 
 
 \begin{DoxyParams}{Parametry}
-{\em session\+Id} & numer sesji do zapisania \\
+{\em session\+Id} & numer sesji -\/ parametr wymagany \\
+\hline
+{\em user\+Id} & powiązany użytkownik -\/ niewymagany \\
+\hline
+{\em logged\+In} & czy użytkownik jest zalogowany -\/ niewymagane \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Zwraca}
 0 w razie sukcesu lub 500 w razie błędu bazy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mydb_8h_ad069cb7cbbade92bac35c8b2681121d3}\label{mydb_8h_ad069cb7cbbade92bac35c8b2681121d3}} 
+\index{mydb.h@{mydb.h}!updateUserSetGroup@{updateUserSetGroup}}
+\index{updateUserSetGroup@{updateUserSetGroup}!mydb.h@{mydb.h}}
+\subsubsection{\texorpdfstring{updateUserSetGroup()}{updateUserSetGroup()}}
+{\footnotesize\ttfamily int update\+User\+Set\+Group (\begin{DoxyParamCaption}\item[{int}]{user\+Id,  }\item[{int}]{group\+Id }\end{DoxyParamCaption})}
+
+Dodaje grupę do studenta. 
+\begin{DoxyParams}{Parametry}
+{\em user\+Id} & id studenta \\
+\hline
+{\em group\+Id} & id grupy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 w razie sukcesu, 500 w razie błędu bazy. 
 \end{DoxyReturn}

@@ -1,0 +1,1701 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.15"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Egzamin: Dokumentacja pliku libs/mydb.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Egzamin
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.15 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html">libs</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definicje</a> &#124;
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku mydb.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="mydb_8h_source.html">mydb.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Definicje</h2></td></tr>
+<tr class="memitem:abbcb64a4f71ba470ccd4a8c25496772e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#abbcb64a4f71ba470ccd4a8c25496772e">INTERNAL_SERVER_ERROR</a>&#160;&#160;&#160;500</td></tr>
+<tr class="separator:abbcb64a4f71ba470ccd4a8c25496772e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33bfc1f995233887a0414369c36936b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a33bfc1f995233887a0414369c36936b8">NOT_FOUND</a>&#160;&#160;&#160;404</td></tr>
+<tr class="separator:a33bfc1f995233887a0414369c36936b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a2945f047f8998d636b50a184c99a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#aa3a2945f047f8998d636b50a184c99a8">DB_SERVER</a>&#160;&#160;&#160;&quot;localhost&quot;</td></tr>
+<tr class="separator:aa3a2945f047f8998d636b50a184c99a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a91ca47e7ff6fac6bc8fac0809110ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a8a91ca47e7ff6fac6bc8fac0809110ea">DB_DATABASE</a>&#160;&#160;&#160;&quot;egzamin&quot;</td></tr>
+<tr class="separator:a8a91ca47e7ff6fac6bc8fac0809110ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf6e62f788a1c295424bca52dfd57dff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#adf6e62f788a1c295424bca52dfd57dff">DB_LOGIN</a>&#160;&#160;&#160;&quot;egzamin&quot;</td></tr>
+<tr class="separator:adf6e62f788a1c295424bca52dfd57dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a575b56de3d90288721473c6e8966aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a4a575b56de3d90288721473c6e8966aa">DB_PASSWORD</a>&#160;&#160;&#160;&quot;6}H46aeEr&amp;#G&quot;</td></tr>
+<tr class="separator:a4a575b56de3d90288721473c6e8966aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1d47685776b48c3e5844d76e241c93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#add1d47685776b48c3e5844d76e241c93">MAX_QUERY</a>&#160;&#160;&#160;256</td></tr>
+<tr class="separator:add1d47685776b48c3e5844d76e241c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51c1b0814dd4a39adef1e679359db411"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a51c1b0814dd4a39adef1e679359db411">GET_SESSION_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT s.*, u.*, g.name FROM session s LEFT JOIN user u ON s.user_id = u.id LEFT JOIN student_group g ON u.group_id = g.id WHERE session_id = '%s'&quot;</td></tr>
+<tr class="separator:a51c1b0814dd4a39adef1e679359db411"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55798757f438ec914b9da8285464afbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a55798757f438ec914b9da8285464afbf">INSERT_SESSION_TEMPLATE</a>&#160;&#160;&#160;&quot;INSERT INTO session (session_id, user_id, logged_in) VALUES ('%s', %s, %d) ON DUPLICATE KEY UPDATE user_id = %s, logged_in = %d&quot;</td></tr>
+<tr class="separator:a55798757f438ec914b9da8285464afbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33f18bb1e7d1f6ea1cd64c47b573d78c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a33f18bb1e7d1f6ea1cd64c47b573d78c">GET_USER_BY_LOGIN_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT * FROM user WHERE login = '%s'&quot;</td></tr>
+<tr class="separator:a33f18bb1e7d1f6ea1cd64c47b573d78c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52010cf7517e857f49d0ece1f686ded2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a52010cf7517e857f49d0ece1f686ded2">GET_STUDENTS_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT u.*, g.name FROM user u LEFT JOIN student_group g ON u.group_id = g.id WHERE u.role = 'STUDENT'&quot;</td></tr>
+<tr class="separator:a52010cf7517e857f49d0ece1f686ded2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c3d97dcb1e54838e989bf7ac09b0b7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a2c3d97dcb1e54838e989bf7ac09b0b7a">GET_STUDENTS_BY_GROUP_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT u.*, g.name FROM user u LEFT JOIN student_group g ON u.group_id = g.id WHERE u.role = 'STUDENT' AND u.group_id = %d&quot;</td></tr>
+<tr class="separator:a2c3d97dcb1e54838e989bf7ac09b0b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae572366ff5992777361d190ee11cb999"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ae572366ff5992777361d190ee11cb999">INSERT_USER_TEMPLATE</a>&#160;&#160;&#160;&quot;INSERT INTO user (login, password, first_name, last_name, role) VALUES ('%s', '%s', '%s', '%s', '%s')&quot;</td></tr>
+<tr class="separator:ae572366ff5992777361d190ee11cb999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dd39b3151c809989354c19180d2095d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a8dd39b3151c809989354c19180d2095d">UPDATE_USER_SET_GROUP_TEMPLATE</a>&#160;&#160;&#160;&quot;UPDATE user SET group_id = '%d' WHERE id = '%d'&quot;</td></tr>
+<tr class="separator:a8dd39b3151c809989354c19180d2095d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa71c6d4a5981c523671e74db0d80de17"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#aa71c6d4a5981c523671e74db0d80de17">GET_GROUPS_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT * FROM student_group&quot;</td></tr>
+<tr class="separator:aa71c6d4a5981c523671e74db0d80de17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eec631bb7fcb49e8356b58036e6cb40"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a5eec631bb7fcb49e8356b58036e6cb40">GET_GROUP_BY_NAME_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT * FROM student_group WHERE name = '%s'&quot;</td></tr>
+<tr class="separator:a5eec631bb7fcb49e8356b58036e6cb40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac148e3c4fe54e50aa4eafe4f3e4d955f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ac148e3c4fe54e50aa4eafe4f3e4d955f">INSERT_GROUP_TEMPLATE</a>&#160;&#160;&#160;&quot;INSERT INTO student_group (name) VALUES ('%s')&quot;</td></tr>
+<tr class="separator:ac148e3c4fe54e50aa4eafe4f3e4d955f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1152364fc2a2636798d8bbaaf252c7b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a1152364fc2a2636798d8bbaaf252c7b4">INSERT_TEST</a>&#160;&#160;&#160;&quot;INSERT INTO test (author_id, subject) VALUES (%d, '%s')&quot;</td></tr>
+<tr class="separator:a1152364fc2a2636798d8bbaaf252c7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af595a53199e5aa35ad491e03f5197d1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#af595a53199e5aa35ad491e03f5197d1d">GET_TESTS_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT * FROM test WHERE author_id = %d &quot;</td></tr>
+<tr class="separator:af595a53199e5aa35ad491e03f5197d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade3512f1e928ba8c8a59cc339befd694"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ade3512f1e928ba8c8a59cc339befd694">GET_QUESTIONS_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT * FROM question WHERE test_id = %d&quot;</td></tr>
+<tr class="separator:ade3512f1e928ba8c8a59cc339befd694"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc375803bf9d46bdaa1baf2783193df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a3cc375803bf9d46bdaa1baf2783193df">GET_WAITING_TESTS_BY_TEST_AND_GROUP_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT * FROM waiting_test WHERE test_id = %d AND group_id = %d&quot;</td></tr>
+<tr class="separator:a3cc375803bf9d46bdaa1baf2783193df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b2a0482d7bbb2fa999bb0499bf0cd7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a26b2a0482d7bbb2fa999bb0499bf0cd7">GET_WAITING_TEST_BY_ID_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT w.*, t.subject FROM waiting_test w JOIN test t on t.id = w.test_id WHERE w.id = %d&quot;</td></tr>
+<tr class="separator:a26b2a0482d7bbb2fa999bb0499bf0cd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9a4565d6946a39068927b31b4c87aee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ae9a4565d6946a39068927b31b4c87aee">GET_WAITING_TEST_BY_ID_AND_NOT_ENDED_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT w.*, t.subject FROM waiting_test w JOIN test t on t.id = w.test_id WHERE w.id = %d AND w.end_time &gt; CURRENT_TIMESTAMP()&quot;</td></tr>
+<tr class="separator:ae9a4565d6946a39068927b31b4c87aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd668a6f08bb476f871ae434167df0e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#aebd668a6f08bb476f871ae434167df0e">GET_WAITING_TESTS_BY_AUTHOR_AND_NOT_ENDED_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT w.*, t.subject, t.author_id, g.name FROM waiting_test w JOIN test t on t.id = w.test_id JOIN student_group g ON g.id = w.group_id WHERE t.author_id = %d AND w.end_time &lt; CURRENT_TIMESTAMP() AND w.id NOT IN (SELECT waiting_test_id FROM result)&quot;</td></tr>
+<tr class="separator:aebd668a6f08bb476f871ae434167df0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0200738b688045e04dbf3e033c50cf5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a0200738b688045e04dbf3e033c50cf5a">GET_WAITING_TESTS_BY_STUDENT_AND_GROUP_AND_NOT_ENDED_AND_NOT_CHECKED_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT w.*, t.subject FROM waiting_test w JOIN test t on t.id = w.test_id WHERE w.group_id = %d AND w.end_time &gt; CURRENT_TIMESTAMP() AND w.id NOT IN (SELECT waiting_test_id FROM test_answer WHERE student_id = %d)&quot;</td></tr>
+<tr class="separator:a0200738b688045e04dbf3e033c50cf5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2646d149c0599d3b70367ddd0196383"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ad2646d149c0599d3b70367ddd0196383">INSERT_WAITING_TEST_TEMPLATE</a>&#160;&#160;&#160;&quot;INSERT INTO waiting_test (test_id, group_id, end_time) VALUES (%d, %d, '%s')&quot;</td></tr>
+<tr class="separator:ad2646d149c0599d3b70367ddd0196383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa293a9d6719760cec80a1fdb5485be3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#afa293a9d6719760cec80a1fdb5485be3">GET_WAITING_TESTS_BY_STUDENT_AND_ENDED_AND_CHECKED_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT w.*, t.subject, r.result FROM waiting_test w JOIN test t on t.id = w.test_id JOIN result r ON r.waiting_test_id = w.id WHERE r.student_id = %d AND r.result IS NOT NULL&quot;</td></tr>
+<tr class="separator:afa293a9d6719760cec80a1fdb5485be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb560ef5d0aead416aa000a244ecfb57"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#abb560ef5d0aead416aa000a244ecfb57">GET_ANSWERS_BY_WAITING_TEST_AND_STUDENT_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT * FROM test_answer WHERE waiting_test_id = %d AND student_id = %d&quot;</td></tr>
+<tr class="separator:abb560ef5d0aead416aa000a244ecfb57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13c9e440324f6ba627ec4a8fd6ac7ab8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a13c9e440324f6ba627ec4a8fd6ac7ab8">GET_ANSWERS_BY_WAITING_TEST_TEMPLATE</a>&#160;&#160;&#160;&quot;SELECT * FROM test_answer WHERE waiting_test_id = %d&quot;</td></tr>
+<tr class="separator:a13c9e440324f6ba627ec4a8fd6ac7ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a279fab1c82ff1dc2f06d8bcd230e345a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a279fab1c82ff1dc2f06d8bcd230e345a">INSERT_ANSWERS_TEMPLATE</a>&#160;&#160;&#160;&quot;INSERT INTO test_answer (waiting_test_id, student_id, answers) VALUES (%d, %d, '%s')&quot;</td></tr>
+<tr class="separator:a279fab1c82ff1dc2f06d8bcd230e345a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:aed3bbf4798b6281e09f75f4a641bd6fb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#aed3bbf4798b6281e09f75f4a641bd6fb">runQuery</a> (MYSQL *connection, char *query)</td></tr>
+<tr class="separator:aed3bbf4798b6281e09f75f4a641bd6fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac42166a977128e050ae17430f6ee8746"><td class="memItemLeft" align="right" valign="top">MYSQL_RES *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ac42166a977128e050ae17430f6ee8746">getResult</a> (MYSQL *connection)</td></tr>
+<tr class="separator:ac42166a977128e050ae17430f6ee8746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4279a72d4977b2b097600b0408f73b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ae4279a72d4977b2b097600b0408f73b9">saveSession</a> (char *sessionId, int userId, int loggedIn)</td></tr>
+<tr class="separator:ae4279a72d4977b2b097600b0408f73b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a363428555c5707c1e4cab824537fa77e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a363428555c5707c1e4cab824537fa77e">getSession</a> (char *sessionId, <a class="el" href="structSession.html">Session</a> *session)</td></tr>
+<tr class="separator:a363428555c5707c1e4cab824537fa77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7367396c3739a32296eaf1297f423868"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a7367396c3739a32296eaf1297f423868">getUserByLogin</a> (char *login, <a class="el" href="structUser.html">User</a> *user)</td></tr>
+<tr class="separator:a7367396c3739a32296eaf1297f423868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac419d3686c84d52c39a3221f0e4119fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ac419d3686c84d52c39a3221f0e4119fd">getStudents</a> (<a class="el" href="structUser.html">User</a> user[], int *count, <a class="el" href="structSession.html">Session</a> *session)</td></tr>
+<tr class="separator:ac419d3686c84d52c39a3221f0e4119fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08499842806bd1db045e4c50723ab6ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a08499842806bd1db045e4c50723ab6ae">getStudentsIdsByGroup</a> (int ids[], int *count, int groupId)</td></tr>
+<tr class="separator:a08499842806bd1db045e4c50723ab6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2385bb9ce62f50d9d321fb487968380a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a2385bb9ce62f50d9d321fb487968380a">getTestsByAuthor</a> (<a class="el" href="structTest.html">Test</a> tests[], int *count, <a class="el" href="structSession.html">Session</a> *session)</td></tr>
+<tr class="separator:a2385bb9ce62f50d9d321fb487968380a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a560acce1aafaa6cf55ae3319848d622c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a560acce1aafaa6cf55ae3319848d622c">addWaitingTest</a> (int testId, int groupId, char *endTime)</td></tr>
+<tr class="separator:a560acce1aafaa6cf55ae3319848d622c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70fd4479738eae6ccdb16702f463674f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a70fd4479738eae6ccdb16702f463674f">getWaitingTestByTestAndGroup</a> (int testId, int groupId)</td></tr>
+<tr class="separator:a70fd4479738eae6ccdb16702f463674f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3abcf65212af76cf1c3b18377c936ba3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a3abcf65212af76cf1c3b18377c936ba3">getWaitingTestsByStudentAndGroupAndNotEnded</a> (<a class="el" href="structWaitingTest.html">WaitingTest</a> *waitingTests, int *count, int groupId, int studentId)</td></tr>
+<tr class="separator:a3abcf65212af76cf1c3b18377c936ba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd926005cfc57c8ca6715642b2270520"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#afd926005cfc57c8ca6715642b2270520">getWaitingTestByAuthorAndEnded</a> (<a class="el" href="structWaitingTest.html">WaitingTest</a> *waitingTests, int *count, int authorId)</td></tr>
+<tr class="separator:afd926005cfc57c8ca6715642b2270520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a7e9ce4389b220b8ec5f357354c70d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a05a7e9ce4389b220b8ec5f357354c70d">getCheckedTestByStudent</a> (<a class="el" href="structWaitingTest.html">WaitingTest</a> waitingTests[], int *count, int studentId)</td></tr>
+<tr class="separator:a05a7e9ce4389b220b8ec5f357354c70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acccd4d1b6e15c9d83997897ea5af3dd4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#acccd4d1b6e15c9d83997897ea5af3dd4">getWaitingTestByIdAndNotEnded</a> (<a class="el" href="structWaitingTest.html">WaitingTest</a> *waitingTest, int waitingTestId)</td></tr>
+<tr class="separator:acccd4d1b6e15c9d83997897ea5af3dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad279dd45a3963ab34000fb045478574e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ad279dd45a3963ab34000fb045478574e">getWaitingTestById</a> (<a class="el" href="structWaitingTest.html">WaitingTest</a> *waitingTest, int waitingTestId)</td></tr>
+<tr class="separator:ad279dd45a3963ab34000fb045478574e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e2cbccdfdca376b59145b93ff07fffb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a1e2cbccdfdca376b59145b93ff07fffb">getQuestionsByTestId</a> (<a class="el" href="structQuestion.html">Question</a> questions[], int *count, int testId)</td></tr>
+<tr class="separator:a1e2cbccdfdca376b59145b93ff07fffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f8ed9947fe0827b16fe04f51e2e9ff3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a7f8ed9947fe0827b16fe04f51e2e9ff3">addUser</a> (char *login, char *password, char *firstName, char *lastName, char *role)</td></tr>
+<tr class="separator:a7f8ed9947fe0827b16fe04f51e2e9ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af502ea05e96a5f0ae393188e27facb6d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#af502ea05e96a5f0ae393188e27facb6d">addAnswers</a> (int waitingTestId, int student_id, char *answers)</td></tr>
+<tr class="separator:af502ea05e96a5f0ae393188e27facb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6bf7af1bb27272b94b243a8d2dd9322"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ac6bf7af1bb27272b94b243a8d2dd9322">getAnswersByWaitingTestIdAndStudentId</a> (char *answers, int waitingTestId, int studentId)</td></tr>
+<tr class="separator:ac6bf7af1bb27272b94b243a8d2dd9322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a704cf9ab83947a1962bbe320378a275a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a704cf9ab83947a1962bbe320378a275a">getAnswersByWaitingTestId</a> (<a class="el" href="structAnswers.html">Answers</a> answers[], int *count, int waitingTestId)</td></tr>
+<tr class="separator:a704cf9ab83947a1962bbe320378a275a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b005132805ab95e4b8aa42c2f40ed07"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a1b005132805ab95e4b8aa42c2f40ed07">runPreparedQuery</a> (char *query)</td></tr>
+<tr class="separator:a1b005132805ab95e4b8aa42c2f40ed07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48b90f74a874b160281a91d950197e0f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a48b90f74a874b160281a91d950197e0f">addTest</a> (int userId, char *subject, int *testId)</td></tr>
+<tr class="separator:a48b90f74a874b160281a91d950197e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad069cb7cbbade92bac35c8b2681121d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ad069cb7cbbade92bac35c8b2681121d3">updateUserSetGroup</a> (int userId, int groupId)</td></tr>
+<tr class="separator:ad069cb7cbbade92bac35c8b2681121d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3dbb71a63d8670e5f477bf66099fc58"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ad3dbb71a63d8670e5f477bf66099fc58">getGroups</a> (<a class="el" href="structGroup.html">Group</a> groups[], int *count)</td></tr>
+<tr class="separator:ad3dbb71a63d8670e5f477bf66099fc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4827bc626b32fcf6d61b830f795d3c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#aa4827bc626b32fcf6d61b830f795d3c0">getGroupByName</a> (char *name, <a class="el" href="structGroup.html">Group</a> *group)</td></tr>
+<tr class="separator:aa4827bc626b32fcf6d61b830f795d3c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a615b854d7fcd304c52ff9f5c194c6e8e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a615b854d7fcd304c52ff9f5c194c6e8e">addGroup</a> (char *name)</td></tr>
+<tr class="separator:a615b854d7fcd304c52ff9f5c194c6e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae886edf9c804939ba8432d12dbf6ca05"><td class="memItemLeft" align="right" valign="top">MYSQL *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#ae886edf9c804939ba8432d12dbf6ca05">connectToDatabase</a> ()</td></tr>
+<tr class="separator:ae886edf9c804939ba8432d12dbf6ca05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cf6e29bdeb6bfd376259a61344fe988"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mydb_8c.html#a7cf6e29bdeb6bfd376259a61344fe988">databaseError</a> (MYSQL *connection)</td></tr>
+<tr class="separator:a7cf6e29bdeb6bfd376259a61344fe988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja definicji</h2>
+<a id="a8a91ca47e7ff6fac6bc8fac0809110ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a91ca47e7ff6fac6bc8fac0809110ea">&#9670;&nbsp;</a></span>DB_DATABASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DB_DATABASE&#160;&#160;&#160;&quot;egzamin&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adf6e62f788a1c295424bca52dfd57dff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf6e62f788a1c295424bca52dfd57dff">&#9670;&nbsp;</a></span>DB_LOGIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DB_LOGIN&#160;&#160;&#160;&quot;egzamin&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a575b56de3d90288721473c6e8966aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a575b56de3d90288721473c6e8966aa">&#9670;&nbsp;</a></span>DB_PASSWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DB_PASSWORD&#160;&#160;&#160;&quot;6}H46aeEr&amp;#G&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa3a2945f047f8998d636b50a184c99a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3a2945f047f8998d636b50a184c99a8">&#9670;&nbsp;</a></span>DB_SERVER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DB_SERVER&#160;&#160;&#160;&quot;localhost&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb560ef5d0aead416aa000a244ecfb57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb560ef5d0aead416aa000a244ecfb57">&#9670;&nbsp;</a></span>GET_ANSWERS_BY_WAITING_TEST_AND_STUDENT_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_ANSWERS_BY_WAITING_TEST_AND_STUDENT_TEMPLATE&#160;&#160;&#160;&quot;SELECT * FROM test_answer WHERE waiting_test_id = %d AND student_id = %d&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a13c9e440324f6ba627ec4a8fd6ac7ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c9e440324f6ba627ec4a8fd6ac7ab8">&#9670;&nbsp;</a></span>GET_ANSWERS_BY_WAITING_TEST_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_ANSWERS_BY_WAITING_TEST_TEMPLATE&#160;&#160;&#160;&quot;SELECT * FROM test_answer WHERE waiting_test_id = %d&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5eec631bb7fcb49e8356b58036e6cb40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eec631bb7fcb49e8356b58036e6cb40">&#9670;&nbsp;</a></span>GET_GROUP_BY_NAME_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_GROUP_BY_NAME_TEMPLATE&#160;&#160;&#160;&quot;SELECT * FROM student_group WHERE name = '%s'&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa71c6d4a5981c523671e74db0d80de17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa71c6d4a5981c523671e74db0d80de17">&#9670;&nbsp;</a></span>GET_GROUPS_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_GROUPS_TEMPLATE&#160;&#160;&#160;&quot;SELECT * FROM student_group&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade3512f1e928ba8c8a59cc339befd694"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade3512f1e928ba8c8a59cc339befd694">&#9670;&nbsp;</a></span>GET_QUESTIONS_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_QUESTIONS_TEMPLATE&#160;&#160;&#160;&quot;SELECT * FROM question WHERE test_id = %d&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51c1b0814dd4a39adef1e679359db411"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51c1b0814dd4a39adef1e679359db411">&#9670;&nbsp;</a></span>GET_SESSION_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_SESSION_TEMPLATE&#160;&#160;&#160;&quot;SELECT s.*, u.*, g.name FROM session s LEFT JOIN user u ON s.user_id = u.id LEFT JOIN student_group g ON u.group_id = g.id WHERE session_id = '%s'&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c3d97dcb1e54838e989bf7ac09b0b7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c3d97dcb1e54838e989bf7ac09b0b7a">&#9670;&nbsp;</a></span>GET_STUDENTS_BY_GROUP_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_STUDENTS_BY_GROUP_TEMPLATE&#160;&#160;&#160;&quot;SELECT u.*, g.name FROM user u LEFT JOIN student_group g ON u.group_id = g.id WHERE u.role = 'STUDENT' AND u.group_id = %d&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a52010cf7517e857f49d0ece1f686ded2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52010cf7517e857f49d0ece1f686ded2">&#9670;&nbsp;</a></span>GET_STUDENTS_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_STUDENTS_TEMPLATE&#160;&#160;&#160;&quot;SELECT u.*, g.name FROM user u LEFT JOIN student_group g ON u.group_id = g.id WHERE u.role = 'STUDENT'&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af595a53199e5aa35ad491e03f5197d1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af595a53199e5aa35ad491e03f5197d1d">&#9670;&nbsp;</a></span>GET_TESTS_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_TESTS_TEMPLATE&#160;&#160;&#160;&quot;SELECT * FROM test WHERE author_id = %d &quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a33f18bb1e7d1f6ea1cd64c47b573d78c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33f18bb1e7d1f6ea1cd64c47b573d78c">&#9670;&nbsp;</a></span>GET_USER_BY_LOGIN_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_USER_BY_LOGIN_TEMPLATE&#160;&#160;&#160;&quot;SELECT * FROM user WHERE login = '%s'&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae9a4565d6946a39068927b31b4c87aee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9a4565d6946a39068927b31b4c87aee">&#9670;&nbsp;</a></span>GET_WAITING_TEST_BY_ID_AND_NOT_ENDED_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_WAITING_TEST_BY_ID_AND_NOT_ENDED_TEMPLATE&#160;&#160;&#160;&quot;SELECT w.*, t.subject FROM waiting_test w JOIN test t on t.id = w.test_id WHERE w.id = %d AND w.end_time &gt; CURRENT_TIMESTAMP()&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a26b2a0482d7bbb2fa999bb0499bf0cd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26b2a0482d7bbb2fa999bb0499bf0cd7">&#9670;&nbsp;</a></span>GET_WAITING_TEST_BY_ID_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_WAITING_TEST_BY_ID_TEMPLATE&#160;&#160;&#160;&quot;SELECT w.*, t.subject FROM waiting_test w JOIN test t on t.id = w.test_id WHERE w.id = %d&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aebd668a6f08bb476f871ae434167df0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd668a6f08bb476f871ae434167df0e">&#9670;&nbsp;</a></span>GET_WAITING_TESTS_BY_AUTHOR_AND_NOT_ENDED_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_WAITING_TESTS_BY_AUTHOR_AND_NOT_ENDED_TEMPLATE&#160;&#160;&#160;&quot;SELECT w.*, t.subject, t.author_id, g.name FROM waiting_test w JOIN test t on t.id = w.test_id JOIN student_group g ON g.id = w.group_id WHERE t.author_id = %d AND w.end_time &lt; CURRENT_TIMESTAMP() AND w.id NOT IN (SELECT waiting_test_id FROM result)&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa293a9d6719760cec80a1fdb5485be3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa293a9d6719760cec80a1fdb5485be3">&#9670;&nbsp;</a></span>GET_WAITING_TESTS_BY_STUDENT_AND_ENDED_AND_CHECKED_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_WAITING_TESTS_BY_STUDENT_AND_ENDED_AND_CHECKED_TEMPLATE&#160;&#160;&#160;&quot;SELECT w.*, t.subject, r.result FROM waiting_test w JOIN test t on t.id = w.test_id JOIN result r ON r.waiting_test_id = w.id WHERE r.student_id = %d AND r.result IS NOT NULL&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0200738b688045e04dbf3e033c50cf5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0200738b688045e04dbf3e033c50cf5a">&#9670;&nbsp;</a></span>GET_WAITING_TESTS_BY_STUDENT_AND_GROUP_AND_NOT_ENDED_AND_NOT_CHECKED_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_WAITING_TESTS_BY_STUDENT_AND_GROUP_AND_NOT_ENDED_AND_NOT_CHECKED_TEMPLATE&#160;&#160;&#160;&quot;SELECT w.*, t.subject FROM waiting_test w JOIN test t on t.id = w.test_id WHERE w.group_id = %d AND w.end_time &gt; CURRENT_TIMESTAMP() AND w.id NOT IN (SELECT waiting_test_id FROM test_answer WHERE student_id = %d)&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3cc375803bf9d46bdaa1baf2783193df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cc375803bf9d46bdaa1baf2783193df">&#9670;&nbsp;</a></span>GET_WAITING_TESTS_BY_TEST_AND_GROUP_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GET_WAITING_TESTS_BY_TEST_AND_GROUP_TEMPLATE&#160;&#160;&#160;&quot;SELECT * FROM waiting_test WHERE test_id = %d AND group_id = %d&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a279fab1c82ff1dc2f06d8bcd230e345a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a279fab1c82ff1dc2f06d8bcd230e345a">&#9670;&nbsp;</a></span>INSERT_ANSWERS_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INSERT_ANSWERS_TEMPLATE&#160;&#160;&#160;&quot;INSERT INTO test_answer (waiting_test_id, student_id, answers) VALUES (%d, %d, '%s')&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac148e3c4fe54e50aa4eafe4f3e4d955f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac148e3c4fe54e50aa4eafe4f3e4d955f">&#9670;&nbsp;</a></span>INSERT_GROUP_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INSERT_GROUP_TEMPLATE&#160;&#160;&#160;&quot;INSERT INTO student_group (name) VALUES ('%s')&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a55798757f438ec914b9da8285464afbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55798757f438ec914b9da8285464afbf">&#9670;&nbsp;</a></span>INSERT_SESSION_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INSERT_SESSION_TEMPLATE&#160;&#160;&#160;&quot;INSERT INTO session (session_id, user_id, logged_in) VALUES ('%s', %s, %d) ON DUPLICATE KEY UPDATE user_id = %s, logged_in = %d&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1152364fc2a2636798d8bbaaf252c7b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1152364fc2a2636798d8bbaaf252c7b4">&#9670;&nbsp;</a></span>INSERT_TEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INSERT_TEST&#160;&#160;&#160;&quot;INSERT INTO test (author_id, subject) VALUES (%d, '%s')&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae572366ff5992777361d190ee11cb999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae572366ff5992777361d190ee11cb999">&#9670;&nbsp;</a></span>INSERT_USER_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INSERT_USER_TEMPLATE&#160;&#160;&#160;&quot;INSERT INTO user (login, password, first_name, last_name, role) VALUES ('%s', '%s', '%s', '%s', '%s')&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad2646d149c0599d3b70367ddd0196383"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2646d149c0599d3b70367ddd0196383">&#9670;&nbsp;</a></span>INSERT_WAITING_TEST_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INSERT_WAITING_TEST_TEMPLATE&#160;&#160;&#160;&quot;INSERT INTO waiting_test (test_id, group_id, end_time) VALUES (%d, %d, '%s')&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abbcb64a4f71ba470ccd4a8c25496772e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbcb64a4f71ba470ccd4a8c25496772e">&#9670;&nbsp;</a></span>INTERNAL_SERVER_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INTERNAL_SERVER_ERROR&#160;&#160;&#160;500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add1d47685776b48c3e5844d76e241c93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add1d47685776b48c3e5844d76e241c93">&#9670;&nbsp;</a></span>MAX_QUERY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_QUERY&#160;&#160;&#160;256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a33bfc1f995233887a0414369c36936b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33bfc1f995233887a0414369c36936b8">&#9670;&nbsp;</a></span>NOT_FOUND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOT_FOUND&#160;&#160;&#160;404</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8dd39b3151c809989354c19180d2095d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dd39b3151c809989354c19180d2095d">&#9670;&nbsp;</a></span>UPDATE_USER_SET_GROUP_TEMPLATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UPDATE_USER_SET_GROUP_TEMPLATE&#160;&#160;&#160;&quot;UPDATE user SET group_id = '%d' WHERE id = '%d'&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="af502ea05e96a5f0ae393188e27facb6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af502ea05e96a5f0ae393188e27facb6d">&#9670;&nbsp;</a></span>addAnswers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int addAnswers </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>waitingTestId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>student_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>answers</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dodaje odpowiedzi studenta na test. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waitingTestId</td><td>id oczekującego testu </td></tr>
+    <tr><td class="paramname">student_id</td><td>id studenta </td></tr>
+    <tr><td class="paramname">answers</td><td>odpowiedzi studenta w formie łancucha znaków </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+<a id="a615b854d7fcd304c52ff9f5c194c6e8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a615b854d7fcd304c52ff9f5c194c6e8e">&#9670;&nbsp;</a></span>addGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int addGroup </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dodaje grupę do bazy </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>nazwa grupy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+<a id="a48b90f74a874b160281a91d950197e0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48b90f74a874b160281a91d950197e0f">&#9670;&nbsp;</a></span>addTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int addTest </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>subject</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>testId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dodaje test do bazy </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>id autora </td></tr>
+    <tr><td class="paramname">subject</td><td>temat testu </td></tr>
+    <tr><td class="paramname">testId</td><td>id wstawionego właśnie testu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+<a id="a7f8ed9947fe0827b16fe04f51e2e9ff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f8ed9947fe0827b16fe04f51e2e9ff3">&#9670;&nbsp;</a></span>addUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int addUser </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>login</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>password</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>firstName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>lastName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>role</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dodaje użytkownika do bazy </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td></td></tr>
+    <tr><td class="paramname">password</td><td></td></tr>
+    <tr><td class="paramname">firstName</td><td>imię </td></tr>
+    <tr><td class="paramname">lastName</td><td>nazwisko </td></tr>
+    <tr><td class="paramname">role</td><td>rola w systemie </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+<a id="a560acce1aafaa6cf55ae3319848d622c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a560acce1aafaa6cf55ae3319848d622c">&#9670;&nbsp;</a></span>addWaitingTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int addWaitingTest </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>testId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>groupId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>endTime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dodaje oczekujący test dla podanej grup z podanym czasem koncowym. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">testId</td><td>numer testu </td></tr>
+    <tr><td class="paramname">groupId</td><td>numer grupy </td></tr>
+    <tr><td class="paramname">endTime</td><td>Timestamp z czasem zakończenia </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+<a id="ae886edf9c804939ba8432d12dbf6ca05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae886edf9c804939ba8432d12dbf6ca05">&#9670;&nbsp;</a></span>connectToDatabase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MYSQL* connectToDatabase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Uruchamia połączenie z bazą (wymagane, żeby wykonywać operacje na bazie).</p>
+<dl class="section return"><dt>Zwraca</dt><dd>wskaźnik do struktury MYSQL zawierającej informacje o uzyskanym połączeniu lub NULL, jeśli połączenie się nie udało. </dd></dl>
+
+</div>
+</div>
+<a id="a7cf6e29bdeb6bfd376259a61344fe988"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cf6e29bdeb6bfd376259a61344fe988">&#9670;&nbsp;</a></span>databaseError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int databaseError </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>connection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Loguje lub wypisuje na ekran komunikat błędu dotyczącego bazy, zamyka połączenie i zwraca błąd INTERNAL_SERVER_ERROR.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connection</td><td>połączenie z bazą, którego dotyczy błąd </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>500 (INTERNAL_SERVER_ERROR) </dd></dl>
+
+</div>
+</div>
+<a id="a704cf9ab83947a1962bbe320378a275a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a704cf9ab83947a1962bbe320378a275a">&#9670;&nbsp;</a></span>getAnswersByWaitingTestId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getAnswersByWaitingTestId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structAnswers.html">Answers</a>&#160;</td>
+          <td class="paramname"><em>answers</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>waitingTestId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera odpowiedzi studentów na podany oczekujacy test </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">answers</td><td>tablica odpowiedzi do zapełnienia </td></tr>
+    <tr><td class="paramname">count</td><td>liczba znalezionych wpisów </td></tr>
+    <tr><td class="paramname">waitingTestId</td><td>id oczekującego testu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+<a id="ac6bf7af1bb27272b94b243a8d2dd9322"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6bf7af1bb27272b94b243a8d2dd9322">&#9670;&nbsp;</a></span>getAnswersByWaitingTestIdAndStudentId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getAnswersByWaitingTestIdAndStudentId </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>answers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>waitingTestId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>studentId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera odpowiedzi studenta na podany oczekujący test. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">answers</td><td>wynikowe odpowiedzi </td></tr>
+    <tr><td class="paramname">waitingTestId</td><td>id oczekującego testu </td></tr>
+    <tr><td class="paramname">studentId</td><td>id studenta </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie znalezienia, -1 w razie nie znalezienia, 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="a05a7e9ce4389b220b8ec5f357354c70d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05a7e9ce4389b220b8ec5f357354c70d">&#9670;&nbsp;</a></span>getCheckedTestByStudent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getCheckedTestByStudent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structWaitingTest.html">WaitingTest</a>&#160;</td>
+          <td class="paramname"><em>waitingTests</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>studentId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera sprawdzone testy studenta </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waitingTests</td><td>tablica testów do zapełnienia </td></tr>
+    <tr><td class="paramname">count</td><td>liczba znalezionych wpisów </td></tr>
+    <tr><td class="paramname">studentId</td><td>id studenta </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+<a id="aa4827bc626b32fcf6d61b830f795d3c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4827bc626b32fcf6d61b830f795d3c0">&#9670;&nbsp;</a></span>getGroupByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getGroupByName </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structGroup.html">Group</a> *&#160;</td>
+          <td class="paramname"><em>group</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera grupę po nazwie </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>nazwa grupy do znalezienia </td></tr>
+    <tr><td class="paramname">group</td><td>znaleziona grupa </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie znalezienia, -1 w razie nie znalezienia, 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="ad3dbb71a63d8670e5f477bf66099fc58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3dbb71a63d8670e5f477bf66099fc58">&#9670;&nbsp;</a></span>getGroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getGroups </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGroup.html">Group</a>&#160;</td>
+          <td class="paramname"><em>groups</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera grupy z bazy </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">groups</td><td>tablica grup do zapełnienia </td></tr>
+    <tr><td class="paramname">count</td><td>liczba znalezionych wpisów </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+<a id="a1e2cbccdfdca376b59145b93ff07fffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e2cbccdfdca376b59145b93ff07fffb">&#9670;&nbsp;</a></span>getQuestionsByTestId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getQuestionsByTestId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structQuestion.html">Question</a>&#160;</td>
+          <td class="paramname"><em>questions</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>testId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera pytania, które są częścią podanego testu. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">questions</td><td>tablica pytań do zapełnienia </td></tr>
+    <tr><td class="paramname">count</td><td>liczba znalezionych wpisów </td></tr>
+    <tr><td class="paramname">testId</td><td>id testu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+<a id="ac42166a977128e050ae17430f6ee8746"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac42166a977128e050ae17430f6ee8746">&#9670;&nbsp;</a></span>getResult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MYSQL_RES* getResult </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>connection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera wynik ostatniego zapytania do bazy.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connection</td><td>aktywne połączenie z bazą </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="a363428555c5707c1e4cab824537fa77e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a363428555c5707c1e4cab824537fa77e">&#9670;&nbsp;</a></span>getSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getSession </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>sessionId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structSession.html">Session</a> *&#160;</td>
+          <td class="paramname"><em>session</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera dane o sesji z bazy.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sessionId</td><td>numer sesji do pobrania </td></tr>
+    <tr><td class="paramname">session</td><td>dane sesji, które zostaną uzupełnione </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="ac419d3686c84d52c39a3221f0e4119fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac419d3686c84d52c39a3221f0e4119fd">&#9670;&nbsp;</a></span>getStudents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getStudents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structUser.html">User</a>&#160;</td>
+          <td class="paramname"><em>user</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structSession.html">Session</a> *&#160;</td>
+          <td class="paramname"><em>session</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera listę wszystkich studentów. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">user</td><td>wynikowa tablica studentów </td></tr>
+    <tr><td class="paramname">count</td><td>liczba znalezionych wpisów </td></tr>
+    <tr><td class="paramname">session</td><td>sesja </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a08499842806bd1db045e4c50723ab6ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08499842806bd1db045e4c50723ab6ae">&#9670;&nbsp;</a></span>getStudentsIdsByGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getStudentsIdsByGroup </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ids</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>groupId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera tablicę id studentów należących do podanej grupy. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ids</td><td>tablica id do zapełnienia </td></tr>
+    <tr><td class="paramname">count</td><td>liczba znalezionych wpisów </td></tr>
+    <tr><td class="paramname">groupId</td><td>id grupy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="a2385bb9ce62f50d9d321fb487968380a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2385bb9ce62f50d9d321fb487968380a">&#9670;&nbsp;</a></span>getTestsByAuthor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getTestsByAuthor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structTest.html">Test</a>&#160;</td>
+          <td class="paramname"><em>tests</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structSession.html">Session</a> *&#160;</td>
+          <td class="paramname"><em>session</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera testy dla utworzone przez zalogowanego użytkownika </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tests</td><td>tablica testów do zapełnienia </td></tr>
+    <tr><td class="paramname">count</td><td>liczba znalezionych wpisów </td></tr>
+    <tr><td class="paramname">session</td><td>aktualna sesja </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a7367396c3739a32296eaf1297f423868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7367396c3739a32296eaf1297f423868">&#9670;&nbsp;</a></span>getUserByLogin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getUserByLogin </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>login</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structUser.html">User</a> *&#160;</td>
+          <td class="paramname"><em>user</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera dane o użytkowniku z bazy po loginie </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>do wyszukania użytkownika </td></tr>
+    <tr><td class="paramname">user</td><td>dane o użytkowniku, które zostaną uzupełnione </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, -1 w razie nie znalezienia użytkownika o podanym loginie, 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="afd926005cfc57c8ca6715642b2270520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd926005cfc57c8ca6715642b2270520">&#9670;&nbsp;</a></span>getWaitingTestByAuthorAndEnded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getWaitingTestByAuthorAndEnded </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structWaitingTest.html">WaitingTest</a> *&#160;</td>
+          <td class="paramname"><em>waitingTests</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>authorId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera testy utworzone przez użytkownika, których czas minął </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waitingTests</td><td></td></tr>
+    <tr><td class="paramname">count</td><td>liczba znalezionych wpisów </td></tr>
+    <tr><td class="paramname">authorId</td><td>id autora </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+<a id="ad279dd45a3963ab34000fb045478574e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad279dd45a3963ab34000fb045478574e">&#9670;&nbsp;</a></span>getWaitingTestById()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getWaitingTestById </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structWaitingTest.html">WaitingTest</a> *&#160;</td>
+          <td class="paramname"><em>waitingTest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>waitingTestId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera oczekujący test po jego id </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waitingTest</td><td>wynikowy test </td></tr>
+    <tr><td class="paramname">waitingTestId</td><td>id oczekującego testu do znalezienia </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie znalezienia, -1 w razie nie znalezienia, 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="acccd4d1b6e15c9d83997897ea5af3dd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acccd4d1b6e15c9d83997897ea5af3dd4">&#9670;&nbsp;</a></span>getWaitingTestByIdAndNotEnded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getWaitingTestByIdAndNotEnded </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structWaitingTest.html">WaitingTest</a> *&#160;</td>
+          <td class="paramname"><em>waitingTest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>waitingTestId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera oczekując test po id, jeśli się nie zakończył </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waitingTest</td><td>wynikowy test </td></tr>
+    <tr><td class="paramname">waitingTestId</td><td>id oczekującego testu do znalezienia </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie znalezienia, -1 w razie nie znalezienia, 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="a70fd4479738eae6ccdb16702f463674f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70fd4479738eae6ccdb16702f463674f">&#9670;&nbsp;</a></span>getWaitingTestByTestAndGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getWaitingTestByTestAndGroup </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>testId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>groupId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera oczekujący test dla podanego id testu i grupy. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">testId</td><td>id testu </td></tr>
+    <tr><td class="paramname">groupId</td><td>id grupy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie znalezienia, -1 w razie nie znalezienia, 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="a3abcf65212af76cf1c3b18377c936ba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3abcf65212af76cf1c3b18377c936ba3">&#9670;&nbsp;</a></span>getWaitingTestsByStudentAndGroupAndNotEnded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getWaitingTestsByStudentAndGroupAndNotEnded </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structWaitingTest.html">WaitingTest</a> *&#160;</td>
+          <td class="paramname"><em>waitingTests</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>groupId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>studentId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera oczekujące i nie zakończone testy dla studenta i grupy, które nie zostały jeszcze sprawdzone.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">waitingTests</td><td>tablica testów do zapelnienia </td></tr>
+    <tr><td class="paramname">count</td><td>liczba znalezionych wpisów </td></tr>
+    <tr><td class="paramname">groupId</td><td></td></tr>
+    <tr><td class="paramname">studentId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+<a id="a1b005132805ab95e4b8aa42c2f40ed07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b005132805ab95e4b8aa42c2f40ed07">&#9670;&nbsp;</a></span>runPreparedQuery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int runPreparedQuery </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>query</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Uruchamia podane zapytanie do bazy </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td>treść zapytania </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+<a id="aed3bbf4798b6281e09f75f4a641bd6fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed3bbf4798b6281e09f75f4a641bd6fb">&#9670;&nbsp;</a></span>runQuery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int runQuery </td>
+          <td>(</td>
+          <td class="paramtype">MYSQL *&#160;</td>
+          <td class="paramname"><em>connection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>query</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Uruchamia zapytanie do bazy.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connection</td><td>aktywne połączenie z bazą </td></tr>
+    <tr><td class="paramname">query</td><td>zapytanie SQL </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub -1 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="ae4279a72d4977b2b097600b0408f73b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4279a72d4977b2b097600b0408f73b9">&#9670;&nbsp;</a></span>saveSession()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int saveSession </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>sessionId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>loggedIn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zapisuje daną sesję do bazy, jeśli nie była zapisana wcześniej. Jeśli była, modyfikuje wpis.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sessionId</td><td>numer sesji - parametr wymagany </td></tr>
+    <tr><td class="paramname">userId</td><td>powiązany użytkownik - niewymagany </td></tr>
+    <tr><td class="paramname">loggedIn</td><td>czy użytkownik jest zalogowany - niewymagane </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub 500 w razie błędu bazy </dd></dl>
+
+</div>
+</div>
+<a id="ad069cb7cbbade92bac35c8b2681121d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad069cb7cbbade92bac35c8b2681121d3">&#9670;&nbsp;</a></span>updateUserSetGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int updateUserSetGroup </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>userId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>groupId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dodaje grupę do studenta. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userId</td><td>id studenta </td></tr>
+    <tr><td class="paramname">groupId</td><td>id grupy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu bazy. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
+</body>
+</html>

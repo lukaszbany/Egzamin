@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Dokumentacja pliku RequestProcessor.c</title>
+<title>Egzamin: Dokumentacja pliku RequestProcessor.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Egzamin
    </div>
   </td>
  </tr>
@@ -70,27 +70,114 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="RequestProcessor_8h_source.html">RequestProcessor.h</a>&quot;</code><br />
-<code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;mysql/mysql.h&gt;</code><br />
-<code>#include &lt;zconf.h&gt;</code><br />
-<code>#include &lt;sys/socket.h&gt;</code><br />
-<code>#include &lt;netinet/in.h&gt;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
-<code>#include &lt;time.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="libs_2mylib_8h_source.html">libs/mylib.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="mydb_8h_source.html">libs/mydb.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Definicje</h2></td></tr>
-<tr class="memitem:a54fa99013d88b05125eba286921517c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a54fa99013d88b05125eba286921517c7">SESSION_ID_LENGTH</a>&#160;&#160;&#160;15</td></tr>
-<tr class="separator:a54fa99013d88b05125eba286921517c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca1c6a1e424e30049c0fa365ab34647"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a2ca1c6a1e424e30049c0fa365ab34647">MINI_BUF</a>&#160;&#160;&#160;128</td></tr>
+<tr class="separator:a2ca1c6a1e424e30049c0fa365ab34647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb01965415283c7dcb324706c2ef5755"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#aeb01965415283c7dcb324706c2ef5755">SMALL_BUF</a>&#160;&#160;&#160;256</td></tr>
+<tr class="separator:aeb01965415283c7dcb324706c2ef5755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3864d0ffbbbc481a10a5600146ad9ed9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a3864d0ffbbbc481a10a5600146ad9ed9">METHOD_LENGTH</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:a3864d0ffbbbc481a10a5600146ad9ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad11e02669e60f64a75f5a1e8a03c7d5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#ad11e02669e60f64a75f5a1e8a03c7d5f">MAX_ARRAY</a>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:ad11e02669e60f64a75f5a1e8a03c7d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8475e926a72f519c2845b818daa7ddc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#aa8475e926a72f519c2845b818daa7ddc">ANSWER_OK</a>&#160;&#160;&#160;&quot;HTTP/1.1 200 OK\r\n&quot;</td></tr>
+<tr class="separator:aa8475e926a72f519c2845b818daa7ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07048072a11b7c8c17be0c820147b617"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a07048072a11b7c8c17be0c820147b617">MANDATORY</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a07048072a11b7c8c17be0c820147b617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdff552467cc2d2d5815831e9656cffc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#afdff552467cc2d2d5815831e9656cffc">OPTIONAL</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:afdff552467cc2d2d5815831e9656cffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5237f6efdf6691b19934e869b7ba9a24"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a5237f6efdf6691b19934e869b7ba9a24">NO_MESSAGE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a5237f6efdf6691b19934e869b7ba9a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa90cac659d18e8ef6294c7ae337f6b58"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#aa90cac659d18e8ef6294c7ae337f6b58">SUCCESS</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:aa90cac659d18e8ef6294c7ae337f6b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada3f1f3fa9b684d837200490fbb07c26"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#ada3f1f3fa9b684d837200490fbb07c26">ALERT</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ada3f1f3fa9b684d837200490fbb07c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc4a9ad83f9350a588d117e0c8916d45"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#acc4a9ad83f9350a588d117e0c8916d45">NOW</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:acc4a9ad83f9350a588d117e0c8916d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funkcje</h2></td></tr>
 <tr class="memitem:af6d6108de0d4edf552b16b42718356a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#af6d6108de0d4edf552b16b42718356a7">process</a> (int connectionFd)</td></tr>
 <tr class="separator:af6d6108de0d4edf552b16b42718356a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d95d9fb16ff0fdb16b4ecd4217df103"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a5d95d9fb16ff0fdb16b4ecd4217df103">resolveRequest</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:a5d95d9fb16ff0fdb16b4ecd4217df103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a612c5088c42bcbb62e36c3813c592ae3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a612c5088c42bcbb62e36c3813c592ae3">isFileRequest</a> (char *request, char *headers)</td></tr>
+<tr class="separator:a612c5088c42bcbb62e36c3813c592ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e86365694fac4e3d56a3bde252be0fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a3e86365694fac4e3d56a3bde252be0fa">isMappedRequest</a> (char *request)</td></tr>
+<tr class="separator:a3e86365694fac4e3d56a3bde252be0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a601212945b3210c989cb4f5a5d380887"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a601212945b3210c989cb4f5a5d380887">resolveMappedRequest</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:a601212945b3210c989cb4f5a5d380887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8dc3ef76ed2a370e5f27152f74254c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#ad8dc3ef76ed2a370e5f27152f74254c0">respondToIndex</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo, int messageType, char *message)</td></tr>
+<tr class="separator:ad8dc3ef76ed2a370e5f27152f74254c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48052809b2895eb031f077ed167ce016"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a48052809b2895eb031f077ed167ce016">respondToGetLogin</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo, int messageType, char *message)</td></tr>
+<tr class="separator:a48052809b2895eb031f077ed167ce016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1b39d834e9170d22b8bde116068ac20"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#ae1b39d834e9170d22b8bde116068ac20">respondToGetRegister</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo, int messageType, char *message)</td></tr>
+<tr class="separator:ae1b39d834e9170d22b8bde116068ac20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31dda2675408dc19fe57d8db116e0690"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a31dda2675408dc19fe57d8db116e0690">respondToPostRegister</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:a31dda2675408dc19fe57d8db116e0690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada1da38e9bf4f1781351dc855c02e08a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#ada1da38e9bf4f1781351dc855c02e08a">respondToGetAddGroup</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo, int messageType, char *message)</td></tr>
+<tr class="separator:ada1da38e9bf4f1781351dc855c02e08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e2155a5af10465e0416c20cbdbc14ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a3e2155a5af10465e0416c20cbdbc14ec">respondToPostAddGroup</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:a3e2155a5af10465e0416c20cbdbc14ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a961204fa21052c2b04353b3c7ab4a617"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a961204fa21052c2b04353b3c7ab4a617">respondToPostAddToGroup</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:a961204fa21052c2b04353b3c7ab4a617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2332af1624adf989dd7d80963e86358"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#aa2332af1624adf989dd7d80963e86358">respondToPostStartTest</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:aa2332af1624adf989dd7d80963e86358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82b5d2bcf0bbce4179c94f78561f975b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a82b5d2bcf0bbce4179c94f78561f975b">respondToGetStudents</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo, int messageType, char *message)</td></tr>
+<tr class="separator:a82b5d2bcf0bbce4179c94f78561f975b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad972bf0f0f50ad7b7c4bb90e5d34e994"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#ad972bf0f0f50ad7b7c4bb90e5d34e994">respondToGetTests</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo, int messageType, char *message)</td></tr>
+<tr class="separator:ad972bf0f0f50ad7b7c4bb90e5d34e994"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5386fe5c16e5b36e1ffb3203cb2a62d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a5386fe5c16e5b36e1ffb3203cb2a62d0">respondToGetTestsByLecturer</a> (FILE *responseFile, <a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo, int messageType, char *message, <a class="el" href="structSession.html">Session</a> session)</td></tr>
+<tr class="separator:a5386fe5c16e5b36e1ffb3203cb2a62d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2932ca88ce3c0ccb0f0a75dc56906680"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a2932ca88ce3c0ccb0f0a75dc56906680">respondToGetTestsByStudent</a> (FILE *responseFile, <a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo, int messageType, char *message, <a class="el" href="structSession.html">Session</a> session)</td></tr>
+<tr class="separator:a2932ca88ce3c0ccb0f0a75dc56906680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06e1503b572227309d82fd1e9adc709c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a06e1503b572227309d82fd1e9adc709c">respondToGetAddTest</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo, int messageType, char *message)</td></tr>
+<tr class="separator:a06e1503b572227309d82fd1e9adc709c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a015949c29e160768aefba7ba752f066e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a015949c29e160768aefba7ba752f066e">respondToPostAddTest</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:a015949c29e160768aefba7ba752f066e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09826803df1351e1e98ff136eeb239eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a09826803df1351e1e98ff136eeb239eb">respondToPostTest</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:a09826803df1351e1e98ff136eeb239eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b7a5156e18d6f8bfcb6b5760496f6a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a7b7a5156e18d6f8bfcb6b5760496f6a1">respondToPostSendTest</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:a7b7a5156e18d6f8bfcb6b5760496f6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9da155f191a99526c7a9bd51b1bb59f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#ad9da155f191a99526c7a9bd51b1bb59f">respondToPostCheckTest</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:ad9da155f191a99526c7a9bd51b1bb59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30085b1a911b9c4f7751637f89956a30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a30085b1a911b9c4f7751637f89956a30">appendToQuery</a> (char *query, char *newQuery)</td></tr>
+<tr class="separator:a30085b1a911b9c4f7751637f89956a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47962df758c167f344c187e8775fc915"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a47962df758c167f344c187e8775fc915">appendMessage</a> (FILE *responseFile, int messageType, char *message)</td></tr>
+<tr class="separator:a47962df758c167f344c187e8775fc915"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6294199c9f252e4860411a011512896f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a6294199c9f252e4860411a011512896f">respondToPostLogin</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:a6294199c9f252e4860411a011512896f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42b5f842770dfde5dc87ce56c4dadd64"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a42b5f842770dfde5dc87ce56c4dadd64">respondToPostLogout</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:a42b5f842770dfde5dc87ce56c4dadd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d5dc1a71414b535848b3b1869448f1f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a2d5dc1a71414b535848b3b1869448f1f">getPostParameterValue</a> (char *requestBody, char *parameter, char value[], int mandatory)</td></tr>
+<tr class="separator:a2d5dc1a71414b535848b3b1869448f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2185cee9e4b3273f9ac300e00e8d5dcc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a2185cee9e4b3273f9ac300e00e8d5dcc">appendPart</a> (FILE *responseFile, char *part)</td></tr>
+<tr class="separator:a2185cee9e4b3273f9ac300e00e8d5dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9ddc51f58e3c96d25a5921019fae038"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#ad9ddc51f58e3c96d25a5921019fae038">getRequestMethod</a> (char *request, char method[])</td></tr>
+<tr class="separator:ad9ddc51f58e3c96d25a5921019fae038"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d32fbc97316ed6a1a2bd7517f9ad22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a93d32fbc97316ed6a1a2bd7517f9ad22">readArgumentFromRequest</a> (char *request, char *argument)</td></tr>
+<tr class="separator:a93d32fbc97316ed6a1a2bd7517f9ad22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3ea8e8ee3b09b1604fcf802c88beac1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#ad3ea8e8ee3b09b1604fcf802c88beac1">appendToHeaders</a> (char *headers, char *newHeader)</td></tr>
+<tr class="separator:ad3ea8e8ee3b09b1604fcf802c88beac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ad92c33bd7168c224c4b7d69043a3d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a6ad92c33bd7168c224c4b7d69043a3d9">resolveGetFileRequest</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo)</td></tr>
+<tr class="separator:a6ad92c33bd7168c224c4b7d69043a3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08b345ebbe43124108a8ebb58e70a3a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a08b345ebbe43124108a8ebb58e70a3a1">sendFile</a> (int connectionFd, char *filename, char *headers)</td></tr>
+<tr class="separator:a08b345ebbe43124108a8ebb58e70a3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae12d073ac8fb908f2637659d1646a724"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#ae12d073ac8fb908f2637659d1646a724">generateNewSessionId</a> (char *sessionId)</td></tr>
 <tr class="separator:ae12d073ac8fb908f2637659d1646a724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d52ced5a4cab44bff4b132a02f44654"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a1d52ced5a4cab44bff4b132a02f44654">createConnectionInfo</a> (int connectionFd, char *request, char *headers, char *sessionId, char *requestBody)</td></tr>
+<tr class="separator:a1d52ced5a4cab44bff4b132a02f44654"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f5605b15f4e2b212b33d2ca61e47a83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a0f5605b15f4e2b212b33d2ca61e47a83">appendMenu</a> (FILE *responseFile, <a class="el" href="structSession.html">Session</a> session)</td></tr>
+<tr class="separator:a0f5605b15f4e2b212b33d2ca61e47a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3dd11060d3a79e72e13178d3839614"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#abf3dd11060d3a79e72e13178d3839614">appendUserData</a> (FILE *responseFile, <a class="el" href="structSession.html">Session</a> session)</td></tr>
+<tr class="separator:abf3dd11060d3a79e72e13178d3839614"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0762dc6030a760b1d95ee5390911b9bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a0762dc6030a760b1d95ee5390911b9bf">handleError</a> (<a class="el" href="structConnectionInfo.html">ConnectionInfo</a> connectionInfo, int errorCode)</td></tr>
+<tr class="separator:a0762dc6030a760b1d95ee5390911b9bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a422cf3728942d9e8588b4f67fe5adae0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#a422cf3728942d9e8588b4f67fe5adae0">appendErrorHttpCode</a> (FILE *responseFile, int errorCode)</td></tr>
+<tr class="separator:a422cf3728942d9e8588b4f67fe5adae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf1f218a7548ac5d40752eea1fff6839"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="RequestProcessor_8c.html#aaf1f218a7548ac5d40752eea1fff6839">appendErrorMessage</a> (FILE *responseFile, int errorCode)</td></tr>
+<tr class="separator:aaf1f218a7548ac5d40752eea1fff6839"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Zmienne</h2></td></tr>
@@ -98,21 +185,517 @@ Zmienne</h2></td></tr>
 <tr class="separator:a7066977006bd1e86e63f017236d9b584"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Dokumentacja definicji</h2>
-<a id="a54fa99013d88b05125eba286921517c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54fa99013d88b05125eba286921517c7">&#9670;&nbsp;</a></span>SESSION_ID_LENGTH</h2>
+<a id="ada3f1f3fa9b684d837200490fbb07c26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada3f1f3fa9b684d837200490fbb07c26">&#9670;&nbsp;</a></span>ALERT</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SESSION_ID_LENGTH&#160;&#160;&#160;15</td>
+          <td class="memname">#define ALERT&#160;&#160;&#160;2</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Wiadomość do użytkownika informująca o niepowodzeniu </p>
+
+</div>
+</div>
+<a id="aa8475e926a72f519c2845b818daa7ddc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8475e926a72f519c2845b818daa7ddc">&#9670;&nbsp;</a></span>ANSWER_OK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ANSWER_OK&#160;&#160;&#160;&quot;HTTP/1.1 200 OK\r\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Standardowa odpowiedź HTTP (OK). </p>
+
+</div>
+</div>
+<a id="a07048072a11b7c8c17be0c820147b617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07048072a11b7c8c17be0c820147b617">&#9670;&nbsp;</a></span>MANDATORY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MANDATORY&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Argument wymagany metody post </p>
+
+</div>
+</div>
+<a id="ad11e02669e60f64a75f5a1e8a03c7d5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad11e02669e60f64a75f5a1e8a03c7d5f">&#9670;&nbsp;</a></span>MAX_ARRAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_ARRAY&#160;&#160;&#160;100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Maksymalna wielkość tablicy struktur bazy danych </p>
+
+</div>
+</div>
+<a id="a3864d0ffbbbc481a10a5600146ad9ed9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3864d0ffbbbc481a10a5600146ad9ed9">&#9670;&nbsp;</a></span>METHOD_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define METHOD_LENGTH&#160;&#160;&#160;8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Maksymalna długość metody HTTP </p>
+
+</div>
+</div>
+<a id="a2ca1c6a1e424e30049c0fa365ab34647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca1c6a1e424e30049c0fa365ab34647">&#9670;&nbsp;</a></span>MINI_BUF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MINI_BUF&#160;&#160;&#160;128</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Mini bufor (128 znaków) </p>
+
+</div>
+</div>
+<a id="a5237f6efdf6691b19934e869b7ba9a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5237f6efdf6691b19934e869b7ba9a24">&#9670;&nbsp;</a></span>NO_MESSAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NO_MESSAGE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Brak wiadomości do użytkownika </p>
+
+</div>
+</div>
+<a id="acc4a9ad83f9350a588d117e0c8916d45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc4a9ad83f9350a588d117e0c8916d45">&#9670;&nbsp;</a></span>NOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOW&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zerowy offset przesunięcia minutowego czasu. </p>
+
+</div>
+</div>
+<a id="afdff552467cc2d2d5815831e9656cffc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdff552467cc2d2d5815831e9656cffc">&#9670;&nbsp;</a></span>OPTIONAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OPTIONAL&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Argument opcjonalny metody post </p>
+
+</div>
+</div>
+<a id="aeb01965415283c7dcb324706c2ef5755"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb01965415283c7dcb324706c2ef5755">&#9670;&nbsp;</a></span>SMALL_BUF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SMALL_BUF&#160;&#160;&#160;256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Mały bufor (365 znaków) </p>
+
+</div>
+</div>
+<a id="aa90cac659d18e8ef6294c7ae337f6b58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa90cac659d18e8ef6294c7ae337f6b58">&#9670;&nbsp;</a></span>SUCCESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SUCCESS&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wiadomość do użytkownika informująca o sukcesie </p>
 
 </div>
 </div>
 <h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="a422cf3728942d9e8588b4f67fe5adae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a422cf3728942d9e8588b4f67fe5adae0">&#9670;&nbsp;</a></span>appendErrorHttpCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void appendErrorHttpCode </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>responseFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>errorCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zapisuje informacje o błędzie w plik HTML. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">responseFile</td><td>otwarty do zapisu plik HTML </td></tr>
+    <tr><td class="paramname">errorCode</td><td>kod błędu </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaf1f218a7548ac5d40752eea1fff6839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf1f218a7548ac5d40752eea1fff6839">&#9670;&nbsp;</a></span>appendErrorMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void appendErrorMessage </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>responseFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>errorCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">responseFile</td><td>otwarty do zapisu plik HTML </td></tr>
+    <tr><td class="paramname">errorCode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0f5605b15f4e2b212b33d2ca61e47a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f5605b15f4e2b212b33d2ca61e47a83">&#9670;&nbsp;</a></span>appendMenu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void appendMenu </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>responseFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structSession.html">Session</a>&#160;</td>
+          <td class="paramname"><em>session</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Generuje menu dla podanego użytkownika i jego roli. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">responseFile</td><td>otwarty do zapisu plik HTML </td></tr>
+    <tr><td class="paramname">session</td><td>informacje o sesji </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a47962df758c167f344c187e8775fc915"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47962df758c167f344c187e8775fc915">&#9670;&nbsp;</a></span>appendMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void appendMessage </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>responseFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>messageType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wyświetla na stronie wiadomość do użytkownika </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">responseFile</td><td>otwarty do zapisu plik HTML </td></tr>
+    <tr><td class="paramname">messageType</td><td>typ wiadomości do użytkownika </td></tr>
+    <tr><td class="paramname">message</td><td>treść wiadomości do użytkownika </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2185cee9e4b3273f9ac300e00e8d5dcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2185cee9e4b3273f9ac300e00e8d5dcc">&#9670;&nbsp;</a></span>appendPart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int appendPart </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>responseFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>part</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dodaje do pliku html tresc pliku .part o podanej nazwie (znajdujacego się w katalogu /web-content). </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">responseFile</td><td>otwarty do zapisu plik HTML </td></tr>
+    <tr><td class="paramname">part</td><td>nazwa pliku (bez rozszerzenia) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu, 500 w razie błędu </dd></dl>
+
+</div>
+</div>
+<a id="ad3ea8e8ee3b09b1604fcf802c88beac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3ea8e8ee3b09b1604fcf802c88beac1">&#9670;&nbsp;</a></span>appendToHeaders()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void appendToHeaders </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>headers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>newHeader</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dodaje nagłówek do istniejących nagłówków </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">headers</td><td>istniejące nagłówki </td></tr>
+    <tr><td class="paramname">newHeader</td><td>nowy nagłówek </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a30085b1a911b9c4f7751637f89956a30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30085b1a911b9c4f7751637f89956a30">&#9670;&nbsp;</a></span>appendToQuery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void appendToQuery </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>newQuery</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dodaje nowe zapytanie do istniejącego zapytania </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td>istniejące zapytanie </td></tr>
+    <tr><td class="paramname">newQuery</td><td>nowe zapytanie </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abf3dd11060d3a79e72e13178d3839614"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf3dd11060d3a79e72e13178d3839614">&#9670;&nbsp;</a></span>appendUserData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void appendUserData </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>responseFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structSession.html">Session</a>&#160;</td>
+          <td class="paramname"><em>session</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dodaje do pliku html informacje o zalogowanym użytkowniku (imię, nazwisko, rola i grupa, jeśli przynależy) </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">responseFile</td><td>otwarty do zapisu plik HTML </td></tr>
+    <tr><td class="paramname">session</td><td>informacje o sesji </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1d52ced5a4cab44bff4b132a02f44654"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d52ced5a4cab44bff4b132a02f44654">&#9670;&nbsp;</a></span>createConnectionInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a> createConnectionInfo </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>connectionFd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>headers</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>sessionId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>requestBody</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tworzy strukturę z informacjami o requeście z podanych informacji </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionFd</td><td>identyfikator gniazda połączeniowego </td></tr>
+    <tr><td class="paramname">request</td><td>treść requestu </td></tr>
+    <tr><td class="paramname">headers</td><td>nagłówki </td></tr>
+    <tr><td class="paramname">sessionId</td><td>numer sesji </td></tr>
+    <tr><td class="paramname">requestBody</td><td>treść żądania POST </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>zwraca strukurę <a class="el" href="structConnectionInfo.html">ConnectionInfo</a> </dd></dl>
+
+</div>
+</div>
 <a id="ae12d073ac8fb908f2637659d1646a724"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae12d073ac8fb908f2637659d1646a724">&#9670;&nbsp;</a></span>generateNewSessionId()</h2>
 
@@ -128,6 +711,195 @@ Zmienne</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Generuje nowe id sesji. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sessionId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2d5dc1a71414b535848b3b1869448f1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d5dc1a71414b535848b3b1869448f1f">&#9670;&nbsp;</a></span>getPostParameterValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getPostParameterValue </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>requestBody</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>parameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>value</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>mandatory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera podany parametr z treści żądania POST </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">requestBody</td><td>treść żądania POST </td></tr>
+    <tr><td class="paramname">parameter</td><td>parametr do znalezienia </td></tr>
+    <tr><td class="paramname">value</td><td>znaleziona wartość parametru </td></tr>
+    <tr><td class="paramname">mandatory</td><td>flaga określająca, czy parametr jest obowiązkowy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie znalezienia lub jeśli parametr jest niewymagany, 1 w razie nie znalezienia wymaganego parametru </dd></dl>
+
+</div>
+</div>
+<a id="ad9ddc51f58e3c96d25a5921019fae038"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9ddc51f58e3c96d25a5921019fae038">&#9670;&nbsp;</a></span>getRequestMethod()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void getRequestMethod </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>method</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera metodę z requestu </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>treść requestu </td></tr>
+    <tr><td class="paramname">method</td><td>wynikowa metoda </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0762dc6030a760b1d95ee5390911b9bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0762dc6030a760b1d95ee5390911b9bf">&#9670;&nbsp;</a></span>handleError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void handleError </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>errorCode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Przetwarza błąd, jeśli wystąpił. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+    <tr><td class="paramname">errorCode</td><td>kod błędu </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a612c5088c42bcbb62e36c3813c592ae3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a612c5088c42bcbb62e36c3813c592ae3">&#9670;&nbsp;</a></span>isFileRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int isFileRequest </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>headers</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sprawdza, czy zapytanie dotyczy pliku i czy wysyłanie podanego pliku jest dozwolone. Jeśli tak, to dodaje odpowiedni nagłówek.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>treść requestu </td></tr>
+    <tr><td class="paramname">headers</td><td>nagłówki </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>1 jeśli zapytanie o plik, 0 jeśli nie </dd></dl>
+
+</div>
+</div>
+<a id="a3e86365694fac4e3d56a3bde252be0fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e86365694fac4e3d56a3bde252be0fa">&#9670;&nbsp;</a></span>isMappedRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int isMappedRequest </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>request</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sprawdza czy podany request jest obsługiwany przez serwer.</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>treść requestu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>1 jeśli zapytanie o plik, 0 jeśli nie </dd></dl>
 
 </div>
 </div>
@@ -146,6 +918,830 @@ Zmienne</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Przetwarza request na podanym gnieździe. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionFd</td><td>numer gniazda </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a93d32fbc97316ed6a1a2bd7517f9ad22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d32fbc97316ed6a1a2bd7517f9ad22">&#9670;&nbsp;</a></span>readArgumentFromRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void readArgumentFromRequest </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>request</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argument</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Pobiera Argument z requestu. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>treść requestu </td></tr>
+    <tr><td class="paramname">argument</td><td>wynikowy argument </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6ad92c33bd7168c224c4b7d69043a3d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ad92c33bd7168c224c4b7d69043a3d9">&#9670;&nbsp;</a></span>resolveGetFileRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int resolveGetFileRequest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Przetwarza request o plik. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a601212945b3210c989cb4f5a5d380887"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a601212945b3210c989cb4f5a5d380887">&#9670;&nbsp;</a></span>resolveMappedRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int resolveMappedRequest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Przetwarza request, który jest obsługiwany przez serwer, a nie jest requestem o plik. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a5d95d9fb16ff0fdb16b4ecd4217df103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d95d9fb16ff0fdb16b4ecd4217df103">&#9670;&nbsp;</a></span>resolveRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int resolveRequest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Przetwarza request zgodnie informacjami ze struktury connectionInfo </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>informacje o requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>zwraca 0 w razie sukcesu lub numer błędu w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="ada1da38e9bf4f1781351dc855c02e08a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1da38e9bf4f1781351dc855c02e08a">&#9670;&nbsp;</a></span>respondToGetAddGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToGetAddGroup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>messageType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zwraca stronę z dodawaniem nowej grupy </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+    <tr><td class="paramname">messageType</td><td>typ wiadomości do użytkownika </td></tr>
+    <tr><td class="paramname">message</td><td>treść wiadomości do użytkownika </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a06e1503b572227309d82fd1e9adc709c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e1503b572227309d82fd1e9adc709c">&#9670;&nbsp;</a></span>respondToGetAddTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToGetAddTest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>messageType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zwraca stronę z dodawaniem nowego testu </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+    <tr><td class="paramname">messageType</td><td>typ wiadomości do użytkownika </td></tr>
+    <tr><td class="paramname">message</td><td>treść wiadomości do użytkownika </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a48052809b2895eb031f077ed167ce016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48052809b2895eb031f077ed167ce016">&#9670;&nbsp;</a></span>respondToGetLogin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToGetLogin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>messageType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zwraca stronę logowania </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+    <tr><td class="paramname">messageType</td><td>typ wiadomości do użytkownika </td></tr>
+    <tr><td class="paramname">message</td><td>treść wiadomości do użytkownika </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="ae1b39d834e9170d22b8bde116068ac20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1b39d834e9170d22b8bde116068ac20">&#9670;&nbsp;</a></span>respondToGetRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToGetRegister </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>messageType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zwraca stronę rejestracji </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+    <tr><td class="paramname">messageType</td><td>typ wiadomości do użytkownika </td></tr>
+    <tr><td class="paramname">message</td><td>treść wiadomości do użytkownika </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a82b5d2bcf0bbce4179c94f78561f975b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b5d2bcf0bbce4179c94f78561f975b">&#9670;&nbsp;</a></span>respondToGetStudents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToGetStudents </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>messageType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zwraca stronę z listą studentów </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+    <tr><td class="paramname">messageType</td><td>typ wiadomości do użytkownika </td></tr>
+    <tr><td class="paramname">message</td><td>treść wiadomości do użytkownika </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="ad972bf0f0f50ad7b7c4bb90e5d34e994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad972bf0f0f50ad7b7c4bb90e5d34e994">&#9670;&nbsp;</a></span>respondToGetTests()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToGetTests </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>messageType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zwraca stronę z listą testów </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+    <tr><td class="paramname">messageType</td><td>typ wiadomości do użytkownika </td></tr>
+    <tr><td class="paramname">message</td><td>treść wiadomości do użytkownika </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a5386fe5c16e5b36e1ffb3203cb2a62d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5386fe5c16e5b36e1ffb3203cb2a62d0">&#9670;&nbsp;</a></span>respondToGetTestsByLecturer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToGetTestsByLecturer </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>responseFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>messageType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structSession.html">Session</a>&#160;</td>
+          <td class="paramname"><em>session</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zwraca stronę z listą testów dla egzaminatora </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">responseFile</td><td></td></tr>
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+    <tr><td class="paramname">messageType</td><td>typ wiadomości do użytkownika </td></tr>
+    <tr><td class="paramname">message</td><td>treść wiadomości do użytkownika </td></tr>
+    <tr><td class="paramname">session</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a2932ca88ce3c0ccb0f0a75dc56906680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2932ca88ce3c0ccb0f0a75dc56906680">&#9670;&nbsp;</a></span>respondToGetTestsByStudent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToGetTestsByStudent </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>responseFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>messageType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structSession.html">Session</a>&#160;</td>
+          <td class="paramname"><em>session</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zwraca stronę z listą testów dla studenta </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">responseFile</td><td></td></tr>
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+    <tr><td class="paramname">messageType</td><td>typ wiadomości do użytkownika </td></tr>
+    <tr><td class="paramname">message</td><td>treść wiadomości do użytkownika </td></tr>
+    <tr><td class="paramname">session</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="ad8dc3ef76ed2a370e5f27152f74254c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8dc3ef76ed2a370e5f27152f74254c0">&#9670;&nbsp;</a></span>respondToIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToIndex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>messageType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zwraca stronę główną serwisu </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+    <tr><td class="paramname">messageType</td><td>typ wiadomości do użytkownika </td></tr>
+    <tr><td class="paramname">message</td><td>treść wiadomości do użytkownika </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a3e2155a5af10465e0416c20cbdbc14ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e2155a5af10465e0416c20cbdbc14ec">&#9670;&nbsp;</a></span>respondToPostAddGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToPostAddGroup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tworzy nową grupę </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a015949c29e160768aefba7ba752f066e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a015949c29e160768aefba7ba752f066e">&#9670;&nbsp;</a></span>respondToPostAddTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToPostAddTest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dodaje nowy test </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a961204fa21052c2b04353b3c7ab4a617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a961204fa21052c2b04353b3c7ab4a617">&#9670;&nbsp;</a></span>respondToPostAddToGroup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToPostAddToGroup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dodaje studenta do grupy </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="ad9da155f191a99526c7a9bd51b1bb59f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9da155f191a99526c7a9bd51b1bb59f">&#9670;&nbsp;</a></span>respondToPostCheckTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToPostCheckTest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Uruchamia automatyczne sprawdzanie testu </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a6294199c9f252e4860411a011512896f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6294199c9f252e4860411a011512896f">&#9670;&nbsp;</a></span>respondToPostLogin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToPostLogin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wysyła dane logowania do serwera </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a42b5f842770dfde5dc87ce56c4dadd64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42b5f842770dfde5dc87ce56c4dadd64">&#9670;&nbsp;</a></span>respondToPostLogout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToPostLogout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wysyła do serwera żądanie o wylogowanie </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a31dda2675408dc19fe57d8db116e0690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31dda2675408dc19fe57d8db116e0690">&#9670;&nbsp;</a></span>respondToPostRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToPostRegister </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wysyła formularz rejestracyjny do serwera </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a7b7a5156e18d6f8bfcb6b5760496f6a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b7a5156e18d6f8bfcb6b5760496f6a1">&#9670;&nbsp;</a></span>respondToPostSendTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToPostSendTest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wysyła odpowiedzi na test </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="aa2332af1624adf989dd7d80963e86358"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2332af1624adf989dd7d80963e86358">&#9670;&nbsp;</a></span>respondToPostStartTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToPostStartTest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Udostępnia test grupie </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a09826803df1351e1e98ff136eeb239eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09826803df1351e1e98ff136eeb239eb">&#9670;&nbsp;</a></span>respondToPostTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int respondToPostTest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structConnectionInfo.html">ConnectionInfo</a>&#160;</td>
+          <td class="paramname"><em>connectionInfo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Zwraca stronę z rozwiązywaniem testu </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionInfo</td><td>struktura z danymi o aktualnym requeście </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
+
+</div>
+</div>
+<a id="a08b345ebbe43124108a8ebb58e70a3a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08b345ebbe43124108a8ebb58e70a3a1">&#9670;&nbsp;</a></span>sendFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sendFile </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>connectionFd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>headers</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wysyła podany plik do klienta </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">connectionFd</td><td></td></tr>
+    <tr><td class="paramname">filename</td><td></td></tr>
+    <tr><td class="paramname">headers</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 w razie sukcesu lub odpowiedni błąd w razie jego wystąpienia </dd></dl>
 
 </div>
 </div>
@@ -161,6 +1757,7 @@ Zmienne</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Znaki, z których może składać się sesja. </p>
 
 </div>
 </div>

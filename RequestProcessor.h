@@ -16,6 +16,9 @@
 #include "libs/mylib.h"
 #include "libs/mydb.h"
 
+/**
+ * Struktura zawierające informacje o połączeniu i requeście.
+ */
 typedef struct ConnectionInfo {
     int connectionFd;
     char * request;
@@ -43,6 +46,7 @@ int getPostParameterValue(char * requestBody, char * parameter, char * value, in
 void appendMessage(FILE * responseFile, int messageType, char * message);
 void appendErrorMessage(FILE * responseFile, int errorCode);
 void appendErrorHttpCode(FILE * responseFile, int errorCode);
+void appendToQuery(char * query, char * newQuery);
 
 int respondToIndex(ConnectionInfo connectionInfo, int messageType, char * message);
 int respondToGetLogin(ConnectionInfo connectionInfo, int messageType, char * message);
@@ -50,7 +54,21 @@ int respondToPostLogin(ConnectionInfo connectionInfo);
 int respondToPostLogout(ConnectionInfo connectionInfo);
 int respondToGetRegister(ConnectionInfo connectionInfo, int messageType, char * message);
 int respondToPostRegister(ConnectionInfo connectionInfo);
+int respondToGetAddGroup(ConnectionInfo connectionInfo, int messageType, char * message);
+int respondToPostAddGroup(ConnectionInfo connectionInfo);
+int respondToGetStudents(ConnectionInfo connectionInfo, int messageType, char * message);
+int respondToPostAddToGroup(ConnectionInfo connectionInfo);
+int respondToGetAddTest(ConnectionInfo connectionInfo, int messageType, char * message);
+int respondToPostAddTest(ConnectionInfo connectionInfo);
 
-        void handleError(ConnectionInfo connectionInfo, int errorCode);
+int respondToGetTests(ConnectionInfo connectionInfo, int messageType, char *message);
+int respondToGetTestsByLecturer(FILE *responseFile, ConnectionInfo connectionInfo, int messageType, char *message, Session session);
+int respondToPostStartTest(ConnectionInfo connectionInfo);
+int respondToGetTestsByStudent(FILE *responseFile, ConnectionInfo connectionInfo, int messageType, char *message, Session session);
+int respondToPostTest(ConnectionInfo connectionInfo);
+int respondToPostSendTest(ConnectionInfo connectionInfo);
+int respondToPostCheckTest(ConnectionInfo connectionInfo);
+
+void handleError(ConnectionInfo connectionInfo, int errorCode);
 
 #endif //EGZAMIN_REQUESTPROCESSOR_H

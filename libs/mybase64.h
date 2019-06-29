@@ -8,6 +8,5 @@
 
 void decodeChars(char *chars, char *decodedChars);
 void encodeChars(char *chars, char *encodedChars);
-void getLoginAndPassword(char *uderData, char *login, char *password);
 
 #endif //EGZAMIN_MYBASE64_H

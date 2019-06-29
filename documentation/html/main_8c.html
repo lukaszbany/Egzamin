@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Dokumentacja pliku main.c</title>
+<title>Egzamin: Dokumentacja pliku main.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">Egzamin
    </div>
   </td>
  </tr>
@@ -75,7 +75,8 @@ $(function() {
 <code>#include &lt;netinet/in.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;time.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="libs_2mylib_8h_source.html">libs/mylib.h</a>&quot;</code><br />
+<code>#include &lt;locale.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="mylib_8h_source.html">libs/mylib.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="RequestProcessor_8h_source.html">RequestProcessor.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -106,6 +107,7 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Domyślny port serwera. </p>
 
 </div>
 </div>
@@ -120,6 +122,7 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Maksymalna ilość uczekujących połączeń. </p>
 
 </div>
 </div>
@@ -134,6 +137,7 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Liczba wywołanych na początku programu procesów, które obsługują żądania. </p>
 
 </div>
 </div>
@@ -163,6 +167,14 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Pobiera port z argumentu lub ustawia domyślny </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>liczba argumentów </td></tr>
+    <tr><td class="paramname">argv</td><td>tablica argumentów </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>numer portu </dd></dl>
 
 </div>
 </div>
@@ -191,6 +203,15 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Metoda startująca serwer. Jako parametr można podać port (jeśli nie zostanie podany, użyty zostanie domyślny 9876)</p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>liczba argumentów </td></tr>
+    <tr><td class="paramname">argv</td><td>tablica argumentów </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>0 jeśli zostanie zakończony poprawnie </dd></dl>
 
 </div>
 </div>

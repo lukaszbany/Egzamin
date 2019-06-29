@@ -1,7 +1,26 @@
 var searchData=
 [
-  ['10a_2dserwer_2ec',['10a-serwer.c',['../10a-serwer_8c.html',1,'']]],
-  ['10b_2dserwer_2ec',['10b-serwer.c',['../10b-serwer_8c.html',1,'']]],
-  ['10c_2dserwer_2ec',['10c-serwer.c',['../10c-serwer_8c.html',1,'']]],
-  ['10d_2dserwer_2ec',['10d-serwer.c',['../10d-serwer_8c.html',1,'']]]
+  ['acceptconnection',['acceptConnection',['../mylib_8c.html#a67b86ec0e83279c0885565da066be3df',1,'acceptConnection(int serverSocket):&#160;mylib.c'],['../mylib_8h.html#a67b86ec0e83279c0885565da066be3df',1,'acceptConnection(int serverSocket):&#160;mylib.c']]],
+  ['addanswers',['addAnswers',['../mydb_8c.html#af502ea05e96a5f0ae393188e27facb6d',1,'addAnswers(int waitingTestId, int student_id, char *answers):&#160;mydb.c'],['../mydb_8h.html#af502ea05e96a5f0ae393188e27facb6d',1,'addAnswers(int waitingTestId, int student_id, char *answers):&#160;mydb.c']]],
+  ['addgroup',['addGroup',['../mydb_8c.html#a615b854d7fcd304c52ff9f5c194c6e8e',1,'addGroup(char *name):&#160;mydb.c'],['../mydb_8h.html#a615b854d7fcd304c52ff9f5c194c6e8e',1,'addGroup(char *name):&#160;mydb.c']]],
+  ['addtest',['addTest',['../mydb_8c.html#a48b90f74a874b160281a91d950197e0f',1,'addTest(int userId, char *subject, int *testId):&#160;mydb.c'],['../mydb_8h.html#a48b90f74a874b160281a91d950197e0f',1,'addTest(int userId, char *subject, int *testId):&#160;mydb.c']]],
+  ['adduser',['addUser',['../mydb_8c.html#a7f8ed9947fe0827b16fe04f51e2e9ff3',1,'addUser(char *login, char *password, char *firstName, char *lastName, char *role):&#160;mydb.c'],['../mydb_8h.html#a7f8ed9947fe0827b16fe04f51e2e9ff3',1,'addUser(char *login, char *password, char *firstName, char *lastName, char *role):&#160;mydb.c']]],
+  ['addwaitingtest',['addWaitingTest',['../mydb_8c.html#a560acce1aafaa6cf55ae3319848d622c',1,'addWaitingTest(int testId, int groupId, char *endTime):&#160;mydb.c'],['../mydb_8h.html#a560acce1aafaa6cf55ae3319848d622c',1,'addWaitingTest(int testId, int groupId, char *endTime):&#160;mydb.c']]],
+  ['alert',['ALERT',['../RequestProcessor_8c.html#ada3f1f3fa9b684d837200490fbb07c26',1,'RequestProcessor.c']]],
+  ['answer1',['answer1',['../structQuestion.html#ae306f51695f64973343e9af1f80e6957',1,'Question']]],
+  ['answer2',['answer2',['../structQuestion.html#a1a6f4a873b32609a0475d3a2902d1215',1,'Question']]],
+  ['answer3',['answer3',['../structQuestion.html#a3ab3e9b12d5358ab16a493747647161d',1,'Question']]],
+  ['answer4',['answer4',['../structQuestion.html#a7966046ed86d5959a74a8aab9554d168',1,'Question']]],
+  ['answer_5fok',['ANSWER_OK',['../RequestProcessor_8c.html#aa8475e926a72f519c2845b818daa7ddc',1,'RequestProcessor.c']]],
+  ['answers',['Answers',['../structAnswers.html',1,'Answers'],['../structAnswers.html#a4157a86bf322214504cae9b9133865d6',1,'Answers::answers()']]],
+  ['appenderrorhttpcode',['appendErrorHttpCode',['../RequestProcessor_8c.html#a422cf3728942d9e8588b4f67fe5adae0',1,'appendErrorHttpCode(FILE *responseFile, int errorCode):&#160;RequestProcessor.c'],['../RequestProcessor_8h.html#a422cf3728942d9e8588b4f67fe5adae0',1,'appendErrorHttpCode(FILE *responseFile, int errorCode):&#160;RequestProcessor.c']]],
+  ['appenderrormessage',['appendErrorMessage',['../RequestProcessor_8c.html#aaf1f218a7548ac5d40752eea1fff6839',1,'appendErrorMessage(FILE *responseFile, int errorCode):&#160;RequestProcessor.c'],['../RequestProcessor_8h.html#aaf1f218a7548ac5d40752eea1fff6839',1,'appendErrorMessage(FILE *responseFile, int errorCode):&#160;RequestProcessor.c']]],
+  ['appendmenu',['appendMenu',['../RequestProcessor_8c.html#a0f5605b15f4e2b212b33d2ca61e47a83',1,'appendMenu(FILE *responseFile, Session session):&#160;RequestProcessor.c'],['../RequestProcessor_8h.html#a0f5605b15f4e2b212b33d2ca61e47a83',1,'appendMenu(FILE *responseFile, Session session):&#160;RequestProcessor.c']]],
+  ['appendmessage',['appendMessage',['../RequestProcessor_8c.html#a47962df758c167f344c187e8775fc915',1,'appendMessage(FILE *responseFile, int messageType, char *message):&#160;RequestProcessor.c'],['../RequestProcessor_8h.html#a47962df758c167f344c187e8775fc915',1,'appendMessage(FILE *responseFile, int messageType, char *message):&#160;RequestProcessor.c']]],
+  ['appendpart',['appendPart',['../RequestProcessor_8c.html#a2185cee9e4b3273f9ac300e00e8d5dcc',1,'appendPart(FILE *responseFile, char *part):&#160;RequestProcessor.c'],['../RequestProcessor_8h.html#a2185cee9e4b3273f9ac300e00e8d5dcc',1,'appendPart(FILE *responseFile, char *part):&#160;RequestProcessor.c']]],
+  ['appendtoheaders',['appendToHeaders',['../RequestProcessor_8c.html#ad3ea8e8ee3b09b1604fcf802c88beac1',1,'appendToHeaders(char *headers, char *newHeader):&#160;RequestProcessor.c'],['../RequestProcessor_8h.html#ad3ea8e8ee3b09b1604fcf802c88beac1',1,'appendToHeaders(char *headers, char *newHeader):&#160;RequestProcessor.c']]],
+  ['appendtoquery',['appendToQuery',['../RequestProcessor_8c.html#a30085b1a911b9c4f7751637f89956a30',1,'appendToQuery(char *query, char *newQuery):&#160;RequestProcessor.c'],['../RequestProcessor_8h.html#a30085b1a911b9c4f7751637f89956a30',1,'appendToQuery(char *query, char *newQuery):&#160;RequestProcessor.c']]],
+  ['appenduserdata',['appendUserData',['../RequestProcessor_8c.html#abf3dd11060d3a79e72e13178d3839614',1,'appendUserData(FILE *responseFile, Session session):&#160;RequestProcessor.c'],['../RequestProcessor_8h.html#abf3dd11060d3a79e72e13178d3839614',1,'appendUserData(FILE *responseFile, Session session):&#160;RequestProcessor.c']]],
+  ['authenticationprovider_2ec',['AuthenticationProvider.c',['../AuthenticationProvider_8c.html',1,'']]],
+  ['authenticationprovider_2eh',['AuthenticationProvider.h',['../AuthenticationProvider_8h.html',1,'']]]
 ];

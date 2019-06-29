@@ -1,0 +1,263 @@
+ <form action="/addTest" method="POST" accept-charset="UTF-8">
+        <div class="form-group">
+            <label for="subject">Temat</label>
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Temat testu" maxlength="35" required>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="question1">Pytanie 1</label>
+                    <input type="text" class="form-control" id="question1" name="question1" placeholder="Pytanie 1" maxlength="80" required>
+                </div>
+
+                <div class="form-group row">
+                    <label for="answer1a" class="col-form-label col-2">Poprawna:</label>
+                    <input type="text" class="form-control col-4" id="answer1a" name="answer1a" placeholder="A" maxlength="35" required>
+                    <input type="text" class="form-control col-4 offset-1" id="answer1b" name="answer1b" placeholder="B" maxlength="35" required>
+                </div>
+                <div class="form-group row">
+                    <select id="correct1" name="correct1" class="col-1">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </select>
+                    <input type="text" class="form-control col-4 offset-1" id="answer1c" name="answer1c" placeholder="C" maxlength="35" required>
+                    <input type="text" class="form-control col-4 offset-1" id="answer1d" name="answer1d" placeholder="D" maxlength="35" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="question2">Pytanie 2</label>
+                    <input type="text" class="form-control" id="question2" name="question2" placeholder="Pytanie 2" maxlength="80" >
+                </div>
+
+                <div class="form-group row">
+                    <label for="answer2a" class="col-form-label col-2">Poprawna:</label>
+                    <input type="text" class="form-control col-4" id="answer2a" name="answer2a" placeholder="A" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer2b" name="answer2b" placeholder="B" maxlength="35" >
+                </div>
+                <div class="form-group row">
+                    <select id="correct2" name="correct2" class="col-1">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </select>
+                    <input type="text" class="form-control col-4 offset-1" id="answer2c" name="answer2c" placeholder="C" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer2d" name="answer2d" placeholder="D" maxlength="35" >
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="question3">Pytanie 3</label>
+                    <input type="text" class="form-control" id="question3" name="question3" placeholder="Pytanie 3" maxlength="80" >
+                </div>
+
+                <div class="form-group row">
+                    <label for="answer3a" class="col-form-label col-2">Poprawna:</label>
+                    <input type="text" class="form-control col-4" id="answer3a" name="answer3a" placeholder="A" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer3b" name="answer3b" placeholder="B" maxlength="35" >
+                </div>
+                <div class="form-group row">
+                    <select id="correct3" name="correct3" class="col-1">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </select>
+                    <input type="text" class="form-control col-4 offset-1" id="answer3c" name="answer3c" placeholder="C" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer3d" name="answer3d" placeholder="D" maxlength="35" >
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="question3">Pytanie 4</label>
+                    <input type="text" class="form-control" id="question4" name="question4" placeholder="Pytanie 4" maxlength="80" >
+                </div>
+
+                <div class="form-group row">
+                    <label for="answer4a" class="col-form-label col-2">Poprawna:</label>
+                    <input type="text" class="form-control col-4" id="answer4a" name="answer4a" placeholder="A" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer4b" name="answer4b" placeholder="B" maxlength="35" >
+                </div>
+                <div class="form-group row">
+                    <select id="correct4" name="correct4" class="col-1">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </select>
+                    <input type="text" class="form-control col-4 offset-1" id="answer4c" name="answer4c" placeholder="C" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer4d" name="answer4d" placeholder="D" maxlength="35" >
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="question3">Pytanie 5</label>
+                    <input type="text" class="form-control" id="question5" name="question5" placeholder="Pytanie 5" maxlength="80" >
+                </div>
+
+                <div class="form-group row">
+                    <label for="answer5a" class="col-form-label col-2">Poprawna:</label>
+                    <input type="text" class="form-control col-4" id="answer5a" name="answer5a" placeholder="A" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer5b" name="answer5b" placeholder="B" maxlength="35" >
+                </div>
+                <div class="form-group row">
+                    <select id="correct5" name="correct5" class="col-1">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </select>
+                    <input type="text" class="form-control col-4 offset-1" id="answer5c" name="answer5c" placeholder="C" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer5d" name="answer5d" placeholder="D" maxlength="35" >
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="question3">Pytanie 6</label>
+                    <input type="text" class="form-control" id="question6" name="question6" placeholder="Pytanie 6" maxlength="80" >
+                </div>
+
+                <div class="form-group row">
+                    <label for="answer6a" class="col-form-label col-2">Poprawna:</label>
+                    <input type="text" class="form-control col-4" id="answer6a" name="answer6a" placeholder="A" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer6b" name="answer6b" placeholder="B" maxlength="35" >
+                </div>
+                <div class="form-group row">
+                    <select id="correct6" name="correct6" class="col-1">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </select>
+                    <input type="text" class="form-control col-4 offset-1" id="answer6c" name="answer6c" placeholder="C" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer6d" name="answer6d" placeholder="D" maxlength="35" >
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="question3">Pytanie 7</label>
+                    <input type="text" class="form-control" id="question7" name="question7" placeholder="Pytanie 7" maxlength="80" >
+                </div>
+
+                <div class="form-group row">
+                    <label for="answer7a" class="col-form-label col-2">Poprawna:</label>
+                    <input type="text" class="form-control col-4" id="answer7a" name="answer7a" placeholder="A" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer7b" name="answer7b" placeholder="B" maxlength="35" >
+                </div>
+                <div class="form-group row">
+                    <select id="correct7" name="correct7" class="col-1">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </select>
+                    <input type="text" class="form-control col-4 offset-1" id="answer7c" name="answer7c" placeholder="C" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer7d" name="answer7d" placeholder="D" maxlength="35" >
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="question3">Pytanie 8</label>
+                    <input type="text" class="form-control" id="question8" name="question8" placeholder="Pytanie 8" maxlength="80" >
+                </div>
+
+                <div class="form-group row">
+                    <label for="answer8a" class="col-form-label col-2">Poprawna:</label>
+                    <input type="text" class="form-control col-4" id="answer8a" name="answer8a" placeholder="A" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer8b" name="answer8b" placeholder="B" maxlength="35" >
+                </div>
+                <div class="form-group row">
+                    <select id="correct8" name="correct8" class="col-1">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </select>
+                    <input type="text" class="form-control col-4 offset-1" id="answer8c" name="answer8c" placeholder="C" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer8d" name="answer8d" placeholder="D" maxlength="35" >
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="question3">Pytanie 9</label>
+                    <input type="text" class="form-control" id="question9" name="question9" placeholder="Pytanie 9" maxlength="80" >
+                </div>
+
+                <div class="form-group row">
+                    <label for="answer9a" class="col-form-label col-2">Poprawna:</label>
+                    <input type="text" class="form-control col-4" id="answer9a" name="answer9a" placeholder="A" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer9b" name="answer9b" placeholder="B" maxlength="35" >
+                </div>
+                <div class="form-group row">
+                    <select id="correct9" name="correct9" class="col-1">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </select>
+                    <input type="text" class="form-control col-4 offset-1" id="answer9c" name="answer9c" placeholder="C" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer9d" name="answer9d" placeholder="D" maxlength="35" >
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="question3">Pytanie 10</label>
+                    <input type="text" class="form-control" id="question10" name="question10" placeholder="Pytanie 10" maxlength="80" >
+                </div>
+
+                <div class="form-group row">
+                    <label for="answer10a" class="col-form-label col-2">Poprawna:</label>
+                    <input type="text" class="form-control col-4" id="answer10a" name="answer10a" placeholder="A" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer10b" name="answer10b" placeholder="B" maxlength="35" >
+                </div>
+                <div class="form-group row">
+                    <select id="correct10" name="correct10" class="col-1">
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                        <option>D</option>
+                    </select>
+                    <input type="text" class="form-control col-4 offset-1" id="answer10c" name="answer10c" placeholder="C" maxlength="35" >
+                    <input type="text" class="form-control col-4 offset-1" id="answer10d" name="answer10d" placeholder="D" maxlength="35" >
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <button type="submit" class="btn btn-primary float-right">Zapisz test</button>
+            </div>
+        </div>
+    </form>
+</div>

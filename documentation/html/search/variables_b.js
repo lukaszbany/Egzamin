@@ -1,8 +1,7 @@
 var searchData=
 [
   ['sessionchars',['sessionChars',['../RequestProcessor_8c.html#a7066977006bd1e86e63f017236d9b584',1,'RequestProcessor.c']]],
-  ['sid',['sid',['../structProcessData.html#ae2b682ccbe7479d5b39fb772d4758163',1,'ProcessData']]],
-  ['sigblk',['sigBlk',['../structProcessData.html#a72c5b212928cf187e31e07e158a54de0',1,'ProcessData']]],
-  ['sigcgt',['sigCgt',['../structProcessData.html#a935413a7627d662bf41ecdb4477dc202',1,'ProcessData']]],
-  ['sigign',['sigIgn',['../structProcessData.html#a42a5f1eed5e28b5185fe07d0aa309399',1,'ProcessData']]]
+  ['sessionid',['sessionId',['../structSession.html#a447ed28ff422953c1ba4b92caa5ce1a6',1,'Session::sessionId()'],['../structConnectionInfo.html#ab53345d57548192751c2d5208c982b2f',1,'ConnectionInfo::sessionId()']]],
+  ['studentid',['studentId',['../structAnswers.html#aa1103403098fae40f60afe3ea5e78396',1,'Answers']]],
+  ['subject',['subject',['../structTest.html#a08311b2f79e3d7ed9c57f4db5b05de4a',1,'Test::subject()'],['../structWaitingTest.html#ae3556998232402cacea1e7dc3586b9b7',1,'WaitingTest::subject()']]]
 ];

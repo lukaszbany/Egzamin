@@ -1,0 +1,30 @@
+\hypertarget{AuthenticationProvider_8h}{}\section{Dokumentacja pliku Authentication\+Provider.\+h}
+\label{AuthenticationProvider_8h}\index{AuthenticationProvider.h@{AuthenticationProvider.h}}
+{\ttfamily \#include \char`\"{}libs/mydb.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}libs/mybase64.\+h\char`\"{}}\newline
+\subsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{AuthenticationProvider_8h_a12f10e15314bf0bef77f8d74d0c54143}{check\+Credentials}} (char $\ast$login, char $\ast$password, \mbox{\hyperlink{structUser}{User}} $\ast$user)
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{AuthenticationProvider_8h_a12f10e15314bf0bef77f8d74d0c54143}\label{AuthenticationProvider_8h_a12f10e15314bf0bef77f8d74d0c54143}} 
+\index{AuthenticationProvider.h@{AuthenticationProvider.h}!checkCredentials@{checkCredentials}}
+\index{checkCredentials@{checkCredentials}!AuthenticationProvider.h@{AuthenticationProvider.h}}
+\subsubsection{\texorpdfstring{checkCredentials()}{checkCredentials()}}
+{\footnotesize\ttfamily int check\+Credentials (\begin{DoxyParamCaption}\item[{char $\ast$}]{login,  }\item[{char $\ast$}]{password,  }\item[{\mbox{\hyperlink{structUser}{User}} $\ast$}]{user }\end{DoxyParamCaption})}
+
+Sprawdza czy dane użytkownika znajdują się w bazie łącznie z odkodowaniem jego hasła i zwraca go, jeśli tak. 
+\begin{DoxyParams}{Parametry}
+{\em login} & login użytkownika \\
+\hline
+{\em password} & hasło użytkownika \\
+\hline
+{\em user} & znaleziony użytkownika \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+0 jeśli login i hasło się zgadzają, -\/1 jeśli nie 
+\end{DoxyReturn}

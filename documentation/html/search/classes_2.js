@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['threadargs',['threadArgs',['../structthreadArgs.html',1,'']]]
+  ['group',['Group',['../structGroup.html',1,'']]]
 ];

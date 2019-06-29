@@ -1,9 +1,19 @@
 var searchData=
 [
-  ['handleconnection',['handleConnection',['../serwerWspolbiezny_8c.html#aff7a31e8c78a7dc3272f97c7ea912c50',1,'serwerWspolbiezny.c']]],
-  ['handlerusr1',['handlerUsr1',['../z6__14__receiver_8c.html#ac91e614835aeb81a713587e558ced4a2',1,'z6_14_receiver.c']]],
-  ['hash_5flength',['HASH_LENGTH',['../libs_2mybase64_8h.html#a42eb19b10bf0faee9c8decb218bdeae9',1,'HASH_LENGTH():&#160;mybase64.h'],['../pap_2zaj7_2zadanie7_2mybase64_8h.html#a42eb19b10bf0faee9c8decb218bdeae9',1,'HASH_LENGTH():&#160;mybase64.h'],['../z8__6_8c.html#a42eb19b10bf0faee9c8decb218bdeae9',1,'HASH_LENGTH():&#160;z8_6.c']]],
-  ['header',['header',['../10a-serwer_8c.html#adc7bfb1c892aecf61c0c73f3458caf90',1,'header(FILE *fp, char *content_type):&#160;10a-serwer.c'],['../10b-serwer_8c.html#adc7bfb1c892aecf61c0c73f3458caf90',1,'header(FILE *fp, char *content_type):&#160;10b-serwer.c'],['../10c-serwer_8c.html#adc7bfb1c892aecf61c0c73f3458caf90',1,'header(FILE *fp, char *content_type):&#160;10c-serwer.c'],['../10d-serwer_8c.html#adc7bfb1c892aecf61c0c73f3458caf90',1,'header(FILE *fp, char *content_type):&#160;10d-serwer.c'],['../serwer-www_8c.html#adc7bfb1c892aecf61c0c73f3458caf90',1,'header(FILE *fp, char *content_type):&#160;serwer-www.c']]],
-  ['hex',['HEX',['../CMakeCCompilerId_8c.html#a46d5d95daa1bef867bd0179594310ed5',1,'CMakeCCompilerId.c']]],
-  ['hostlen',['HOSTLEN',['../pap_2zaj7_2zadanie10_2socklib_8c.html#aaed8cc9d26720635595ffb924fd59ef0',1,'HOSTLEN():&#160;socklib.c'],['../socklib_8c.html#aaed8cc9d26720635595ffb924fd59ef0',1,'HOSTLEN():&#160;socklib.c']]]
+  ['main',['main',['../main_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.c']]],
+  ['main_2ec',['main.c',['../main_8c.html',1,'']]],
+  ['mandatory',['MANDATORY',['../RequestProcessor_8c.html#a07048072a11b7c8c17be0c820147b617',1,'RequestProcessor.c']]],
+  ['max_5farray',['MAX_ARRAY',['../RequestProcessor_8c.html#ad11e02669e60f64a75f5a1e8a03c7d5f',1,'RequestProcessor.c']]],
+  ['max_5fbacklog',['MAX_BACKLOG',['../main_8c.html#ad5765300a9df69229ca7cf5bd438ce73',1,'main.c']]],
+  ['max_5fclients',['MAX_CLIENTS',['../main_8c.html#a0a8f91f93d75a07f0ae45077db45b3eb',1,'main.c']]],
+  ['max_5fhostname_5flength',['MAX_HOSTNAME_LENGTH',['../mylib_8h.html#ad5570a4ab8c9d790b0e8f7c15378d582',1,'mylib.h']]],
+  ['max_5fquery',['MAX_QUERY',['../mydb_8c.html#add1d47685776b48c3e5844d76e241c93',1,'mydb.c']]],
+  ['method_5flength',['METHOD_LENGTH',['../RequestProcessor_8c.html#a3864d0ffbbbc481a10a5600146ad9ed9',1,'RequestProcessor.c']]],
+  ['mini_5fbuf',['MINI_BUF',['../RequestProcessor_8c.html#a2ca1c6a1e424e30049c0fa365ab34647',1,'RequestProcessor.c']]],
+  ['mybase64_2ec',['mybase64.c',['../mybase64_8c.html',1,'']]],
+  ['mybase64_2eh',['mybase64.h',['../mybase64_8h.html',1,'']]],
+  ['mydb_2ec',['mydb.c',['../mydb_8c.html',1,'']]],
+  ['mydb_2eh',['mydb.h',['../mydb_8h.html',1,'']]],
+  ['mylib_2ec',['mylib.c',['../mylib_8c.html',1,'']]],
+  ['mylib_2eh',['mylib.h',['../mylib_8h.html',1,'']]]
 ];
